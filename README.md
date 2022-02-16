@@ -1,7 +1,7 @@
-# SEP2 project
+# SEP3 project
 
-SEP2 Project is a project create for VIA university second semester.
-we will use JAVA and SQL
+SEP3 Project is a project create for VIA university second semester.
+we will use JAVA, SQL and C#
 
 
 <h3 align="left">Languages and Tools:</h3>
