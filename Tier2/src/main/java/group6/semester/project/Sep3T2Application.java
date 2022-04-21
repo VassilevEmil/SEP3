@@ -1,15 +1,13 @@
-package via.group6.tier2;
+package group6.semester.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Tier2Application {
-
-    //always port localhost:8080
+public class Sep3T2Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Tier2Application.class, args);
+        SpringApplication.run(Sep3T2Application.class, args);
     }
 
 }
