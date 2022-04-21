@@ -1,11 +1,9 @@
-﻿namespace Entities.Models;
+﻿namespace Entities.Models; 
 
-public class Message
-{
-    public string message { get; set; }
+public class Message {
+    public int Id { get; set; }
+    public string Body { get; set; }
 
-    public Message()
-    {
-        this.message=String.Empty;
-    }
+
+
 }
