@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GRPCService";
+
+package message;
+
+service Message {
+  rpc AddMessage (MessageObj) returns (MessageObj);
+  rpc GetMessage (IdMessage) returns (MessageObj);
+}
+
+
+message MessageObj {
+  int32 id=1;
+  string body = 2;
+}
+
+
+message IdMessage {
+  int32 id = 1;
+}
