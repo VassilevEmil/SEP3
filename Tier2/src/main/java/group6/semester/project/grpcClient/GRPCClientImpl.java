@@ -14,9 +14,8 @@ public class GRPCClientImpl implements GRPCClient {
     private MessageGrpc.MessageBlockingStub messageproto;
 
     public GRPCClientImpl() {
-        ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 5206).usePlaintext().build();
+        ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 5250).usePlaintext().build();
         messageproto = MessageGrpc.newBlockingStub(managedChannel);
-
     }
 
     @Override
