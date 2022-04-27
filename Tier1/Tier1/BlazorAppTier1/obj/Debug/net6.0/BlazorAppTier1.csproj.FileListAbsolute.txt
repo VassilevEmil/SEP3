@@ -32,3 +32,4 @@ C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier1\Tier1\BlazorAppTier1\obj\D
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier1\Tier1\BlazorAppTier1\obj\Debug\net6.0\ref\BlazorAppTier1.dll
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier1\Tier1\BlazorAppTier1\obj\Debug\net6.0\BlazorAppTier1.pdb
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier1\Tier1\BlazorAppTier1\obj\Debug\net6.0\BlazorAppTier1.genruntimeconfig.cache
+C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier1\Tier1\BlazorAppTier1\obj\Debug\net6.0\scopedcss\Pages\Login\Login.razor.rz.scp.css

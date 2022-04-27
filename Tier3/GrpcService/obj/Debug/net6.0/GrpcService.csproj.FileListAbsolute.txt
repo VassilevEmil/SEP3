@@ -29,3 +29,4 @@ C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\GrpcService\obj\Debug\net6
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\GrpcService\obj\Debug\net6.0\ref\GrpcService.dll
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.pdb
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.genruntimeconfig.cache
+C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\GrpcService\bin\Debug\net6.0\message.json
