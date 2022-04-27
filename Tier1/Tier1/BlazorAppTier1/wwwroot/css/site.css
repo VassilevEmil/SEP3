@@ -7,10 +7,11 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .background {
-    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../images/homepage.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    /*background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../images/homepage.jpg);*/
+    /*background-position: center center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    background-color: #1f2029;
 }
 
 h1:focus {
