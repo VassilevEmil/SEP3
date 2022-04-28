@@ -1,54 +1,66 @@
 /* _content/BlazorAppTier1/Pages/Login/Login.razor.rz.scp.css */
 
-#body[b-aq8dnhbdpp]{
+#body[b-aq8dnhbdpp] {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 15px;
     line-height: 1.7;
     color: #c4c3ca;
     overflow-x: hidden;
+    padding-top: 25px;
 }
+
 a[b-aq8dnhbdpp] {
     cursor: pointer;
     transition: all 200ms linear;
 }
+
 a:hover[b-aq8dnhbdpp] {
     text-decoration: none;
 }
+
 .link[b-aq8dnhbdpp] {
     color: #c4c3ca;
 }
+
 .link:hover[b-aq8dnhbdpp] {
     color: #ffeba7;
 }
+
 p[b-aq8dnhbdpp] {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.7;
 }
+
 h4[b-aq8dnhbdpp] {
     font-weight: 600;
 }
-h6 span[b-aq8dnhbdpp]{
+
+h6 span[b-aq8dnhbdpp] {
     padding: 0 20px;
     text-transform: uppercase;
     font-weight: 700;
 }
-.section[b-aq8dnhbdpp]{
+
+.section[b-aq8dnhbdpp] {
     position: relative;
     width: 100%;
     display: block;
 }
-.full-height[b-aq8dnhbdpp]{
+
+.full-height[b-aq8dnhbdpp] {
     min-height: 100vh;
 }
+
 [type="checkbox"]:checked[b-aq8dnhbdpp],
-[type="checkbox"]:not(:checked)[b-aq8dnhbdpp]{
+[type="checkbox"]:not(:checked)[b-aq8dnhbdpp] {
     position: absolute;
     left: -9999px;
 }
+
 .checkbox:checked + label[b-aq8dnhbdpp],
-.checkbox:not(:checked) + label[b-aq8dnhbdpp]{
+.checkbox:not(:checked) + label[b-aq8dnhbdpp] {
     position: relative;
     display: block;
     text-align: center;
@@ -60,8 +72,9 @@ h6 span[b-aq8dnhbdpp]{
     cursor: pointer;
     background-color: #ffeba7;
 }
+
 .checkbox:checked + label[b-aq8dnhbdpp]:before,
-.checkbox:not(:checked) + label[b-aq8dnhbdpp]:before{
+.checkbox:not(:checked) + label[b-aq8dnhbdpp]:before {
     position: absolute;
     display: block;
     width: 36px;
@@ -79,6 +92,7 @@ h6 span[b-aq8dnhbdpp]{
     font-size: 24px;
     transition: all 0.5s ease;
 }
+
 .checkbox:checked + label[b-aq8dnhbdpp]:before {
     transform: translateX(44px) rotate(-270deg);
 }
@@ -94,16 +108,18 @@ h6 span[b-aq8dnhbdpp]{
     perspective: 800px;
     margin-top: 60px;
 }
+
 .card-3d-wrapper[b-aq8dnhbdpp] {
     width: 100%;
     height: 100%;
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     transition: all 600ms ease-out;
 }
+
 .card-front[b-aq8dnhbdpp], .card-back[b-aq8dnhbdpp] {
     width: 100%;
     height: 100%;
@@ -123,13 +139,16 @@ h6 span[b-aq8dnhbdpp]{
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+
 .card-back[b-aq8dnhbdpp] {
     transform: rotateY(180deg);
 }
+
 .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper[b-aq8dnhbdpp] {
     transform: rotateY(180deg);
 }
-.center-wrap[b-aq8dnhbdpp]{
+
+.center-wrap[b-aq8dnhbdpp] {
     position: absolute;
     width: 100%;
     padding: 0 35px;
@@ -141,12 +160,13 @@ h6 span[b-aq8dnhbdpp]{
 }
 
 
-.form-group[b-aq8dnhbdpp]{
+.form-group[b-aq8dnhbdpp] {
     position: relative;
     display: block;
     margin: 0;
     padding: 0;
 }
+
 .form-style[b-aq8dnhbdpp] {
     padding: 13px 20px;
     padding-left: 55px;
@@ -163,14 +183,16 @@ h6 span[b-aq8dnhbdpp]{
     border: none;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
-    box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+    box-shadow: 0 4px 8px 0 rgba(21, 21, 21, .2);
 }
+
 .form-style:focus[b-aq8dnhbdpp],
 .form-style:active[b-aq8dnhbdpp] {
     border: none;
     outline: none;
-    box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+    box-shadow: 0 4px 8px 0 rgba(21, 21, 21, .2);
 }
+
 .input-icon[b-aq8dnhbdpp] {
     position: absolute;
     top: 0;
@@ -184,58 +206,65 @@ h6 span[b-aq8dnhbdpp]{
     transition: all 200ms linear;
 }
 
-.form-group input:-ms-input-placeholder[b-aq8dnhbdpp]  {
+.form-group input:-ms-input-placeholder[b-aq8dnhbdpp] {
     color: #c4c3ca;
     opacity: 0.7;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
-.form-group input[b-aq8dnhbdpp]::-moz-placeholder  {
+
+.form-group input[b-aq8dnhbdpp]::-moz-placeholder {
     color: #c4c3ca;
     opacity: 0.7;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
-.form-group input:-moz-placeholder[b-aq8dnhbdpp]  {
+
+.form-group input:-moz-placeholder[b-aq8dnhbdpp] {
     color: #c4c3ca;
     opacity: 0.7;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
-.form-group input[b-aq8dnhbdpp]::-webkit-input-placeholder  {
+
+.form-group input[b-aq8dnhbdpp]::-webkit-input-placeholder {
     color: #c4c3ca;
     opacity: 0.7;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
-.form-group input:focus:-ms-input-placeholder[b-aq8dnhbdpp]  {
-    opacity: 0;
-    -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-.form-group input:focus[b-aq8dnhbdpp]::-moz-placeholder  {
-    opacity: 0;
-    -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-.form-group input:focus:-moz-placeholder[b-aq8dnhbdpp]  {
-    opacity: 0;
-    -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-.form-group input:focus[b-aq8dnhbdpp]::-webkit-input-placeholder  {
+
+.form-group input:focus:-ms-input-placeholder[b-aq8dnhbdpp] {
     opacity: 0;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
 
-.btn[b-aq8dnhbdpp]{
+.form-group input:focus[b-aq8dnhbdpp]::-moz-placeholder {
+    opacity: 0;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.form-group input:focus:-moz-placeholder[b-aq8dnhbdpp] {
+    opacity: 0;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.form-group input:focus[b-aq8dnhbdpp]::-webkit-input-placeholder {
+    opacity: 0;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.btn[b-aq8dnhbdpp] {
     border-radius: 4px;
     height: 44px;
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    -webkit-transition : all 200ms linear;
+    -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
     padding: 0 30px;
     letter-spacing: 1px;
@@ -255,21 +284,21 @@ h6 span[b-aq8dnhbdpp]{
     border: none;
     background-color: #ffeba7;
     color: #102770;
-    box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+    box-shadow: 0 8px 24px 0 rgba(255, 235, 167, .2);
 }
+
 .btn:active[b-aq8dnhbdpp],
-.btn:focus[b-aq8dnhbdpp]{
+.btn:focus[b-aq8dnhbdpp] {
     background-color: #102770;
     color: #ffeba7;
-    box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
 }
-.btn:hover[b-aq8dnhbdpp]{
+
+.btn:hover[b-aq8dnhbdpp] {
     background-color: #102770;
     color: #ffeba7;
-    box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
 }
-
-
 
 
 .logo[b-aq8dnhbdpp] {
@@ -280,10 +309,16 @@ h6 span[b-aq8dnhbdpp]{
     z-index: 100;
     transition: all 250ms linear;
 }
+
 .logo img[b-aq8dnhbdpp] {
     height: 26px;
     width: auto;
     display: block;
+}
+
+.errorPrompt[b-aq8dnhbdpp] {
+    margin-top: 20px;
+    color: red;
 }
 /* _content/BlazorAppTier1/Shared/MainLayout.razor.rz.scp.css */
 .page[b-qvllrcxqwe] {
@@ -679,21 +714,21 @@ h1 span:nth-child(15)[b-4oagloexvm]{
     -webkit-transition: all 300ms linear;
     transition: all 300ms linear;
 }
-#switch[b-4oagloexvm] {
-    width: 60px;
-    height: 8px;
-    border: 2px solid #8167a9;
-    border-radius: 27px;
-    background: #000;
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    opacity: 1;
-    transform: translate(0);
-    transition: all 300ms linear;
-    transition-delay: 1900ms;
-}
+/*#switch {*/
+/*    width: 60px;*/
+/*    height: 8px;*/
+/*    border: 2px solid #8167a9;*/
+/*    border-radius: 27px;*/
+/*    background: #000;*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    margin: 0 auto;*/
+/*    text-align: center;*/
+/*    opacity: 1;*/
+/*    transform: translate(0);*/
+/*    transition: all 300ms linear;*/
+/*    transition-delay: 1900ms;*/
+/*}*/
 .hero-anime #switch[b-4oagloexvm]{
     opacity: 0;
     transform: translateY(40px);

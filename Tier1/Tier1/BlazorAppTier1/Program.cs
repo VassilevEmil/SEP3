@@ -1,3 +1,4 @@
+using BlazorAppTier1.Authentication;
 using Contracts;
 using HttpServices;
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<IMessageService, MessageHttpClient>();
+builder.Services.AddScoped<IUserService, UserHttpClient>();
+builder.Services.AddScoped<IAuthService, AuthServiceImpl>();
 
 
 var app = builder.Build();
