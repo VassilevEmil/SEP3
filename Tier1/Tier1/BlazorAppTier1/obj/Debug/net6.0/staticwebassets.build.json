@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SQB+F0Sa9rAC1j5/tOyV96bnXocWL+SsFlwfzggYWYg=",
+  "Hash": "lOD1sR/Y6rTDuBCe+d54O7mPLSAyV89E/QGbbuH4zdo=",
   "Source": "BlazorAppTier1",
   "BasePath": "_content/BlazorAppTier1",
   "Mode": "Default",
@@ -270,6 +270,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\BlazorAppTier1\\wwwroot\\images\\homepage.jpg",
+      "SourceId": "BlazorAppTier1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\BlazorAppTier1\\wwwroot\\",
+      "BasePath": "_content/BlazorAppTier1",
+      "RelativePath": "images/homepage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\homepage.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\BlazorAppTier1\\wwwroot\\images\\logo.png",
+      "SourceId": "BlazorAppTier1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\BlazorAppTier1\\wwwroot\\",
+      "BasePath": "_content/BlazorAppTier1",
+      "RelativePath": "images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     }
   ]
 }

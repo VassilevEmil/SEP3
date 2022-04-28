@@ -1,63 +1,118 @@
 ﻿@page "/Login"
-<a href="https://front.codes/" class="logo" target="_blank">
-		<img src="https://assets.codepen.io/1462889/fcy.png" alt="">
-	</a>
+@using Entities.Models 
+@using Contracts   
+@using Microsoft.AspNetCore.Identity
+@inject IAuthService _authService
+@inject IUserService _userService
+@inject  NavigationManager navMgr
+<div id="body">
 
-	<div class="section">
-		<div class="container">
-			<div class="row full-height justify-content-center">
-				<div class="col-12 text-center align-self-center py-5">
-					<div class="section pb-5 pt-5 pt-sm-2 text-center">
-						<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
-			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-			          	<label for="reg-log"></label>
-						<div class="card-3d-wrap mx-auto">
-							<div class="card-3d-wrapper">
-								<div class="card-front">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Log In</h4>
-											<div class="form-group">
-												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
-												<i class="input-icon uil uil-at"></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-											<a href="#" class="btn mt-4">submit</a>
-                            				<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
-				      					</div>
-			      					</div>
-			      				</div>
-								<div class="card-back">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Sign Up</h4>
-											<div class="form-group">
-												<input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
-												<i class="input-icon uil uil-user"></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
-												<i class="input-icon uil uil-at"></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-											<a href="#" class="btn mt-4">submit</a>
-				      					</div>
-			      					</div>
-			      				</div>
-			      			</div>
-			      		</div>
-			      	</div>
-		      	</div>
-	      	</div>
-	    </div>
-	</div>
+
+    <a href="https://front.codes/" class="logo" target="_blank">
+        <img src="images/logo.png" alt="">
+    </a>
+
+    <div class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                        <h6 class="mb-0 pb-3">
+                            <span>Log In </span><span>Sign Up</span>
+                        </h6>
+                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                        <label for="reg-log"></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+                                <div class="card-front">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Log In</h4>
+                                            <div class="form-group">
+                                                <input type="text" class="form-style" placeholder="Your Username" autocomplete="off" @bind="UsernameLogin">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" @bind="UsernameLogin">
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <button class="btn mt-4" @onclick="LoginAsync">Login</button>
+                                            <p class="mb-0 mt-4 text-center">
+                                                <a href="#" class="link">Forgot your password?</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Sign Up</h4>
+                                            <div class="form-group">
+                                                <input type="text" class="form-style" placeholder="Your First Name" autocomplete="off" @bind="userSignUp.FirstName">
+                                                <i class="input-icon uil uil-user"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="text" class="form-style" placeholder="Your Last Name" autocomplete="off" @bind="userSignUp.LastName">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="text" class="form-style" placeholder="Choose an username" autocomplete="off" @bind="userSignUp.Username">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style" placeholder="Enter Password" id="logpass" autocomplete="off" @bind="userSignUp.Password">
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <button class="btn mt-4">Sign Up</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        @if (!string.IsNullOrEmpty(errorLabel)) {
+                            <div class="errorPrompt">
+                                <label> @errorLabel</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @code {
-    
+    private string UsernameLogin;
+    private string PasswordLogin;
+    private string errorLabel;
+
+    private User userSignUp = new User();
+
+    private async Task LoginAsync() {
+        errorLabel = string.Empty;
+
+        try {
+            await _authService.LoginAsync(UsernameLogin, PasswordLogin);
+    // Todo navMgr.NavigateTo("/");    
+            errorLabel = $"Hello {UsernameLogin}, whats up buddy??";
+        }
+        catch (Exception e) {
+            errorLabel = $"Error : {e.Message}";
+        }
+    }
+
+    private async Task CreateUserAsync() {
+        errorLabel = string.Empty;
+        try {
+            await _userService.CreateUserAsync(userSignUp);
+            navMgr.NavigateTo("/");
+        }
+        catch (Exception e) {
+            errorLabel = $"Error : {e.Message}";
+        }
+
+    }
+
+
+
 }
