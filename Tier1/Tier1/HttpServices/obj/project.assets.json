@@ -46,19 +46,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nepal\\.nuget\\packages\\": {}
+    "/Users/prabina/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\HttpServices\\HttpServices.csproj",
+      "projectUniqueName": "/Users/prabina/Desktop/Coding/sep3/Tier1/Tier1/HttpServices/HttpServices.csproj",
       "projectName": "HttpServices",
-      "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\HttpServices\\HttpServices.csproj",
-      "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\HttpServices\\obj\\",
+      "projectPath": "/Users/prabina/Desktop/Coding/sep3/Tier1/Tier1/HttpServices/HttpServices.csproj",
+      "packagesPath": "/Users/prabina/.nuget/packages/",
+      "outputPath": "/Users/prabina/Desktop/Coding/sep3/Tier1/Tier1/HttpServices/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/prabina/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -70,11 +70,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj": {
-              "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj"
+            "/Users/prabina/Desktop/Coding/sep3/Tier1/Tier1/Contracts/Contracts.csproj": {
+              "projectPath": "/Users/prabina/Desktop/Coding/sep3/Tier1/Tier1/Contracts/Contracts.csproj"
             },
-            "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj"
+            "/Users/prabina/Desktop/Coding/sep3/Tier1/Tier1/Entities/Entities.csproj": {
+              "projectPath": "/Users/prabina/Desktop/Coding/sep3/Tier1/Tier1/Entities/Entities.csproj"
             }
           }
         }
@@ -103,7 +103,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }
