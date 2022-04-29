@@ -86,7 +86,7 @@
     private string PasswordLogin;
     private string errorLabel;
 
-    private User userSignUp = new User();
+    private User? userSignUp = new User();
 
     private async Task LoginAsync() {
         errorLabel = string.Empty;
@@ -104,6 +104,7 @@
     private async Task CreateUserAsync() {
         errorLabel = string.Empty;
         try {
+            Console.WriteLine(userSignUp.Username);
             await _userService.CreateUserAsync(userSignUp);
             navMgr.NavigateTo("/");
         }

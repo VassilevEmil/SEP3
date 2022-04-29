@@ -8,4 +8,10 @@ public interface IUserService {
 
     Task<User> GetUserAsync(string username);
 
+    Task DeleteUser(string id);
+
+    Task Update(User user);
+    Task<User> GetUserById(string id);
+    
+
 }
