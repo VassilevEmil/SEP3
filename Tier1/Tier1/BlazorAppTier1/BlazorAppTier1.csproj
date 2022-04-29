@@ -12,4 +12,22 @@
       <ProjectReference Include="..\HttpServices\HttpServices.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="bin\Debug\net6.0\appsettings.Development.json" />
+      <Content Include="bin\Debug\net6.0\appsettings.json" />
+      <Content Include="bin\Debug\net6.0\BlazorAppTier1.deps.json" />
+      <Content Include="bin\Debug\net6.0\BlazorAppTier1.dll" />
+      <Content Include="bin\Debug\net6.0\BlazorAppTier1.exe" />
+      <Content Include="bin\Debug\net6.0\BlazorAppTier1.pdb" />
+      <Content Include="bin\Debug\net6.0\BlazorAppTier1.runtimeconfig.json" />
+      <Content Include="bin\Debug\net6.0\BlazorAppTier1.staticwebassets.runtime.json" />
+      <Content Include="bin\Debug\net6.0\Contracts.dll" />
+      <Content Include="bin\Debug\net6.0\Contracts.pdb" />
+      <Content Include="bin\Debug\net6.0\Entities.dll" />
+      <Content Include="bin\Debug\net6.0\Entities.pdb" />
+      <Content Include="bin\Debug\net6.0\HttpServices.dll" />
+      <Content Include="bin\Debug\net6.0\HttpServices.pdb" />
+      <Content Include="bin\Debug\net6.0\ref\BlazorAppTier1.dll" />
+    </ItemGroup>
+
 </Project>

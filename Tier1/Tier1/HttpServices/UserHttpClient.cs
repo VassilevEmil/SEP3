@@ -8,7 +8,15 @@ public class UserHttpClient : IUserService {
         throw new NotImplementedException();
     }
 
-    public Task<User> GetUserAsync(string username) {
+    public async Task<User> GetUserAsync(string username) {
         throw new NotImplementedException();
+        // The following code is for testing....
+        // return new User() {
+        //     Username = "Sachin",
+        //     Password = "helloThere12",
+        //     FirstName = "Sachin",
+        //     LastName = "Baral",
+        //     Role = "User"
+        // };
     }
 }

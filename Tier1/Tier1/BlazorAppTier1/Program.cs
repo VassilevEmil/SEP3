@@ -1,6 +1,9 @@
 using BlazorAppTier1.Authentication;
 using Contracts;
 using HttpServices;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
