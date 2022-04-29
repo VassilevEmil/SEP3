@@ -1,13 +1,14 @@
-package group6.semester.project.services;
+package group6.semester.project.logic.SericeImpl;
 
 
 import group6.semester.project.grpcClient.GRPCClient;
 import group6.semester.project.grpcClient.GRPCClientImpl;
 import group6.semester.project.model.Message;
+import group6.semester.project.services.MessageService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MessageServiceImpl implements MessageService{
+public class MessageServiceImpl implements MessageService {
     private GRPCClient client;
 
     public MessageServiceImpl() {
