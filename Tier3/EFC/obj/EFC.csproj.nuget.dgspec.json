@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\EFC\\EFC.csproj": {}
+    "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Application\\Application.csproj": {
+    "D:\\VIA_Courses\\SEP3\\Tier3\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier3\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\vassi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Application\\obj\\",
+        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\vassi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Entities\\Entities.csproj"
+              "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj"
               }
             }
           }
@@ -60,30 +66,36 @@
         }
       }
     },
-    "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\EFC\\EFC.csproj": {
+    "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\EFC\\EFC.csproj",
+        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj",
         "projectName": "EFC",
-        "projectPath": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\EFC\\EFC.csproj",
-        "packagesPath": "C:\\Users\\vassi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\EFC\\obj\\",
+        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj",
+        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\vassi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Application\\Application.csproj"
+              "D:\\VIA_Courses\\SEP3\\Tier3\\Application\\Application.csproj": {
+                "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Application\\Application.csproj"
               }
             }
           }
@@ -100,21 +112,17 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             }
           },
           "imports": [
@@ -136,22 +144,28 @@
         }
       }
     },
-    "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+    "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\vassi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vassi\\Desktop\\adrians assignment\\SEP3\\Tier3\\Entities\\obj\\",
+        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\vassi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

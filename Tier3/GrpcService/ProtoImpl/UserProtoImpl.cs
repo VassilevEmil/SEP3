@@ -5,7 +5,7 @@ namespace GRPCService.ProtoImpl;
 
 public class UserProtoImpl : User.UserBase
 {
-     private readonly IUserService _service;
+     private IUserService _service;
 
      public UserProtoImpl(IUserService _service)
      {

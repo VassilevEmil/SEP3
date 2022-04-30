@@ -5,10 +5,10 @@ namespace EFC.DAOImpl;
 
 public class MessageDAOImpl : IMessageDAO {
 
-    private readonly DBContext _db;
+    private readonly DbAccess _db;
 
-    public MessageDAOImpl(DBContext _db) {
-        _db = _db;
+    public MessageDAOImpl(DbAccess _db) {
+        this._db = _db;
     }
 
     public async Task<Message> AddMessage(Message message)

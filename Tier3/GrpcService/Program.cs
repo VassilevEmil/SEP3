@@ -1,6 +1,7 @@
 using Application.DAOInterfaces;
 using Application.ServiceImpl;
 using EFC.DAOImpl;
+using EFC;
 using Entities.Contracts;
 using GRPCService.ProtoImpl;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,7 @@ builder.Services.AddScoped<IUserService,UserServiceImpl>();
 //daos
 //builder.Services.AddScoped<IMessageDAO, MessageDAOImpl>();
 builder.Services.AddScoped<IUserDAO, UserDAOImpl>();
-builder.Services.AddDbContext<DbContext>();
+builder.Services.AddDbContext<DbAccess>();
 
 var app = builder.Build();
 

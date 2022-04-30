@@ -11,12 +11,12 @@ service User {
 
 
 message UserObj {
-
-  string username = 1;
-  string password =2;
-  string firstName = 3;
-  string  lastName = 4;
-  string role = 5;
+  string id = 1;
+  string username = 2;
+  string password =3;
+  string firstName = 4;
+  string  lastName = 5;
+  string role = 6;
 }
 
 

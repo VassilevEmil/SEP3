@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EFC;
 
-public class DBContext : DbContext
+public class DbAccess : DbContext
 {
-    public DbSet<User> Users { get; set; }
+    public DbSet<User>? Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        //optionsBuilder.UseNpgsql(@"Data Source = ..\EFCDataAccess\Forum.db");
-        optionsBuilder.UseSqlite(@"Data Source  = ..\EFC\user.db");
+        //https://api.elephantsql.com/console/75da4502-36f5-47cf-b29b-2bd6d5301618/details
+        optionsBuilder.UseNpgsql(@"Host=balarama.db.elephantsql.com;Database=ubptppqb;Username=ubptppqb;Password=DlaXSF8Wa8ZJo5vV06domqvVCVivHLsc");
         optionsBuilder.EnableSensitiveDataLogging();
     }
 
