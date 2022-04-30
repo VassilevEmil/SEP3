@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "GRPCService";
+
+package user;
+
+service User {
+  rpc AddUser (UserObj) returns (UserObj);
+  rpc GetUser (Username) returns (UserObj);
+}
+
+
+message UserObj {
+
+  string username = 1;
+  string password =2;
+  string firstName = 3;
+  string  lastName = 4;
+  string role = 5;
+}
+
+
+message Username {
+ string userName = 1;
+}

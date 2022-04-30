@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj": {}
+    "/Users/prabina/Desktop/Development/SEP3/Tier3/GrpcService/GrpcService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+    "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj",
+        "projectUniqueName": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\obj\\",
+        "projectPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj",
+        "packagesPath": "/Users/prabina/.nuget/packages/",
+        "outputPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/prabina/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -52,21 +52,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj": {
+    "/Users/prabina/Desktop/Development/SEP3/Tier3/GrpcService/GrpcService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj",
+        "projectUniqueName": "/Users/prabina/Desktop/Development/SEP3/Tier3/GrpcService/GrpcService.csproj",
         "projectName": "GrpcService",
-        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj",
-        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\obj\\",
+        "projectPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/GrpcService/GrpcService.csproj",
+        "packagesPath": "/Users/prabina/.nuget/packages/",
+        "outputPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/GrpcService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/prabina/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -78,8 +78,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj"
+              "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj": {
+                "projectPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj"
               }
             }
           }
@@ -117,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }
