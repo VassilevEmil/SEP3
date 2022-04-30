@@ -1,8 +1,10 @@
-using FileContext;
-using GrpcService.DAO;
-using GRPCService.DAO;
-using GRPCService.Services;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Application.DAOInterfaces;
+using Application.ServiceImpl;
+using EFC.DAOImpl;
+using EFC;
+using Entities.Contracts;
+using GRPCService.ProtoImpl;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,14 +13,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
-builder.Services.AddScoped<IMessageDAO, MessageDAOImpl>();
+
+//services
+builder.Services.AddScoped<IUserService,UserServiceImpl>();
+//daos
+//builder.Services.AddScoped<IMessageDAO, MessageDAOImpl>();
 builder.Services.AddScoped<IUserDAO, UserDAOImpl>();
-builder.Services.AddScoped<JsonFileContext>();
+builder.Services.AddDbContext<DbAccess>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-app.MapGrpcService<UserService>();
+app.MapGrpcService<UserProtoImpl>();
 app.MapGet("/",
     () =>
         "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");

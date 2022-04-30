@@ -24,16 +24,17 @@ namespace GRPCService {
     static UserReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFQcm90b3MvdXNlci5wcm90bxIEdXNlciJgCgdVc2VyT2JqEhAKCHVzZXJu",
-            "YW1lGAEgASgJEhAKCHBhc3N3b3JkGAIgASgJEhEKCWZpcnN0TmFtZRgDIAEo",
-            "CRIQCghsYXN0TmFtZRgEIAEoCRIMCgRyb2xlGAUgASgJIhwKCFVzZXJuYW1l",
-            "EhAKCHVzZXJOYW1lGAEgASgJMlkKBFVzZXISJwoHQWRkVXNlchINLnVzZXIu",
-            "VXNlck9iahoNLnVzZXIuVXNlck9iahIoCgdHZXRVc2VyEg4udXNlci5Vc2Vy",
-            "bmFtZRoNLnVzZXIuVXNlck9iakIOqgILR1JQQ1NlcnZpY2ViBnByb3RvMw=="));
+            "ChFQcm90b3MvdXNlci5wcm90bxIEdXNlciJsCgdVc2VyT2JqEgoKAmlkGAEg",
+            "ASgJEhAKCHVzZXJuYW1lGAIgASgJEhAKCHBhc3N3b3JkGAMgASgJEhEKCWZp",
+            "cnN0TmFtZRgEIAEoCRIQCghsYXN0TmFtZRgFIAEoCRIMCgRyb2xlGAYgASgJ",
+            "IhwKCFVzZXJuYW1lEhAKCHVzZXJOYW1lGAEgASgJMlkKBFVzZXISJwoHQWRk",
+            "VXNlchINLnVzZXIuVXNlck9iahoNLnVzZXIuVXNlck9iahIoCgdHZXRVc2Vy",
+            "Eg4udXNlci5Vc2VybmFtZRoNLnVzZXIuVXNlck9iakIOqgILR1JQQ1NlcnZp",
+            "Y2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.UserObj), global::GRPCService.UserObj.Parser, new[]{ "Username", "Password", "FirstName", "LastName", "Role" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.UserObj), global::GRPCService.UserObj.Parser, new[]{ "Id", "Username", "Password", "FirstName", "LastName", "Role" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.Username), global::GRPCService.Username.Parser, new[]{ "UserName" }, null, null, null, null)
           }));
     }
@@ -70,6 +71,7 @@ namespace GRPCService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UserObj(UserObj other) : this() {
+      id_ = other.id_;
       username_ = other.username_;
       password_ = other.password_;
       firstName_ = other.firstName_;
@@ -83,8 +85,19 @@ namespace GRPCService {
       return new UserObj(this);
     }
 
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "username" field.</summary>
-    public const int UsernameFieldNumber = 1;
+    public const int UsernameFieldNumber = 2;
     private string username_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Username {
@@ -95,7 +108,7 @@ namespace GRPCService {
     }
 
     /// <summary>Field number for the "password" field.</summary>
-    public const int PasswordFieldNumber = 2;
+    public const int PasswordFieldNumber = 3;
     private string password_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Password {
@@ -106,7 +119,7 @@ namespace GRPCService {
     }
 
     /// <summary>Field number for the "firstName" field.</summary>
-    public const int FirstNameFieldNumber = 3;
+    public const int FirstNameFieldNumber = 4;
     private string firstName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FirstName {
@@ -117,7 +130,7 @@ namespace GRPCService {
     }
 
     /// <summary>Field number for the "lastName" field.</summary>
-    public const int LastNameFieldNumber = 4;
+    public const int LastNameFieldNumber = 5;
     private string lastName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string LastName {
@@ -128,7 +141,7 @@ namespace GRPCService {
     }
 
     /// <summary>Field number for the "role" field.</summary>
-    public const int RoleFieldNumber = 5;
+    public const int RoleFieldNumber = 6;
     private string role_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Role {
@@ -151,6 +164,7 @@ namespace GRPCService {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Id != other.Id) return false;
       if (Username != other.Username) return false;
       if (Password != other.Password) return false;
       if (FirstName != other.FirstName) return false;
@@ -162,6 +176,7 @@ namespace GRPCService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Username.Length != 0) hash ^= Username.GetHashCode();
       if (Password.Length != 0) hash ^= Password.GetHashCode();
       if (FirstName.Length != 0) hash ^= FirstName.GetHashCode();
@@ -183,24 +198,28 @@ namespace GRPCService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Username.Length != 0) {
+      if (Id.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Username.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Username);
       }
       if (Password.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(Password);
       }
       if (FirstName.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteString(FirstName);
       }
       if (LastName.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(LastName);
       }
       if (Role.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteString(Role);
       }
       if (_unknownFields != null) {
@@ -212,24 +231,28 @@ namespace GRPCService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Username.Length != 0) {
+      if (Id.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Username.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Username);
       }
       if (Password.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(Password);
       }
       if (FirstName.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteString(FirstName);
       }
       if (LastName.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(LastName);
       }
       if (Role.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteString(Role);
       }
       if (_unknownFields != null) {
@@ -241,6 +264,9 @@ namespace GRPCService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
       if (Username.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
       }
@@ -266,6 +292,9 @@ namespace GRPCService {
     public void MergeFrom(UserObj other) {
       if (other == null) {
         return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
       }
       if (other.Username.Length != 0) {
         Username = other.Username;
@@ -297,22 +326,26 @@ namespace GRPCService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Username = input.ReadString();
+            Id = input.ReadString();
             break;
           }
           case 18: {
-            Password = input.ReadString();
+            Username = input.ReadString();
             break;
           }
           case 26: {
-            FirstName = input.ReadString();
+            Password = input.ReadString();
             break;
           }
           case 34: {
-            LastName = input.ReadString();
+            FirstName = input.ReadString();
             break;
           }
           case 42: {
+            LastName = input.ReadString();
+            break;
+          }
+          case 50: {
             Role = input.ReadString();
             break;
           }
@@ -331,22 +364,26 @@ namespace GRPCService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Username = input.ReadString();
+            Id = input.ReadString();
             break;
           }
           case 18: {
-            Password = input.ReadString();
+            Username = input.ReadString();
             break;
           }
           case 26: {
-            FirstName = input.ReadString();
+            Password = input.ReadString();
             break;
           }
           case 34: {
-            LastName = input.ReadString();
+            FirstName = input.ReadString();
             break;
           }
           case 42: {
+            LastName = input.ReadString();
+            break;
+          }
+          case 50: {
             Role = input.ReadString();
             break;
           }

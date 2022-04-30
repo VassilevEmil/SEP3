@@ -15,18 +15,13 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
 
+    @Autowired
     private UserService userService;
-
-
-   public UserController(UserService userService)
-    {
-     this.userService = userService;
-     }
 
    @PostMapping(value = "/user")
     public ResponseEntity addUser(@RequestBody User user) throws Exception {
         try{
-            User addedUser = userService.CreateUserAsync(user);
+            ResponseEntity addedUser = userService.CreateUserAsync(user);
             return ResponseEntity.ok().body(addedUser);
         }
         catch (Exception e){
@@ -40,7 +35,7 @@ public class UserController {
   public ResponseEntity getMessage(@PathVariable String username){
     try {
 
-      User userFromServer = userService.GetUserAsync(username);
+      ResponseEntity<User> userFromServer = userService.GetUserAsync(username);
       return ResponseEntity.ok(userFromServer);
     } catch (Exception e) {
       return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);

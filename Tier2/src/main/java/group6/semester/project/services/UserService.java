@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface UserService{
-    User CreateUserAsync(User user) throws Exception;
-    User GetUserAsync(String username) throws Exception;
+    ResponseEntity CreateUserAsync(User user) throws Exception;
+    ResponseEntity<User> GetUserAsync(String username) throws Exception;
 }
