@@ -39,7 +39,8 @@ public class UserService : User.UserBase
 
      public override async Task<UserObj> GetUser(Username request, ServerCallContext context)
      {
-         Entities.Models.User userFromDatabase =  await userDao.GetUser(request.UserName);
+          Console.Write(request.UserName);
+         Entities.Models.User userFromDatabase =   userDao.GetUser(request.UserName).Result;
          UserObj userToSend = new UserObj()
          {
               Username = userFromDatabase.Username,

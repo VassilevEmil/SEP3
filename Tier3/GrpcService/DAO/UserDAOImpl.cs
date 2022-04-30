@@ -10,9 +10,17 @@ public class UserDAOImpl : IUserDAO
         throw new NotImplementedException();
     }
 
-    public Task<User> GetUser(string username)
+    public async Task<User> GetUser(string username)
     {
-        Console.WriteLine(username.ToString());
-        throw new NotImplementedException();
+        User user = new User()
+        {
+            FirstName = "Himal",
+            LastName = "Sharma",
+            Password = "123122",
+            Role = "User",
+            Username = "Himal"
+        };
+
+        return  user;
     }
 }
