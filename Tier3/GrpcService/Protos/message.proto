@@ -10,6 +10,7 @@ service Message {
 }
 
 
+
 message MessageObj {
   int32 id=1;
   string body = 2;
