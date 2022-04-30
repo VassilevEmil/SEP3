@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj": {}
+    "H:\\Third Semester\\Sep3Test\\Tier3\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj": {
+    "H:\\Third Semester\\Sep3Test\\Tier3\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj",
+        "projectUniqueName": "H:\\Third Semester\\Sep3Test\\Tier3\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj",
-        "packagesPath": "/Users/prabina/.nuget/packages/",
-        "outputPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/obj/",
+        "projectPath": "H:\\Third Semester\\Sep3Test\\Tier3\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\himal\\.nuget\\packages\\",
+        "outputPath": "H:\\Third Semester\\Sep3Test\\Tier3\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/prabina/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\himal\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
