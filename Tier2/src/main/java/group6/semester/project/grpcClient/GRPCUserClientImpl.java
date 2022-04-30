@@ -5,6 +5,9 @@ import GRPCService.UserOuterClass;
 import group6.semester.project.model.User;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import org.springframework.http.ResponseEntity;
+
+import java.io.Console;
 
 public class GRPCUserClientImpl implements  GRPCUserClient
 {
@@ -17,7 +20,7 @@ public class GRPCUserClientImpl implements  GRPCUserClient
     userBlockingStub = UserGrpc.newBlockingStub(managedChannel);
   }
 
-  @Override public User addUser(User user)
+  @Override public ResponseEntity addUser(User user)
   {
 
     // Converting User to UserProtoObj and sending it
@@ -30,12 +33,13 @@ public class GRPCUserClientImpl implements  GRPCUserClient
         userObj);
 
     // Converting received user to java obj
+    System.out.println(userObjFromServer.getFirstName());
 
-    return getUser(userObjFromServer);
+    return ResponseEntity.ok(userObjFromServer);
   }
 
 
-  @Override public User getUser(String username)
+  @Override public ResponseEntity<User> getUser(String username)
   {
     // Sending username to get user from GRpc c#
 
@@ -45,7 +49,7 @@ public class GRPCUserClientImpl implements  GRPCUserClient
 
     // Converting received user to java obj
 
-    return getUser(userObjFromServer);
+    return ResponseEntity.ok(getUser(userObjFromServer));
   }
 
   //Converting user object that is sent from server ---
