@@ -1,4 +1,5 @@
-﻿using Entities.Models;
+﻿using System.Threading.Tasks;
+using Entities.Models;
 
 namespace Application.DAOInterfaces; 
 public interface IMessageDAO {

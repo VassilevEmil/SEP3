@@ -1,19 +1,24 @@
+using System;
+using System.Threading.Tasks;
 using Grpc.Core;
 using Entities.Contracts;
+using Entities.Models;
 
 namespace GRPCService.ProtoImpl;
 
-public class UserProtoImpl : User.UserBase
+public class UserProtoImpl : User.UserBase 
 {
      private IUserService _service;
-
+     
      public UserProtoImpl(IUserService _service)
      {
           this._service = _service;
      }
-
+     
      public override async Task<UserObj> AddUser(UserObj request, ServerCallContext context)
      {
+
+          Console.WriteLine(request.Username);
           Entities.Models.User addingUser = new Entities.Models.User()
           {
                Username = request.Username,
@@ -23,7 +28,7 @@ public class UserProtoImpl : User.UserBase
                Role = request.Role
           };
        Entities.Models.User addedUser =   await _service.AddUser(addingUser);
-
+     
        UserObj userObj = new UserObj()
        {
             Username = addedUser.Username,
@@ -32,11 +37,11 @@ public class UserProtoImpl : User.UserBase
             LastName = addedUser.LastName,
             Role = addedUser.Role
        };
-
+     
        return userObj;
      }
-
-
+     
+     
      public override async Task<UserObj> GetUser(Username request, ServerCallContext context)
      {
           Console.Write(request.UserName);
@@ -50,6 +55,6 @@ public class UserProtoImpl : User.UserBase
               Role = userFromDatabase.Role
          };
          return userToSend;
-
+     
      }
 }
