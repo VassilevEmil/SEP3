@@ -25,8 +25,21 @@ public class UserHttpClient : IUserService
 
     public async Task<User> GetUserAsync(string username)
     {
-        throw new NotImplementedException();
+        try
+        {
+            string content = await ClientAPI.getContent(Methods.Get, $"/user/{username}");
+            
+            User user  = JsonSerializer.Deserialize<User>(content, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            })!;
+            return user;
 
+        }
+        catch (Exception e)
+        {
+            throw new Exception(e.Message);
+        }
 
         // The following code is for testing....
         // return new User() {
