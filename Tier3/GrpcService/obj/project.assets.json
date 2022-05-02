@@ -1092,19 +1092,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/prabina/.nuget/packages/": {}
+    "C:\\Users\\nepal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/prabina/Desktop/Development/SEP3/Tier3/GrpcService/GrpcService.csproj",
+      "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj",
       "projectName": "GrpcService",
-      "projectPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/GrpcService/GrpcService.csproj",
-      "packagesPath": "/Users/prabina/.nuget/packages/",
-      "outputPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/GrpcService/obj/",
+      "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj",
+      "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/prabina/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -1116,11 +1116,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/prabina/Desktop/Development/SEP3/Tier3/Application/Application.csproj": {
-              "projectPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/Application/Application.csproj"
+            "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Application\\Application.csproj"
             },
-            "/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/EFC.csproj": {
-              "projectPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/EFC.csproj"
+            "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj": {
+              "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj"
             }
           }
         }
@@ -1158,7 +1158,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -15,24 +15,29 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
 
-    @Autowired
+    // Dont use autowired on the field..
+
     private UserService userService;
 
-   @PostMapping(value = "/user")
-    public ResponseEntity addUser(@RequestBody User user) throws Exception {
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping(value = "/user")
+    public ResponseEntity addUser(@RequestBody User user) {
         try{
             ResponseEntity addedUser = userService.CreateUserAsync(user);
             return ResponseEntity.ok().body(addedUser);
         }
         catch (Exception e){
-            throw new Exception(e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
    }
 
 
   @GetMapping(value = "/user/{username}")
   @ResponseBody
-  public ResponseEntity getMessage(@PathVariable String username){
+  public ResponseEntity getUser(@PathVariable String username){
     try {
 
       ResponseEntity<User> userFromServer = userService.GetUserAsync(username);

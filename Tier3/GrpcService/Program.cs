@@ -4,7 +4,9 @@ using EFC.DAOImpl;
 using EFC;
 using Entities.Contracts;
 using GRPCService.ProtoImpl;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
