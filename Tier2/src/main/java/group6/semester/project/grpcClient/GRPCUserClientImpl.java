@@ -11,10 +11,18 @@ public class GRPCUserClientImpl implements UserClient
 
   private UserGrpc.UserBlockingStub userBlockingStub;
 
+  public UserGrpc.UserBlockingStub getUserBlockingStub() {
+    if (userBlockingStub==null){
+      ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 5250).usePlaintext().build();
+      userBlockingStub = UserGrpc.newBlockingStub(managedChannel);
+    }
+    return userBlockingStub;
+  }
+
   public GRPCUserClientImpl()
+
   {
-    ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 5250).usePlaintext().build();
-    userBlockingStub = UserGrpc.newBlockingStub(managedChannel);
+
   }
 
   @Override public User addUser(User user)
@@ -28,8 +36,9 @@ public class GRPCUserClientImpl implements UserClient
         "User").build();
     System.out.println(userObj.getLastName());
 
-    UserOuterClass.UserObj userObjFromServer = userBlockingStub.addUser(
+    UserOuterClass.UserObj userObjFromServer = getUserBlockingStub().addUser(
         userObj);
+    userBlockingStub=null;
 
     System.out.println(userObjFromServer.getFirstName());
 
@@ -49,8 +58,9 @@ public class GRPCUserClientImpl implements UserClient
 
     UserOuterClass.Username userNameProto = UserOuterClass.Username.newBuilder()
         .setUserName(username).build();
-    UserOuterClass.UserObj userObjFromServer = userBlockingStub.getUser(userNameProto);
+    UserOuterClass.UserObj userObjFromServer = getUserBlockingStub().getUser(userNameProto);
 
+    userBlockingStub=null;
     // Converting received user to java obj
 
     return getUser(userObjFromServer);
@@ -65,7 +75,6 @@ public class GRPCUserClientImpl implements UserClient
     returnedUser.setUsername(userObjFromServer.getUsername());
     returnedUser.setPassword(userObjFromServer.getPassword());
     returnedUser.setRole(userObjFromServer.getRole());
-
     return returnedUser;
   }
 }
