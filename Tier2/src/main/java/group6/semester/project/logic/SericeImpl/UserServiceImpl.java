@@ -17,12 +17,12 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
-    public ResponseEntity CreateUserAsync(User user) throws Exception {
+    public User CreateUserAsync(User user) throws Exception {
     return client.addUser(user);
     }
 
     @Override
-    public ResponseEntity<User> GetUserAsync(String username) throws Exception {
+    public User GetUserAsync(String username) throws Exception {
             return client.getUser(username);
 
     }
