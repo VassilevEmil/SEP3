@@ -30,4 +30,9 @@
       <Content Include="bin\Debug\net6.0\ref\BlazorAppTier1.dll" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Message\GetMessage.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Message\SendMessage.razor" />
+    </ItemGroup>
+
 </Project>
