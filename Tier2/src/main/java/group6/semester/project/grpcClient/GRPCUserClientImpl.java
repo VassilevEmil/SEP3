@@ -2,79 +2,93 @@ package group6.semester.project.grpcClient;
 
 import GRPCService.UserGrpc;
 import GRPCService.UserOuterClass;
+import com.google.protobuf.RpcChannel;
+import com.google.protobuf.RpcUtil;
 import group6.semester.project.model.User;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.StatusRuntimeException;
 
-public class GRPCUserClientImpl implements UserClient
-{
+public class GRPCUserClientImpl implements UserClient {
+    private UserGrpc.UserBlockingStub userBlockingStub;
 
-  private UserGrpc.UserBlockingStub userBlockingStub;
-
-  public UserGrpc.UserBlockingStub getUserBlockingStub() {
-    if (userBlockingStub==null){
-      ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 5250).usePlaintext().build();
-      userBlockingStub = UserGrpc.newBlockingStub(managedChannel);
+    public UserGrpc.UserBlockingStub getUserBlockingStub() {
+        if (userBlockingStub == null) {
+            ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 5250).usePlaintext().build();
+            userBlockingStub = UserGrpc.newBlockingStub(managedChannel);
+        }
+        return userBlockingStub;
     }
-    return userBlockingStub;
-  }
 
-  public GRPCUserClientImpl()
+    public GRPCUserClientImpl() {
 
-  {
+    }
 
-  }
+    @Override
+    public User addUser(User user) {
 
-  @Override public User addUser(User user)
-  {
+        System.out.println("At client " + user.getFirstName());
+        // Converting User to UserProtoObj and sending it
+        UserOuterClass.UserObj userObj = UserOuterClass.UserObj.newBuilder().setFirstName(
+                user.getFirstName()).setLastName(user.getLastName()).setPassword(
+                user.getPassword()).setUsername(user.getUsername()).setRole(
+                "User").build();
+        System.out.println(userObj.getLastName());
 
-    System.out.println("At client "+ user.getFirstName());
-    // Converting User to UserProtoObj and sending it
-    UserOuterClass.UserObj userObj = UserOuterClass.UserObj.newBuilder().setFirstName(
-        user.getFirstName()).setLastName(user.getLastName()).setPassword(
-        user.getPassword()).setUsername(user.getUsername()).setRole(
-        "User").build();
-    System.out.println(userObj.getLastName());
-
-    UserOuterClass.UserObj userObjFromServer = getUserBlockingStub().addUser(
-        userObj);
-    userBlockingStub=null;
-
-    System.out.println(userObjFromServer.getFirstName());
-
-
-    // Converting received user to java obj
- //   System.out.println(userObjFromServer.getFirstName());
-
-    User realObj = getUser(userObjFromServer);
-    System.out.println(realObj.getUsername());
-    return realObj;
-  }
+        UserOuterClass.UserObj userObjFromServer = null;
+        try {
+            userObjFromServer = getUserBlockingStub().addUser(
+                    userObj);
+        } catch (StatusRuntimeException e) {
+            System.out.println(e.getStatus().getDescription());
+            throw new RuntimeException(e.getStatus().getDescription());
+        } finally {
+            userBlockingStub = null;
+        }
 
 
-  @Override public User getUser(String username)
-  {
-    // Sending username to get user from GRpc c#
+        System.out.println(userObjFromServer.getFirstName());
 
-    UserOuterClass.Username userNameProto = UserOuterClass.Username.newBuilder()
-        .setUserName(username).build();
-    UserOuterClass.UserObj userObjFromServer = getUserBlockingStub().getUser(userNameProto);
 
-    userBlockingStub=null;
-    // Converting received user to java obj
+        // Converting received user to java obj
+        //   System.out.println(userObjFromServer.getFirstName());
 
-    return getUser(userObjFromServer);
-  }
+        User realObj = getUser(userObjFromServer);
+        System.out.println(realObj.getUsername());
+        return realObj;
+    }
 
-  //Converting user object that is sent from server ---
-  private User getUser(UserOuterClass.UserObj userObjFromServer)
-  {
-    User returnedUser = new User();
-    returnedUser.setFirstName(userObjFromServer.getFirstName());
-    returnedUser.setLastName(userObjFromServer.getLastName());
-    returnedUser.setUsername(userObjFromServer.getUsername());
-    returnedUser.setPassword(userObjFromServer.getPassword());
-    returnedUser.setRole(userObjFromServer.getRole());
-    return returnedUser;
-  }
+
+    @Override
+    public User getUser(String username)  {
+        // Sending username to get user from GRpc c#
+
+        UserOuterClass.Username userNameProto = UserOuterClass.Username.newBuilder()
+                .setUserName(username).build();
+        UserOuterClass.UserObj userObjFromServer = null;
+        try {
+            userObjFromServer = getUserBlockingStub().getUser(userNameProto);
+        } catch (StatusRuntimeException e) {
+            System.out.println(e.getStatus().getDescription());
+            throw new RuntimeException(e.getStatus().getDescription());
+        } finally {
+            userBlockingStub = null;
+        }
+
+
+        // Converting received user to java obj
+
+        return getUser(userObjFromServer);
+    }
+
+    //Converting user object that is sent from server ---
+    private User getUser(UserOuterClass.UserObj userObjFromServer) {
+        User returnedUser = new User();
+        returnedUser.setFirstName(userObjFromServer.getFirstName());
+        returnedUser.setLastName(userObjFromServer.getLastName());
+        returnedUser.setUsername(userObjFromServer.getUsername());
+        returnedUser.setPassword(userObjFromServer.getPassword());
+        returnedUser.setRole(userObjFromServer.getRole());
+        return returnedUser;
+    }
 }

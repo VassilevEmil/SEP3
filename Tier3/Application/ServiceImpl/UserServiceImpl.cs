@@ -14,12 +14,12 @@ public class UserServiceImpl : IUserService
         this._dao = _dao;
     }
     
-    public async Task<User> AddUser(User user)
+    public async Task<User?> AddUser(User user)
     {
         return await _dao.AddUser(user);
     }
 
-    public async Task<User> GetUser(string username)
+    public async Task<User?> GetUser(string username)
     {
         return await _dao.GetUser(username);
     }

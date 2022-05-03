@@ -33,7 +33,8 @@ public class ClientAPI
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception($"Error: {response.StatusCode}, {content}");
+                    Console.Write(content);
+                    throw new Exception($"{content}");
                 }
 
                 break;

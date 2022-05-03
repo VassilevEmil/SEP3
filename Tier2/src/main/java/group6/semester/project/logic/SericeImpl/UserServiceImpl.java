@@ -17,12 +17,12 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
-    public User CreateUserAsync(User user) throws Exception {
+    public User CreateUserAsync(User user)  {
     return client.addUser(user);
     }
 
     @Override
-    public User GetUserAsync(String username) throws Exception {
+    public User GetUserAsync(String username) {
             return client.getUser(username);
 
     }
