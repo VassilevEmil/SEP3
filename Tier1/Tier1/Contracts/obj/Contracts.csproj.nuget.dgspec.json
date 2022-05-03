@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj": {}
+    "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj": {
+    "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj",
+        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj",
         "projectName": "Contracts",
-        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj",
-        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\obj\\",
+        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj",
+        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Contracts\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj"
+              "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj"
               }
             }
           }
@@ -60,22 +66,28 @@
         }
       }
     },
-    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
+    "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\obj\\",
+        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -21,6 +21,7 @@ public class ClientAPI
       public static async Task<string> getContent(Methods methods,string endpoint, [Optional] Object element)
     {
         using HttpClient client = new();
+        client.DefaultRequestHeaders.Add("Authentification","abc123");
         HttpResponseMessage? response = new();
         string? content=String.Empty;
         StringContent? stringContent;
