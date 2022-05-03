@@ -6,6 +6,11 @@ namespace EFC;
 public class DbAccess : DbContext
 {
     public DbSet<User>? Users { get; set; }
+    public DbSet<Post> Posts { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Subcategory> Subcategories { get; set; }
+    public DbSet<Image> Images { get; set; }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
