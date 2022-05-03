@@ -31,7 +31,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+      <_ContentIncludedByDefault Remove="Pages\Message\GetMessage.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Message\SendMessage.razor" />
     </ItemGroup>
 
 </Project>

@@ -2,7 +2,6 @@
 
 public class User
 {
-    public string? id { get; set; } = "0";
     public string? Username { get; set; }
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
