@@ -22,8 +22,7 @@ public class UserDAOImpl : IUserDAO {
             return added.Entity;
         }
         catch (Exception e) {
-            Console.WriteLine(e + " " + e.StackTrace); // or log to file, etc.
-            throw; // re-throw the exception if you want it to continue up the stack
+            throw new Exception("Username already exists");
         }
     }
 

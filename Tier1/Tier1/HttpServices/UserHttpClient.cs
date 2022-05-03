@@ -19,7 +19,7 @@ public class UserHttpClient : IUserService
         }
         catch (Exception e)
         {
-            throw new Exception(e.Message + e.StackTrace);
+            throw new Exception(e.Message);
         }
     }
 
