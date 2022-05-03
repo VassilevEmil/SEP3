@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1IL4kYNzeKdTfYkv8XBhqRL4pZ5k5HOWcLBS3eYt+T3tiLSVEqZXV11uef7hKV2C+Ts0R8Bpqq2gEBTf5x7sEA==",
+  "dgSpecHash": "iIKIh+qxfo0Z2UDFCyOmuwe7arlwdJtsiSsRCQUFBbhIHzUC8rNioSP7CgeFh8zeEmvRApBrM9FpVSveYEjcWg==",
   "success": true,
   "projectFilePath": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\HttpServices\\HttpServices.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Adrian\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

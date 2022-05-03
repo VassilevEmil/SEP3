@@ -24,10 +24,17 @@ public class AuthServiceImpl : IAuthService {
 
     public async Task LoginAsync(string username, string password) {
         User user = await _userService.GetUserAsync(username);
-        ValidateLoginCredentials(password, user);
-        await CacheUserAsync(user);
-        _principal = CreateClaimsPrincipal(user);
-        OnAuthStateChanged?.Invoke(_principal);
+        //add bycript hashing to verify the login credentials
+        bool verified = BCrypt.Net.BCrypt.Verify(password, user.Password);
+        //ValidateLoginCredentials(BCrypt.Net.BCrypt.HashPassword(password), user); // Validate input data against data from database
+        //ValidateLoginCredentials(password, user);
+        
+        if (verified)
+        {
+            await CacheUserAsync(user);
+            _principal = CreateClaimsPrincipal(user);
+            OnAuthStateChanged?.Invoke(_principal);
+        }
     }
 
     private async Task CacheUserAsync(User? user) {

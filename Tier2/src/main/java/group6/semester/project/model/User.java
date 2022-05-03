@@ -8,7 +8,6 @@ import java.io.Serializable;
 @Component
 @Data
 public class User implements Serializable {
-    private String id;
     private String Username;
     private String FirstName;
     private String LastName;
@@ -19,11 +18,6 @@ public class User implements Serializable {
     {
 
     }
-
-    public String getId() {
-        return id;
-    }
-
     public String getUsername() {
         return Username;
     }
@@ -39,13 +33,8 @@ public class User implements Serializable {
     public String getPassword() {
         return Password;
     }
-
     public String getRole() {
         return Role;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public void setUsername(String username) {
@@ -71,7 +60,6 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
                 ", Username='" + Username + '\'' +
                 ", FirstName='" + FirstName + '\'' +
                 ", LastName='" + LastName + '\'' +
