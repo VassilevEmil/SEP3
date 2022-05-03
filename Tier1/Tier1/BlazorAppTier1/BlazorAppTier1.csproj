@@ -30,4 +30,8 @@
       <Content Include="bin\Debug\net6.0\ref\BlazorAppTier1.dll" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    </ItemGroup>
+
 </Project>
