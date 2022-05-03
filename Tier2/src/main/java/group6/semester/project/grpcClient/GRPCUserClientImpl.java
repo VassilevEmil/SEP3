@@ -2,8 +2,6 @@ package group6.semester.project.grpcClient;
 
 import GRPCService.UserGrpc;
 import GRPCService.UserOuterClass;
-import com.google.protobuf.RpcChannel;
-import com.google.protobuf.RpcUtil;
 import group6.semester.project.model.User;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -35,7 +33,7 @@ public class GRPCUserClientImpl implements UserClient {
                 "User").build();
         System.out.println(userObj.getLastName());
 
-        UserOuterClass.UserObj userObjFromServer = null;
+        UserOuterClass.UserObj userObjFromServer ;
         try {
             userObjFromServer = getUserBlockingStub().addUser(
                     userObj);
@@ -65,7 +63,7 @@ public class GRPCUserClientImpl implements UserClient {
 
         UserOuterClass.Username userNameProto = UserOuterClass.Username.newBuilder()
                 .setUserName(username).build();
-        UserOuterClass.UserObj userObjFromServer = null;
+        UserOuterClass.UserObj userObjFromServer;
         try {
             userObjFromServer = getUserBlockingStub().getUser(userNameProto);
         } catch (StatusRuntimeException e) {
