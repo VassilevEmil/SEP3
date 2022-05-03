@@ -4,12 +4,11 @@ import group6.semester.project.grpcClient.UserClient;
 import group6.semester.project.grpcClient.GRPCUserClientImpl;
 import group6.semester.project.model.User;
 import group6.semester.project.services.UserService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private UserClient client;
+    private final UserClient client;
 
     public UserServiceImpl() {
         client = new GRPCUserClientImpl();
@@ -40,22 +39,22 @@ public class UserServiceImpl implements UserService {
 
         for (Character c : password.toCharArray()
         ) {
-            if (capitalLetter==false){
+            if (!capitalLetter){
                 if (Character.isUpperCase(c)){
                     capitalLetter =true;
                 }
             }
 
-            if (digitLetter==false){
+            if (!digitLetter){
                 if (Character.isDigit(c)){
                     digitLetter=true;
                 }
             }
         }
-        if (capitalLetter==false){
+        if (!capitalLetter){
             throw new RuntimeException("Password needs to contain at least one uppercase letter");
         }
-        if (digitLetter ==false){
+        if (!digitLetter){
             throw new RuntimeException("Password needs to contain at least one digit letter");
         }
     }

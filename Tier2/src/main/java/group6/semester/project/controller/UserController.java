@@ -2,13 +2,9 @@ package group6.semester.project.controller;
 
 
 import group6.semester.project.model.User;
-
 import group6.semester.project.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.SerializationUtils;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
 
-    // Dont use autowired on the field..
+    // Don't use autowired on the field.
 
-    private UserService userService;
+    private final UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
