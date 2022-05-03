@@ -24,8 +24,6 @@ public class GRPCUserClientImpl implements UserClient {
 
     @Override
     public User addUser(User user) {
-
-        System.out.println("At client " + user.getFirstName());
         // Converting User to UserProtoObj and sending it
         UserOuterClass.UserObj userObj = UserOuterClass.UserObj.newBuilder().setFirstName(
                 user.getFirstName()).setLastName(user.getLastName()).setPassword(
