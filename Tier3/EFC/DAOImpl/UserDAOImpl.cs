@@ -1,13 +1,12 @@
-using System;
-using System.Threading.Tasks;
-using Application.DAOInterfaces;
+
+using Entities.Contracts;
 using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace EFC.DAOImpl;
 
-public class UserDAOImpl : IUserDAO {
+public class UserDAOImpl : IUserService {
     private readonly DbAccess _context;
 
     public UserDAOImpl(DbAccess _context) {

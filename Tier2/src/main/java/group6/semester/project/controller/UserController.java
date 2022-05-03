@@ -8,10 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
 public class UserController {
-
-
     // Don't use autowired on the field.
 
     private final UserService userService;

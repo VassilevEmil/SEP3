@@ -24,7 +24,15 @@ public class UserServiceImpl implements UserService {
         }
         validateUsername(user.getUsername());
         validatePassword(user.getPassword());
+
+        // Todo do the encryption here...
         return client.addUser(user);
+    }
+    @Override
+    public User GetUserAsync(String username) {
+        validateUsername(username);
+        // todo do the decryption here....
+        return client.getUser(username);
     }
 
     private void validatePassword(String password) {
@@ -71,11 +79,5 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    @Override
-    public User GetUserAsync(String username) {
-        validateUsername(username);
-        return client.getUser(username);
-        
 
-    }
 }
