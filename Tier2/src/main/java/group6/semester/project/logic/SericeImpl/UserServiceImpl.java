@@ -74,6 +74,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User GetUserAsync(String username) {
+        validateUsername(username);
         return client.getUser(username);
 
     }
