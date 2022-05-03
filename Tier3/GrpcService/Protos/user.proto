@@ -14,8 +14,12 @@ message UserObj {
   string username = 1;
   string password =2;
   string firstName = 3;
-  string  lastName = 4;
+  string lastName = 4;
   string role = 5;
+}
+
+message Id{
+  int32  id =1;
 }
 
 

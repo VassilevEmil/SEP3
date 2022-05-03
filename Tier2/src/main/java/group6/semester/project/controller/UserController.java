@@ -5,6 +5,7 @@ import group6.semester.project.model.User;
 
 import group6.semester.project.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.SerializationUtils;
@@ -31,7 +32,7 @@ public class UserController {
             return ResponseEntity.ok().body(addedUser);
         }
         catch (Exception e){
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
    }
 
@@ -44,6 +45,7 @@ public class UserController {
       User userFromServer = userService.GetUserAsync(username);
       return ResponseEntity.ok(userFromServer);
     } catch (Exception e) {
+        System.out.println(e.getMessage());
       return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
