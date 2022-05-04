@@ -14,6 +14,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Application\Application.csproj" />
       <ProjectReference Include="..\EFC\EFC.csproj" />
+      <ProjectReference Include="..\Entities\Entities.csproj" />
     </ItemGroup>
 
 </Project>

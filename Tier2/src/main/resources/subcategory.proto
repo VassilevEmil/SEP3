@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "GRPCService";
+import "user.proto";
+import "post.proto";
+package subcategory;
+
+service subCategory{
+
+}
+message SubcategoryObj{
+  int32 id =1;
+  string name =2;
+  repeated post.PostObj posts=3;
+}
