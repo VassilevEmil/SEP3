@@ -24,7 +24,6 @@ public class AuthServiceImpl : IAuthService {
 
     public async Task LoginAsync(string username, string password) {
         User user = await _userService.GetUserAsync(username);
-        //add bycript hashing to verify the login credentials
         bool verified = BCrypt.Net.BCrypt.Verify(password, user.Password);
         //ValidateLoginCredentials(BCrypt.Net.BCrypt.HashPassword(password), user); // Validate input data against data from database
         //ValidateLoginCredentials(password, user);
@@ -84,15 +83,5 @@ public class AuthServiceImpl : IAuthService {
         user = await _userService.GetUserAsync(user.Username);
         _principal = CreateClaimsPrincipal(user);
         return _principal;
-    }
-
-    private void ValidateLoginCredentials(string password, User user) {
-        // if (user == null) {
-        //     throw new Exception("Username not found");
-        // }
-
-        if (!password.Equals(user.Password)) {
-            throw new Exception("Password Incorrect");
-        }
     }
 }
