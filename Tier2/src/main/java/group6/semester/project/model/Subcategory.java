@@ -9,5 +9,4 @@ public class Subcategory {
     private int id;
     private String name;
     private List<Post> posts;
-    private Category category;
 }

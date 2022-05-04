@@ -1,3 +1,6 @@
+/**
+ * It's a controller that handles requests to the /user endpoint
+ */
 package group6.semester.project.controller;
 
 
@@ -17,6 +20,12 @@ public class UserController {
         this.userService = userService;
     }
 
+    /**
+     * The function takes a user object as a parameter, and returns a response entity with the added user object
+     *
+     * @param user The user object that is being passed in the request body.
+     * @return A ResponseEntity object is being returned.
+     */
     @PostMapping(value = "/user")
     public ResponseEntity addUser(@RequestBody User user) {
         try{

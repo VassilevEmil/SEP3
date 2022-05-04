@@ -1,7 +1,6 @@
-package group6.semester.project.logic.SericeImpl;
+package group6.semester.project.services.SericeImpl;
 
-import group6.semester.project.grpcClient.UserClient;
-import group6.semester.project.grpcClient.GRPCUserClientImpl;
+import group6.semester.project.grpcClient.user.UserClient;
 import group6.semester.project.model.User;
 import group6.semester.project.services.UserService;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -11,8 +10,8 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     private final UserClient client;
 
-    public UserServiceImpl() {
-        client = new GRPCUserClientImpl();
+    public UserServiceImpl(UserClient userClient) {
+      this.client = userClient;
     }
 
     //hasing passwords

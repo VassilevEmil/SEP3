@@ -8,9 +8,9 @@ import java.io.Serializable;
 @Component
 @Data
 public class User implements Serializable {
-    private String Username;
-    private String FirstName;
-    private String LastName;
-    private String Password;
-    private String Role;
+    private String username;
+    private String firstName;
+    private String lastName;
+    private String password;
+    private String role;
 }
