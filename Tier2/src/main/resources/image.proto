@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "GRPCService";
+package image;
+
+service image{
+
+}
+message ImageObj{
+  int32 id =1;
+  string href =2;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "GRPCService";
+import "user.proto";
+import "subcategory.proto";
+
+
+package category;
+
+service category{
+
+}
+message CategoryObj{
+  int32 id =1;
+  string name =2;
+  repeated subcategory.SubcategoryObj subCategories =3;
+
+
+}
