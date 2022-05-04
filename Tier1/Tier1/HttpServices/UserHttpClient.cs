@@ -10,8 +10,6 @@ public class UserHttpClient : IUserService
     {
         try
         {
-            //convert the password to hash
-            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
             string client = await ClientAPI.getContent(Methods.Post, "/user", user);
             User user1 = JsonSerializer.Deserialize<User>(client, new JsonSerializerOptions
             {
