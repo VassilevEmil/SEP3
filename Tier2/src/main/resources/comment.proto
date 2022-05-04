@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "GRPCService";
+import "user.proto";
+
+package comment;
+
+service comment {
+
+}
+
+message CommentObj{
+  int32 id =1;
+  string body =2;
+  user.UserObj writer =3;
+}
+

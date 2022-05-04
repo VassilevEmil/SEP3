@@ -1,4 +1,4 @@
-package group6.semester.project.grpcClient;
+package group6.semester.project.grpcClient.user;
 
 import GRPCService.UserGrpc;
 import GRPCService.UserOuterClass;
@@ -6,7 +6,9 @@ import group6.semester.project.model.User;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class GRPCUserClientImpl implements UserClient {
     private UserGrpc.UserBlockingStub userBlockingStub;
 
@@ -18,9 +20,7 @@ public class GRPCUserClientImpl implements UserClient {
         return userBlockingStub;
     }
 
-    public GRPCUserClientImpl() {
 
-    }
 
     @Override
     public User addUser(User user) {

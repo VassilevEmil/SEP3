@@ -124,6 +124,43 @@ public final class PostOuterClass {
      */
     GRPCService.Image.ImageObjOrBuilder getImagesOrBuilder(
         int index);
+
+    /**
+     * <code>.post.DateCreated dateCreated = 11;</code>
+     */
+    boolean hasDateCreated();
+    /**
+     * <code>.post.DateCreated dateCreated = 11;</code>
+     */
+    GRPCService.PostOuterClass.DateCreated getDateCreated();
+    /**
+     * <code>.post.DateCreated dateCreated = 11;</code>
+     */
+    GRPCService.PostOuterClass.DateCreatedOrBuilder getDateCreatedOrBuilder();
+
+    /**
+     * <code>repeated .comment.CommentObj comments = 12;</code>
+     */
+    java.util.List<GRPCService.Comment.CommentObj> 
+        getCommentsList();
+    /**
+     * <code>repeated .comment.CommentObj comments = 12;</code>
+     */
+    GRPCService.Comment.CommentObj getComments(int index);
+    /**
+     * <code>repeated .comment.CommentObj comments = 12;</code>
+     */
+    int getCommentsCount();
+    /**
+     * <code>repeated .comment.CommentObj comments = 12;</code>
+     */
+    java.util.List<? extends GRPCService.Comment.CommentObjOrBuilder> 
+        getCommentsOrBuilderList();
+    /**
+     * <code>repeated .comment.CommentObj comments = 12;</code>
+     */
+    GRPCService.Comment.CommentObjOrBuilder getCommentsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code post.PostObj}
@@ -147,6 +184,7 @@ public final class PostOuterClass {
       phoneNumber_ = "";
       email_ = "";
       images_ = java.util.Collections.emptyList();
+      comments_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -241,6 +279,28 @@ public final class PostOuterClass {
                   input.readMessage(GRPCService.Image.ImageObj.parser(), extensionRegistry));
               break;
             }
+            case 90: {
+              GRPCService.PostOuterClass.DateCreated.Builder subBuilder = null;
+              if (dateCreated_ != null) {
+                subBuilder = dateCreated_.toBuilder();
+              }
+              dateCreated_ = input.readMessage(GRPCService.PostOuterClass.DateCreated.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dateCreated_);
+                dateCreated_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+                comments_ = new java.util.ArrayList<GRPCService.Comment.CommentObj>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              comments_.add(
+                  input.readMessage(GRPCService.Comment.CommentObj.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -258,6 +318,9 @@ public final class PostOuterClass {
       } finally {
         if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
           images_ = java.util.Collections.unmodifiableList(images_);
+        }
+        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+          comments_ = java.util.Collections.unmodifiableList(comments_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -555,6 +618,62 @@ public final class PostOuterClass {
       return images_.get(index);
     }
 
+    public static final int DATECREATED_FIELD_NUMBER = 11;
+    private GRPCService.PostOuterClass.DateCreated dateCreated_;
+    /**
+     * <code>.post.DateCreated dateCreated = 11;</code>
+     */
+    public boolean hasDateCreated() {
+      return dateCreated_ != null;
+    }
+    /**
+     * <code>.post.DateCreated dateCreated = 11;</code>
+     */
+    public GRPCService.PostOuterClass.DateCreated getDateCreated() {
+      return dateCreated_ == null ? GRPCService.PostOuterClass.DateCreated.getDefaultInstance() : dateCreated_;
+    }
+    /**
+     * <code>.post.DateCreated dateCreated = 11;</code>
+     */
+    public GRPCService.PostOuterClass.DateCreatedOrBuilder getDateCreatedOrBuilder() {
+      return getDateCreated();
+    }
+
+    public static final int COMMENTS_FIELD_NUMBER = 12;
+    private java.util.List<GRPCService.Comment.CommentObj> comments_;
+    /**
+     * <code>repeated .comment.CommentObj comments = 12;</code>
+     */
+    public java.util.List<GRPCService.Comment.CommentObj> getCommentsList() {
+      return comments_;
+    }
+    /**
+     * <code>repeated .comment.CommentObj comments = 12;</code>
+     */
+    public java.util.List<? extends GRPCService.Comment.CommentObjOrBuilder> 
+        getCommentsOrBuilderList() {
+      return comments_;
+    }
+    /**
+     * <code>repeated .comment.CommentObj comments = 12;</code>
+     */
+    public int getCommentsCount() {
+      return comments_.size();
+    }
+    /**
+     * <code>repeated .comment.CommentObj comments = 12;</code>
+     */
+    public GRPCService.Comment.CommentObj getComments(int index) {
+      return comments_.get(index);
+    }
+    /**
+     * <code>repeated .comment.CommentObj comments = 12;</code>
+     */
+    public GRPCService.Comment.CommentObjOrBuilder getCommentsOrBuilder(
+        int index) {
+      return comments_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -599,6 +718,12 @@ public final class PostOuterClass {
       for (int i = 0; i < images_.size(); i++) {
         output.writeMessage(10, images_.get(i));
       }
+      if (dateCreated_ != null) {
+        output.writeMessage(11, getDateCreated());
+      }
+      for (int i = 0; i < comments_.size(); i++) {
+        output.writeMessage(12, comments_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -642,6 +767,14 @@ public final class PostOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, images_.get(i));
       }
+      if (dateCreated_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getDateCreated());
+      }
+      for (int i = 0; i < comments_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, comments_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -681,6 +814,13 @@ public final class PostOuterClass {
       }
       result = result && getImagesList()
           .equals(other.getImagesList());
+      result = result && (hasDateCreated() == other.hasDateCreated());
+      if (hasDateCreated()) {
+        result = result && getDateCreated()
+            .equals(other.getDateCreated());
+      }
+      result = result && getCommentsList()
+          .equals(other.getCommentsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -715,6 +855,14 @@ public final class PostOuterClass {
       if (getImagesCount() > 0) {
         hash = (37 * hash) + IMAGES_FIELD_NUMBER;
         hash = (53 * hash) + getImagesList().hashCode();
+      }
+      if (hasDateCreated()) {
+        hash = (37 * hash) + DATECREATED_FIELD_NUMBER;
+        hash = (53 * hash) + getDateCreated().hashCode();
+      }
+      if (getCommentsCount() > 0) {
+        hash = (37 * hash) + COMMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getCommentsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -845,6 +993,7 @@ public final class PostOuterClass {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getImagesFieldBuilder();
+          getCommentsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -877,6 +1026,18 @@ public final class PostOuterClass {
           bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           imagesBuilder_.clear();
+        }
+        if (dateCreatedBuilder_ == null) {
+          dateCreated_ = null;
+        } else {
+          dateCreated_ = null;
+          dateCreatedBuilder_ = null;
+        }
+        if (commentsBuilder_ == null) {
+          comments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+        } else {
+          commentsBuilder_.clear();
         }
         return this;
       }
@@ -927,6 +1088,20 @@ public final class PostOuterClass {
           result.images_ = images_;
         } else {
           result.images_ = imagesBuilder_.build();
+        }
+        if (dateCreatedBuilder_ == null) {
+          result.dateCreated_ = dateCreated_;
+        } else {
+          result.dateCreated_ = dateCreatedBuilder_.build();
+        }
+        if (commentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) == 0x00000800)) {
+            comments_ = java.util.Collections.unmodifiableList(comments_);
+            bitField0_ = (bitField0_ & ~0x00000800);
+          }
+          result.comments_ = comments_;
+        } else {
+          result.comments_ = commentsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -1033,6 +1208,35 @@ public final class PostOuterClass {
                    getImagesFieldBuilder() : null;
             } else {
               imagesBuilder_.addAllMessages(other.images_);
+            }
+          }
+        }
+        if (other.hasDateCreated()) {
+          mergeDateCreated(other.getDateCreated());
+        }
+        if (commentsBuilder_ == null) {
+          if (!other.comments_.isEmpty()) {
+            if (comments_.isEmpty()) {
+              comments_ = other.comments_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+            } else {
+              ensureCommentsIsMutable();
+              comments_.addAll(other.comments_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.comments_.isEmpty()) {
+            if (commentsBuilder_.isEmpty()) {
+              commentsBuilder_.dispose();
+              commentsBuilder_ = null;
+              comments_ = other.comments_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+              commentsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCommentsFieldBuilder() : null;
+            } else {
+              commentsBuilder_.addAllMessages(other.comments_);
             }
           }
         }
@@ -1888,6 +2092,363 @@ public final class PostOuterClass {
         }
         return imagesBuilder_;
       }
+
+      private GRPCService.PostOuterClass.DateCreated dateCreated_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.PostOuterClass.DateCreated, GRPCService.PostOuterClass.DateCreated.Builder, GRPCService.PostOuterClass.DateCreatedOrBuilder> dateCreatedBuilder_;
+      /**
+       * <code>.post.DateCreated dateCreated = 11;</code>
+       */
+      public boolean hasDateCreated() {
+        return dateCreatedBuilder_ != null || dateCreated_ != null;
+      }
+      /**
+       * <code>.post.DateCreated dateCreated = 11;</code>
+       */
+      public GRPCService.PostOuterClass.DateCreated getDateCreated() {
+        if (dateCreatedBuilder_ == null) {
+          return dateCreated_ == null ? GRPCService.PostOuterClass.DateCreated.getDefaultInstance() : dateCreated_;
+        } else {
+          return dateCreatedBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.post.DateCreated dateCreated = 11;</code>
+       */
+      public Builder setDateCreated(GRPCService.PostOuterClass.DateCreated value) {
+        if (dateCreatedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dateCreated_ = value;
+          onChanged();
+        } else {
+          dateCreatedBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.DateCreated dateCreated = 11;</code>
+       */
+      public Builder setDateCreated(
+          GRPCService.PostOuterClass.DateCreated.Builder builderForValue) {
+        if (dateCreatedBuilder_ == null) {
+          dateCreated_ = builderForValue.build();
+          onChanged();
+        } else {
+          dateCreatedBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.DateCreated dateCreated = 11;</code>
+       */
+      public Builder mergeDateCreated(GRPCService.PostOuterClass.DateCreated value) {
+        if (dateCreatedBuilder_ == null) {
+          if (dateCreated_ != null) {
+            dateCreated_ =
+              GRPCService.PostOuterClass.DateCreated.newBuilder(dateCreated_).mergeFrom(value).buildPartial();
+          } else {
+            dateCreated_ = value;
+          }
+          onChanged();
+        } else {
+          dateCreatedBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.DateCreated dateCreated = 11;</code>
+       */
+      public Builder clearDateCreated() {
+        if (dateCreatedBuilder_ == null) {
+          dateCreated_ = null;
+          onChanged();
+        } else {
+          dateCreated_ = null;
+          dateCreatedBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.DateCreated dateCreated = 11;</code>
+       */
+      public GRPCService.PostOuterClass.DateCreated.Builder getDateCreatedBuilder() {
+        
+        onChanged();
+        return getDateCreatedFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.post.DateCreated dateCreated = 11;</code>
+       */
+      public GRPCService.PostOuterClass.DateCreatedOrBuilder getDateCreatedOrBuilder() {
+        if (dateCreatedBuilder_ != null) {
+          return dateCreatedBuilder_.getMessageOrBuilder();
+        } else {
+          return dateCreated_ == null ?
+              GRPCService.PostOuterClass.DateCreated.getDefaultInstance() : dateCreated_;
+        }
+      }
+      /**
+       * <code>.post.DateCreated dateCreated = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.PostOuterClass.DateCreated, GRPCService.PostOuterClass.DateCreated.Builder, GRPCService.PostOuterClass.DateCreatedOrBuilder> 
+          getDateCreatedFieldBuilder() {
+        if (dateCreatedBuilder_ == null) {
+          dateCreatedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              GRPCService.PostOuterClass.DateCreated, GRPCService.PostOuterClass.DateCreated.Builder, GRPCService.PostOuterClass.DateCreatedOrBuilder>(
+                  getDateCreated(),
+                  getParentForChildren(),
+                  isClean());
+          dateCreated_ = null;
+        }
+        return dateCreatedBuilder_;
+      }
+
+      private java.util.List<GRPCService.Comment.CommentObj> comments_ =
+        java.util.Collections.emptyList();
+      private void ensureCommentsIsMutable() {
+        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+          comments_ = new java.util.ArrayList<GRPCService.Comment.CommentObj>(comments_);
+          bitField0_ |= 0x00000800;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          GRPCService.Comment.CommentObj, GRPCService.Comment.CommentObj.Builder, GRPCService.Comment.CommentObjOrBuilder> commentsBuilder_;
+
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public java.util.List<GRPCService.Comment.CommentObj> getCommentsList() {
+        if (commentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(comments_);
+        } else {
+          return commentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public int getCommentsCount() {
+        if (commentsBuilder_ == null) {
+          return comments_.size();
+        } else {
+          return commentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public GRPCService.Comment.CommentObj getComments(int index) {
+        if (commentsBuilder_ == null) {
+          return comments_.get(index);
+        } else {
+          return commentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public Builder setComments(
+          int index, GRPCService.Comment.CommentObj value) {
+        if (commentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommentsIsMutable();
+          comments_.set(index, value);
+          onChanged();
+        } else {
+          commentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public Builder setComments(
+          int index, GRPCService.Comment.CommentObj.Builder builderForValue) {
+        if (commentsBuilder_ == null) {
+          ensureCommentsIsMutable();
+          comments_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          commentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public Builder addComments(GRPCService.Comment.CommentObj value) {
+        if (commentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommentsIsMutable();
+          comments_.add(value);
+          onChanged();
+        } else {
+          commentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public Builder addComments(
+          int index, GRPCService.Comment.CommentObj value) {
+        if (commentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommentsIsMutable();
+          comments_.add(index, value);
+          onChanged();
+        } else {
+          commentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public Builder addComments(
+          GRPCService.Comment.CommentObj.Builder builderForValue) {
+        if (commentsBuilder_ == null) {
+          ensureCommentsIsMutable();
+          comments_.add(builderForValue.build());
+          onChanged();
+        } else {
+          commentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public Builder addComments(
+          int index, GRPCService.Comment.CommentObj.Builder builderForValue) {
+        if (commentsBuilder_ == null) {
+          ensureCommentsIsMutable();
+          comments_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          commentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public Builder addAllComments(
+          java.lang.Iterable<? extends GRPCService.Comment.CommentObj> values) {
+        if (commentsBuilder_ == null) {
+          ensureCommentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, comments_);
+          onChanged();
+        } else {
+          commentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public Builder clearComments() {
+        if (commentsBuilder_ == null) {
+          comments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+          onChanged();
+        } else {
+          commentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public Builder removeComments(int index) {
+        if (commentsBuilder_ == null) {
+          ensureCommentsIsMutable();
+          comments_.remove(index);
+          onChanged();
+        } else {
+          commentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public GRPCService.Comment.CommentObj.Builder getCommentsBuilder(
+          int index) {
+        return getCommentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public GRPCService.Comment.CommentObjOrBuilder getCommentsOrBuilder(
+          int index) {
+        if (commentsBuilder_ == null) {
+          return comments_.get(index);  } else {
+          return commentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public java.util.List<? extends GRPCService.Comment.CommentObjOrBuilder> 
+           getCommentsOrBuilderList() {
+        if (commentsBuilder_ != null) {
+          return commentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(comments_);
+        }
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public GRPCService.Comment.CommentObj.Builder addCommentsBuilder() {
+        return getCommentsFieldBuilder().addBuilder(
+            GRPCService.Comment.CommentObj.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public GRPCService.Comment.CommentObj.Builder addCommentsBuilder(
+          int index) {
+        return getCommentsFieldBuilder().addBuilder(
+            index, GRPCService.Comment.CommentObj.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .comment.CommentObj comments = 12;</code>
+       */
+      public java.util.List<GRPCService.Comment.CommentObj.Builder> 
+           getCommentsBuilderList() {
+        return getCommentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          GRPCService.Comment.CommentObj, GRPCService.Comment.CommentObj.Builder, GRPCService.Comment.CommentObjOrBuilder> 
+          getCommentsFieldBuilder() {
+        if (commentsBuilder_ == null) {
+          commentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              GRPCService.Comment.CommentObj, GRPCService.Comment.CommentObj.Builder, GRPCService.Comment.CommentObjOrBuilder>(
+                  comments_,
+                  ((bitField0_ & 0x00000800) == 0x00000800),
+                  getParentForChildren(),
+                  isClean());
+          comments_ = null;
+        }
+        return commentsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1941,8 +2502,8 @@ public final class PostOuterClass {
 
   }
 
-  public interface dateCreatedOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:post.dateCreated)
+  public interface DateCreatedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:post.DateCreated)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1961,18 +2522,18 @@ public final class PostOuterClass {
     int getYear();
   }
   /**
-   * Protobuf type {@code post.dateCreated}
+   * Protobuf type {@code post.DateCreated}
    */
-  public  static final class dateCreated extends
+  public  static final class DateCreated extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:post.dateCreated)
-      dateCreatedOrBuilder {
+      // @@protoc_insertion_point(message_implements:post.DateCreated)
+      DateCreatedOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use dateCreated.newBuilder() to construct.
-    private dateCreated(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DateCreated.newBuilder() to construct.
+    private DateCreated(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private dateCreated() {
+    private DateCreated() {
       day_ = 0;
       month_ = 0;
       year_ = 0;
@@ -1983,7 +2544,7 @@ public final class PostOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private dateCreated(
+    private DateCreated(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2038,15 +2599,15 @@ public final class PostOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return GRPCService.PostOuterClass.internal_static_post_dateCreated_descriptor;
+      return GRPCService.PostOuterClass.internal_static_post_DateCreated_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return GRPCService.PostOuterClass.internal_static_post_dateCreated_fieldAccessorTable
+      return GRPCService.PostOuterClass.internal_static_post_DateCreated_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              GRPCService.PostOuterClass.dateCreated.class, GRPCService.PostOuterClass.dateCreated.Builder.class);
+              GRPCService.PostOuterClass.DateCreated.class, GRPCService.PostOuterClass.DateCreated.Builder.class);
     }
 
     public static final int DAY_FIELD_NUMBER = 1;
@@ -2130,10 +2691,10 @@ public final class PostOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof GRPCService.PostOuterClass.dateCreated)) {
+      if (!(obj instanceof GRPCService.PostOuterClass.DateCreated)) {
         return super.equals(obj);
       }
-      GRPCService.PostOuterClass.dateCreated other = (GRPCService.PostOuterClass.dateCreated) obj;
+      GRPCService.PostOuterClass.DateCreated other = (GRPCService.PostOuterClass.DateCreated) obj;
 
       boolean result = true;
       result = result && (getDay()
@@ -2164,69 +2725,69 @@ public final class PostOuterClass {
       return hash;
     }
 
-    public static GRPCService.PostOuterClass.dateCreated parseFrom(
+    public static GRPCService.PostOuterClass.DateCreated parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseFrom(
+    public static GRPCService.PostOuterClass.DateCreated parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseFrom(
+    public static GRPCService.PostOuterClass.DateCreated parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseFrom(
+    public static GRPCService.PostOuterClass.DateCreated parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseFrom(byte[] data)
+    public static GRPCService.PostOuterClass.DateCreated parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseFrom(
+    public static GRPCService.PostOuterClass.DateCreated parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseFrom(java.io.InputStream input)
+    public static GRPCService.PostOuterClass.DateCreated parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseFrom(
+    public static GRPCService.PostOuterClass.DateCreated parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseDelimitedFrom(java.io.InputStream input)
+    public static GRPCService.PostOuterClass.DateCreated parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseDelimitedFrom(
+    public static GRPCService.PostOuterClass.DateCreated parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseFrom(
+    public static GRPCService.PostOuterClass.DateCreated parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GRPCService.PostOuterClass.dateCreated parseFrom(
+    public static GRPCService.PostOuterClass.DateCreated parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2239,7 +2800,7 @@ public final class PostOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(GRPCService.PostOuterClass.dateCreated prototype) {
+    public static Builder newBuilder(GRPCService.PostOuterClass.DateCreated prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2255,26 +2816,26 @@ public final class PostOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code post.dateCreated}
+     * Protobuf type {@code post.DateCreated}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:post.dateCreated)
-        GRPCService.PostOuterClass.dateCreatedOrBuilder {
+        // @@protoc_insertion_point(builder_implements:post.DateCreated)
+        GRPCService.PostOuterClass.DateCreatedOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return GRPCService.PostOuterClass.internal_static_post_dateCreated_descriptor;
+        return GRPCService.PostOuterClass.internal_static_post_DateCreated_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return GRPCService.PostOuterClass.internal_static_post_dateCreated_fieldAccessorTable
+        return GRPCService.PostOuterClass.internal_static_post_DateCreated_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                GRPCService.PostOuterClass.dateCreated.class, GRPCService.PostOuterClass.dateCreated.Builder.class);
+                GRPCService.PostOuterClass.DateCreated.class, GRPCService.PostOuterClass.DateCreated.Builder.class);
       }
 
-      // Construct using GRPCService.PostOuterClass.dateCreated.newBuilder()
+      // Construct using GRPCService.PostOuterClass.DateCreated.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2304,17 +2865,17 @@ public final class PostOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return GRPCService.PostOuterClass.internal_static_post_dateCreated_descriptor;
+        return GRPCService.PostOuterClass.internal_static_post_DateCreated_descriptor;
       }
 
       @java.lang.Override
-      public GRPCService.PostOuterClass.dateCreated getDefaultInstanceForType() {
-        return GRPCService.PostOuterClass.dateCreated.getDefaultInstance();
+      public GRPCService.PostOuterClass.DateCreated getDefaultInstanceForType() {
+        return GRPCService.PostOuterClass.DateCreated.getDefaultInstance();
       }
 
       @java.lang.Override
-      public GRPCService.PostOuterClass.dateCreated build() {
-        GRPCService.PostOuterClass.dateCreated result = buildPartial();
+      public GRPCService.PostOuterClass.DateCreated build() {
+        GRPCService.PostOuterClass.DateCreated result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2322,8 +2883,8 @@ public final class PostOuterClass {
       }
 
       @java.lang.Override
-      public GRPCService.PostOuterClass.dateCreated buildPartial() {
-        GRPCService.PostOuterClass.dateCreated result = new GRPCService.PostOuterClass.dateCreated(this);
+      public GRPCService.PostOuterClass.DateCreated buildPartial() {
+        GRPCService.PostOuterClass.DateCreated result = new GRPCService.PostOuterClass.DateCreated(this);
         result.day_ = day_;
         result.month_ = month_;
         result.year_ = year_;
@@ -2365,16 +2926,16 @@ public final class PostOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof GRPCService.PostOuterClass.dateCreated) {
-          return mergeFrom((GRPCService.PostOuterClass.dateCreated)other);
+        if (other instanceof GRPCService.PostOuterClass.DateCreated) {
+          return mergeFrom((GRPCService.PostOuterClass.DateCreated)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(GRPCService.PostOuterClass.dateCreated other) {
-        if (other == GRPCService.PostOuterClass.dateCreated.getDefaultInstance()) return this;
+      public Builder mergeFrom(GRPCService.PostOuterClass.DateCreated other) {
+        if (other == GRPCService.PostOuterClass.DateCreated.getDefaultInstance()) return this;
         if (other.getDay() != 0) {
           setDay(other.getDay());
         }
@@ -2399,11 +2960,11 @@ public final class PostOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        GRPCService.PostOuterClass.dateCreated parsedMessage = null;
+        GRPCService.PostOuterClass.DateCreated parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (GRPCService.PostOuterClass.dateCreated) e.getUnfinishedMessage();
+          parsedMessage = (GRPCService.PostOuterClass.DateCreated) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2503,41 +3064,41 @@ public final class PostOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:post.dateCreated)
+      // @@protoc_insertion_point(builder_scope:post.DateCreated)
     }
 
-    // @@protoc_insertion_point(class_scope:post.dateCreated)
-    private static final GRPCService.PostOuterClass.dateCreated DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:post.DateCreated)
+    private static final GRPCService.PostOuterClass.DateCreated DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GRPCService.PostOuterClass.dateCreated();
+      DEFAULT_INSTANCE = new GRPCService.PostOuterClass.DateCreated();
     }
 
-    public static GRPCService.PostOuterClass.dateCreated getDefaultInstance() {
+    public static GRPCService.PostOuterClass.DateCreated getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<dateCreated>
-        PARSER = new com.google.protobuf.AbstractParser<dateCreated>() {
+    private static final com.google.protobuf.Parser<DateCreated>
+        PARSER = new com.google.protobuf.AbstractParser<DateCreated>() {
       @java.lang.Override
-      public dateCreated parsePartialFrom(
+      public DateCreated parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new dateCreated(input, extensionRegistry);
+        return new DateCreated(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<dateCreated> parser() {
+    public static com.google.protobuf.Parser<DateCreated> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<dateCreated> getParserForType() {
+    public com.google.protobuf.Parser<DateCreated> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public GRPCService.PostOuterClass.dateCreated getDefaultInstanceForType() {
+    public GRPCService.PostOuterClass.DateCreated getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2549,10 +3110,10 @@ public final class PostOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_post_PostObj_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_post_dateCreated_descriptor;
+    internal_static_post_DateCreated_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_post_dateCreated_fieldAccessorTable;
+      internal_static_post_DateCreated_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2563,14 +3124,17 @@ public final class PostOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\npost.proto\022\004post\032\nuser.proto\032\013image.pr" +
-      "oto\"\320\001\n\007PostObj\022\n\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001" +
-      "(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005price\030\004 \001(\005\022\017" +
-      "\n\007address\030\005 \001(\t\022\021\n\tcondition\030\006 \001(\t\022\023\n\013ph" +
-      "oneNumber\030\007 \001(\t\022\r\n\005email\030\010 \001(\t\022\035\n\006writer" +
-      "\030\t \001(\0132\r.user.UserObj\022\037\n\006images\030\n \003(\0132\017." +
-      "image.ImageObj\"7\n\013dateCreated\022\013\n\003day\030\001 \001" +
-      "(\005\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030\003 \001(\0052\006\n\004PostB" +
-      "\r\n\013GRPCServiceb\006proto3"
+      "oto\032\rcomment.proto\"\237\002\n\007PostObj\022\n\n\002id\030\001 \001" +
+      "(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r" +
+      "\n\005price\030\004 \001(\005\022\017\n\007address\030\005 \001(\t\022\021\n\tcondit" +
+      "ion\030\006 \001(\t\022\023\n\013phoneNumber\030\007 \001(\t\022\r\n\005email\030" +
+      "\010 \001(\t\022\035\n\006writer\030\t \001(\0132\r.user.UserObj\022\037\n\006" +
+      "images\030\n \003(\0132\017.image.ImageObj\022&\n\013dateCre" +
+      "ated\030\013 \001(\0132\021.post.DateCreated\022%\n\010comment" +
+      "s\030\014 \003(\0132\023.comment.CommentObj\"7\n\013DateCrea" +
+      "ted\022\013\n\003day\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030" +
+      "\003 \001(\0052/\n\004Post\022\'\n\007AddPost\022\r.post.PostObj\032" +
+      "\r.post.PostObjB\r\n\013GRPCServiceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2585,21 +3149,23 @@ public final class PostOuterClass {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           GRPCService.UserOuterClass.getDescriptor(),
           GRPCService.Image.getDescriptor(),
+          GRPCService.Comment.getDescriptor(),
         }, assigner);
     internal_static_post_PostObj_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_post_PostObj_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_PostObj_descriptor,
-        new java.lang.String[] { "Id", "Title", "Description", "Price", "Address", "Condition", "PhoneNumber", "Email", "Writer", "Images", });
-    internal_static_post_dateCreated_descriptor =
+        new java.lang.String[] { "Id", "Title", "Description", "Price", "Address", "Condition", "PhoneNumber", "Email", "Writer", "Images", "DateCreated", "Comments", });
+    internal_static_post_DateCreated_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_post_dateCreated_fieldAccessorTable = new
+    internal_static_post_DateCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_post_dateCreated_descriptor,
+        internal_static_post_DateCreated_descriptor,
         new java.lang.String[] { "Day", "Month", "Year", });
     GRPCService.UserOuterClass.getDescriptor();
     GRPCService.Image.getDescriptor();
+    GRPCService.Comment.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

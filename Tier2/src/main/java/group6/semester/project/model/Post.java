@@ -16,7 +16,7 @@ public class Post {
     private String condition;
     private String phoneNumber;
     private String email;
-    private Subcategory subcategory;
     private List<Image> images;
+    private List<Comment> comments;
     private User writer;
 }
