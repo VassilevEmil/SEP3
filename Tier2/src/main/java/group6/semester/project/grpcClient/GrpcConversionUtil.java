@@ -69,6 +69,39 @@ public class GrpcConversionUtil {
     }
 
     /**
+     * This function takes a Post object and returns a PostObj object
+     *
+     * @param post the post object that we want to convert to a grpc post object
+     * @return A PostOuterClass.PostObj object.
+     */
+    public static PostOuterClass.PostObj getGrpcPostFromOurPost(Post post) {
+        PostOuterClass.PostObj postObj = PostOuterClass.PostObj.newBuilder()
+                .setId(post.getId())
+                .setAddress(post.getAddress()).setCondition(post.getCondition())
+                .setDateCreated(getDateCreatedFromYearMonthDay(post.getDateCreated().getYear(), post.getDateCreated().getMonth(), post.getDateCreated().getDay()))
+                .addAllComments(getListOfGRPCCommentsFromOurListOfComments(post.getComments()))
+                .setTitle(post.getTitle()).setPrice(post.getPrice())
+                . setDescription(post.getDescription())
+                .setPhoneNumber(post.getPhoneNumber())
+                .setEmail(post.getEmail())
+                .addAllImages(getListOfGRPCImageFromListOfImage(post.getImages()))
+                .setWriter(getGrpcUserFromUser(post.getWriter()))
+                .setPrice(post.getPrice())
+                .build();
+        return postObj;
+
+
+    }
+
+    public static PostOuterClass.DateCreated getDateCreatedFromYearMonthDay(int year, int month,int day){
+        PostOuterClass.DateCreated dateCreated = PostOuterClass.DateCreated.newBuilder().setDay(day).setMonth(month).setYear(year).build();
+        return dateCreated;
+
+
+    }
+
+
+    /**
      * Converts the list of grpc posts to the list of our posts..
      *
      * @param list
@@ -132,7 +165,7 @@ public class GrpcConversionUtil {
      * @param list List of Image objects
      * @return A list of GRPCService.Image.ImageObj
      */
-    public List<GRPCService.Image.ImageObj> getListOfGRPCImageFromListOfImage(List<Image> list) {
+    public static List<GRPCService.Image.ImageObj> getListOfGRPCImageFromListOfImage(List<Image> list) {
         List<GRPCService.Image.ImageObj> imageObjList = new ArrayList<>();
         for (Image img : list
         ) {
@@ -154,6 +187,33 @@ public class GrpcConversionUtil {
         comment.setBody(commentObj.getBody());
         comment.setId(commentObj.getId());
         return comment;
+    }
+
+    /**
+     * It converts a Comment object to a CommentObj object.
+     *
+     * @param comment The comment object that we want to convert to a gRPC object.
+     * @return A CommentObj object.
+     */
+    public static GRPCService.Comment.CommentObj getGrpcCommentFromOurComment(Comment comment){
+        GRPCService.Comment.CommentObj commentObj = GRPCService.Comment.CommentObj.newBuilder().setId(comment.getId())
+                .setWriter(getGrpcUserFromUser(comment.getWriter())).setBody(comment.getBody()).build();
+        return commentObj;
+    }
+
+    /**
+     * It takes a list of our Comment objects and returns a list of GRPCService.Comment.CommentObj objects
+     *
+     * @param list The list of comments that you want to convert to a list of GRPC comments.
+     * @return A list of GRPCService.Comment.CommentObj
+     */
+    public static List<GRPCService.Comment.CommentObj> getListOfGRPCCommentsFromOurListOfComments(List<Comment> list)
+    {
+        List<GRPCService.Comment.CommentObj> commentObjs = new ArrayList<>();
+        for (Comment i : list) {
+            commentObjs.add(getGrpcCommentFromOurComment(i));
+        }
+        return commentObjs;
     }
 
 
