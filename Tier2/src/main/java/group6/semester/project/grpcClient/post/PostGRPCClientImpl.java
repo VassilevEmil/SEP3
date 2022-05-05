@@ -36,7 +36,7 @@ public class PostGRPCClientImpl implements PostClient {
 
         PostOuterClass.TransferPostWithSubcategoryId transferPostWithSubcategoryId = PostOuterClass.TransferPostWithSubcategoryId.newBuilder().setPostObj(postObj).setIdWithInteger(id).build();
 
-        PostOuterClass.PostObj postObj1 = postBlockingStub.addPost(transferPostWithSubcategoryId);
+        PostOuterClass.PostObj postObj1 = getPostBlockingStub().addPost(transferPostWithSubcategoryId);
         return GrpcConversionUtil.getPostFromGrpcPost(postObj1);
     }
 
