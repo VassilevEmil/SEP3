@@ -20,7 +20,7 @@ public class PostGRPCClientImpl implements PostClient {
      *
      * @return A blocking stub for the Post service.
      */
-    public PostGrpc.PostBlockingStub getPostBlockingStub() {
+    private PostGrpc.PostBlockingStub getPostBlockingStub() {
         if (postBlockingStub == null) {
             ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 5250).usePlaintext().build();
             postBlockingStub = PostGrpc.newBlockingStub(managedChannel);
