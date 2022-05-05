@@ -1,3 +1,6 @@
+/**
+ * It's a service class that implements the UserService interface
+ */
 package group6.semester.project.services.SericeImpl;
 
 import group6.semester.project.grpcClient.user.UserClient;
@@ -7,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 @Service
+
 public class UserServiceImpl implements UserService {
     private final UserClient client;
 
@@ -15,6 +19,13 @@ public class UserServiceImpl implements UserService {
     }
 
     //hasing passwords
+    /**
+     * `hashPassword` takes a plaintext password as a string and returns a hashed password as a string using a randomly
+     * generated salt
+     *
+     * @param password_plaintext This is the plaintext password that you want to hash.
+     * @return The hashed password.
+     */
     protected static String hashPassword(String password_plaintext) {
         String salt = BCrypt.gensalt(12);
         String hashed_password = BCrypt.hashpw(password_plaintext, salt);
@@ -22,6 +33,14 @@ public class UserServiceImpl implements UserService {
         return(hashed_password);
     }
 
+    /**
+     * `checkPassword` takes a plaintext password and a hash of the correct one for comparison, and returns whether or not
+     * the plaintext password matches the correct hash
+     *
+     * @param password_plaintext This is the password that was provided by the user trying to log in during the login form
+     * @param stored_hash The hash that was stored in the database.
+     * @return A boolean value.
+     */
     public static boolean checkPassword(String password_plaintext, String stored_hash) {
         boolean password_verified = false;
 
@@ -34,6 +53,12 @@ public class UserServiceImpl implements UserService {
     }
 
 
+    /**
+     * > This function creates a user in the database
+     *
+     * @param user The user object that is being created.
+     * @return The user object is being returned.
+     */
     @Override
     public User CreateUserAsync(User user) {
         if (user.getFirstName()==null || user.getFirstName().isEmpty()) {
@@ -50,6 +75,12 @@ public class UserServiceImpl implements UserService {
 
         return client.addUser(user);
     }
+    /**
+     * > The function takes a username as a parameter, validates it, and then returns the user object
+     *
+     * @param username The username of the user you want to retrieve.
+     * @return A User object
+     */
     @Override
     public User GetUserAsync(String username) {
         validateUsername(username);
@@ -58,6 +89,12 @@ public class UserServiceImpl implements UserService {
         return client.getUser(username);
     }
 
+    /**
+     * It checks if the password is null or empty, if it's less than 6 characters, if it contains at least one uppercase
+     * letter, and if it contains at least one digit
+     *
+     * @param password The password to validate.
+     */
     private void validatePassword(String password) {
         if (password==null|| password.isEmpty()) {
             throw new RuntimeException("Password cannot be empty");
@@ -90,6 +127,12 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+
+    /**
+     * "If the username is null or empty, or if it's too short or too long, throw an exception."
+
+     * @param username The username of the user.
+     */
     private void validateUsername(String username) {
         if (username==null ||  username.isEmpty()) {
             throw new RuntimeException("Username cannot be empty");

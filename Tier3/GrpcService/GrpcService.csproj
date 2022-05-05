@@ -6,13 +6,28 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
     <ItemGroup>
-        <Protobuf Include="Protos\user.proto" GrpcServices="Server" />
+        <Protobuf Include="Protos\user.proto" GrpcServices="Server" ProtoRoot="Protos\" />
     </ItemGroup>
+    <ItemGroup>
+        <Protobuf Include="Protos\comment.proto" GrpcServices="Server" ProtoRoot="Protos\" />
+    </ItemGroup>
+    <ItemGroup>
+        <Protobuf Include="Protos\post.proto" GrpcServices="Server" ProtoRoot="Protos\" />
+    </ItemGroup>
+    <ItemGroup>
+        <Protobuf Include="Protos\category.proto" GrpcServices="Server" ProtoRoot="Protos\" />
+    </ItemGroup>
+    <ItemGroup>
+        <Protobuf Include="Protos\image.proto" GrpcServices="Server" ProtoRoot="Protos\" />
+    </ItemGroup>
+    <ItemGroup>
+        <Protobuf Include="Protos\subcategory.proto" GrpcServices="Server" ProtoRoot="Protos\" />
+    </ItemGroup>
+    
     <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Application\Application.csproj" />
       <ProjectReference Include="..\EFC\EFC.csproj" />
       <ProjectReference Include="..\Entities\Entities.csproj" />
     </ItemGroup>
