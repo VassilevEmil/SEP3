@@ -12,17 +12,15 @@ public class PostProtoImpl : Post.PostBase {
         _postService = postService;
     }
 
-    
-    public async override Task<PostObj> AddPost(PostObj request, ServerCallContext context) {
-        Entities.Models.Post post = ConvertGRPC.ConvertPostObjToPost(request);
-        Entities.Models.Post postFromServer=await _postService.AddPost(post);
-       return ConvertGRPC.ConvertPostToPostObj(postFromServer);
+
+    public async override Task<PostObj> AddPost(TransferPostWithSubcategoryId request, ServerCallContext context) {
+        PostObj postObj = request.PostObj;
+        IdWithInteger idWith = request.IdWithInteger;
+
+        Entities.Models.Post post = ConvertGRPC.ConvertPostObjToPost(postObj);
+        int subCategoryId = idWith.Id;
+
+        var addPost = await _postService.AddPost(subCategoryId, post);
+        return ConvertGRPC.ConvertPostToPostObj(addPost);
     }
-
- 
-
-
-  
-
-  
 }

@@ -3,5 +3,5 @@
 namespace Entities.Contracts; 
 
 public interface IPostService { 
-    Task<Post> AddPost(Post post);
+    Task<Post> AddPost(int subCategoryId,Post post);
 }

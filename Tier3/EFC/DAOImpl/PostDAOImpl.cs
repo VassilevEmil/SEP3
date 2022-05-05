@@ -12,7 +12,15 @@ public class PostDAOImpl : IPostService {
     }
 
 
-    public Task<Post> AddPost(Post post) {
+    public async Task<Post> AddPost(int subCategoryId,Post post) {
+        var subcategory = await _context.Subcategories.FindAsync(subCategoryId);
+        var user = await _context.Users.FindAsync(post.Writer.Username);
 
+        post.Writer = user!;
+        post.Subcategory = subcategory!;
+
+        var entityEntry = await _context.Posts.AddAsync(post);
+        await _context.SaveChangesAsync();
+        return entityEntry.Entity;
     }
 }

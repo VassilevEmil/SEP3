@@ -1,7 +1,6 @@
 ﻿syntax = "proto3";
 
 option csharp_namespace = "GRPCService";
-import "user.proto";
 import "subcategory.proto";
 
 

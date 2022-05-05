@@ -30,7 +30,7 @@ message IdWithInteger{
 }
 
 message TransferPostWithSubcategoryId{
-  IdWithInteger subCategoryid =1;
+  IdWithInteger idWithInteger =1;
   PostObj  postObj =2;
 }
 

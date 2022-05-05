@@ -7,7 +7,7 @@ import "comment.proto";
 package post;
 
 service Post{
-  rpc AddPost(PostObj) returns (PostObj);
+  rpc AddPost(TransferPostWithSubcategoryId) returns (PostObj);
 }
 
 message PostObj{
@@ -24,6 +24,13 @@ message PostObj{
   DateCreated dateCreated =11;
   repeated comment.CommentObj comments =12 ;
 
+}
+message TransferPostWithSubcategoryId{
+  IdWithInteger idWithInteger =1;
+  PostObj  postObj =2;
+}
+message IdWithInteger{
+  int32 id=1;
 }
 
 message DateCreated{

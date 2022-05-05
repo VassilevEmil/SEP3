@@ -2983,17 +2983,17 @@ public final class PostOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     * <code>.post.IdWithInteger idWithInteger = 1;</code>
      */
-    boolean hasSubCategoryid();
+    boolean hasIdWithInteger();
     /**
-     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     * <code>.post.IdWithInteger idWithInteger = 1;</code>
      */
-    GRPCService.PostOuterClass.IdWithInteger getSubCategoryid();
+    GRPCService.PostOuterClass.IdWithInteger getIdWithInteger();
     /**
-     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     * <code>.post.IdWithInteger idWithInteger = 1;</code>
      */
-    GRPCService.PostOuterClass.IdWithIntegerOrBuilder getSubCategoryidOrBuilder();
+    GRPCService.PostOuterClass.IdWithIntegerOrBuilder getIdWithIntegerOrBuilder();
 
     /**
      * <code>.post.PostObj postObj = 2;</code>
@@ -3049,13 +3049,13 @@ public final class PostOuterClass {
               break;
             case 10: {
               GRPCService.PostOuterClass.IdWithInteger.Builder subBuilder = null;
-              if (subCategoryid_ != null) {
-                subBuilder = subCategoryid_.toBuilder();
+              if (idWithInteger_ != null) {
+                subBuilder = idWithInteger_.toBuilder();
               }
-              subCategoryid_ = input.readMessage(GRPCService.PostOuterClass.IdWithInteger.parser(), extensionRegistry);
+              idWithInteger_ = input.readMessage(GRPCService.PostOuterClass.IdWithInteger.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(subCategoryid_);
-                subCategoryid_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(idWithInteger_);
+                idWithInteger_ = subBuilder.buildPartial();
               }
 
               break;
@@ -3105,25 +3105,25 @@ public final class PostOuterClass {
               GRPCService.PostOuterClass.TransferPostWithSubcategoryId.class, GRPCService.PostOuterClass.TransferPostWithSubcategoryId.Builder.class);
     }
 
-    public static final int SUBCATEGORYID_FIELD_NUMBER = 1;
-    private GRPCService.PostOuterClass.IdWithInteger subCategoryid_;
+    public static final int IDWITHINTEGER_FIELD_NUMBER = 1;
+    private GRPCService.PostOuterClass.IdWithInteger idWithInteger_;
     /**
-     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     * <code>.post.IdWithInteger idWithInteger = 1;</code>
      */
-    public boolean hasSubCategoryid() {
-      return subCategoryid_ != null;
+    public boolean hasIdWithInteger() {
+      return idWithInteger_ != null;
     }
     /**
-     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     * <code>.post.IdWithInteger idWithInteger = 1;</code>
      */
-    public GRPCService.PostOuterClass.IdWithInteger getSubCategoryid() {
-      return subCategoryid_ == null ? GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance() : subCategoryid_;
+    public GRPCService.PostOuterClass.IdWithInteger getIdWithInteger() {
+      return idWithInteger_ == null ? GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance() : idWithInteger_;
     }
     /**
-     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     * <code>.post.IdWithInteger idWithInteger = 1;</code>
      */
-    public GRPCService.PostOuterClass.IdWithIntegerOrBuilder getSubCategoryidOrBuilder() {
-      return getSubCategoryid();
+    public GRPCService.PostOuterClass.IdWithIntegerOrBuilder getIdWithIntegerOrBuilder() {
+      return getIdWithInteger();
     }
 
     public static final int POSTOBJ_FIELD_NUMBER = 2;
@@ -3161,8 +3161,8 @@ public final class PostOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (subCategoryid_ != null) {
-        output.writeMessage(1, getSubCategoryid());
+      if (idWithInteger_ != null) {
+        output.writeMessage(1, getIdWithInteger());
       }
       if (postObj_ != null) {
         output.writeMessage(2, getPostObj());
@@ -3176,9 +3176,9 @@ public final class PostOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (subCategoryid_ != null) {
+      if (idWithInteger_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getSubCategoryid());
+          .computeMessageSize(1, getIdWithInteger());
       }
       if (postObj_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -3200,10 +3200,10 @@ public final class PostOuterClass {
       GRPCService.PostOuterClass.TransferPostWithSubcategoryId other = (GRPCService.PostOuterClass.TransferPostWithSubcategoryId) obj;
 
       boolean result = true;
-      result = result && (hasSubCategoryid() == other.hasSubCategoryid());
-      if (hasSubCategoryid()) {
-        result = result && getSubCategoryid()
-            .equals(other.getSubCategoryid());
+      result = result && (hasIdWithInteger() == other.hasIdWithInteger());
+      if (hasIdWithInteger()) {
+        result = result && getIdWithInteger()
+            .equals(other.getIdWithInteger());
       }
       result = result && (hasPostObj() == other.hasPostObj());
       if (hasPostObj()) {
@@ -3221,9 +3221,9 @@ public final class PostOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasSubCategoryid()) {
-        hash = (37 * hash) + SUBCATEGORYID_FIELD_NUMBER;
-        hash = (53 * hash) + getSubCategoryid().hashCode();
+      if (hasIdWithInteger()) {
+        hash = (37 * hash) + IDWITHINTEGER_FIELD_NUMBER;
+        hash = (53 * hash) + getIdWithInteger().hashCode();
       }
       if (hasPostObj()) {
         hash = (37 * hash) + POSTOBJ_FIELD_NUMBER;
@@ -3362,11 +3362,11 @@ public final class PostOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (subCategoryidBuilder_ == null) {
-          subCategoryid_ = null;
+        if (idWithIntegerBuilder_ == null) {
+          idWithInteger_ = null;
         } else {
-          subCategoryid_ = null;
-          subCategoryidBuilder_ = null;
+          idWithInteger_ = null;
+          idWithIntegerBuilder_ = null;
         }
         if (postObjBuilder_ == null) {
           postObj_ = null;
@@ -3400,10 +3400,10 @@ public final class PostOuterClass {
       @java.lang.Override
       public GRPCService.PostOuterClass.TransferPostWithSubcategoryId buildPartial() {
         GRPCService.PostOuterClass.TransferPostWithSubcategoryId result = new GRPCService.PostOuterClass.TransferPostWithSubcategoryId(this);
-        if (subCategoryidBuilder_ == null) {
-          result.subCategoryid_ = subCategoryid_;
+        if (idWithIntegerBuilder_ == null) {
+          result.idWithInteger_ = idWithInteger_;
         } else {
-          result.subCategoryid_ = subCategoryidBuilder_.build();
+          result.idWithInteger_ = idWithIntegerBuilder_.build();
         }
         if (postObjBuilder_ == null) {
           result.postObj_ = postObj_;
@@ -3458,8 +3458,8 @@ public final class PostOuterClass {
 
       public Builder mergeFrom(GRPCService.PostOuterClass.TransferPostWithSubcategoryId other) {
         if (other == GRPCService.PostOuterClass.TransferPostWithSubcategoryId.getDefaultInstance()) return this;
-        if (other.hasSubCategoryid()) {
-          mergeSubCategoryid(other.getSubCategoryid());
+        if (other.hasIdWithInteger()) {
+          mergeIdWithInteger(other.getIdWithInteger());
         }
         if (other.hasPostObj()) {
           mergePostObj(other.getPostObj());
@@ -3493,121 +3493,121 @@ public final class PostOuterClass {
         return this;
       }
 
-      private GRPCService.PostOuterClass.IdWithInteger subCategoryid_ = null;
+      private GRPCService.PostOuterClass.IdWithInteger idWithInteger_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          GRPCService.PostOuterClass.IdWithInteger, GRPCService.PostOuterClass.IdWithInteger.Builder, GRPCService.PostOuterClass.IdWithIntegerOrBuilder> subCategoryidBuilder_;
+          GRPCService.PostOuterClass.IdWithInteger, GRPCService.PostOuterClass.IdWithInteger.Builder, GRPCService.PostOuterClass.IdWithIntegerOrBuilder> idWithIntegerBuilder_;
       /**
-       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       * <code>.post.IdWithInteger idWithInteger = 1;</code>
        */
-      public boolean hasSubCategoryid() {
-        return subCategoryidBuilder_ != null || subCategoryid_ != null;
+      public boolean hasIdWithInteger() {
+        return idWithIntegerBuilder_ != null || idWithInteger_ != null;
       }
       /**
-       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       * <code>.post.IdWithInteger idWithInteger = 1;</code>
        */
-      public GRPCService.PostOuterClass.IdWithInteger getSubCategoryid() {
-        if (subCategoryidBuilder_ == null) {
-          return subCategoryid_ == null ? GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance() : subCategoryid_;
+      public GRPCService.PostOuterClass.IdWithInteger getIdWithInteger() {
+        if (idWithIntegerBuilder_ == null) {
+          return idWithInteger_ == null ? GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance() : idWithInteger_;
         } else {
-          return subCategoryidBuilder_.getMessage();
+          return idWithIntegerBuilder_.getMessage();
         }
       }
       /**
-       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       * <code>.post.IdWithInteger idWithInteger = 1;</code>
        */
-      public Builder setSubCategoryid(GRPCService.PostOuterClass.IdWithInteger value) {
-        if (subCategoryidBuilder_ == null) {
+      public Builder setIdWithInteger(GRPCService.PostOuterClass.IdWithInteger value) {
+        if (idWithIntegerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          subCategoryid_ = value;
+          idWithInteger_ = value;
           onChanged();
         } else {
-          subCategoryidBuilder_.setMessage(value);
+          idWithIntegerBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       * <code>.post.IdWithInteger idWithInteger = 1;</code>
        */
-      public Builder setSubCategoryid(
+      public Builder setIdWithInteger(
           GRPCService.PostOuterClass.IdWithInteger.Builder builderForValue) {
-        if (subCategoryidBuilder_ == null) {
-          subCategoryid_ = builderForValue.build();
+        if (idWithIntegerBuilder_ == null) {
+          idWithInteger_ = builderForValue.build();
           onChanged();
         } else {
-          subCategoryidBuilder_.setMessage(builderForValue.build());
+          idWithIntegerBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       * <code>.post.IdWithInteger idWithInteger = 1;</code>
        */
-      public Builder mergeSubCategoryid(GRPCService.PostOuterClass.IdWithInteger value) {
-        if (subCategoryidBuilder_ == null) {
-          if (subCategoryid_ != null) {
-            subCategoryid_ =
-              GRPCService.PostOuterClass.IdWithInteger.newBuilder(subCategoryid_).mergeFrom(value).buildPartial();
+      public Builder mergeIdWithInteger(GRPCService.PostOuterClass.IdWithInteger value) {
+        if (idWithIntegerBuilder_ == null) {
+          if (idWithInteger_ != null) {
+            idWithInteger_ =
+              GRPCService.PostOuterClass.IdWithInteger.newBuilder(idWithInteger_).mergeFrom(value).buildPartial();
           } else {
-            subCategoryid_ = value;
+            idWithInteger_ = value;
           }
           onChanged();
         } else {
-          subCategoryidBuilder_.mergeFrom(value);
+          idWithIntegerBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       * <code>.post.IdWithInteger idWithInteger = 1;</code>
        */
-      public Builder clearSubCategoryid() {
-        if (subCategoryidBuilder_ == null) {
-          subCategoryid_ = null;
+      public Builder clearIdWithInteger() {
+        if (idWithIntegerBuilder_ == null) {
+          idWithInteger_ = null;
           onChanged();
         } else {
-          subCategoryid_ = null;
-          subCategoryidBuilder_ = null;
+          idWithInteger_ = null;
+          idWithIntegerBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       * <code>.post.IdWithInteger idWithInteger = 1;</code>
        */
-      public GRPCService.PostOuterClass.IdWithInteger.Builder getSubCategoryidBuilder() {
+      public GRPCService.PostOuterClass.IdWithInteger.Builder getIdWithIntegerBuilder() {
         
         onChanged();
-        return getSubCategoryidFieldBuilder().getBuilder();
+        return getIdWithIntegerFieldBuilder().getBuilder();
       }
       /**
-       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       * <code>.post.IdWithInteger idWithInteger = 1;</code>
        */
-      public GRPCService.PostOuterClass.IdWithIntegerOrBuilder getSubCategoryidOrBuilder() {
-        if (subCategoryidBuilder_ != null) {
-          return subCategoryidBuilder_.getMessageOrBuilder();
+      public GRPCService.PostOuterClass.IdWithIntegerOrBuilder getIdWithIntegerOrBuilder() {
+        if (idWithIntegerBuilder_ != null) {
+          return idWithIntegerBuilder_.getMessageOrBuilder();
         } else {
-          return subCategoryid_ == null ?
-              GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance() : subCategoryid_;
+          return idWithInteger_ == null ?
+              GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance() : idWithInteger_;
         }
       }
       /**
-       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       * <code>.post.IdWithInteger idWithInteger = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           GRPCService.PostOuterClass.IdWithInteger, GRPCService.PostOuterClass.IdWithInteger.Builder, GRPCService.PostOuterClass.IdWithIntegerOrBuilder> 
-          getSubCategoryidFieldBuilder() {
-        if (subCategoryidBuilder_ == null) {
-          subCategoryidBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getIdWithIntegerFieldBuilder() {
+        if (idWithIntegerBuilder_ == null) {
+          idWithIntegerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               GRPCService.PostOuterClass.IdWithInteger, GRPCService.PostOuterClass.IdWithInteger.Builder, GRPCService.PostOuterClass.IdWithIntegerOrBuilder>(
-                  getSubCategoryid(),
+                  getIdWithInteger(),
                   getParentForChildren(),
                   isClean());
-          subCategoryid_ = null;
+          idWithInteger_ = null;
         }
-        return subCategoryidBuilder_;
+        return idWithIntegerBuilder_;
       }
 
       private GRPCService.PostOuterClass.PostObj postObj_ = null;
@@ -4420,7 +4420,7 @@ public final class PostOuterClass {
       "ated\030\013 \001(\0132\021.post.DateCreated\022%\n\010comment" +
       "s\030\014 \003(\0132\023.comment.CommentObj\"\033\n\rIdWithIn" +
       "teger\022\n\n\002id\030\001 \001(\005\"k\n\035TransferPostWithSub" +
-      "categoryId\022*\n\rsubCategoryid\030\001 \001(\0132\023.post" +
+      "categoryId\022*\n\ridWithInteger\030\001 \001(\0132\023.post" +
       ".IdWithInteger\022\036\n\007postObj\030\002 \001(\0132\r.post.P" +
       "ostObj\"7\n\013DateCreated\022\013\n\003day\030\001 \001(\005\022\r\n\005mo" +
       "nth\030\002 \001(\005\022\014\n\004year\030\003 \001(\0052E\n\004Post\022=\n\007AddPo" +
@@ -4459,7 +4459,7 @@ public final class PostOuterClass {
     internal_static_post_TransferPostWithSubcategoryId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_TransferPostWithSubcategoryId_descriptor,
-        new java.lang.String[] { "SubCategoryid", "PostObj", });
+        new java.lang.String[] { "IdWithInteger", "PostObj", });
     internal_static_post_DateCreated_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_post_DateCreated_fieldAccessorTable = new
