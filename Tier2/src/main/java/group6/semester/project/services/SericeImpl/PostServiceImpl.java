@@ -14,6 +14,12 @@ public class PostServiceImpl implements PostService {
         this.postClient = postClient;
     }
 
+    /**
+     * > The function adds a post to the database
+     *
+     * @param post the post object to be added.
+     * @return A Post object.
+     */
     @Override
     public Post addPost(Post post) {
 
