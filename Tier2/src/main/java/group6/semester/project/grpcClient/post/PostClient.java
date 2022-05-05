@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface PostClient {
-    Post addPost(Post post);
+    Post addPost(Post post, int subCategoryId);
 }

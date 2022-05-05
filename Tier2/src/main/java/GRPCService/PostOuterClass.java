@@ -2502,6 +2502,1283 @@ public final class PostOuterClass {
 
   }
 
+  public interface IdWithIntegerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:post.IdWithInteger)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     */
+    int getId();
+  }
+  /**
+   * Protobuf type {@code post.IdWithInteger}
+   */
+  public  static final class IdWithInteger extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:post.IdWithInteger)
+      IdWithIntegerOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use IdWithInteger.newBuilder() to construct.
+    private IdWithInteger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private IdWithInteger() {
+      id_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private IdWithInteger(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.PostOuterClass.internal_static_post_IdWithInteger_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.PostOuterClass.internal_static_post_IdWithInteger_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.PostOuterClass.IdWithInteger.class, GRPCService.PostOuterClass.IdWithInteger.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    /**
+     * <code>int32 id = 1;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.PostOuterClass.IdWithInteger)) {
+        return super.equals(obj);
+      }
+      GRPCService.PostOuterClass.IdWithInteger other = (GRPCService.PostOuterClass.IdWithInteger) obj;
+
+      boolean result = true;
+      result = result && (getId()
+          == other.getId());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.PostOuterClass.IdWithInteger parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.IdWithInteger parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.PostOuterClass.IdWithInteger prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code post.IdWithInteger}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:post.IdWithInteger)
+        GRPCService.PostOuterClass.IdWithIntegerOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.PostOuterClass.internal_static_post_IdWithInteger_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.PostOuterClass.internal_static_post_IdWithInteger_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.PostOuterClass.IdWithInteger.class, GRPCService.PostOuterClass.IdWithInteger.Builder.class);
+      }
+
+      // Construct using GRPCService.PostOuterClass.IdWithInteger.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.PostOuterClass.internal_static_post_IdWithInteger_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.IdWithInteger getDefaultInstanceForType() {
+        return GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.IdWithInteger build() {
+        GRPCService.PostOuterClass.IdWithInteger result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.IdWithInteger buildPartial() {
+        GRPCService.PostOuterClass.IdWithInteger result = new GRPCService.PostOuterClass.IdWithInteger(this);
+        result.id_ = id_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.PostOuterClass.IdWithInteger) {
+          return mergeFrom((GRPCService.PostOuterClass.IdWithInteger)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.PostOuterClass.IdWithInteger other) {
+        if (other == GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.PostOuterClass.IdWithInteger parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.PostOuterClass.IdWithInteger) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:post.IdWithInteger)
+    }
+
+    // @@protoc_insertion_point(class_scope:post.IdWithInteger)
+    private static final GRPCService.PostOuterClass.IdWithInteger DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.PostOuterClass.IdWithInteger();
+    }
+
+    public static GRPCService.PostOuterClass.IdWithInteger getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IdWithInteger>
+        PARSER = new com.google.protobuf.AbstractParser<IdWithInteger>() {
+      @java.lang.Override
+      public IdWithInteger parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IdWithInteger(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<IdWithInteger> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IdWithInteger> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.PostOuterClass.IdWithInteger getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TransferPostWithSubcategoryIdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:post.TransferPostWithSubcategoryId)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     */
+    boolean hasSubCategoryid();
+    /**
+     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     */
+    GRPCService.PostOuterClass.IdWithInteger getSubCategoryid();
+    /**
+     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     */
+    GRPCService.PostOuterClass.IdWithIntegerOrBuilder getSubCategoryidOrBuilder();
+
+    /**
+     * <code>.post.PostObj postObj = 2;</code>
+     */
+    boolean hasPostObj();
+    /**
+     * <code>.post.PostObj postObj = 2;</code>
+     */
+    GRPCService.PostOuterClass.PostObj getPostObj();
+    /**
+     * <code>.post.PostObj postObj = 2;</code>
+     */
+    GRPCService.PostOuterClass.PostObjOrBuilder getPostObjOrBuilder();
+  }
+  /**
+   * Protobuf type {@code post.TransferPostWithSubcategoryId}
+   */
+  public  static final class TransferPostWithSubcategoryId extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:post.TransferPostWithSubcategoryId)
+      TransferPostWithSubcategoryIdOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TransferPostWithSubcategoryId.newBuilder() to construct.
+    private TransferPostWithSubcategoryId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TransferPostWithSubcategoryId() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TransferPostWithSubcategoryId(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              GRPCService.PostOuterClass.IdWithInteger.Builder subBuilder = null;
+              if (subCategoryid_ != null) {
+                subBuilder = subCategoryid_.toBuilder();
+              }
+              subCategoryid_ = input.readMessage(GRPCService.PostOuterClass.IdWithInteger.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(subCategoryid_);
+                subCategoryid_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              GRPCService.PostOuterClass.PostObj.Builder subBuilder = null;
+              if (postObj_ != null) {
+                subBuilder = postObj_.toBuilder();
+              }
+              postObj_ = input.readMessage(GRPCService.PostOuterClass.PostObj.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postObj_);
+                postObj_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.PostOuterClass.internal_static_post_TransferPostWithSubcategoryId_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.PostOuterClass.internal_static_post_TransferPostWithSubcategoryId_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.PostOuterClass.TransferPostWithSubcategoryId.class, GRPCService.PostOuterClass.TransferPostWithSubcategoryId.Builder.class);
+    }
+
+    public static final int SUBCATEGORYID_FIELD_NUMBER = 1;
+    private GRPCService.PostOuterClass.IdWithInteger subCategoryid_;
+    /**
+     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     */
+    public boolean hasSubCategoryid() {
+      return subCategoryid_ != null;
+    }
+    /**
+     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     */
+    public GRPCService.PostOuterClass.IdWithInteger getSubCategoryid() {
+      return subCategoryid_ == null ? GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance() : subCategoryid_;
+    }
+    /**
+     * <code>.post.IdWithInteger subCategoryid = 1;</code>
+     */
+    public GRPCService.PostOuterClass.IdWithIntegerOrBuilder getSubCategoryidOrBuilder() {
+      return getSubCategoryid();
+    }
+
+    public static final int POSTOBJ_FIELD_NUMBER = 2;
+    private GRPCService.PostOuterClass.PostObj postObj_;
+    /**
+     * <code>.post.PostObj postObj = 2;</code>
+     */
+    public boolean hasPostObj() {
+      return postObj_ != null;
+    }
+    /**
+     * <code>.post.PostObj postObj = 2;</code>
+     */
+    public GRPCService.PostOuterClass.PostObj getPostObj() {
+      return postObj_ == null ? GRPCService.PostOuterClass.PostObj.getDefaultInstance() : postObj_;
+    }
+    /**
+     * <code>.post.PostObj postObj = 2;</code>
+     */
+    public GRPCService.PostOuterClass.PostObjOrBuilder getPostObjOrBuilder() {
+      return getPostObj();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (subCategoryid_ != null) {
+        output.writeMessage(1, getSubCategoryid());
+      }
+      if (postObj_ != null) {
+        output.writeMessage(2, getPostObj());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (subCategoryid_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getSubCategoryid());
+      }
+      if (postObj_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getPostObj());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.PostOuterClass.TransferPostWithSubcategoryId)) {
+        return super.equals(obj);
+      }
+      GRPCService.PostOuterClass.TransferPostWithSubcategoryId other = (GRPCService.PostOuterClass.TransferPostWithSubcategoryId) obj;
+
+      boolean result = true;
+      result = result && (hasSubCategoryid() == other.hasSubCategoryid());
+      if (hasSubCategoryid()) {
+        result = result && getSubCategoryid()
+            .equals(other.getSubCategoryid());
+      }
+      result = result && (hasPostObj() == other.hasPostObj());
+      if (hasPostObj()) {
+        result = result && getPostObj()
+            .equals(other.getPostObj());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSubCategoryid()) {
+        hash = (37 * hash) + SUBCATEGORYID_FIELD_NUMBER;
+        hash = (53 * hash) + getSubCategoryid().hashCode();
+      }
+      if (hasPostObj()) {
+        hash = (37 * hash) + POSTOBJ_FIELD_NUMBER;
+        hash = (53 * hash) + getPostObj().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.PostOuterClass.TransferPostWithSubcategoryId prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code post.TransferPostWithSubcategoryId}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:post.TransferPostWithSubcategoryId)
+        GRPCService.PostOuterClass.TransferPostWithSubcategoryIdOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.PostOuterClass.internal_static_post_TransferPostWithSubcategoryId_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.PostOuterClass.internal_static_post_TransferPostWithSubcategoryId_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.PostOuterClass.TransferPostWithSubcategoryId.class, GRPCService.PostOuterClass.TransferPostWithSubcategoryId.Builder.class);
+      }
+
+      // Construct using GRPCService.PostOuterClass.TransferPostWithSubcategoryId.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (subCategoryidBuilder_ == null) {
+          subCategoryid_ = null;
+        } else {
+          subCategoryid_ = null;
+          subCategoryidBuilder_ = null;
+        }
+        if (postObjBuilder_ == null) {
+          postObj_ = null;
+        } else {
+          postObj_ = null;
+          postObjBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.PostOuterClass.internal_static_post_TransferPostWithSubcategoryId_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.TransferPostWithSubcategoryId getDefaultInstanceForType() {
+        return GRPCService.PostOuterClass.TransferPostWithSubcategoryId.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.TransferPostWithSubcategoryId build() {
+        GRPCService.PostOuterClass.TransferPostWithSubcategoryId result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.TransferPostWithSubcategoryId buildPartial() {
+        GRPCService.PostOuterClass.TransferPostWithSubcategoryId result = new GRPCService.PostOuterClass.TransferPostWithSubcategoryId(this);
+        if (subCategoryidBuilder_ == null) {
+          result.subCategoryid_ = subCategoryid_;
+        } else {
+          result.subCategoryid_ = subCategoryidBuilder_.build();
+        }
+        if (postObjBuilder_ == null) {
+          result.postObj_ = postObj_;
+        } else {
+          result.postObj_ = postObjBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.PostOuterClass.TransferPostWithSubcategoryId) {
+          return mergeFrom((GRPCService.PostOuterClass.TransferPostWithSubcategoryId)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.PostOuterClass.TransferPostWithSubcategoryId other) {
+        if (other == GRPCService.PostOuterClass.TransferPostWithSubcategoryId.getDefaultInstance()) return this;
+        if (other.hasSubCategoryid()) {
+          mergeSubCategoryid(other.getSubCategoryid());
+        }
+        if (other.hasPostObj()) {
+          mergePostObj(other.getPostObj());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.PostOuterClass.TransferPostWithSubcategoryId parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.PostOuterClass.TransferPostWithSubcategoryId) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private GRPCService.PostOuterClass.IdWithInteger subCategoryid_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.PostOuterClass.IdWithInteger, GRPCService.PostOuterClass.IdWithInteger.Builder, GRPCService.PostOuterClass.IdWithIntegerOrBuilder> subCategoryidBuilder_;
+      /**
+       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       */
+      public boolean hasSubCategoryid() {
+        return subCategoryidBuilder_ != null || subCategoryid_ != null;
+      }
+      /**
+       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       */
+      public GRPCService.PostOuterClass.IdWithInteger getSubCategoryid() {
+        if (subCategoryidBuilder_ == null) {
+          return subCategoryid_ == null ? GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance() : subCategoryid_;
+        } else {
+          return subCategoryidBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       */
+      public Builder setSubCategoryid(GRPCService.PostOuterClass.IdWithInteger value) {
+        if (subCategoryidBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          subCategoryid_ = value;
+          onChanged();
+        } else {
+          subCategoryidBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       */
+      public Builder setSubCategoryid(
+          GRPCService.PostOuterClass.IdWithInteger.Builder builderForValue) {
+        if (subCategoryidBuilder_ == null) {
+          subCategoryid_ = builderForValue.build();
+          onChanged();
+        } else {
+          subCategoryidBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       */
+      public Builder mergeSubCategoryid(GRPCService.PostOuterClass.IdWithInteger value) {
+        if (subCategoryidBuilder_ == null) {
+          if (subCategoryid_ != null) {
+            subCategoryid_ =
+              GRPCService.PostOuterClass.IdWithInteger.newBuilder(subCategoryid_).mergeFrom(value).buildPartial();
+          } else {
+            subCategoryid_ = value;
+          }
+          onChanged();
+        } else {
+          subCategoryidBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       */
+      public Builder clearSubCategoryid() {
+        if (subCategoryidBuilder_ == null) {
+          subCategoryid_ = null;
+          onChanged();
+        } else {
+          subCategoryid_ = null;
+          subCategoryidBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       */
+      public GRPCService.PostOuterClass.IdWithInteger.Builder getSubCategoryidBuilder() {
+        
+        onChanged();
+        return getSubCategoryidFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       */
+      public GRPCService.PostOuterClass.IdWithIntegerOrBuilder getSubCategoryidOrBuilder() {
+        if (subCategoryidBuilder_ != null) {
+          return subCategoryidBuilder_.getMessageOrBuilder();
+        } else {
+          return subCategoryid_ == null ?
+              GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance() : subCategoryid_;
+        }
+      }
+      /**
+       * <code>.post.IdWithInteger subCategoryid = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.PostOuterClass.IdWithInteger, GRPCService.PostOuterClass.IdWithInteger.Builder, GRPCService.PostOuterClass.IdWithIntegerOrBuilder> 
+          getSubCategoryidFieldBuilder() {
+        if (subCategoryidBuilder_ == null) {
+          subCategoryidBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              GRPCService.PostOuterClass.IdWithInteger, GRPCService.PostOuterClass.IdWithInteger.Builder, GRPCService.PostOuterClass.IdWithIntegerOrBuilder>(
+                  getSubCategoryid(),
+                  getParentForChildren(),
+                  isClean());
+          subCategoryid_ = null;
+        }
+        return subCategoryidBuilder_;
+      }
+
+      private GRPCService.PostOuterClass.PostObj postObj_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.PostOuterClass.PostObj, GRPCService.PostOuterClass.PostObj.Builder, GRPCService.PostOuterClass.PostObjOrBuilder> postObjBuilder_;
+      /**
+       * <code>.post.PostObj postObj = 2;</code>
+       */
+      public boolean hasPostObj() {
+        return postObjBuilder_ != null || postObj_ != null;
+      }
+      /**
+       * <code>.post.PostObj postObj = 2;</code>
+       */
+      public GRPCService.PostOuterClass.PostObj getPostObj() {
+        if (postObjBuilder_ == null) {
+          return postObj_ == null ? GRPCService.PostOuterClass.PostObj.getDefaultInstance() : postObj_;
+        } else {
+          return postObjBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.post.PostObj postObj = 2;</code>
+       */
+      public Builder setPostObj(GRPCService.PostOuterClass.PostObj value) {
+        if (postObjBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postObj_ = value;
+          onChanged();
+        } else {
+          postObjBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.PostObj postObj = 2;</code>
+       */
+      public Builder setPostObj(
+          GRPCService.PostOuterClass.PostObj.Builder builderForValue) {
+        if (postObjBuilder_ == null) {
+          postObj_ = builderForValue.build();
+          onChanged();
+        } else {
+          postObjBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.PostObj postObj = 2;</code>
+       */
+      public Builder mergePostObj(GRPCService.PostOuterClass.PostObj value) {
+        if (postObjBuilder_ == null) {
+          if (postObj_ != null) {
+            postObj_ =
+              GRPCService.PostOuterClass.PostObj.newBuilder(postObj_).mergeFrom(value).buildPartial();
+          } else {
+            postObj_ = value;
+          }
+          onChanged();
+        } else {
+          postObjBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.PostObj postObj = 2;</code>
+       */
+      public Builder clearPostObj() {
+        if (postObjBuilder_ == null) {
+          postObj_ = null;
+          onChanged();
+        } else {
+          postObj_ = null;
+          postObjBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.post.PostObj postObj = 2;</code>
+       */
+      public GRPCService.PostOuterClass.PostObj.Builder getPostObjBuilder() {
+        
+        onChanged();
+        return getPostObjFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.post.PostObj postObj = 2;</code>
+       */
+      public GRPCService.PostOuterClass.PostObjOrBuilder getPostObjOrBuilder() {
+        if (postObjBuilder_ != null) {
+          return postObjBuilder_.getMessageOrBuilder();
+        } else {
+          return postObj_ == null ?
+              GRPCService.PostOuterClass.PostObj.getDefaultInstance() : postObj_;
+        }
+      }
+      /**
+       * <code>.post.PostObj postObj = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.PostOuterClass.PostObj, GRPCService.PostOuterClass.PostObj.Builder, GRPCService.PostOuterClass.PostObjOrBuilder> 
+          getPostObjFieldBuilder() {
+        if (postObjBuilder_ == null) {
+          postObjBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              GRPCService.PostOuterClass.PostObj, GRPCService.PostOuterClass.PostObj.Builder, GRPCService.PostOuterClass.PostObjOrBuilder>(
+                  getPostObj(),
+                  getParentForChildren(),
+                  isClean());
+          postObj_ = null;
+        }
+        return postObjBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:post.TransferPostWithSubcategoryId)
+    }
+
+    // @@protoc_insertion_point(class_scope:post.TransferPostWithSubcategoryId)
+    private static final GRPCService.PostOuterClass.TransferPostWithSubcategoryId DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.PostOuterClass.TransferPostWithSubcategoryId();
+    }
+
+    public static GRPCService.PostOuterClass.TransferPostWithSubcategoryId getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TransferPostWithSubcategoryId>
+        PARSER = new com.google.protobuf.AbstractParser<TransferPostWithSubcategoryId>() {
+      @java.lang.Override
+      public TransferPostWithSubcategoryId parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TransferPostWithSubcategoryId(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TransferPostWithSubcategoryId> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TransferPostWithSubcategoryId> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.PostOuterClass.TransferPostWithSubcategoryId getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DateCreatedOrBuilder extends
       // @@protoc_insertion_point(interface_extends:post.DateCreated)
       com.google.protobuf.MessageOrBuilder {
@@ -3110,6 +4387,16 @@ public final class PostOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_post_PostObj_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_post_IdWithInteger_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_post_IdWithInteger_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_post_TransferPostWithSubcategoryId_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_post_TransferPostWithSubcategoryId_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_post_DateCreated_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3131,9 +4418,13 @@ public final class PostOuterClass {
       "\010 \001(\t\022\035\n\006writer\030\t \001(\0132\r.user.UserObj\022\037\n\006" +
       "images\030\n \003(\0132\017.image.ImageObj\022&\n\013dateCre" +
       "ated\030\013 \001(\0132\021.post.DateCreated\022%\n\010comment" +
-      "s\030\014 \003(\0132\023.comment.CommentObj\"7\n\013DateCrea" +
-      "ted\022\013\n\003day\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030" +
-      "\003 \001(\0052/\n\004Post\022\'\n\007AddPost\022\r.post.PostObj\032" +
+      "s\030\014 \003(\0132\023.comment.CommentObj\"\033\n\rIdWithIn" +
+      "teger\022\n\n\002id\030\001 \001(\005\"k\n\035TransferPostWithSub" +
+      "categoryId\022*\n\rsubCategoryid\030\001 \001(\0132\023.post" +
+      ".IdWithInteger\022\036\n\007postObj\030\002 \001(\0132\r.post.P" +
+      "ostObj\"7\n\013DateCreated\022\013\n\003day\030\001 \001(\005\022\r\n\005mo" +
+      "nth\030\002 \001(\005\022\014\n\004year\030\003 \001(\0052E\n\004Post\022=\n\007AddPo" +
+      "st\022#.post.TransferPostWithSubcategoryId\032" +
       "\r.post.PostObjB\r\n\013GRPCServiceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
@@ -3157,8 +4448,20 @@ public final class PostOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_PostObj_descriptor,
         new java.lang.String[] { "Id", "Title", "Description", "Price", "Address", "Condition", "PhoneNumber", "Email", "Writer", "Images", "DateCreated", "Comments", });
-    internal_static_post_DateCreated_descriptor =
+    internal_static_post_IdWithInteger_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_post_IdWithInteger_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_post_IdWithInteger_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_post_TransferPostWithSubcategoryId_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_post_TransferPostWithSubcategoryId_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_post_TransferPostWithSubcategoryId_descriptor,
+        new java.lang.String[] { "SubCategoryid", "PostObj", });
+    internal_static_post_DateCreated_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_post_DateCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_DateCreated_descriptor,
