@@ -12,7 +12,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<IUserService, UserHttpClient>();
 builder.Services.AddScoped<IAuthService, AuthServiceImpl>();
-
+builder.Services.AddScoped<IPostService, PostHttpClient>();
 
 var app = builder.Build();
 
