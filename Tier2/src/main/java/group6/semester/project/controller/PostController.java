@@ -15,12 +15,11 @@ public class PostController {
         this.postService = postService;
     }
 
-    @PostMapping(value = "/post{subForumId:int}")
-
-    public ResponseEntity addPost(@RequestBody Post post, @PathVariable int subForumId){
+    @PostMapping(value = "/post/{subCategoryId:int}")
+    public ResponseEntity addPost(@RequestBody Post post, @PathVariable int subCategoryId){
 
         try {
-            Post addedPost = postService.addPost(post, subForumId);
+            Post addedPost = postService.addPost(post, subCategoryId);
             return ResponseEntity.ok(addedPost);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_ACCEPTABLE);
