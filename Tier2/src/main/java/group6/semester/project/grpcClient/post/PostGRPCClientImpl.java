@@ -3,9 +3,11 @@ package group6.semester.project.grpcClient.post;
 import GRPCService.PostGrpc;
 import GRPCService.PostOuterClass;
 import GRPCService.UserGrpc;
+import group6.semester.project.grpcClient.GrpcConversionUtil;
 import group6.semester.project.model.Post;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.internal.GrpcUtil;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,8 +29,15 @@ public class PostGRPCClientImpl implements PostClient {
     }
 
     @Override
-    public Post addPost(Post post) {
-        return null;
+    public Post addPost(Post post, int subCategoryId) {
+
+        PostOuterClass.PostObj postObj = GrpcConversionUtil.getGrpcPostFromOurPost(post);
+        PostOuterClass.IdWithInteger id = PostOuterClass.IdWithInteger.newBuilder().setId(subCategoryId).build();
+
+        PostOuterClass.TransferPostWithSubcategoryId transferPostWithSubcategoryId = PostOuterClass.TransferPostWithSubcategoryId.newBuilder().setPostObj(postObj).setSubCategoryid(id).build();
+
+        PostOuterClass.PostObj postObj1 = postBlockingStub.addPost(transferPostWithSubcategoryId);
+        return GrpcConversionUtil.getPostFromGrpcPost(postObj1);
     }
 
 

@@ -12,11 +12,11 @@ public class PostProtoImpl : Post.PostBase {
         _postService = postService;
     }
 
+    
     public async override Task<PostObj> AddPost(PostObj request, ServerCallContext context) {
-        // todo the conversion here...
         Entities.Models.Post post = ConvertGRPC.ConvertPostObjToPost(request);
         Entities.Models.Post postFromServer=await _postService.AddPost(post);
-       return ConvertPostToPostObj(postFromServer);
+       return ConvertGRPC.ConvertPostToPostObj(postFromServer);
     }
 
  
