@@ -7,4 +7,6 @@ public interface IPostService {
     Task<List<Category>> GetAllCategories();
 
     Task<List<Post>> GetAllPosyByUserName(string userName);
+
+    Task<List<Post>> GetAllPostBySubCategory(int subcategoryId);
 }
