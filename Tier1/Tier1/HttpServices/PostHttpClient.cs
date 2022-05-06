@@ -8,14 +8,31 @@ public class PostHttpClient : IPostService {
     public async Task<Post> AddPostAsync(int subCategoryId, Post postToAdd) {
         try {
             string client =await ClientAPI.getContent(Methods.Post, $"/post/{subCategoryId}", postToAdd);
-            Post postFromServer = JsonSerializer.Deserialize<Post>(client, new JsonSerializerOptions() {
-                PropertyNameCaseInsensitive = true
-            }) !;
+            Post postFromServer = GetDeserialized<Post>(client);
             return postFromServer;
         }
         catch (Exception e) {
             throw new Exception(e.Message);
         }
 
+    }
+
+    public async Task<List<Category>> GetALlCategoriesAsync() {
+        try {
+            string client = await ClientAPI.getContent(Methods.Get, "/allCategories");
+            List<Category> list = GetDeserialized<List<Category>>(client);
+            return list;
+        }
+        catch (Exception e) {
+            throw new Exception(e.Message);
+        }
+
+    }
+
+    private T GetDeserialized<T>(string jsonFormat) {
+        T obj = JsonSerializer.Deserialize<T>(jsonFormat, new JsonSerializerOptions() {
+            PropertyNameCaseInsensitive = true
+        }) !;
+        return obj;
     }
 }

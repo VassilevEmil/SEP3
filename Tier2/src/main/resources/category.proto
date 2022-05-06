@@ -7,11 +7,16 @@ import "subcategory.proto";
 
 package category;
 
-service category{
-
+service Category{
+  rpc GetAllCategories(Empty) returns (ListOfCategoryObj);
 }
 message CategoryObj{
-  int32 id =1;
-  string name =2;
-  repeated subcategory.SubcategoryObj subCategories =3;
+  int32 id = 1;
+  string name = 2;
+  repeated subcategory.SubcategoryObj subCategories = 3;
+}
+message ListOfCategoryObj{
+  repeated CategoryObj allCategories = 1;
+}
+message Empty{
 }

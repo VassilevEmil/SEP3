@@ -41,7 +41,7 @@ public class UserProtoImpl : User.UserBase {
     }
 
 
-    public override async Task<UserObj> GetUser(Username request, ServerCallContext context) {
+    public override Task<UserObj> GetUser(Username request, ServerCallContext context) {
         try {
             Entities.Models.User? userFromDatabase = _service.GetUser(request.UserName).Result;
             if (userFromDatabase == null) {
@@ -55,8 +55,8 @@ public class UserProtoImpl : User.UserBase {
                 LastName = userFromDatabase.LastName,
                 Role = userFromDatabase.Role
             };
-            return userToSend;
-        }
+            return Task.FromResult(userToSend);
+        }             
         catch (Exception e) {
             Console.WriteLine(e.Message + "\n\n\n");
             throw new RpcException(new Status(StatusCode.NotFound, e.Message));

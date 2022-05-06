@@ -23,4 +23,8 @@ public class PostDAOImpl : IPostService {
         await _context.SaveChangesAsync();
         return entityEntry.Entity;
     }
+
+    public Task<List<Category>> GetAllCategories() {
+        return Task.FromResult(_context.Categories.ToList());
+    }
 }
