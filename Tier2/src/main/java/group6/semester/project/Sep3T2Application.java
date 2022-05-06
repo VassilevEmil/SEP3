@@ -3,6 +3,7 @@ package group6.semester.project;
 import group6.semester.project.grpcClient.post.PostGRPCClientImpl;
 
 import group6.semester.project.grpcClient.user.GRPCUserClientImpl;
+import group6.semester.project.model.Category;
 import group6.semester.project.model.Post;
 import group6.semester.project.model.User;
 
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @SpringBootApplication
 
@@ -25,7 +27,20 @@ public class Sep3T2Application {
 //            System.out.println(e.getMessage());
 //        }
 //        testPost();
+
+        testCategory();
+
+        testCategory();
         SpringApplication.run(Sep3T2Application.class, args);
+    }
+
+    private static void testCategory() {
+        PostGRPCClientImpl postGRPCClient = new PostGRPCClientImpl();
+        List<Category> categories = postGRPCClient.getAllCategories();
+        for (Category ca :categories
+        ) {
+            System.out.println(ca.getName());
+        }
     }
 
     private static void testUser() {
