@@ -1,5 +1,6 @@
 ﻿using Entities.Contracts;
 using Entities.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFC.DAOImpl; 
 
@@ -26,5 +27,19 @@ public class PostDAOImpl : IPostService {
 
     public Task<List<Category>> GetAllCategories() {
         return Task.FromResult(_context.Categories.ToList());
+    }
+
+    public Task<List<Post>> GetAllPosyByUserName(string userName)
+    {
+        List<Post> postsByUser = _context.Posts.Where(post => post.Writer.Username.Equals (userName)).Include(post
+            => post.Subcategory).Include(p
+            => p.Subcategory.Category).ToList();
+        return Task.FromResult(postsByUser);
+    }
+
+    public Task<List<Post>> GetAllPostBySubCategory(int subcategoryId)
+    {
+        var postOnSubCategory = _context.Posts.Where(post => post.Subcategory.Id.Equals(subcategoryId)).Include(post => post.Writer.Username).ToList();
+        return Task.FromResult(postOnSubCategory);
     }
 }

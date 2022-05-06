@@ -1,4 +1,6 @@
 ﻿using Entities.Contracts;
+using Entities.Models;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using GRPCService.ProtoImpl.Util;
 
