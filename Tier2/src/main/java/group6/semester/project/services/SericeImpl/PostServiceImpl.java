@@ -2,9 +2,12 @@ package group6.semester.project.services.SericeImpl;
 
 
 import group6.semester.project.grpcClient.post.PostClient;
+import group6.semester.project.model.Category;
 import group6.semester.project.model.Post;
 import group6.semester.project.services.PostService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -29,5 +32,10 @@ public class PostServiceImpl implements PostService {
 //       setSubCategoryid(subCategoryId) .build()
         //todo all the business logics here...
         return postClient.addPost(post, subCategoryId);
+    }
+
+    @Override
+    public List<Category> getAllCategories() {
+        return postClient.getAllCategories();
     }
 }

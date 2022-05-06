@@ -19,12 +19,12 @@ import java.util.Date;
 public class Sep3T2Application {
 
     public static void main(String[] args) {
-        try {
-            testUser();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        testPost();
+//        try {
+//            testUser();
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
+//        testPost();
         SpringApplication.run(Sep3T2Application.class, args);
     }
 

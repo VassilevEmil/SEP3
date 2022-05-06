@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class GRPCUserClientImpl implements UserClient {
-    private UserGrpc.UserBlockingStub userBlockingStub;
+    private UserGrpc.UserBlockingStub    userBlockingStub;
 
     public UserGrpc.UserBlockingStub getUserBlockingStub() {
         if (userBlockingStub == null) {

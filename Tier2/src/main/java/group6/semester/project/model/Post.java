@@ -22,4 +22,12 @@ public class Post {
     private List<Comment> comments;
     private User writer;
 
+    public Post() {
+        title ="";
+        description = "";
+        address="";
+        condition ="";
+        phoneNumber = "";
+        email = "";
+    }
 }

@@ -3,6 +3,7 @@
  */
 package group6.semester.project.grpcClient;
 
+import GRPCService.CategoryOuterClass;
 import GRPCService.PostOuterClass;
 import GRPCService.UserOuterClass;
 import group6.semester.project.model.*;
@@ -238,13 +239,24 @@ public class ConvertGrpc {
      * @param categoryObj The GRPC object that is received from the server.
      * @return A Category object
      */
-    public static Category getCategoryFromGrpcCategory(GRPCService.Category.CategoryObj categoryObj) {
+    public static Category getCategoryFromGrpcCategory(GRPCService.CategoryOuterClass.CategoryObj categoryObj) {
         Category category = new Category();
         category.setId(categoryObj.getId());
         category.setName(categoryObj.getName());
         category.setSubcategories(getListOfSubCategoryFromListOfGrpcSubcatgeories(categoryObj.getSubCategoriesList()));
         return category;
     }
+
+    public static List<Category> getListOfCategoryFromCategory(List<CategoryOuterClass.CategoryObj> categoryObjList){
+        List<Category> categories = new ArrayList<>();
+        for (CategoryOuterClass.CategoryObj i:categoryObjList
+             ) {
+            categories.add(getCategoryFromGrpcCategory(i));
+
+        }
+        return categories;
+    }
+
 
     /**
      * It takes a GRPCService.Subcategory.SubcategoryObj object and returns a Subcategory object

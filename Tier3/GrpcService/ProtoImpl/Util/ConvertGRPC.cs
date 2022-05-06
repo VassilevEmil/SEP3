@@ -90,4 +90,49 @@ public class ConvertGRPC {
 
         return imageObjs;
     }
+
+    public static CategoryObj GetGRPCCategoryFromCategory(Entities.Models.Category category) {
+        CategoryObj categoryObj = new CategoryObj() {
+            Id = category.Id,
+            Name = category.Name,
+            SubCategories = {new RepeatedField<SubcategoryObj>()}
+        };
+        return categoryObj;
+    }
+
+
+    public static RepeatedField<CategoryObj> GetRepeatedFieldOfCategoryObjFromListOfCategory(
+        List<Entities.Models.Category> categories) {
+
+        RepeatedField<CategoryObj> categoryObjs = new RepeatedField<CategoryObj>();
+
+        foreach (Entities.Models.Category category in categories) {
+            categoryObjs.Add(GetGRPCCategoryFromCategory(category));
+            
+        }
+
+        return categoryObjs;
+    }
+
+
+    public static SubcategoryObj GetSubcategoryObjFromSubCategory(Entities.Models.Subcategory subcategory) {
+        SubcategoryObj subcategoryObj = new SubcategoryObj() {
+            Id = subcategory.Id,
+            Name = subcategory.Name,
+            Posts = {new RepeatedField<PostObj>()},
+        };
+        return subcategoryObj;
+    }
+
+
+    private static RepeatedField<SubcategoryObj> GetRepeatedSubCategoryFromListOfSubCategories(
+        ICollection<Subcategory> categorySubcategories) {
+        RepeatedField<SubcategoryObj> subcategories = new RepeatedField<SubcategoryObj>();
+
+        foreach (var subcategory in categorySubcategories) {
+            subcategories.Add(GetSubcategoryObjFromSubCategory(subcategory));
+        }
+
+        return subcategories;
+    }
 }
