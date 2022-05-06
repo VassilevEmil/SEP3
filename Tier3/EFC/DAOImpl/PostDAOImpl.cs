@@ -37,9 +37,9 @@ public class PostDAOImpl : IPostService {
         return Task.FromResult(postsByUser);
     }
 
-    public async Task<List<Post>> GetAllPostBySubCategory(int subcategoryId)
+    public Task<List<Post>> GetAllPostBySubCategory(int subcategoryId)
     {
-        List<Post> postOnSubCategory = _context.Posts.Where(post => post.Subcategory.Id.Equals(subcategoryId)).Include(post => post.Writer.Username).ToList();
-        return postOnSubCategory;
+        var postOnSubCategory = _context.Posts.Where(post => post.Subcategory.Id.Equals(subcategoryId)).Include(post => post.Writer.Username).ToList();
+        return Task.FromResult(postOnSubCategory);
     }
 }
