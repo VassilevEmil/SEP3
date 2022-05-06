@@ -1,4 +1,5 @@
 ﻿using Entities.Contracts;
+using Entities.Models;
 using Grpc.Core;
 using GRPCService.ProtoImpl.Util;
 

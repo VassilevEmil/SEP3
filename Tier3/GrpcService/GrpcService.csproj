@@ -34,5 +34,14 @@
     <ItemGroup>
       <Folder Include="Services" />
     </ItemGroup>
+    <ItemGroup>
+      <Content Include="obj\Debug\net6.0\1255d1a520d30ea4_category.protodep" />
+      <Content Include="obj\Debug\net6.0\1255d1a520d30ea4_comment.protodep" />
+      <Content Include="obj\Debug\net6.0\1255d1a520d30ea4_image.protodep" />
+      <Content Include="obj\Debug\net6.0\1255d1a520d30ea4_post.protodep" />
+      <Content Include="obj\Debug\net6.0\1255d1a520d30ea4_subcategory.protodep" />
+      <Content Include="obj\Debug\net6.0\1255d1a520d30ea4_user.protodep" />
+      <Content Include="obj\Debug\net6.0\apphost" />
+    </ItemGroup>
 
 </Project>

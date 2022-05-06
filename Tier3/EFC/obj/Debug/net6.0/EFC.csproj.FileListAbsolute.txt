@@ -1,0 +1,17 @@
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/bin/Debug/net6.0/EFC.deps.json
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/bin/Debug/net6.0/EFC.runtimeconfig.json
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/bin/Debug/net6.0/EFC.dll
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/bin/Debug/net6.0/EFC.pdb
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/bin/Debug/net6.0/Entities.dll
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/bin/Debug/net6.0/Entities.pdb
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/EFC.csproj.AssemblyReference.cache
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/EFC.GeneratedMSBuildEditorConfig.editorconfig
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/EFC.AssemblyInfoInputs.cache
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/EFC.AssemblyInfo.cs
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/EFC.csproj.CoreCompileInputs.cache
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/EFC.csproj.CopyComplete
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/EFC.dll
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/refint/EFC.dll
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/EFC.pdb
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/EFC.genruntimeconfig.cache
+/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/Debug/net6.0/ref/EFC.dll
