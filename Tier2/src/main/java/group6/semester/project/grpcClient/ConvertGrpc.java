@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class GrpcConversionUtil {
+public class ConvertGrpc {
 
     /**
      * This function takes a User object and converts it into a GRPC UserObj object

@@ -1,7 +1,6 @@
 package group6.semester.project.services.SericeImpl;
 
-import GRPCService.PostOuterClass;
-import group6.semester.project.grpcClient.GrpcConversionUtil;
+
 import group6.semester.project.grpcClient.post.PostClient;
 import group6.semester.project.model.Post;
 import group6.semester.project.services.PostService;

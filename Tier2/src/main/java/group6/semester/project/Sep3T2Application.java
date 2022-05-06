@@ -1,14 +1,15 @@
 package group6.semester.project;
 
 import group6.semester.project.grpcClient.post.PostGRPCClientImpl;
+
 import group6.semester.project.grpcClient.user.GRPCUserClientImpl;
 import group6.semester.project.model.Post;
 import group6.semester.project.model.User;
-import group6.semester.project.services.SericeImpl.UserServiceImpl;
+
 import group6.semester.project.services.UserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
+
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,8 +19,25 @@ import java.util.Date;
 public class Sep3T2Application {
 
     public static void main(String[] args) {
+        try {
+            testUser();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         testPost();
         SpringApplication.run(Sep3T2Application.class, args);
+    }
+
+    private static void testUser() {
+        User user = new User();
+        user.setFirstName("TestFirstName");
+        user.setLastName("TestLastName");
+        user.setUsername("TestUsername12");
+        user.setPassword("TestPassword21");
+        user.setRole("User");
+        GRPCUserClientImpl userClient = new GRPCUserClientImpl();
+        User addUser = userClient.addUser(user);
+        System.out.println(addUser.getUsername());
     }
 
     private static void testPost() {
@@ -27,7 +45,7 @@ public class Sep3T2Application {
         Post post = new Post();
         post.setTitle("hello");
         post.setPrice(10);
-        post.setDescription("Hello again");
+        post.setDescription("testDescription");
         post.setDateCreated(new Date());
         post.setImages(new ArrayList<>());
         post.setAddress("address");
@@ -42,7 +60,8 @@ public class Sep3T2Application {
         user.setLastName("Hero");
         user.setRole("user");
         post.setWriter(user);
-        postGRPCClient.addPost(post,1);
+        Post addPost = postGRPCClient.addPost(post, 1);
+        System.out.println(addPost.getDescription());
 
 
     }

@@ -21,4 +21,5 @@ public class Post {
     private List<Image> images;
     private List<Comment> comments;
     private User writer;
+
 }
