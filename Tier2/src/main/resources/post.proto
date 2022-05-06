@@ -20,7 +20,7 @@ message PostObj{
   string phoneNumber =7;
   string email =8;
   user.UserObj writer =9;
-  repeated image.ImageObj images =10;
+  repeated image.ImageObj  images =10;
   DateCreated dateCreated =11;
    repeated comment.CommentObj comments =12 ;
 

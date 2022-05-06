@@ -10,7 +10,7 @@ public class Post {
     public DateOnly DateCreated { get; set; }
     public int Price { get; set; }
     public string? Address { get; set; }
-    public string Condition { get; set; }
+    public string? Condition { get; set; }
     public string? PhoneNumber { get; set; }
     public string? Email { get; set; }
     public Subcategory Subcategory { get; set; }

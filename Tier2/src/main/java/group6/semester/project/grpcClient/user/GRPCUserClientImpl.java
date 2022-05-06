@@ -29,7 +29,7 @@ public class GRPCUserClientImpl implements UserClient {
                 user.getFirstName()).setLastName(user.getLastName()).setPassword(
                 user.getPassword()).setUsername(user.getUsername()).setRole(
                 "User").build();
-        System.out.println(userObj.getLastName());
+//        System.out.println(userObj.getLastName());
 
         UserOuterClass.UserObj userObjFromServer ;
         try {

@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Component
 @Data
-public class User implements Serializable {
+public class User  {
     private String username;
     private String firstName;
     private String lastName;
