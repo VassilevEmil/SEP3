@@ -66,6 +66,23 @@ D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.cspro
 D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.dll
 D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\ref\HttpServices.dll
 D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.pdb
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.deps.json
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.dll
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\ref\HttpServices.dll
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.pdb
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Contracts.dll
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Entities.dll
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Contracts.pdb
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Entities.pdb
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.csproj.AssemblyReference.cache
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.AssemblyInfoInputs.cache
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.AssemblyInfo.cs
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.csproj.CoreCompileInputs.cache
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.csproj.CopyComplete
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.dll
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\ref\HttpServices.dll
+C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.pdb
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.deps.json
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.dll
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\ref\HttpServices.dll

@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Marian\\.nuget\\packages\\": {}
+    "C:\\Users\\vassi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marian\\Desktop\\VIA UNIVERSITY\\3rd semester\\sep project\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\Users\\Marian\\Desktop\\VIA UNIVERSITY\\3rd semester\\sep project\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
-      "packagesPath": "C:\\Users\\Marian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marian\\Desktop\\VIA UNIVERSITY\\3rd semester\\sep project\\SEP3\\Tier1\\Tier1\\Entities\\obj\\",
+      "projectPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
+      "packagesPath": "C:\\Users\\vassi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier1\\Tier1\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Marian\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\vassi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
