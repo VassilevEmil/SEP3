@@ -267,7 +267,7 @@ public class ConvertGrpc {
     public static Subcategory getSubCategoriesFromGrpcSubCategories(GRPCService.Subcategory.SubcategoryObj subcategoryObj) {
         Subcategory subcategory = new Subcategory();
         subcategory.setId(subcategoryObj.getId());
-        subcategory.setName(subcategory.getName());
+        subcategory.setName(subcategoryObj.getName());
         subcategory.setPosts(getListOfPostFromListOfGrpcPostObjects(subcategoryObj.getPostsList()));
         return subcategory;
 
