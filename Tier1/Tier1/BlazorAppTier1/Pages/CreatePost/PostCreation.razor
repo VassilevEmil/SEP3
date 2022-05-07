@@ -92,7 +92,7 @@ else
                     <div class="form-group">
                       <label class="col-sm-2 control-label" style="color:white" @bind="post.Condition">Condition</label>
                       <div class="col-sm-10">
-                        <input type="email" class="form-control">
+                        <input type="text" class="form-control">
                       </div>
                     </div>
                     <div class="form-group">
@@ -140,6 +140,7 @@ else
       private Post post = new Post();
         private List<Category>? allCategories = new List<Category>();
         private List<Subcategory> _subcategories = new List<Subcategory>();
+      
 
     protected async override Task OnInitializedAsync()
     {
@@ -154,19 +155,24 @@ else
 
       private string test = String.Empty;
       
+      
       private async Task CreatePost()
       {
+        int localId = 0;
         foreach (var item in _subcategories)
         {
+          
           if (item.Name.Equals(test))
           {
+            localId = item.Id;
+            
             post.Subcategory = item;
           }
-
+          
         }
         
-        
-        
+       await  _postService.AddPostAsync(localId, post );
+
         Console.WriteLine(post.Subcategory.Name);
       }
 
