@@ -29,6 +29,30 @@ public class PostHttpClient : IPostService {
 
     }
 
+    public async Task<List<Post>> GetPostsByName(string name)
+    {
+        try {
+            string client = await ClientAPI.getContent(Methods.Get, $"/post/{name}");
+            List<Post> list = GetDeserialized<List<Post>>(client);
+            return list;
+        }
+        catch (Exception e) {
+            throw new Exception(e.Message);
+        }
+    }
+
+    public async Task<List<Post>> GetAllPosts()
+    {
+        try {
+            string client = await ClientAPI.getContent(Methods.Get, $"/post");
+            List<Post> list = GetDeserialized<List<Post>>(client);
+            return list;
+        }
+        catch (Exception e) {
+            throw new Exception(e.Message);
+        }
+    }
+
     private T GetDeserialized<T>(string jsonFormat) {
         T obj = JsonSerializer.Deserialize<T>(jsonFormat, new JsonSerializerOptions() {
             PropertyNameCaseInsensitive = true
