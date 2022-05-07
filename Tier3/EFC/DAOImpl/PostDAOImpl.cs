@@ -29,7 +29,14 @@ public class PostDAOImpl : IPostService {
     }
 
     public Task<List<Category>> GetAllCategories() {
-        return Task.FromResult(_context.Categories.ToList());
+        return Task.FromResult(_context.Categories.
+            Include(category => category.Subcategories)
+            .ThenInclude(subcategory => subcategory.Posts)
+            .ThenInclude(post => post.Writer)
+            .Include(category => category.Subcategories)
+            .ThenInclude(subcategory => subcategory.Posts)
+            .ThenInclude(post => post.Images)
+            .ToList());
     }
 
     public Task<List<Post>> GetAllPosyByUserName(string userName)
