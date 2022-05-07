@@ -1,39 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VIA_Courses\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj": {}
+    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj": {}
   },
   "projects": {
-    "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj": {
+    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj",
+        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj",
         "projectName": "EFC",
-        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj",
-        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
-        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\obj\\",
+        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj",
+        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj"
+              "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj"
               }
             }
           }
@@ -82,28 +76,22 @@
         }
       }
     },
-    "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
-        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -140,39 +128,33 @@
         }
       }
     },
-    "D:\\VIA_Courses\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj": {
+    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj",
+        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj",
         "projectName": "GrpcService",
-        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj",
-        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
-        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier3\\GrpcService\\obj\\",
+        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\GrpcService.csproj",
+        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\GrpcService\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj": {
-                "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj"
+              "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj": {
+                "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj"
               },
-              "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj"
+              "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj"
               }
             }
           }

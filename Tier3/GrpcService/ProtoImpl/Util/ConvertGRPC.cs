@@ -35,7 +35,6 @@ public class ConvertGRPC {
             Email = request.Email,
             Condition = request.Condition,
             Images = GetImagesFromRepetionion(request.Images),
-
             Price = request.Price,
             Title = request.Title,
             Writer = GetUserFromUserObj(request.Writer),
@@ -64,6 +63,16 @@ public class ConvertGRPC {
             PhoneNumber = request.PhoneNumber
         };
         return postObj;
+    }
+
+
+    public static RepeatedField<PostObj> GetRepeatedFieldOfPostFromListOfPosts(List<Entities.Models.Post> posts) {
+        RepeatedField<PostObj> repeatedField = new RepeatedField<PostObj>();
+        foreach (Entities.Models.Post post in posts) {
+            repeatedField.Add(ConvertPostToPostObj(post));
+        }
+
+        return repeatedField;
     }
 
     public static List<Image> GetImagesFromRepetionion(RepeatedField<ImageObj> imageObjs) {
@@ -95,7 +104,7 @@ public class ConvertGRPC {
         CategoryObj categoryObj = new CategoryObj() {
             Id = category.Id,
             Name = category.Name,
-            SubCategories = {new RepeatedField<SubcategoryObj>()}
+            SubCategories = {GetRepeatedSubCategoryFromListOfSubCategories(category.Subcategories)}
         };
         return categoryObj;
     }
@@ -119,7 +128,7 @@ public class ConvertGRPC {
         SubcategoryObj subcategoryObj = new SubcategoryObj() {
             Id = subcategory.Id,
             Name = subcategory.Name,
-            Posts = {new RepeatedField<PostObj>()},
+            Posts = {GetRepeatedFieldOfPostFromListOfPosts(subcategory.Posts.ToList())},
         };
         return subcategoryObj;
     }
