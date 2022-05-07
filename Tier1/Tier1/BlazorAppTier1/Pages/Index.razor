@@ -20,7 +20,7 @@
             <div class="widget border-0">
                 <!--seaching-->
                 <div class="search">
-                    <input class="form-control" type="text" placeholder="Search Keywords">
+                    <input class="form-control" type="text" placeholder="Search by title" @oninput=@(args => UpdateOwnerFilter(args))>
                 </div>
             </div>
             
@@ -310,10 +310,30 @@
 
 @code{
 
+    private List<Post>? allPosts = new List<Post>();
     private List<Category>? allCategories=new List<Category>();
 
     protected async override Task OnInitializedAsync() {
         allCategories = await _postService.GetALlCategoriesAsync();
     }
 
+    private async Task UpdateOwnerFilter(ChangeEventArgs args)
+    {
+        string value = (string)args.Value;
+        if (string.IsNullOrEmpty(value))
+        {
+            await GetNormal();
+            return;
+        }
+        
+        allPosts.Clear();
+        allPosts = await _postService.GetPostsByName(value);
+        
+    }
+    
+    private async Task GetNormal()
+    {
+        allPosts = await _postService.GetAllPosts();
+    }
+    
 }
