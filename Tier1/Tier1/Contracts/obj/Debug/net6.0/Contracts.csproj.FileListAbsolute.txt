@@ -58,3 +58,18 @@ D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.csproj.Copy
 D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.dll
 D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\ref\Contracts.dll
 D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.pdb
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.deps.json
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.dll
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\ref\Contracts.dll
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.pdb
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Entities.dll
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Entities.pdb
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.csproj.AssemblyReference.cache
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfoInputs.cache
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfo.cs
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.csproj.CopyComplete
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.dll
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\ref\Contracts.dll
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.pdb
