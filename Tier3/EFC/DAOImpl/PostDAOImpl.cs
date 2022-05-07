@@ -1,4 +1,7 @@
-﻿using Entities.Contracts;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Entities.Contracts;
 using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 
