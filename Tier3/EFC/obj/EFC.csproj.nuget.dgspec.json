@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/EFC.csproj": {}
+    "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj": {}
   },
   "projects": {
-    "/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/EFC.csproj": {
+    "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/EFC.csproj",
+        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj",
         "projectName": "EFC",
-        "projectPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/EFC.csproj",
-        "packagesPath": "/Users/prabina/.nuget/packages/",
-        "outputPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/EFC/obj/",
+        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj",
+        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/prabina/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj": {
-                "projectPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj"
+              "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj"
               }
             }
           }
@@ -72,26 +78,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj": {
+    "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj",
+        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/Entities.csproj",
-        "packagesPath": "/Users/prabina/.nuget/packages/",
-        "outputPath": "/Users/prabina/Desktop/Development/SEP3/Tier3/Entities/obj/",
+        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/prabina/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -124,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
