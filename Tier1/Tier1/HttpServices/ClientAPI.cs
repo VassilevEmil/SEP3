@@ -43,6 +43,7 @@ public class ClientAPI
                 
                 stringContent = new(JsonSerializer.Serialize(element, new JsonSerializerOptions()
                 {
+                    PropertyNameCaseInsensitive = true,
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                 }), Encoding.UTF8, "application/json");
                 response = await client.PostAsync(host + endpoint, stringContent);
@@ -64,6 +65,7 @@ public class ClientAPI
             case Methods.Patch:
                 stringContent = new(JsonSerializer.Serialize(element, new JsonSerializerOptions()
                 {
+                    PropertyNameCaseInsensitive = true,
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                 }), Encoding.UTF8, "application/json");
                 response = await client.PatchAsync(host + endpoint, stringContent);

@@ -7,12 +7,12 @@ namespace HttpServices;
 public class PostHttpClient : IPostService {
     public async Task<Post> AddPostAsync(int subCategoryId, Post postToAdd) {
         try {
-            string client =await ClientAPI.getContent(Methods.Post, $"/post/{subCategoryId}", postToAdd);
+            string client =await ClientAPI.getContent(Methods.Post, "/post/" +subCategoryId, postToAdd);
             Post postFromServer = GetDeserialized<Post>(client);
             return postFromServer;
         }
         catch (Exception e) {
-            throw new Exception(e.Message);
+            throw new Exception(e.Message + " " + e.StackTrace);
         }
 
     }

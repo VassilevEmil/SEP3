@@ -4,7 +4,9 @@
 @using Entities.Models
 @using Entities.Models
 @using System.Text.Encodings.Web
+@using System.Security.Claims
 @inject IPostService _postService;
+@inject IUserService _UserService;
 
 
 @inject NavigationManager navMgr
@@ -137,6 +139,10 @@ else
 
     @code {
 
+      [CascadingParameter]
+      public Task<AuthenticationState> AuthState { get; set; } = null!;
+      
+      private User? _user = new User();
       private Post post = new Post();
         private List<Category>? allCategories = new List<Category>();
         private List<Subcategory> _subcategories = new List<Subcategory>();
@@ -145,6 +151,19 @@ else
     protected async override Task OnInitializedAsync()
     {
         allCategories = await _postService.GetALlCategoriesAsync();
+      try
+      {
+        AuthenticationState authState = await AuthState;
+        ClaimsPrincipal user = authState.User;
+        if (user.Identity.IsAuthenticated)
+        {
+      //get user clas base on the user identity
+          _user = await _UserService.GetUserAsync(user.Identity.Name);
+        }
+      }
+      catch (Exception e)
+      {
+      }
     }
 
 
@@ -165,15 +184,16 @@ else
           if (item.Name.Equals(test))
           {
             localId = item.Id;
-            
-            post.Subcategory = item;
           }
           
         }
         
-       await  _postService.AddPostAsync(localId, post );
+        post.DateCreated = DateTime.Now;
+        post.Images = new List<Image>();
+        post.Writer = _user;
+        Post localTest = await  _postService.AddPostAsync(localId, post);
 
-        Console.WriteLine(post.Subcategory.Name);
+        Console.WriteLine(localTest.Description);
       }
 
     }
