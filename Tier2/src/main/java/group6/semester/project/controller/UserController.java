@@ -52,5 +52,16 @@ public class UserController {
     }
   }
 
+    @GetMapping(value = "/user/{username}/{password}")
+    @ResponseBody
+    public ResponseEntity getUser(@PathVariable String username, @PathVariable String password){
+        try {
+            User userFromServer = userService.GetUserLogin(username,password);
+            return ResponseEntity.ok(userFromServer);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
 
 }

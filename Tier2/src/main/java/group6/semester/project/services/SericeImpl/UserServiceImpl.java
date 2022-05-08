@@ -84,9 +84,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public User GetUserAsync(String username) {
         validateUsername(username);
-        // todo do the decryption here....
-
         return client.getUser(username);
+    }
+
+    @Override
+    public User GetUserLogin(String username, String password) throws Exception {
+        validateUsername(username);
+        User local = client.getUser(username);
+
+        if(checkPassword(password, local.getPassword()))
+            return local;
+        else return null;
     }
 
     /**

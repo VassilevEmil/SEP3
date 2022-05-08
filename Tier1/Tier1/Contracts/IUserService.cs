@@ -7,6 +7,7 @@ public interface IUserService {
     Task CreateUserAsync(User user);
 
     Task<User> GetUserAsync(string username);
+    Task<User> GetUserLogin(string username, string password);
 
     Task DeleteUser(string id);
 

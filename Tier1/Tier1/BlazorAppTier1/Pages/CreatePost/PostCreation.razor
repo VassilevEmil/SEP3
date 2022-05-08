@@ -11,7 +11,9 @@
 
 @inject NavigationManager navMgr
 
-<br/>
+@attribute [Authorize]
+
+           />
 <br/>
 <br/>   
 
@@ -203,9 +205,9 @@ else
 
     protected async override Task OnInitializedAsync()
     {
-        allCategories = await _postService.GetALlCategoriesAsync();
       try
       {
+        allCategories = await _postService.GetALlCategoriesAsync();
         AuthenticationState authState = await AuthState;
         ClaimsPrincipal user = authState.User;
         if (user.Identity.IsAuthenticated)
@@ -216,6 +218,7 @@ else
       }
       catch (Exception e)
       {
+        Console.WriteLine(e.Message);
       }
     }
 
