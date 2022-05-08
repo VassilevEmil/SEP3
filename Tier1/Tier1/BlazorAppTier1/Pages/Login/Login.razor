@@ -93,7 +93,7 @@
 
         try {
             await _authService.LoginAsync(UsernameLogin, PasswordLogin);
-    // Todo navMgr.NavigateTo("/");    
+            navMgr.NavigateTo("/");    
             errorLabel = $"Hello {UsernameLogin}, whats up buddy??";
         }
         catch (Exception e) {

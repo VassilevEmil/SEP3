@@ -19,10 +19,11 @@ public class PostController {
         this.postService = postService;
     }
 
-    @PostMapping(value = "/post/{subCategoryId:int}")
+    @PostMapping(value = "/post/{subCategoryId}")
     public ResponseEntity addPost(@RequestBody Post post, @PathVariable int subCategoryId){
 
         try {
+            System.out.println(post.getDescription());
             Post addedPost = postService.addPost(post, subCategoryId);
             return ResponseEntity.ok(addedPost);
         } catch (Exception e) {

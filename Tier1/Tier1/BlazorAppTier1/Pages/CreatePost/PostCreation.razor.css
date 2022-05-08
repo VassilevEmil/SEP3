@@ -29,3 +29,10 @@
     padding: 1.25rem;
 }
 
+body{
+    background:#eee;
+}
+#text {
+    resize: none;
+    margin-botton:10px;
+}

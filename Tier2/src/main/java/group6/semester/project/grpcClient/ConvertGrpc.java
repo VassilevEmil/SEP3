@@ -6,6 +6,7 @@ package group6.semester.project.grpcClient;
 import GRPCService.CategoryOuterClass;
 import GRPCService.PostOuterClass;
 import GRPCService.UserOuterClass;
+import com.google.type.DateTime;
 import group6.semester.project.model.*;
 
 import java.util.ArrayList;
@@ -56,7 +57,6 @@ public class ConvertGrpc {
         Post post = new Post();
         post.setId(postObj.getId());
         post.setAddress(postObj.getAddress());
-        post.setComments(getListOfCommentFromGrpcListOfComments(postObj.getCommentsList()));
         post.setCondition(postObj.getCondition());
         post.setPhoneNumber(postObj.getPhoneNumber());
         post.setDescription(postObj.getDescription());
@@ -65,7 +65,7 @@ public class ConvertGrpc {
         post.setPrice(postObj.getPrice());
         post.setTitle(postObj.getTitle());
         post.setImages(getListOfImageFromListOfGrpcImages(postObj.getImagesList()));
-        post.setDateCreated(new Date(postObj.getDateCreated().getYear(), postObj.getDateCreated().getMonth(), postObj.getDateCreated().getDay()));
+        post.setDateCreated( null);
         return post;
     }
 
@@ -80,7 +80,7 @@ public class ConvertGrpc {
                 .setId(post.getId())
                 .setAddress(post.getAddress()).setCondition(post.getCondition())
                 .setDateCreated(getDateCreatedFromYearMonthDay(post.getDateCreated().getYear(), post.getDateCreated().getMonth(), post.getDateCreated().getDay()))
-                .addAllComments(getListOfGRPCCommentsFromOurListOfComments(post.getComments()))
+                .addAllComments(getListOfGRPCCommentsFromOurListOfComments(new ArrayList<>()))
                 .setTitle(post.getTitle()).setPrice(post.getPrice())
                 . setDescription(post.getDescription())
                 .setPhoneNumber(post.getPhoneNumber())

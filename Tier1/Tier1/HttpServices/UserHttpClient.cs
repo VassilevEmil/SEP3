@@ -40,15 +40,25 @@ public class UserHttpClient : IUserService
         {
             throw new Exception(e.Message);
         }
+    }
 
-        // The following code is for testing....
-        // return new User() {
-        //     Username = "Sachin",
-        //     Password = "helloThere12",
-        //     FirstName = "Sachin",
-        //     LastName = "Baral",
-        //     Role = "User"
-        // };
+    public async Task<User> GetUserLogin(string username, string password)
+    {
+        try
+        {
+            string content = await ClientAPI.getContent(Methods.Get, $"/user/{username}/{password}");
+            
+            User user  = JsonSerializer.Deserialize<User>(content, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            })!;
+            return user;
+
+        }
+        catch (Exception e)
+        {
+            throw new Exception(e.Message);
+        }
     }
 
     public Task DeleteUser(string id)
