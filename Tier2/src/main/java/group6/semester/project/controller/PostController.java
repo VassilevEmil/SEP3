@@ -27,6 +27,7 @@ public class PostController {
             Post addedPost = postService.addPost(post, subCategoryId);
             return ResponseEntity.ok(addedPost);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_ACCEPTABLE);
         }
     }

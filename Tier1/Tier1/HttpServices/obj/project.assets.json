@@ -87,19 +87,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vassi\\.nuget\\packages\\": {}
+    "C:\\Users\\nepal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier1\\Tier1\\HttpServices\\HttpServices.csproj",
+      "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\HttpServices\\HttpServices.csproj",
       "projectName": "HttpServices",
-      "projectPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier1\\Tier1\\HttpServices\\HttpServices.csproj",
-      "packagesPath": "C:\\Users\\vassi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier1\\Tier1\\HttpServices\\obj\\",
+      "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\HttpServices\\HttpServices.csproj",
+      "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\HttpServices\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vassi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -111,11 +111,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj": {
-              "projectPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj"
+            "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj": {
+              "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj"
             },
-            "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj"
+            "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj"
             }
           }
         }

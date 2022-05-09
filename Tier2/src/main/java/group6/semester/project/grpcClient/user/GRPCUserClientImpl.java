@@ -2,6 +2,7 @@ package group6.semester.project.grpcClient.user;
 
 import GRPCService.UserGrpc;
 import GRPCService.UserOuterClass;
+import group6.semester.project.grpcClient.ManagedChannelGetter;
 import group6.semester.project.model.User;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -10,11 +11,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class GRPCUserClientImpl implements UserClient {
-    private UserGrpc.UserBlockingStub    userBlockingStub;
+    private UserGrpc.UserBlockingStub userBlockingStub;
 
     public UserGrpc.UserBlockingStub getUserBlockingStub() {
         if (userBlockingStub == null) {
-            ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 5250).usePlaintext().build();
+            ManagedChannel managedChannel = ManagedChannelGetter.getManagedChannel();
             userBlockingStub = UserGrpc.newBlockingStub(managedChannel);
         }
         return userBlockingStub;

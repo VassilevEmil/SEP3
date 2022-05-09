@@ -13,9 +13,9 @@ public class Post {
     public string? Condition { get; set; }
     public string? PhoneNumber { get; set; }
     public string? Email { get; set; }
-    public Subcategory Subcategory { get; set; }
-    public ICollection<Image> Images { get; set; }
-    public User Writer { get; set; }
+    public Subcategory? Subcategory { get; set; }
+    public ICollection<Image>? Images { get; set; }
+    public User? Writer { get; set; }
 
 
 
