@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj": {}
+    "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\EFC\\EFC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj": {
+    "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\EFC\\EFC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj",
+        "projectUniqueName": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\EFC\\EFC.csproj",
         "projectName": "EFC",
-        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj",
-        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\obj\\",
+        "projectPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\EFC\\EFC.csproj",
+        "packagesPath": "C:\\Users\\vassi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\EFC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\vassi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj"
+              "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\Entities\\Entities.csproj"
               }
             }
           }
@@ -76,17 +76,17 @@
         }
       }
     },
-    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+    "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\vassi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\vassi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
