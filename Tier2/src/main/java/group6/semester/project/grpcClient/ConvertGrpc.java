@@ -10,7 +10,6 @@ import com.google.type.DateTime;
 import group6.semester.project.model.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ConvertGrpc {
@@ -79,7 +78,7 @@ public class ConvertGrpc {
         PostOuterClass.PostObj postObj = PostOuterClass.PostObj.newBuilder()
                 .setId(post.getId())
                 .setAddress(post.getAddress()).setCondition(post.getCondition())
-                .setDateCreated(getDateCreatedFromYearMonthDay(post.getDateCreated().getYear(), post.getDateCreated().getMonth(), post.getDateCreated().getDay()))
+                .setDateCreated(getDateCreatedFromYearMonthDay(post.getDateCreated()))
                 .addAllComments(getListOfGRPCCommentsFromOurListOfComments(new ArrayList<>()))
                 .setTitle(post.getTitle()).setPrice(post.getPrice())
                 . setDescription(post.getDescription())
@@ -94,8 +93,8 @@ public class ConvertGrpc {
 
     }
 
-    public static PostOuterClass.DateCreated getDateCreatedFromYearMonthDay(int year, int month,int day){
-        PostOuterClass.DateCreated dateCreated = PostOuterClass.DateCreated.newBuilder().setDay(day).setMonth(month).setYear(year).build();
+    public static PostOuterClass.DateCreated getDateCreatedFromYearMonthDay(Date date){
+        PostOuterClass.DateCreated dateCreated = PostOuterClass.DateCreated.newBuilder().setDay(date.getDay()).setMonth(date.getMonth()).setYear(date.getYear()).build();
         return dateCreated;
 
 

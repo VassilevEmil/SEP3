@@ -5,6 +5,7 @@ import GRPCService.CategoryOuterClass;
 import GRPCService.PostGrpc;
 import GRPCService.PostOuterClass;
 import group6.semester.project.grpcClient.ConvertGrpc;
+import group6.semester.project.grpcClient.ManagedChannelGetter;
 import group6.semester.project.model.Category;
 import group6.semester.project.model.Post;
 import io.grpc.ManagedChannel;
@@ -33,9 +34,10 @@ public class PostGRPCClientImpl implements PostClient {
         }
         return postBlockingStub;
     }
+
     private CategoryGrpc.CategoryBlockingStub getCategoryBlockingStub() {
         if (categoryBlockingStub == null) {
-            ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 5250).usePlaintext().build();
+            ManagedChannel managedChannel = ManagedChannelGetter.getManagedChannel();
             categoryBlockingStub = CategoryGrpc.newBlockingStub(managedChannel);
         }
         return categoryBlockingStub;
@@ -44,16 +46,22 @@ public class PostGRPCClientImpl implements PostClient {
     @Override
     public Post addPost(Post post, int subCategoryId) {
 
+        System.out.println("At post client , before conversion"+post.getDescription());
+
+
+        post.setAddress("Address");
+        System.out.println("\n\n\n"+post+"\n\n\n");
         PostOuterClass.PostObj postObj = ConvertGrpc.getGrpcPostFromOurPost(post);
         PostOuterClass.IdWithInteger id = PostOuterClass.IdWithInteger.newBuilder().setId(subCategoryId).build();
 
         PostOuterClass.TransferPostWithSubcategoryId transferPostWithSubcategoryId = PostOuterClass.TransferPostWithSubcategoryId.newBuilder().setPostObj(postObj).setIdWithInteger(id).build();
         PostOuterClass.PostObj postObj1 = null;
         try {
+            System.out.println("At the add post");
             postObj1 = getPostBlockingStub().addPost(transferPostWithSubcategoryId);
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             disposeStub();
         }
         return getPostFromGrpcPost(postObj1);
@@ -66,7 +74,7 @@ public class PostGRPCClientImpl implements PostClient {
             listOfCategoryObj = getCategoryBlockingStub().getAllCategories(CategoryOuterClass.Empty.newBuilder().build());
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             disposeStub();
         }
         List<CategoryOuterClass.CategoryObj> allCategoriesList = listOfCategoryObj.getAllCategoriesList();
@@ -76,7 +84,7 @@ public class PostGRPCClientImpl implements PostClient {
 
     private void disposeStub() {
         postBlockingStub = null;
-        categoryBlockingStub=null;
+        categoryBlockingStub = null;
     }
 
 

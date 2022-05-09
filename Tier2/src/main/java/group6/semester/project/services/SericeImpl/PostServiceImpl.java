@@ -31,6 +31,8 @@ public class PostServiceImpl implements PostService {
 //        PostOuterClass.TransferPostWithSubcategoryId transferPostWithSubcategoryId = PostOuterClass.TransferPostWithSubcategoryId.newBuilder().setPostObj(postObj).
 //       setSubCategoryid(subCategoryId) .build()
         //todo all the business logics here...
+
+        System.out.println("At post service "+post.getDescription()+ "title :"+post.getTitle());
         return postClient.addPost(post, subCategoryId);
     }
 
