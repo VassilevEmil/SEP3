@@ -29,7 +29,7 @@ public class PostGRPCClientImpl implements PostClient {
      */
     private PostGrpc.PostBlockingStub getPostBlockingStub() {
         if (postBlockingStub == null) {
-            ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 5250).usePlaintext().build();
+            ManagedChannel managedChannel = ManagedChannelGetter.getManagedChannel();
             postBlockingStub = PostGrpc.newBlockingStub(managedChannel);
         }
         return postBlockingStub;
@@ -45,12 +45,6 @@ public class PostGRPCClientImpl implements PostClient {
 
     @Override
     public Post addPost(Post post, int subCategoryId) {
-
-        System.out.println("At post client , before conversion"+post.getDescription());
-
-
-        post.setAddress("Address");
-        System.out.println("\n\n\n"+post+"\n\n\n");
         PostOuterClass.PostObj postObj = ConvertGrpc.getGrpcPostFromOurPost(post);
         PostOuterClass.IdWithInteger id = PostOuterClass.IdWithInteger.newBuilder().setId(subCategoryId).build();
 
