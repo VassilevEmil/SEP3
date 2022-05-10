@@ -128,7 +128,7 @@ public class ConvertGRPC {
         SubcategoryObj subcategoryObj = new SubcategoryObj() {
             Id = subcategory.Id,
             Name = subcategory.Name,
-            Posts = {GetRepeatedFieldOfPostFromListOfPosts(subcategory.Posts.ToList())},
+            Posts = {new List<PostObj>()},
         };
         return subcategoryObj;
     }
