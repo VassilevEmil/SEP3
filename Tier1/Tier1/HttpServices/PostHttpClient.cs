@@ -53,6 +53,20 @@ public class PostHttpClient : IPostService {
         }
     }
 
+    public async Task<Post> GetPostDetails(int Id)
+    {
+        try
+        {
+            string client = await ClientAPI.getContent(Methods.Get, $"/id/{Id}");
+            Post post = GetDeserialized<Post>(client);
+            return post;
+        }
+        catch (Exception e)
+        {
+            throw new Exception(e.Message);
+        }
+    }
+
     private T GetDeserialized<T>(string jsonFormat) {
         T obj = JsonSerializer.Deserialize<T>(jsonFormat, new JsonSerializerOptions() {
             PropertyNameCaseInsensitive = true

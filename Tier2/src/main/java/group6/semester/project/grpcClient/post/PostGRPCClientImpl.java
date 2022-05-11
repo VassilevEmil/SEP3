@@ -76,6 +76,11 @@ public class PostGRPCClientImpl implements PostClient {
         return categories;
     }
 
+    @Override
+    public Post getPostDetails(int Id) {
+        return  null;
+    }
+
     private void disposeStub() {
         postBlockingStub = null;
         categoryBlockingStub = null;
