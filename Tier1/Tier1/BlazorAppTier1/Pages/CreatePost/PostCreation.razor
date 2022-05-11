@@ -222,10 +222,12 @@ else {
             Month = today.Month,
             Year = today.Year                                                                           
         };
+        if (post.Address ==null) {
+            post.Address = "Address not provided";
+        }
         post.Images = new List<Image>();
         post.Writer = _user;
         Post localTest = await _postService.AddPostAsync(localId, post);
-
         Console.WriteLine(localTest.Description);
     }
 

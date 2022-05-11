@@ -40,7 +40,6 @@ public class ClientAPI
 
                 break;
             case Methods.Post:
-                
                 stringContent = new(JsonSerializer.Serialize(element, new JsonSerializerOptions()
                 {
                     PropertyNameCaseInsensitive = true,

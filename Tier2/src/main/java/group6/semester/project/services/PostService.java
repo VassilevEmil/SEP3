@@ -13,4 +13,5 @@ public interface PostService {
 
     List<Category> getAllCategories();
 
+    List<Post> searchPosts(String title);
 }
