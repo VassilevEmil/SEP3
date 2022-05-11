@@ -8,4 +8,6 @@ public interface IPostService {
 
     Task<List<Post>> GetPostsByName(string name);
     Task<List<Post>> GetAllPosts();
+
+    Task<List<Post>> SearchPosts(string title);
 }

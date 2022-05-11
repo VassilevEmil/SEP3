@@ -23,7 +23,7 @@ public class PostController {
     public ResponseEntity addPost(@RequestBody Post post, @PathVariable int subCategoryId){
 
         try {
-            System.out.println(post.getDescription());
+            System.out.println(post);
             Post addedPost = postService.addPost(post, subCategoryId);
             return ResponseEntity.ok(addedPost);
         } catch (Exception e) {
@@ -38,6 +38,18 @@ public class PostController {
         try {
             List<Category> categories = postService.getAllCategories();
             return ResponseEntity.ok(categories);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);
+        }
+
+    }
+
+    @GetMapping(value = "/search/{title}")
+    @ResponseBody
+    public ResponseEntity searchPosts(@PathVariable String title){
+        try {
+            List<Post> posts = postService.searchPosts(title);
+            return ResponseEntity.ok(posts);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);
         }
