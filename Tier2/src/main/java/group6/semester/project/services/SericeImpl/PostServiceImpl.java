@@ -40,4 +40,6 @@ public class PostServiceImpl implements PostService {
     public List<Category> getAllCategories() {
         return postClient.getAllCategories();
     }
+
+
 }

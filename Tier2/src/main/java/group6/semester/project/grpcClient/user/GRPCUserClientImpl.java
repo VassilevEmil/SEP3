@@ -13,6 +13,12 @@ import org.springframework.stereotype.Service;
 public class GRPCUserClientImpl implements UserClient {
     private UserGrpc.UserBlockingStub userBlockingStub;
 
+
+    /**
+     * If the userBlockingStub is null, create a new ManagedChannel and a new userBlockingStub
+     *
+     * @return A blocking stub.
+     */
     public UserGrpc.UserBlockingStub getUserBlockingStub() {
         if (userBlockingStub == null) {
             ManagedChannel managedChannel = ManagedChannelGetter.getManagedChannel();
@@ -23,6 +29,13 @@ public class GRPCUserClientImpl implements UserClient {
 
 
 
+    /**
+     * It converts a Java object to a Protobuf object, sends it to the server, receives a Protobuf object from the server,
+     * and converts it back to a Java object
+     *
+     * @param user The user object that we want to send to the server.
+     * @return User object
+     */
     @Override
     public User addUser(User user) {
         // Converting User to UserProtoObj and sending it
@@ -56,6 +69,12 @@ public class GRPCUserClientImpl implements UserClient {
     }
 
 
+    /**
+     * It gets a user from the server.
+     *
+     * @param username The username of the user to be retrieved.
+     * @return User object
+     */
     @Override
     public User getUser(String username)  {
         // Sending username to get user from GRpc c#
@@ -65,6 +84,7 @@ public class GRPCUserClientImpl implements UserClient {
         UserOuterClass.UserObj userObjFromServer;
         try {
             userObjFromServer = getUserBlockingStub().getUser(userNameProto);
+
         } catch (StatusRuntimeException e) {
             System.out.println(e.getStatus().getDescription());
             throw new RuntimeException(e.getStatus().getDescription());
@@ -79,6 +99,12 @@ public class GRPCUserClientImpl implements UserClient {
     }
 
     //Converting user object that is sent from server ---
+    /**
+     * It takes a UserOuterClass.UserObj object and returns a User object
+     *
+     * @param userObjFromServer This is the object that is returned from the server.
+     * @return A User object
+     */
     private User getUser(UserOuterClass.UserObj userObjFromServer) {
         User returnedUser = new User();
         returnedUser.setFirstName(userObjFromServer.getFirstName());
