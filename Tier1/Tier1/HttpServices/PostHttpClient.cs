@@ -64,6 +64,7 @@ public class PostHttpClient : IPostService {
         }
     }
 
+
     public async Task<Post> GetPostDetails(int Id)
     {
         try
@@ -77,6 +78,7 @@ public class PostHttpClient : IPostService {
             throw new Exception(e.Message);
         }
     }
+
 
     private T GetDeserialized<T>(string jsonFormat) {
         T obj = JsonSerializer.Deserialize<T>(jsonFormat, new JsonSerializerOptions() {
