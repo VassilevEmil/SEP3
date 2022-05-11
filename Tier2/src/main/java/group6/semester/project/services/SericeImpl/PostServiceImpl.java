@@ -41,5 +41,10 @@ public class PostServiceImpl implements PostService {
         return postClient.getAllCategories();
     }
 
+    @Override
+    public List<Post> searchPosts(String title) {
+        return postClient.searchPosts(title);
+    }
+
 
 }

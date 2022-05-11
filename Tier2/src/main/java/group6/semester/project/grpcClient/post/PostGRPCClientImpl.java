@@ -78,7 +78,22 @@ public class PostGRPCClientImpl implements PostClient {
 
     @Override
     public Post getPostDetails(int Id) {
-        return  null;
+        return null;
+    }
+
+    @Override
+    public List<Post> searchPosts(String title) {
+        PostOuterClass.OnlyString titleToSend = PostOuterClass.OnlyString.newBuilder().setString(title).build();
+        PostOuterClass.ListOfPostObj list = getPostBlockingStub().searchPosts(titleToSend);
+        List<Post> postList = null;
+        try {
+            postList = ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(list.getListList());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            disposeStub();
+        }
+        return postList;
     }
 
     private void disposeStub() {
