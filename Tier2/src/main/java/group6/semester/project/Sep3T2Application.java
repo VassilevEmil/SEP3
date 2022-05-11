@@ -22,12 +22,17 @@ import java.util.List;
 public class Sep3T2Application {
 
     public static void main(String[] args) {
+
+
         SpringApplication.run(Sep3T2Application.class, args);
+        testSearch();
     }
 
-
-
-
+    private static void testSearch() {
+        PostGRPCClientImpl postGRPCClient = new PostGRPCClientImpl();
+        List<Post> posts = postGRPCClient.searchPosts("test");
+        posts.forEach(System.out::println);
+    }
 
 
 

@@ -54,6 +54,10 @@ public class ConvertGrpc {
      */
     public static Post getPostFromGrpcPost(PostOuterClass.PostObj postObj) {
         Post post = new Post();
+        Date date = new Date();
+        date.setDay(postObj.getDateCreated().getDay());
+        date.setMonth(postObj.getDateCreated().getMonth());
+        date.setYear(postObj.getDateCreated().getYear());
         post.setId(postObj.getId());
         post.setAddress(postObj.getAddress());
         post.setCondition(postObj.getCondition());
@@ -64,7 +68,7 @@ public class ConvertGrpc {
         post.setPrice(postObj.getPrice());
         post.setTitle(postObj.getTitle());
         post.setImages(getListOfImageFromListOfGrpcImages(postObj.getImagesList()));
-        post.setDateCreated( null);
+        post.setDateCreated(date);
         return post;
     }
 

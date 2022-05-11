@@ -11,4 +11,8 @@ public interface PostClient {
     Post addPost(Post post, int subCategoryId);
 
     List<Category> getAllCategories();
+
+
+    Post getPostDetails(int id);
+    List<Post> searchPosts(String title);
 }

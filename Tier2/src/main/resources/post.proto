@@ -8,6 +8,7 @@ package post;
 
 service Post{
  rpc AddPost(TransferPostWithSubcategoryId) returns (PostObj);
+ rpc SearchPosts(OnlyString) returns (ListOfPostObj);
 }
 
 message PostObj{
@@ -25,6 +26,11 @@ message PostObj{
    repeated comment.CommentObj comments =12 ;
 
 }
+
+message ListOfPostObj{
+  repeated PostObj list =1;
+}
+
 message IdWithInteger{
   int32 id=1;
 }
@@ -32,6 +38,10 @@ message IdWithInteger{
 message TransferPostWithSubcategoryId{
   IdWithInteger idWithInteger =1;
   PostObj  postObj =2;
+}
+
+message OnlyString{
+  string string =1;
 }
 
 message DateCreated{
