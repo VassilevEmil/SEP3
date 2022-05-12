@@ -1,13 +1,20 @@
 ﻿syntax = "proto3";
 
-option csharp_namespace = "GRPCService";
 import "user.proto";
 import "image.proto";
 import "comment.proto";
+
+option csharp_namespace = "GRPCService";
+
 package post;
 
 service Post{
   rpc AddPost(TransferPostWithSubcategoryId) returns (PostObj);
+  rpc SearchPosts(OnlyString) returns (ListOfPostObj);
+  rpc GetAllPosts(RequestModel) returns (ListOfPostObj);
+}
+
+message RequestModel {
 }
 
 message PostObj{
@@ -20,17 +27,27 @@ message PostObj{
   string phoneNumber =7;
   string email =8;
   user.UserObj writer =9;
-  repeated image.ImageObj images =10;
+  repeated image.ImageObj  images =10;
   DateCreated dateCreated =11;
   repeated comment.CommentObj comments =12 ;
 
 }
+
+message ListOfPostObj{
+  repeated PostObj list =1;
+}
+
+message IdWithInteger{
+  int32 id=1;
+}
+
 message TransferPostWithSubcategoryId{
   IdWithInteger idWithInteger =1;
   PostObj  postObj =2;
 }
-message IdWithInteger{
-  int32 id=1;
+
+message OnlyString{
+  string string =1;
 }
 
 message DateCreated{

@@ -44,6 +44,18 @@ public class ConvertGRPC {
         return post;
     }
 
+
+    public static ListOfPostObj ConvertListPostToObj(List<Entities.Models.Post> request)
+    {
+        ListOfPostObj postObj = new ListOfPostObj();
+        foreach (var item in request)
+        {
+            postObj.List.Add(ConvertPostToPostObj(item));
+        }
+
+        return postObj;
+    }
+    
     public static PostObj ConvertPostToPostObj(Entities.Models.Post request) {
         PostObj postObj = new PostObj() {
             Id = request.Id,

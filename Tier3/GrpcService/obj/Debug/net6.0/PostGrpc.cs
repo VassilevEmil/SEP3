@@ -49,6 +49,12 @@ namespace GRPCService {
     static readonly grpc::Marshaller<global::GRPCService.TransferPostWithSubcategoryId> __Marshaller_post_TransferPostWithSubcategoryId = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.TransferPostWithSubcategoryId.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GRPCService.PostObj> __Marshaller_post_PostObj = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.PostObj.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GRPCService.OnlyString> __Marshaller_post_OnlyString = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.OnlyString.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GRPCService.ListOfPostObj> __Marshaller_post_ListOfPostObj = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.ListOfPostObj.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GRPCService.RequestModel> __Marshaller_post_RequestModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.RequestModel.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::GRPCService.TransferPostWithSubcategoryId, global::GRPCService.PostObj> __Method_AddPost = new grpc::Method<global::GRPCService.TransferPostWithSubcategoryId, global::GRPCService.PostObj>(
@@ -57,6 +63,22 @@ namespace GRPCService {
         "AddPost",
         __Marshaller_post_TransferPostWithSubcategoryId,
         __Marshaller_post_PostObj);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::GRPCService.OnlyString, global::GRPCService.ListOfPostObj> __Method_SearchPosts = new grpc::Method<global::GRPCService.OnlyString, global::GRPCService.ListOfPostObj>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SearchPosts",
+        __Marshaller_post_OnlyString,
+        __Marshaller_post_ListOfPostObj);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::GRPCService.RequestModel, global::GRPCService.ListOfPostObj> __Method_GetAllPosts = new grpc::Method<global::GRPCService.RequestModel, global::GRPCService.ListOfPostObj>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetAllPosts",
+        __Marshaller_post_RequestModel,
+        __Marshaller_post_ListOfPostObj);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -74,6 +96,18 @@ namespace GRPCService {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::GRPCService.ListOfPostObj> SearchPosts(global::GRPCService.OnlyString request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::GRPCService.ListOfPostObj> GetAllPosts(global::GRPCService.RequestModel request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -82,7 +116,9 @@ namespace GRPCService {
     public static grpc::ServerServiceDefinition BindService(PostBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_AddPost, serviceImpl.AddPost).Build();
+          .AddMethod(__Method_AddPost, serviceImpl.AddPost)
+          .AddMethod(__Method_SearchPosts, serviceImpl.SearchPosts)
+          .AddMethod(__Method_GetAllPosts, serviceImpl.GetAllPosts).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -93,6 +129,8 @@ namespace GRPCService {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, PostBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_AddPost, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.TransferPostWithSubcategoryId, global::GRPCService.PostObj>(serviceImpl.AddPost));
+      serviceBinder.AddMethod(__Method_SearchPosts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.OnlyString, global::GRPCService.ListOfPostObj>(serviceImpl.SearchPosts));
+      serviceBinder.AddMethod(__Method_GetAllPosts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.RequestModel, global::GRPCService.ListOfPostObj>(serviceImpl.GetAllPosts));
     }
 
   }
