@@ -69,8 +69,9 @@ public class PostHttpClient : IPostService {
     {
         try
         {
-            string client = await ClientAPI.getContent(Methods.Get, $"/id/{Id}");
+            string client = await ClientAPI.getContent(Methods.Get, $"/PostDetails/{Id}");
             Post post = GetDeserialized<Post>(client);
+            Console.WriteLine(post.Writer.Username);
             return post;
         }
         catch (Exception e)

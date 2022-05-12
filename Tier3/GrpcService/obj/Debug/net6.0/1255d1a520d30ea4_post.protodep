@@ -1,5 +1,0 @@
-obj/Debug/net6.0/Post.cs \
-obj/Debug/net6.0/PostGrpc.cs: Protos/user.proto\
- Protos/image.proto\
- Protos/comment.proto\
- Protos/post.proto

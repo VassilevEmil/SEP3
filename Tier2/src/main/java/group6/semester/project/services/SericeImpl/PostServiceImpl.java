@@ -51,5 +51,10 @@ public class PostServiceImpl implements PostService {
         return postClient.getAllPosts();
     }
 
+    @Override
+    public Post getPostDetails(int Id) {
+        return postClient.getPostDetails(Id);
+    }
+
 
 }

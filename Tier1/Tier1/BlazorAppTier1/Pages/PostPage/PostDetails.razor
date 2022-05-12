@@ -1,4 +1,4 @@
-﻿@page "/PostDetails/"
+﻿@page "/PostDetails/{Id:int}"
 @using Entities.Models
 @using Contracts
 @inject IPostService _postService
@@ -9,8 +9,8 @@
 <div class="section-fluid-main" >
 		<div class="section">
 			<div class="info-wrap mob-margin">
-				<p class="title-up">@_post.Title</p>
-				<h2>Sella Gastro</h2>
+				<p class="title-up">@_user.GetName()</p>
+				<h2>@_post.Title</h2>
 				<h4>@_post.Price</h4>	
 				<div class="section-fluid">
 					<input class="desc-btn" type="radio" id="desc-1" name="desc-btn" checked/>
@@ -84,14 +84,16 @@
     [Parameter]
     public int Id { get; set; }
 
-    private Post _post = new Post();
-
+    private Post? _post = new Post();
+	private User? _user = new User();
+	
 	protected override async Task OnInitializedAsync()
 	{
 
 		try
 		{
 			_post = await _postService.GetPostDetails(Id);
+			_user = _post.Writer;
 		}
 		catch (Exception e)
 		{

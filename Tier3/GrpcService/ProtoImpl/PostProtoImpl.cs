@@ -41,4 +41,10 @@ public class PostProtoImpl : Post.PostBase {
         };
         return listOfPostObj;
     }
+
+    public override async Task<PostObj> GetPostDetails(IdWithInteger Id, ServerCallContext context)
+    {
+        var  post = await _postService.GetPostDetails(Id.Id);
+        return ConvertGRPC.ConvertPostToPostObj(post);
+    }
 }

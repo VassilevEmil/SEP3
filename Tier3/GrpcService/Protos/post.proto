@@ -12,6 +12,7 @@ service Post{
   rpc AddPost(TransferPostWithSubcategoryId) returns (PostObj);
   rpc SearchPosts(OnlyString) returns (ListOfPostObj);
   rpc GetAllPosts(RequestModel) returns (ListOfPostObj);
+  rpc GetPostDetails(IdWithInteger) returns (PostObj);
 }
 
 message RequestModel {

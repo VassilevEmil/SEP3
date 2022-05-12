@@ -123,6 +123,38 @@ public final class PostGrpc {
      return getGetAllPostsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<GRPCService.PostOuterClass.IdWithInteger,
+      GRPCService.PostOuterClass.PostObj> getGetPostDetailsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPostDetails",
+      requestType = GRPCService.PostOuterClass.IdWithInteger.class,
+      responseType = GRPCService.PostOuterClass.PostObj.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<GRPCService.PostOuterClass.IdWithInteger,
+      GRPCService.PostOuterClass.PostObj> getGetPostDetailsMethod() {
+    io.grpc.MethodDescriptor<GRPCService.PostOuterClass.IdWithInteger, GRPCService.PostOuterClass.PostObj> getGetPostDetailsMethod;
+    if ((getGetPostDetailsMethod = PostGrpc.getGetPostDetailsMethod) == null) {
+      synchronized (PostGrpc.class) {
+        if ((getGetPostDetailsMethod = PostGrpc.getGetPostDetailsMethod) == null) {
+          PostGrpc.getGetPostDetailsMethod = getGetPostDetailsMethod = 
+              io.grpc.MethodDescriptor.<GRPCService.PostOuterClass.IdWithInteger, GRPCService.PostOuterClass.PostObj>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "post.Post", "GetPostDetails"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.PostOuterClass.IdWithInteger.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.PostOuterClass.PostObj.getDefaultInstance()))
+                  .setSchemaDescriptor(new PostMethodDescriptorSupplier("GetPostDetails"))
+                  .build();
+          }
+        }
+     }
+     return getGetPostDetailsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -171,6 +203,13 @@ public final class PostGrpc {
       asyncUnimplementedUnaryCall(getGetAllPostsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getPostDetails(GRPCService.PostOuterClass.IdWithInteger request,
+        io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.PostObj> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetPostDetailsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -194,6 +233,13 @@ public final class PostGrpc {
                 GRPCService.PostOuterClass.RequestModel,
                 GRPCService.PostOuterClass.ListOfPostObj>(
                   this, METHODID_GET_ALL_POSTS)))
+          .addMethod(
+            getGetPostDetailsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                GRPCService.PostOuterClass.IdWithInteger,
+                GRPCService.PostOuterClass.PostObj>(
+                  this, METHODID_GET_POST_DETAILS)))
           .build();
     }
   }
@@ -239,6 +285,14 @@ public final class PostGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetAllPostsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getPostDetails(GRPCService.PostOuterClass.IdWithInteger request,
+        io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.PostObj> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetPostDetailsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -278,6 +332,13 @@ public final class PostGrpc {
     public GRPCService.PostOuterClass.ListOfPostObj getAllPosts(GRPCService.PostOuterClass.RequestModel request) {
       return blockingUnaryCall(
           getChannel(), getGetAllPostsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public GRPCService.PostOuterClass.PostObj getPostDetails(GRPCService.PostOuterClass.IdWithInteger request) {
+      return blockingUnaryCall(
+          getChannel(), getGetPostDetailsMethod(), getCallOptions(), request);
     }
   }
 
@@ -322,11 +383,20 @@ public final class PostGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetAllPostsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<GRPCService.PostOuterClass.PostObj> getPostDetails(
+        GRPCService.PostOuterClass.IdWithInteger request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetPostDetailsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ADD_POST = 0;
   private static final int METHODID_SEARCH_POSTS = 1;
   private static final int METHODID_GET_ALL_POSTS = 2;
+  private static final int METHODID_GET_POST_DETAILS = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -356,6 +426,10 @@ public final class PostGrpc {
         case METHODID_GET_ALL_POSTS:
           serviceImpl.getAllPosts((GRPCService.PostOuterClass.RequestModel) request,
               (io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.ListOfPostObj>) responseObserver);
+          break;
+        case METHODID_GET_POST_DETAILS:
+          serviceImpl.getPostDetails((GRPCService.PostOuterClass.IdWithInteger) request,
+              (io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.PostObj>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -421,6 +495,7 @@ public final class PostGrpc {
               .addMethod(getAddPostMethod())
               .addMethod(getSearchPostsMethod())
               .addMethod(getGetAllPostsMethod())
+              .addMethod(getGetPostDetailsMethod())
               .build();
         }
       }
