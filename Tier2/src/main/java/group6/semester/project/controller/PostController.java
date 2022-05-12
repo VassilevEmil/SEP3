@@ -65,6 +65,18 @@ public class PostController {
 
     }
 
+    @GetMapping(value = "PostDetails/{Id}")
+    @ResponseBody
+    public ResponseEntity getPostDetails(@PathVariable int Id){
+        try{
+            Post post = postService.getPostDetails(Id);
+            return ResponseEntity.ok(post);
+        }
+        catch (Exception e){
+            return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
 
 
 }

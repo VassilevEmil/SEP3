@@ -1,6 +1,0 @@
-obj/Debug/net6.0/Subcategory.cs \
-obj/Debug/net6.0/SubcategoryGrpc.cs: Protos/user.proto\
- Protos/image.proto\
- Protos/comment.proto\
- Protos/post.proto\
- Protos/subcategory.proto

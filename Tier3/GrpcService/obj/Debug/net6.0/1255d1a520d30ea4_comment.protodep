@@ -1,3 +1,0 @@
-obj/Debug/net6.0/Comment.cs \
-obj/Debug/net6.0/CommentGrpc.cs: Protos/user.proto\
- Protos/comment.proto

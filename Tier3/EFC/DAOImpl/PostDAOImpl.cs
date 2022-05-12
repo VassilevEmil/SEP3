@@ -54,4 +54,10 @@ public class PostDAOImpl : IPostService {
             .Where(post => post.Title.Contains(titleToSearch))
             .OrderByDescending(post => post.DateCreated).ToListAsync();
     }
+
+    public async Task<Post> GetPostDetails(int Id)
+    {
+        return await _context.Posts.Include(post => post.Images).Include(post => post.Writer)
+            .FirstAsync(post => post.Id.Equals(Id));
+    }
 }

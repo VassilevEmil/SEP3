@@ -6184,12 +6184,14 @@ public final class PostOuterClass {
       "thInteger\030\001 \001(\0132\023.post.IdWithInteger\022\036\n\007" +
       "postObj\030\002 \001(\0132\r.post.PostObj\"\034\n\nOnlyStri" +
       "ng\022\016\n\006string\030\001 \001(\t\"7\n\013DateCreated\022\013\n\003day" +
-      "\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030\003 \001(\0052\263\001\n\004" +
+      "\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030\003 \001(\0052\351\001\n\004" +
       "Post\022=\n\007AddPost\022#.post.TransferPostWithS" +
       "ubcategoryId\032\r.post.PostObj\0224\n\013SearchPos" +
       "ts\022\020.post.OnlyString\032\023.post.ListOfPostOb" +
       "j\0226\n\013GetAllPosts\022\022.post.RequestModel\032\023.p" +
-      "ost.ListOfPostObjB\r\n\013GRPCServiceb\006proto3"
+      "ost.ListOfPostObj\0224\n\016GetPostDetails\022\023.po" +
+      "st.IdWithInteger\032\r.post.PostObjB\r\n\013GRPCS" +
+      "erviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

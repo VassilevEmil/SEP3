@@ -78,10 +78,6 @@ public class PostGRPCClientImpl implements PostClient {
         return categories;
     }
 
-    @Override
-    public Post getPostDetails(int Id) {
-        return null;
-    }
 
     @Override
     public List<Post> searchPosts(String title) {
@@ -96,6 +92,15 @@ public class PostGRPCClientImpl implements PostClient {
             disposeStub();
         }
         return postList;
+    }
+
+    @Override
+    public Post getPostDetails(int Id) {
+        PostOuterClass.IdWithInteger obj = PostOuterClass.IdWithInteger.newBuilder().setId(Id).build();
+        PostOuterClass.PostObj postObj = getPostBlockingStub().getPostDetails(obj);
+        Post post = ConvertGrpc.getPostFromGrpcPost(postObj);
+        System.out.println(post.getWriter().getUsername());
+        return post;
     }
 
     @Override
