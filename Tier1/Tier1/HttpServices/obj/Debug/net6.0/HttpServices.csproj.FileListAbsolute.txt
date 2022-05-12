@@ -49,23 +49,6 @@ C:\Users\vassi\Desktop\adrians assignment\SEP3\Tier1\Tier1\HttpServices\obj\Debu
 C:\Users\vassi\Desktop\adrians assignment\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.dll
 C:\Users\vassi\Desktop\adrians assignment\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\ref\HttpServices.dll
 C:\Users\vassi\Desktop\adrians assignment\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.pdb
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.deps.json
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\ref\HttpServices.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.pdb
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Contracts.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Entities.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Contracts.pdb
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Entities.pdb
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.csproj.AssemblyReference.cache
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.GeneratedMSBuildEditorConfig.editorconfig
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.AssemblyInfoInputs.cache
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.AssemblyInfo.cs
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.csproj.CoreCompileInputs.cache
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.csproj.CopyComplete
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\ref\HttpServices.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.pdb
 C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.deps.json
 C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.dll
 C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\ref\HttpServices.dll
@@ -100,3 +83,20 @@ C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.dll
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\ref\HttpServices.dll
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.pdb
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.deps.json
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\ref\HttpServices.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\HttpServices.pdb
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Contracts.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Entities.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Contracts.pdb
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\bin\Debug\net6.0\Entities.pdb
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.csproj.AssemblyReference.cache
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.AssemblyInfoInputs.cache
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.AssemblyInfo.cs
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.csproj.CoreCompileInputs.cache
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.csproj.CopyComplete
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\ref\HttpServices.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\HttpServices\obj\Debug\net6.0\HttpServices.pdb
