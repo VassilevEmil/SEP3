@@ -43,21 +43,6 @@ C:\Users\vassi\Desktop\adrians assignment\SEP3\Tier1\Tier1\Contracts\obj\Debug\n
 C:\Users\vassi\Desktop\adrians assignment\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.dll
 C:\Users\vassi\Desktop\adrians assignment\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\ref\Contracts.dll
 C:\Users\vassi\Desktop\adrians assignment\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.pdb
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.deps.json
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\ref\Contracts.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.pdb
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Entities.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Entities.pdb
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.csproj.AssemblyReference.cache
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.GeneratedMSBuildEditorConfig.editorconfig
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfoInputs.cache
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfo.cs
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.csproj.CoreCompileInputs.cache
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.csproj.CopyComplete
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\ref\Contracts.dll
-D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.pdb
 C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.deps.json
 C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.dll
 C:\Users\vassi\Desktop\SEP3\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\ref\Contracts.dll
@@ -88,3 +73,18 @@ C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.dll
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\ref\Contracts.dll
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.pdb
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.deps.json
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\ref\Contracts.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Contracts.pdb
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Entities.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\bin\Debug\net6.0\Entities.pdb
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.csproj.AssemblyReference.cache
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfoInputs.cache
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfo.cs
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.csproj.CoreCompileInputs.cache
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.csproj.CopyComplete
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\ref\Contracts.dll
+D:\VIA_Courses\SEP3\Tier1\Tier1\Contracts\obj\Debug\net6.0\Contracts.pdb
