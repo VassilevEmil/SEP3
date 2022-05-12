@@ -67,14 +67,14 @@
                                     </div>
                                     <div class="candidate-list-option">
                                         <ul class="list-unstyled">
-                                            <li><i class="fas fa-user pr-1"></i>@post.Writer</li>
+                                            <li><i class="fas fa-user pr-1"></i>@post.Writer.GetName()</li>
                                             <li><i class="fas fa-map-marker-alt pr-1"></i>@post.Address</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="candidate-list-favourite-time">
                                     <a class="candidate-list-favourite order-2" href="#"><i class="far fa-heart"></i></a>
-                                    <span class="candidate-list-time order-1"><i class="far fa-clock pr-1"></i>@post.DateCreated</span>
+                                    <span class="candidate-list-time order-1"><i class="far fa-clock pr-1"></i>@post.DateCreated.GetDate()</span>
                                 </div>
                             </div>
                         </div>

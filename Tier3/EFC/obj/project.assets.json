@@ -720,32 +720,39 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nepal\\.nuget\\packages\\": {}
+    "C:\\Users\\Adrian\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj",
+      "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj",
       "projectName": "EFC",
-      "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj",
-      "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\obj\\",
+      "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\EFC.csproj",
+      "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
+      "outputPath": "D:\\VIA_Courses\\SEP3\\Tier3\\EFC\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj"
+            "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\VIA_Courses\\SEP3\\Tier3\\Entities\\Entities.csproj"
             }
           }
         }

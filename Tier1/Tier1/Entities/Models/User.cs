@@ -1,4 +1,4 @@
-﻿namespace Entities.Models; 
+﻿namespace Entities.Models;
 
 public class User
 {
@@ -7,5 +7,10 @@ public class User
     public string? LastName { get; set; }
     public string? Password { get; set; }
     public string? Role { get; set; }
+
+    public string GetName()
+    {
+        return $"{FirstName} {LastName}";
+    }
 
 }
