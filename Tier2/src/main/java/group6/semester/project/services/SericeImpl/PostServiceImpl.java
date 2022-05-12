@@ -46,5 +46,10 @@ public class PostServiceImpl implements PostService {
         return postClient.searchPosts(title);
     }
 
+    @Override
+    public List<Post> getAllPosts() {
+        return postClient.getAllPosts();
+    }
+
 
 }

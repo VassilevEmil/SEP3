@@ -10,8 +10,10 @@ import group6.semester.project.model.Category;
 import group6.semester.project.model.Post;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static group6.semester.project.grpcClient.ConvertGrpc.getPostFromGrpcPost;
@@ -85,6 +87,21 @@ public class PostGRPCClientImpl implements PostClient {
     public List<Post> searchPosts(String title) {
         PostOuterClass.OnlyString titleToSend = PostOuterClass.OnlyString.newBuilder().setString(title).build();
         PostOuterClass.ListOfPostObj list = getPostBlockingStub().searchPosts(titleToSend);
+        List<Post> postList = null;
+        try {
+            postList = ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(list.getListList());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            disposeStub();
+        }
+        return postList;
+    }
+
+    @Override
+    public List<Post> getAllPosts() {
+        PostOuterClass.RequestModel requestModal = PostOuterClass.RequestModel.newBuilder().build();
+        PostOuterClass.ListOfPostObj list = getPostBlockingStub().getAllPosts(requestModal);
         List<Post> postList = null;
         try {
             postList = ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(list.getListList());

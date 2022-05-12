@@ -32,6 +32,15 @@ public class PostController {
         }
     }
 
+    @GetMapping(value = "/post")
+        public ResponseEntity<List<Post>> getAllPosts() throws RuntimeException
+    {
+
+                List<Post> posts = postService.getAllPosts();
+                return ResponseEntity.ok(posts);
+
+    }
+
     @GetMapping(value = "/allCategories")
     @ResponseBody
     public ResponseEntity getAllCategories(){

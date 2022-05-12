@@ -14,6 +14,418 @@ public final class PostOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface RequestModelOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:post.RequestModel)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code post.RequestModel}
+   */
+  public  static final class RequestModel extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:post.RequestModel)
+      RequestModelOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RequestModel.newBuilder() to construct.
+    private RequestModel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RequestModel() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RequestModel(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.PostOuterClass.internal_static_post_RequestModel_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.PostOuterClass.internal_static_post_RequestModel_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.PostOuterClass.RequestModel.class, GRPCService.PostOuterClass.RequestModel.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.PostOuterClass.RequestModel)) {
+        return super.equals(obj);
+      }
+      GRPCService.PostOuterClass.RequestModel other = (GRPCService.PostOuterClass.RequestModel) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.PostOuterClass.RequestModel parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.RequestModel parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.PostOuterClass.RequestModel prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code post.RequestModel}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:post.RequestModel)
+        GRPCService.PostOuterClass.RequestModelOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.PostOuterClass.internal_static_post_RequestModel_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.PostOuterClass.internal_static_post_RequestModel_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.PostOuterClass.RequestModel.class, GRPCService.PostOuterClass.RequestModel.Builder.class);
+      }
+
+      // Construct using GRPCService.PostOuterClass.RequestModel.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.PostOuterClass.internal_static_post_RequestModel_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.RequestModel getDefaultInstanceForType() {
+        return GRPCService.PostOuterClass.RequestModel.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.RequestModel build() {
+        GRPCService.PostOuterClass.RequestModel result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.RequestModel buildPartial() {
+        GRPCService.PostOuterClass.RequestModel result = new GRPCService.PostOuterClass.RequestModel(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.PostOuterClass.RequestModel) {
+          return mergeFrom((GRPCService.PostOuterClass.RequestModel)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.PostOuterClass.RequestModel other) {
+        if (other == GRPCService.PostOuterClass.RequestModel.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.PostOuterClass.RequestModel parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.PostOuterClass.RequestModel) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:post.RequestModel)
+    }
+
+    // @@protoc_insertion_point(class_scope:post.RequestModel)
+    private static final GRPCService.PostOuterClass.RequestModel DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.PostOuterClass.RequestModel();
+    }
+
+    public static GRPCService.PostOuterClass.RequestModel getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RequestModel>
+        PARSER = new com.google.protobuf.AbstractParser<RequestModel>() {
+      @java.lang.Override
+      public RequestModel parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RequestModel(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RequestModel> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RequestModel> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.PostOuterClass.RequestModel getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface PostObjOrBuilder extends
       // @@protoc_insertion_point(interface_extends:post.PostObj)
       com.google.protobuf.MessageOrBuilder {
@@ -5714,6 +6126,11 @@ public final class PostOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_post_RequestModel_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_post_RequestModel_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_post_PostObj_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -5753,25 +6170,26 @@ public final class PostOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\npost.proto\022\004post\032\nuser.proto\032\013image.pr" +
-      "oto\032\rcomment.proto\"\237\002\n\007PostObj\022\n\n\002id\030\001 \001" +
-      "(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r" +
-      "\n\005price\030\004 \001(\005\022\017\n\007address\030\005 \001(\t\022\021\n\tcondit" +
-      "ion\030\006 \001(\t\022\023\n\013phoneNumber\030\007 \001(\t\022\r\n\005email\030" +
-      "\010 \001(\t\022\035\n\006writer\030\t \001(\0132\r.user.UserObj\022\037\n\006" +
-      "images\030\n \003(\0132\017.image.ImageObj\022&\n\013dateCre" +
-      "ated\030\013 \001(\0132\021.post.DateCreated\022%\n\010comment" +
-      "s\030\014 \003(\0132\023.comment.CommentObj\",\n\rListOfPo" +
-      "stObj\022\033\n\004list\030\001 \003(\0132\r.post.PostObj\"\033\n\rId" +
-      "WithInteger\022\n\n\002id\030\001 \001(\005\"k\n\035TransferPostW" +
-      "ithSubcategoryId\022*\n\ridWithInteger\030\001 \001(\0132" +
-      "\023.post.IdWithInteger\022\036\n\007postObj\030\002 \001(\0132\r." +
-      "post.PostObj\"\034\n\nOnlyString\022\016\n\006string\030\001 \001" +
-      "(\t\"7\n\013DateCreated\022\013\n\003day\030\001 \001(\005\022\r\n\005month\030" +
-      "\002 \001(\005\022\014\n\004year\030\003 \001(\0052{\n\004Post\022=\n\007AddPost\022#" +
-      ".post.TransferPostWithSubcategoryId\032\r.po" +
-      "st.PostObj\0224\n\013SearchPosts\022\020.post.OnlyStr" +
-      "ing\032\023.post.ListOfPostObjB\r\n\013GRPCServiceb" +
-      "\006proto3"
+      "oto\032\rcomment.proto\"\016\n\014RequestModel\"\237\002\n\007P" +
+      "ostObj\022\n\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013des" +
+      "cription\030\003 \001(\t\022\r\n\005price\030\004 \001(\005\022\017\n\007address" +
+      "\030\005 \001(\t\022\021\n\tcondition\030\006 \001(\t\022\023\n\013phoneNumber" +
+      "\030\007 \001(\t\022\r\n\005email\030\010 \001(\t\022\035\n\006writer\030\t \001(\0132\r." +
+      "user.UserObj\022\037\n\006images\030\n \003(\0132\017.image.Ima" +
+      "geObj\022&\n\013dateCreated\030\013 \001(\0132\021.post.DateCr" +
+      "eated\022%\n\010comments\030\014 \003(\0132\023.comment.Commen" +
+      "tObj\",\n\rListOfPostObj\022\033\n\004list\030\001 \003(\0132\r.po" +
+      "st.PostObj\"\033\n\rIdWithInteger\022\n\n\002id\030\001 \001(\005\"" +
+      "k\n\035TransferPostWithSubcategoryId\022*\n\ridWi" +
+      "thInteger\030\001 \001(\0132\023.post.IdWithInteger\022\036\n\007" +
+      "postObj\030\002 \001(\0132\r.post.PostObj\"\034\n\nOnlyStri" +
+      "ng\022\016\n\006string\030\001 \001(\t\"7\n\013DateCreated\022\013\n\003day" +
+      "\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030\003 \001(\0052\263\001\n\004" +
+      "Post\022=\n\007AddPost\022#.post.TransferPostWithS" +
+      "ubcategoryId\032\r.post.PostObj\0224\n\013SearchPos" +
+      "ts\022\020.post.OnlyString\032\023.post.ListOfPostOb" +
+      "j\0226\n\013GetAllPosts\022\022.post.RequestModel\032\023.p" +
+      "ost.ListOfPostObjB\r\n\013GRPCServiceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5788,38 +6206,44 @@ public final class PostOuterClass {
           GRPCService.Image.getDescriptor(),
           GRPCService.Comment.getDescriptor(),
         }, assigner);
-    internal_static_post_PostObj_descriptor =
+    internal_static_post_RequestModel_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_post_RequestModel_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_post_RequestModel_descriptor,
+        new java.lang.String[] { });
+    internal_static_post_PostObj_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_post_PostObj_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_PostObj_descriptor,
         new java.lang.String[] { "Id", "Title", "Description", "Price", "Address", "Condition", "PhoneNumber", "Email", "Writer", "Images", "DateCreated", "Comments", });
     internal_static_post_ListOfPostObj_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_post_ListOfPostObj_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_ListOfPostObj_descriptor,
         new java.lang.String[] { "List", });
     internal_static_post_IdWithInteger_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_post_IdWithInteger_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_IdWithInteger_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_post_TransferPostWithSubcategoryId_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_post_TransferPostWithSubcategoryId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_TransferPostWithSubcategoryId_descriptor,
         new java.lang.String[] { "IdWithInteger", "PostObj", });
     internal_static_post_OnlyString_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_post_OnlyString_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_OnlyString_descriptor,
         new java.lang.String[] { "String", });
     internal_static_post_DateCreated_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_post_DateCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_DateCreated_descriptor,
