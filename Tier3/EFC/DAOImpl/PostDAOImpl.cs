@@ -5,10 +5,9 @@ using Entities.Contracts;
 using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFC.DAOImpl; 
+namespace EFC.DAOImpl;
 
 public class PostDAOImpl : IPostService {
-
     private readonly DbAccess _context;
 
     public PostDAOImpl(DbAccess context) {
@@ -16,7 +15,7 @@ public class PostDAOImpl : IPostService {
     }
 
 
-    public async Task<Post> AddPost(int subCategoryId,Post post) {
+    public async Task<Post> AddPost(int subCategoryId, Post post) {
         var subcategory = await _context.Subcategories.FindAsync(subCategoryId);
         var user = await _context.Users.FindAsync(post.Writer.Username);
 
@@ -29,27 +28,30 @@ public class PostDAOImpl : IPostService {
     }
 
     public Task<List<Category>> GetAllCategories() {
-        return Task.FromResult(_context.Categories.
-            Include(category => category.Subcategories)
+        return Task.FromResult(_context.Categories.Include(category => category.Subcategories)
             .ToList());
     }
 
-    public Task<List<Post>> GetAllPosyByUserName(string userName)
-    {
-        List<Post> postsByUser = _context.Posts.Where(post => post.Writer.Username.Equals (userName)).Include(post
+    public Task<List<Post>> GetAllPosyByUserName(string userName) {
+        List<Post> postsByUser = _context.Posts.Where(post => post.Writer.Username.Equals(userName)).Include(post
             => post.Subcategory).Include(p
             => p.Subcategory.Category).ToList();
         return Task.FromResult(postsByUser);
     }
 
-    public Task<List<Post>> GetAllPostBySubCategory(int subcategoryId)
-    {
-        var postOnSubCategory = _context.Posts.Where(post => post.Subcategory.Id.Equals(subcategoryId)).Include(post => post.Writer.Username).ToList();
+    public Task<List<Post>> GetAllPostBySubCategory(int subcategoryId) {
+        var postOnSubCategory = _context.Posts.Where(post => post.Subcategory.Id.Equals(subcategoryId))
+            .Include(post => post.Writer.Username).ToList();
         return Task.FromResult(postOnSubCategory);
     }
 
-    public async Task<List<Post>> GetAllPost()
-    {
+    public async Task<List<Post>> GetAllPost() {
         return _context.Posts.Include(t => t.Images).Include(t => t.Writer).Include(t => t.DateCreated).ToList();
+    }
+
+    public async Task<List<Post>> SearchPosts(string titleToSearch) {
+        return await _context.Posts.Include(post => post.Images).Include(post => post.Writer)
+            .Where(post => post.Title.Contains(titleToSearch))
+            .OrderByDescending(post => post.DateCreated).ToListAsync();
     }
 }

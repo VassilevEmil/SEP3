@@ -32,4 +32,13 @@ public class PostProtoImpl : Post.PostBase {
         var addPost = await _postService.AddPost(subCategoryId, post);
         return ConvertGRPC.ConvertPostToPostObj(addPost);
     }
+
+    public override async Task<ListOfPostObj> SearchPosts(OnlyString request, ServerCallContext context) {
+        String titleToSearch = request.String;
+        List<Entities.Models.Post> searchedPosts = await _postService.SearchPosts(titleToSearch);
+        ListOfPostObj listOfPostObj = new ListOfPostObj() {
+            List = {ConvertGRPC.GetRepeatedFieldOfPostFromListOfPosts(searchedPosts)}
+        };
+        return listOfPostObj;
+    }
 }
