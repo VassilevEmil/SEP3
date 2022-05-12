@@ -46,7 +46,7 @@ public class PostDAOImpl : IPostService {
     }
 
     public async Task<List<Post>> GetAllPost() {
-        return _context.Posts.Include(t => t.Images).Include(t => t.Writer).Include(t => t.DateCreated).ToList();
+        return _context.Posts.Include(t => t.Images).Include(t => t.Writer).ToList();
     }
 
     public async Task<List<Post>> SearchPosts(string titleToSearch) {
