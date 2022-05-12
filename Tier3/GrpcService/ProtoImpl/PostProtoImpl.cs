@@ -13,7 +13,7 @@ public class PostProtoImpl : Post.PostBase {
         _postService = postService;
     }
 
-    public async Task<ListOfPostObj> GetAllPosts(RequestModel request, ServerCallContext context)
+    public override async Task<ListOfPostObj> GetAllPosts(RequestModel request, ServerCallContext context)
     {
         var addPost = await _postService.GetAllPost();
         return ConvertGRPC.ConvertListPostToObj(addPost);
