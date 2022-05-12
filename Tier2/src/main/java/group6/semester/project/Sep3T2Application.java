@@ -31,7 +31,7 @@ public class Sep3T2Application {
     private static void testSearch() {
         System.out.println("Search started ::::::::::::::::::::: \n\n\n\n");
         PostGRPCClientImpl postGRPCClient = new PostGRPCClientImpl();
-        List<Post> posts = postGRPCClient.searchPosts("test");
+        List<Post> posts = postGRPCClient.getAllPosts();
         posts.forEach(System.out::println);
     }
 
