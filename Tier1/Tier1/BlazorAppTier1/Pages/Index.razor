@@ -205,6 +205,9 @@
 
 
     private async Task SearchPosts(String titleToSearch) {
+        if (string.IsNullOrEmpty(titleToSearch)) {
+            return;
+        }
         _tracker = Tracker.SEARCHEDPOSTS;
         _searchTitle = titleToSearch;
         await Pagination(CurrentPage);
