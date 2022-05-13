@@ -79,6 +79,7 @@ public class PostController {
     @ResponseBody
     public ResponseEntity getPostsBySubcategoryId(@PathVariable int subCategoryIdSelected, @PathVariable int current){
 
+        System.out.println("Sub categopory called");
 
         try {
             List<Post> list = postService.getPostsBySubcategories(subCategoryIdSelected, current);

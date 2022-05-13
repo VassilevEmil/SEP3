@@ -50,10 +50,16 @@ public class PostProtoImpl : Post.PostBase {
     }
 
     
-    public override Task<ListOfPostObj> GetPostsBySubcategoryId(SubIdWithCurrent request, ServerCallContext context) {
+    public override async Task<ListOfPostObj> GetPostsBySubcategoryId(SubIdWithCurrent request, ServerCallContext context) {
         int current = request.Current;
         int subcategoryId = request.Id;
-        throw new NotImplementedException();
+
+        
+        List<Entities.Models.Post> postFromServer = await _postService.GetPostsBySubcategoryId(subcategoryId, current);
+        ListOfPostObj obj = new ListOfPostObj() {
+            List = {ConvertGRPC.GetRepeatedFieldOfPostFromListOfPosts(postFromServer)}
+        };
+        return obj;
 
     }
 

@@ -24,7 +24,6 @@
                 <div class="sidebar">
                     <div class="widget border-0">
                         <SearchBar Callback="(s) => SearchPosts(s)"> </SearchBar>
-
                     </div>
 
 
@@ -54,7 +53,7 @@
                                         @foreach (var subcategory in category.Subcategories) {
                                             <div class="custom-control custom-checkbox">
                                                 @* <input type="radio" name="radiobutton" class="custom-control-input" id="dateposted1" @onclick="@(() => postsFilteredBySubcategory(subcategory.Name))"> *@
-                                                <label class="custom-control-label" for="dateposted1">@subcategory.Name</label>
+                                                <label class="custom-control-label" for="dateposted1" @onclick="@(() => UpdateBySubcategory(subcategory.Id))">@subcategory.Name</label>
                                             </div>
                                         }
                                     </div>

@@ -29,17 +29,7 @@ public class PostHttpClient : IPostService {
 
     }
 
-    public async Task<List<Post>> GetPostsByName(string name)
-    {
-        try {
-            string client = await ClientAPI.getContent(Methods.Get, $"/post/{name}");
-            List<Post> list = GetDeserialized<List<Post>>(client);
-            return list;
-        }
-        catch (Exception e) {
-            throw new Exception(e.Message);
-        }
-    }
+   
 
     public async Task<List<Post>> GetAllPosts(int current)
     {
@@ -71,6 +61,7 @@ public class PostHttpClient : IPostService {
             return lisFromServer;
         }
         catch (Exception e) {
+         //   Console.WriteLine(e.Message);
             throw new Exception(e.Message);
         }
     }
