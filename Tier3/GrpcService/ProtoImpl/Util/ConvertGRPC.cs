@@ -73,7 +73,6 @@ public class ConvertGRPC {
                 Year = request.DateCreated.Year
             },
             PhoneNumber = request.PhoneNumber,
-            Subcategory = GetSubcategoryObjFromSubCategory(request.Subcategory)
         };
         return postObj;
     }

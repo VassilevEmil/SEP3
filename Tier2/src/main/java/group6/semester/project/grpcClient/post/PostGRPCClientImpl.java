@@ -80,9 +80,9 @@ public class PostGRPCClientImpl implements PostClient {
 
 
     @Override
-    public List<Post> searchPosts(String title) {
-        PostOuterClass.OnlyString titleToSend = PostOuterClass.OnlyString.newBuilder().setString(title).build();
-        PostOuterClass.ListOfPostObj list = getPostBlockingStub().searchPosts(titleToSend);
+    public List<Post> searchPosts(String title, int current) {
+        PostOuterClass.StringAndInteger titleToSendWithCurrent = PostOuterClass.StringAndInteger.newBuilder().setString(title).setCurrent(current).build();
+        PostOuterClass.ListOfPostObj list = getPostBlockingStub().searchPosts(titleToSendWithCurrent);
         List<Post> postList = null;
         try {
             postList = ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(list.getListList());
@@ -104,8 +104,8 @@ public class PostGRPCClientImpl implements PostClient {
     }
 
     @Override
-    public List<Post> getAllPosts() {
-        PostOuterClass.RequestModel requestModal = PostOuterClass.RequestModel.newBuilder().build();
+    public List<Post> getAllPosts(int current) {
+        PostOuterClass.RequestModel requestModal = PostOuterClass.RequestModel.newBuilder().setCurrent(current).build();
         PostOuterClass.ListOfPostObj list = getPostBlockingStub().getAllPosts(requestModal);
         List<Post> postList = null;
         try {
@@ -116,6 +116,16 @@ public class PostGRPCClientImpl implements PostClient {
             disposeStub();
         }
         return postList;
+    }
+
+    @Override
+    public List<Post> getPostBySubcategoryId(int subCategoryIdSelected, int current) {
+        PostOuterClass.SubIdWithCurrent subIdWithCurrent = PostOuterClass.SubIdWithCurrent.newBuilder().setCurrent(current).setId(subCategoryIdSelected).build();
+        PostOuterClass.ListOfPostObj postsBySubcategoryId = getPostBlockingStub().getPostsBySubcategoryId(subIdWithCurrent);
+        List<Post> posts = ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(postsBySubcategoryId.getListList());
+        return posts;
+
+
     }
 
     private void disposeStub() {

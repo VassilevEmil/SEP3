@@ -1,0 +1,44 @@
+﻿@namespace BlazorAppTier1.Pages.UIElements 
+
+
+<div class="container">
+
+    <div class="row height d-flex">
+
+        <div class="col-md-11">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search posts.." @bind="searchTitle">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" type="button"@onclick="@(() => Callback.InvokeAsync(searchTitle))">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+@code {
+
+
+    // this will return the string on the search menu through which you have to search..
+    [Parameter]
+    public EventCallback<string> Callback { get; set; }
+
+    private string searchTitle;
+
+
+    // this should be done, where we want to search
+    // private async Task SearchPosts() {
+    //     if (string.IsNullOrEmpty(SearchTitle)) {
+    //         return;
+    //     }
+    //     Posts  = await _postService.SearchPosts(SearchTitle);
+    // }
+
+}

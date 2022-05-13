@@ -39,25 +39,33 @@ public class PostDAOImpl : IPostService {
         return Task.FromResult(postsByUser);
     }
 
-    public Task<List<Post>> GetAllPostBySubCategory(int subcategoryId) {
-        var postOnSubCategory = _context.Posts.Where(post => post.Subcategory.Id.Equals(subcategoryId))
-            .Include(post => post.Writer.Username).ToList();
-        return Task.FromResult(postOnSubCategory);
+
+    public async Task<List<Post>> GetAllPost(int current) {
+        int count = 9;
+        return await _context.Posts.Include(t => t.Images).Include(t => t.Writer).OrderByDescending(post => post.DateCreated).Skip((current-1)*count).Take(count).ToListAsync();
     }
 
-    public async Task<List<Post>> GetAllPost() {
-        return _context.Posts.Include(t => t.Images).Include(t => t.Writer).Include(t=>t.Subcategory).ToList();
-    }
-
-    public async Task<List<Post>> SearchPosts(string titleToSearch) {
+    public async Task<List<Post>> SearchPosts(string titleToSearch, int current) {
+        int count = 9;
         return await _context.Posts.Include(post => post.Images).Include(post => post.Writer)
             .Where(post => post.Title.Contains(titleToSearch))
-            .OrderByDescending(post => post.DateCreated).ToListAsync();
+            .OrderByDescending(post => post.DateCreated)
+            .Skip((current-1)*count).Take(count).ToListAsync();
     }
 
     public async Task<Post> GetPostDetails(int Id)
     {
         return await _context.Posts.Include(post => post.Images).Include(post => post.Writer)
             .FirstAsync(post => post.Id.Equals(Id));
+    }
+
+    public async Task<List<Post>> GetPostsBySubcategoryId(int subcategoryId, int current) {
+        var findAsync = await _context.Subcategories.Include(subcategory => subcategory.Posts)
+            .ThenInclude(posts => posts.Images)
+            .Include(subcategory => subcategory.Posts)
+            .ThenInclude(post => post.Writer).FirstAsync(subcategory => subcategory.Id == subcategoryId);
+
+        return findAsync.Posts.ToList();
+
     }
 }

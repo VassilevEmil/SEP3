@@ -13,9 +13,9 @@ public class PostProtoImpl : Post.PostBase {
         _postService = postService;
     }
 
-    public override async Task<ListOfPostObj> GetAllPosts(RequestModel request, ServerCallContext context)
-    {
-        var addPost = await _postService.GetAllPost();
+    public override async Task<ListOfPostObj> GetAllPosts(RequestModel request, ServerCallContext context) {
+        int current = request.Current;
+        var addPost = await _postService.GetAllPost(current);
         return ConvertGRPC.ConvertListPostToObj(addPost);
     }
 
@@ -33,9 +33,10 @@ public class PostProtoImpl : Post.PostBase {
         return ConvertGRPC.ConvertPostToPostObj(addPost);
     }
 
-    public override async Task<ListOfPostObj> SearchPosts(OnlyString request, ServerCallContext context) {
+    public override async Task<ListOfPostObj> SearchPosts(StringAndInteger request, ServerCallContext context) {
         String titleToSearch = request.String;
-        List<Entities.Models.Post> searchedPosts = await _postService.SearchPosts(titleToSearch);
+        int current = request.Current;
+        List<Entities.Models.Post> searchedPosts = await _postService.SearchPosts(titleToSearch, current);
         ListOfPostObj listOfPostObj = new ListOfPostObj() {
             List = {ConvertGRPC.GetRepeatedFieldOfPostFromListOfPosts(searchedPosts)}
         };
@@ -47,4 +48,19 @@ public class PostProtoImpl : Post.PostBase {
         var  post = await _postService.GetPostDetails(Id.Id);
         return ConvertGRPC.ConvertPostToPostObj(post);
     }
+
+    
+    public override async Task<ListOfPostObj> GetPostsBySubcategoryId(SubIdWithCurrent request, ServerCallContext context) {
+        int current = request.Current;
+        int subcategoryId = request.Id;
+
+        
+        List<Entities.Models.Post> postFromServer = await _postService.GetPostsBySubcategoryId(subcategoryId, current);
+        ListOfPostObj obj = new ListOfPostObj() {
+            List = {ConvertGRPC.GetRepeatedFieldOfPostFromListOfPosts(postFromServer)}
+        };
+        return obj;
+
+    }
+
 }

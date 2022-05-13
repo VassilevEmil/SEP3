@@ -42,18 +42,24 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<Post> searchPosts(String title) {
-        return postClient.searchPosts(title);
+    public List<Post> searchPosts(String title, int current) {
+        return postClient.searchPosts(title,current);
     }
 
     @Override
-    public List<Post> getAllPosts() {
-        return postClient.getAllPosts();
+    public List<Post> getAllPosts(int current) {
+        return postClient.getAllPosts(current);
     }
 
     @Override
     public Post getPostDetails(int Id) {
         return postClient.getPostDetails(Id);
+    }
+
+    @Override
+    public List<Post> getPostsBySubcategories(int subCategoryIdSelected, int current) {
+
+        return postClient.getPostBySubcategoryId(subCategoryIdSelected, current);
     }
 
 

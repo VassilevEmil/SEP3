@@ -13,9 +13,12 @@ public interface PostService {
 
     List<Category> getAllCategories();
 
-    List<Post> searchPosts(String title);
+    List<Post> searchPosts(String title,int current);
 
-    List<Post> getAllPosts();
+    List<Post> getAllPosts(int current);
 
     Post getPostDetails(int Id);
+
+    List<Post> getPostsBySubcategories(int subCategoryIdSelected, int current);
+
 }

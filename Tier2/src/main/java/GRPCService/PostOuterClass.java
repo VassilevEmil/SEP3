@@ -17,6 +17,11 @@ public final class PostOuterClass {
   public interface RequestModelOrBuilder extends
       // @@protoc_insertion_point(interface_extends:post.RequestModel)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 current = 1;</code>
+     */
+    int getCurrent();
   }
   /**
    * Protobuf type {@code post.RequestModel}
@@ -31,6 +36,7 @@ public final class PostOuterClass {
       super(builder);
     }
     private RequestModel() {
+      current_ = 0;
     }
 
     @java.lang.Override
@@ -46,6 +52,7 @@ public final class PostOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -56,6 +63,11 @@ public final class PostOuterClass {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              current_ = input.readInt32();
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -88,6 +100,15 @@ public final class PostOuterClass {
               GRPCService.PostOuterClass.RequestModel.class, GRPCService.PostOuterClass.RequestModel.Builder.class);
     }
 
+    public static final int CURRENT_FIELD_NUMBER = 1;
+    private int current_;
+    /**
+     * <code>int32 current = 1;</code>
+     */
+    public int getCurrent() {
+      return current_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -102,6 +123,9 @@ public final class PostOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (current_ != 0) {
+        output.writeInt32(1, current_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -111,6 +135,10 @@ public final class PostOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (current_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, current_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -127,6 +155,8 @@ public final class PostOuterClass {
       GRPCService.PostOuterClass.RequestModel other = (GRPCService.PostOuterClass.RequestModel) obj;
 
       boolean result = true;
+      result = result && (getCurrent()
+          == other.getCurrent());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -138,6 +168,8 @@ public final class PostOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CURRENT_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrent();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -271,6 +303,8 @@ public final class PostOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        current_ = 0;
+
         return this;
       }
 
@@ -297,6 +331,7 @@ public final class PostOuterClass {
       @java.lang.Override
       public GRPCService.PostOuterClass.RequestModel buildPartial() {
         GRPCService.PostOuterClass.RequestModel result = new GRPCService.PostOuterClass.RequestModel(this);
+        result.current_ = current_;
         onBuilt();
         return result;
       }
@@ -345,6 +380,9 @@ public final class PostOuterClass {
 
       public Builder mergeFrom(GRPCService.PostOuterClass.RequestModel other) {
         if (other == GRPCService.PostOuterClass.RequestModel.getDefaultInstance()) return this;
+        if (other.getCurrent() != 0) {
+          setCurrent(other.getCurrent());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -371,6 +409,32 @@ public final class PostOuterClass {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private int current_ ;
+      /**
+       * <code>int32 current = 1;</code>
+       */
+      public int getCurrent() {
+        return current_;
+      }
+      /**
+       * <code>int32 current = 1;</code>
+       */
+      public Builder setCurrent(int value) {
+        
+        current_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 current = 1;</code>
+       */
+      public Builder clearCurrent() {
+        
+        current_ = 0;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -2914,6 +2978,545 @@ public final class PostOuterClass {
 
   }
 
+  public interface SubIdWithCurrentOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:post.SubIdWithCurrent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     */
+    int getId();
+
+    /**
+     * <code>int32 current = 2;</code>
+     */
+    int getCurrent();
+  }
+  /**
+   * Protobuf type {@code post.SubIdWithCurrent}
+   */
+  public  static final class SubIdWithCurrent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:post.SubIdWithCurrent)
+      SubIdWithCurrentOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SubIdWithCurrent.newBuilder() to construct.
+    private SubIdWithCurrent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SubIdWithCurrent() {
+      id_ = 0;
+      current_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SubIdWithCurrent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              current_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.PostOuterClass.internal_static_post_SubIdWithCurrent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.PostOuterClass.internal_static_post_SubIdWithCurrent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.PostOuterClass.SubIdWithCurrent.class, GRPCService.PostOuterClass.SubIdWithCurrent.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    /**
+     * <code>int32 id = 1;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+
+    public static final int CURRENT_FIELD_NUMBER = 2;
+    private int current_;
+    /**
+     * <code>int32 current = 2;</code>
+     */
+    public int getCurrent() {
+      return current_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (current_ != 0) {
+        output.writeInt32(2, current_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (current_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, current_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.PostOuterClass.SubIdWithCurrent)) {
+        return super.equals(obj);
+      }
+      GRPCService.PostOuterClass.SubIdWithCurrent other = (GRPCService.PostOuterClass.SubIdWithCurrent) obj;
+
+      boolean result = true;
+      result = result && (getId()
+          == other.getId());
+      result = result && (getCurrent()
+          == other.getCurrent());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + CURRENT_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrent();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.PostOuterClass.SubIdWithCurrent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.PostOuterClass.SubIdWithCurrent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code post.SubIdWithCurrent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:post.SubIdWithCurrent)
+        GRPCService.PostOuterClass.SubIdWithCurrentOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.PostOuterClass.internal_static_post_SubIdWithCurrent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.PostOuterClass.internal_static_post_SubIdWithCurrent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.PostOuterClass.SubIdWithCurrent.class, GRPCService.PostOuterClass.SubIdWithCurrent.Builder.class);
+      }
+
+      // Construct using GRPCService.PostOuterClass.SubIdWithCurrent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+
+        current_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.PostOuterClass.internal_static_post_SubIdWithCurrent_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.SubIdWithCurrent getDefaultInstanceForType() {
+        return GRPCService.PostOuterClass.SubIdWithCurrent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.SubIdWithCurrent build() {
+        GRPCService.PostOuterClass.SubIdWithCurrent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.PostOuterClass.SubIdWithCurrent buildPartial() {
+        GRPCService.PostOuterClass.SubIdWithCurrent result = new GRPCService.PostOuterClass.SubIdWithCurrent(this);
+        result.id_ = id_;
+        result.current_ = current_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.PostOuterClass.SubIdWithCurrent) {
+          return mergeFrom((GRPCService.PostOuterClass.SubIdWithCurrent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.PostOuterClass.SubIdWithCurrent other) {
+        if (other == GRPCService.PostOuterClass.SubIdWithCurrent.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (other.getCurrent() != 0) {
+          setCurrent(other.getCurrent());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.PostOuterClass.SubIdWithCurrent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.PostOuterClass.SubIdWithCurrent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int current_ ;
+      /**
+       * <code>int32 current = 2;</code>
+       */
+      public int getCurrent() {
+        return current_;
+      }
+      /**
+       * <code>int32 current = 2;</code>
+       */
+      public Builder setCurrent(int value) {
+        
+        current_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 current = 2;</code>
+       */
+      public Builder clearCurrent() {
+        
+        current_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:post.SubIdWithCurrent)
+    }
+
+    // @@protoc_insertion_point(class_scope:post.SubIdWithCurrent)
+    private static final GRPCService.PostOuterClass.SubIdWithCurrent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.PostOuterClass.SubIdWithCurrent();
+    }
+
+    public static GRPCService.PostOuterClass.SubIdWithCurrent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SubIdWithCurrent>
+        PARSER = new com.google.protobuf.AbstractParser<SubIdWithCurrent>() {
+      @java.lang.Override
+      public SubIdWithCurrent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SubIdWithCurrent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SubIdWithCurrent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SubIdWithCurrent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.PostOuterClass.SubIdWithCurrent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ListOfPostObjOrBuilder extends
       // @@protoc_insertion_point(interface_extends:post.ListOfPostObj)
       com.google.protobuf.MessageOrBuilder {
@@ -4973,8 +5576,8 @@ public final class PostOuterClass {
 
   }
 
-  public interface OnlyStringOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:post.OnlyString)
+  public interface StringAndIntegerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:post.StringAndInteger)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -4986,21 +5589,27 @@ public final class PostOuterClass {
      */
     com.google.protobuf.ByteString
         getStringBytes();
+
+    /**
+     * <code>int32 current = 2;</code>
+     */
+    int getCurrent();
   }
   /**
-   * Protobuf type {@code post.OnlyString}
+   * Protobuf type {@code post.StringAndInteger}
    */
-  public  static final class OnlyString extends
+  public  static final class StringAndInteger extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:post.OnlyString)
-      OnlyStringOrBuilder {
+      // @@protoc_insertion_point(message_implements:post.StringAndInteger)
+      StringAndIntegerOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use OnlyString.newBuilder() to construct.
-    private OnlyString(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use StringAndInteger.newBuilder() to construct.
+    private StringAndInteger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private OnlyString() {
+    private StringAndInteger() {
       string_ = "";
+      current_ = 0;
     }
 
     @java.lang.Override
@@ -5008,7 +5617,7 @@ public final class PostOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private OnlyString(
+    private StringAndInteger(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5033,6 +5642,11 @@ public final class PostOuterClass {
               string_ = s;
               break;
             }
+            case 16: {
+
+              current_ = input.readInt32();
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5054,15 +5668,15 @@ public final class PostOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return GRPCService.PostOuterClass.internal_static_post_OnlyString_descriptor;
+      return GRPCService.PostOuterClass.internal_static_post_StringAndInteger_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return GRPCService.PostOuterClass.internal_static_post_OnlyString_fieldAccessorTable
+      return GRPCService.PostOuterClass.internal_static_post_StringAndInteger_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              GRPCService.PostOuterClass.OnlyString.class, GRPCService.PostOuterClass.OnlyString.Builder.class);
+              GRPCService.PostOuterClass.StringAndInteger.class, GRPCService.PostOuterClass.StringAndInteger.Builder.class);
     }
 
     public static final int STRING_FIELD_NUMBER = 1;
@@ -5099,6 +5713,15 @@ public final class PostOuterClass {
       }
     }
 
+    public static final int CURRENT_FIELD_NUMBER = 2;
+    private int current_;
+    /**
+     * <code>int32 current = 2;</code>
+     */
+    public int getCurrent() {
+      return current_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5116,6 +5739,9 @@ public final class PostOuterClass {
       if (!getStringBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, string_);
       }
+      if (current_ != 0) {
+        output.writeInt32(2, current_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5128,6 +5754,10 @@ public final class PostOuterClass {
       if (!getStringBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, string_);
       }
+      if (current_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, current_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5138,14 +5768,16 @@ public final class PostOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof GRPCService.PostOuterClass.OnlyString)) {
+      if (!(obj instanceof GRPCService.PostOuterClass.StringAndInteger)) {
         return super.equals(obj);
       }
-      GRPCService.PostOuterClass.OnlyString other = (GRPCService.PostOuterClass.OnlyString) obj;
+      GRPCService.PostOuterClass.StringAndInteger other = (GRPCService.PostOuterClass.StringAndInteger) obj;
 
       boolean result = true;
       result = result && getString()
           .equals(other.getString());
+      result = result && (getCurrent()
+          == other.getCurrent());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -5159,74 +5791,76 @@ public final class PostOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + STRING_FIELD_NUMBER;
       hash = (53 * hash) + getString().hashCode();
+      hash = (37 * hash) + CURRENT_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrent();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static GRPCService.PostOuterClass.OnlyString parseFrom(
+    public static GRPCService.PostOuterClass.StringAndInteger parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseFrom(
+    public static GRPCService.PostOuterClass.StringAndInteger parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseFrom(
+    public static GRPCService.PostOuterClass.StringAndInteger parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseFrom(
+    public static GRPCService.PostOuterClass.StringAndInteger parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseFrom(byte[] data)
+    public static GRPCService.PostOuterClass.StringAndInteger parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseFrom(
+    public static GRPCService.PostOuterClass.StringAndInteger parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseFrom(java.io.InputStream input)
+    public static GRPCService.PostOuterClass.StringAndInteger parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseFrom(
+    public static GRPCService.PostOuterClass.StringAndInteger parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseDelimitedFrom(java.io.InputStream input)
+    public static GRPCService.PostOuterClass.StringAndInteger parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseDelimitedFrom(
+    public static GRPCService.PostOuterClass.StringAndInteger parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseFrom(
+    public static GRPCService.PostOuterClass.StringAndInteger parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GRPCService.PostOuterClass.OnlyString parseFrom(
+    public static GRPCService.PostOuterClass.StringAndInteger parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5239,7 +5873,7 @@ public final class PostOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(GRPCService.PostOuterClass.OnlyString prototype) {
+    public static Builder newBuilder(GRPCService.PostOuterClass.StringAndInteger prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5255,26 +5889,26 @@ public final class PostOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code post.OnlyString}
+     * Protobuf type {@code post.StringAndInteger}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:post.OnlyString)
-        GRPCService.PostOuterClass.OnlyStringOrBuilder {
+        // @@protoc_insertion_point(builder_implements:post.StringAndInteger)
+        GRPCService.PostOuterClass.StringAndIntegerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return GRPCService.PostOuterClass.internal_static_post_OnlyString_descriptor;
+        return GRPCService.PostOuterClass.internal_static_post_StringAndInteger_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return GRPCService.PostOuterClass.internal_static_post_OnlyString_fieldAccessorTable
+        return GRPCService.PostOuterClass.internal_static_post_StringAndInteger_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                GRPCService.PostOuterClass.OnlyString.class, GRPCService.PostOuterClass.OnlyString.Builder.class);
+                GRPCService.PostOuterClass.StringAndInteger.class, GRPCService.PostOuterClass.StringAndInteger.Builder.class);
       }
 
-      // Construct using GRPCService.PostOuterClass.OnlyString.newBuilder()
+      // Construct using GRPCService.PostOuterClass.StringAndInteger.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5294,23 +5928,25 @@ public final class PostOuterClass {
         super.clear();
         string_ = "";
 
+        current_ = 0;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return GRPCService.PostOuterClass.internal_static_post_OnlyString_descriptor;
+        return GRPCService.PostOuterClass.internal_static_post_StringAndInteger_descriptor;
       }
 
       @java.lang.Override
-      public GRPCService.PostOuterClass.OnlyString getDefaultInstanceForType() {
-        return GRPCService.PostOuterClass.OnlyString.getDefaultInstance();
+      public GRPCService.PostOuterClass.StringAndInteger getDefaultInstanceForType() {
+        return GRPCService.PostOuterClass.StringAndInteger.getDefaultInstance();
       }
 
       @java.lang.Override
-      public GRPCService.PostOuterClass.OnlyString build() {
-        GRPCService.PostOuterClass.OnlyString result = buildPartial();
+      public GRPCService.PostOuterClass.StringAndInteger build() {
+        GRPCService.PostOuterClass.StringAndInteger result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5318,9 +5954,10 @@ public final class PostOuterClass {
       }
 
       @java.lang.Override
-      public GRPCService.PostOuterClass.OnlyString buildPartial() {
-        GRPCService.PostOuterClass.OnlyString result = new GRPCService.PostOuterClass.OnlyString(this);
+      public GRPCService.PostOuterClass.StringAndInteger buildPartial() {
+        GRPCService.PostOuterClass.StringAndInteger result = new GRPCService.PostOuterClass.StringAndInteger(this);
         result.string_ = string_;
+        result.current_ = current_;
         onBuilt();
         return result;
       }
@@ -5359,19 +5996,22 @@ public final class PostOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof GRPCService.PostOuterClass.OnlyString) {
-          return mergeFrom((GRPCService.PostOuterClass.OnlyString)other);
+        if (other instanceof GRPCService.PostOuterClass.StringAndInteger) {
+          return mergeFrom((GRPCService.PostOuterClass.StringAndInteger)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(GRPCService.PostOuterClass.OnlyString other) {
-        if (other == GRPCService.PostOuterClass.OnlyString.getDefaultInstance()) return this;
+      public Builder mergeFrom(GRPCService.PostOuterClass.StringAndInteger other) {
+        if (other == GRPCService.PostOuterClass.StringAndInteger.getDefaultInstance()) return this;
         if (!other.getString().isEmpty()) {
           string_ = other.string_;
           onChanged();
+        }
+        if (other.getCurrent() != 0) {
+          setCurrent(other.getCurrent());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5388,11 +6028,11 @@ public final class PostOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        GRPCService.PostOuterClass.OnlyString parsedMessage = null;
+        GRPCService.PostOuterClass.StringAndInteger parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (GRPCService.PostOuterClass.OnlyString) e.getUnfinishedMessage();
+          parsedMessage = (GRPCService.PostOuterClass.StringAndInteger) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5470,6 +6110,32 @@ public final class PostOuterClass {
         onChanged();
         return this;
       }
+
+      private int current_ ;
+      /**
+       * <code>int32 current = 2;</code>
+       */
+      public int getCurrent() {
+        return current_;
+      }
+      /**
+       * <code>int32 current = 2;</code>
+       */
+      public Builder setCurrent(int value) {
+        
+        current_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 current = 2;</code>
+       */
+      public Builder clearCurrent() {
+        
+        current_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5483,41 +6149,41 @@ public final class PostOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:post.OnlyString)
+      // @@protoc_insertion_point(builder_scope:post.StringAndInteger)
     }
 
-    // @@protoc_insertion_point(class_scope:post.OnlyString)
-    private static final GRPCService.PostOuterClass.OnlyString DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:post.StringAndInteger)
+    private static final GRPCService.PostOuterClass.StringAndInteger DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GRPCService.PostOuterClass.OnlyString();
+      DEFAULT_INSTANCE = new GRPCService.PostOuterClass.StringAndInteger();
     }
 
-    public static GRPCService.PostOuterClass.OnlyString getDefaultInstance() {
+    public static GRPCService.PostOuterClass.StringAndInteger getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<OnlyString>
-        PARSER = new com.google.protobuf.AbstractParser<OnlyString>() {
+    private static final com.google.protobuf.Parser<StringAndInteger>
+        PARSER = new com.google.protobuf.AbstractParser<StringAndInteger>() {
       @java.lang.Override
-      public OnlyString parsePartialFrom(
+      public StringAndInteger parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OnlyString(input, extensionRegistry);
+        return new StringAndInteger(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<OnlyString> parser() {
+    public static com.google.protobuf.Parser<StringAndInteger> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<OnlyString> getParserForType() {
+    public com.google.protobuf.Parser<StringAndInteger> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public GRPCService.PostOuterClass.OnlyString getDefaultInstanceForType() {
+    public GRPCService.PostOuterClass.StringAndInteger getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6136,6 +6802,11 @@ public final class PostOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_post_PostObj_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_post_SubIdWithCurrent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_post_SubIdWithCurrent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_post_ListOfPostObj_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -6151,10 +6822,10 @@ public final class PostOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_post_TransferPostWithSubcategoryId_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_post_OnlyString_descriptor;
+    internal_static_post_StringAndInteger_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_post_OnlyString_fieldAccessorTable;
+      internal_static_post_StringAndInteger_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_post_DateCreated_descriptor;
   private static final 
@@ -6170,28 +6841,32 @@ public final class PostOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\npost.proto\022\004post\032\nuser.proto\032\013image.pr" +
-      "oto\032\rcomment.proto\"\016\n\014RequestModel\"\237\002\n\007P" +
-      "ostObj\022\n\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013des" +
-      "cription\030\003 \001(\t\022\r\n\005price\030\004 \001(\005\022\017\n\007address" +
-      "\030\005 \001(\t\022\021\n\tcondition\030\006 \001(\t\022\023\n\013phoneNumber" +
-      "\030\007 \001(\t\022\r\n\005email\030\010 \001(\t\022\035\n\006writer\030\t \001(\0132\r." +
-      "user.UserObj\022\037\n\006images\030\n \003(\0132\017.image.Ima" +
-      "geObj\022&\n\013dateCreated\030\013 \001(\0132\021.post.DateCr" +
-      "eated\022%\n\010comments\030\014 \003(\0132\023.comment.Commen" +
-      "tObj\",\n\rListOfPostObj\022\033\n\004list\030\001 \003(\0132\r.po" +
-      "st.PostObj\"\033\n\rIdWithInteger\022\n\n\002id\030\001 \001(\005\"" +
-      "k\n\035TransferPostWithSubcategoryId\022*\n\ridWi" +
-      "thInteger\030\001 \001(\0132\023.post.IdWithInteger\022\036\n\007" +
-      "postObj\030\002 \001(\0132\r.post.PostObj\"\034\n\nOnlyStri" +
-      "ng\022\016\n\006string\030\001 \001(\t\"7\n\013DateCreated\022\013\n\003day" +
-      "\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030\003 \001(\0052\351\001\n\004" +
-      "Post\022=\n\007AddPost\022#.post.TransferPostWithS" +
-      "ubcategoryId\032\r.post.PostObj\0224\n\013SearchPos" +
-      "ts\022\020.post.OnlyString\032\023.post.ListOfPostOb" +
-      "j\0226\n\013GetAllPosts\022\022.post.RequestModel\032\023.p" +
-      "ost.ListOfPostObj\0224\n\016GetPostDetails\022\023.po" +
-      "st.IdWithInteger\032\r.post.PostObjB\r\n\013GRPCS" +
-      "erviceb\006proto3"
+      "oto\032\rcomment.proto\"\037\n\014RequestModel\022\017\n\007cu" +
+      "rrent\030\001 \001(\005\"\237\002\n\007PostObj\022\n\n\002id\030\001 \001(\005\022\r\n\005t" +
+      "itle\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005price" +
+      "\030\004 \001(\005\022\017\n\007address\030\005 \001(\t\022\021\n\tcondition\030\006 \001" +
+      "(\t\022\023\n\013phoneNumber\030\007 \001(\t\022\r\n\005email\030\010 \001(\t\022\035" +
+      "\n\006writer\030\t \001(\0132\r.user.UserObj\022\037\n\006images\030" +
+      "\n \003(\0132\017.image.ImageObj\022&\n\013dateCreated\030\013 " +
+      "\001(\0132\021.post.DateCreated\022%\n\010comments\030\014 \003(\013" +
+      "2\023.comment.CommentObj\"/\n\020SubIdWithCurren" +
+      "t\022\n\n\002id\030\001 \001(\005\022\017\n\007current\030\002 \001(\005\",\n\rListOf" +
+      "PostObj\022\033\n\004list\030\001 \003(\0132\r.post.PostObj\"\033\n\r" +
+      "IdWithInteger\022\n\n\002id\030\001 \001(\005\"k\n\035TransferPos" +
+      "tWithSubcategoryId\022*\n\ridWithInteger\030\001 \001(" +
+      "\0132\023.post.IdWithInteger\022\036\n\007postObj\030\002 \001(\0132" +
+      "\r.post.PostObj\"3\n\020StringAndInteger\022\016\n\006st" +
+      "ring\030\001 \001(\t\022\017\n\007current\030\002 \001(\005\"7\n\013DateCreat" +
+      "ed\022\013\n\003day\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030\003" +
+      " \001(\0052\267\002\n\004Post\022=\n\007AddPost\022#.post.Transfer" +
+      "PostWithSubcategoryId\032\r.post.PostObj\022:\n\013" +
+      "SearchPosts\022\026.post.StringAndInteger\032\023.po" +
+      "st.ListOfPostObj\0226\n\013GetAllPosts\022\022.post.R" +
+      "equestModel\032\023.post.ListOfPostObj\0224\n\016GetP" +
+      "ostDetails\022\023.post.IdWithInteger\032\r.post.P" +
+      "ostObj\022F\n\027GetPostsBySubcategoryId\022\026.post" +
+      ".SubIdWithCurrent\032\023.post.ListOfPostObjB\r" +
+      "\n\013GRPCServiceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6213,39 +6888,45 @@ public final class PostOuterClass {
     internal_static_post_RequestModel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_RequestModel_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Current", });
     internal_static_post_PostObj_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_post_PostObj_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_PostObj_descriptor,
         new java.lang.String[] { "Id", "Title", "Description", "Price", "Address", "Condition", "PhoneNumber", "Email", "Writer", "Images", "DateCreated", "Comments", });
-    internal_static_post_ListOfPostObj_descriptor =
+    internal_static_post_SubIdWithCurrent_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_post_SubIdWithCurrent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_post_SubIdWithCurrent_descriptor,
+        new java.lang.String[] { "Id", "Current", });
+    internal_static_post_ListOfPostObj_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_post_ListOfPostObj_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_ListOfPostObj_descriptor,
         new java.lang.String[] { "List", });
     internal_static_post_IdWithInteger_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_post_IdWithInteger_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_IdWithInteger_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_post_TransferPostWithSubcategoryId_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_post_TransferPostWithSubcategoryId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_TransferPostWithSubcategoryId_descriptor,
         new java.lang.String[] { "IdWithInteger", "PostObj", });
-    internal_static_post_OnlyString_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_post_OnlyString_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_post_OnlyString_descriptor,
-        new java.lang.String[] { "String", });
-    internal_static_post_DateCreated_descriptor =
+    internal_static_post_StringAndInteger_descriptor =
       getDescriptor().getMessageTypes().get(6);
+    internal_static_post_StringAndInteger_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_post_StringAndInteger_descriptor,
+        new java.lang.String[] { "String", "Current", });
+    internal_static_post_DateCreated_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_post_DateCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_DateCreated_descriptor,

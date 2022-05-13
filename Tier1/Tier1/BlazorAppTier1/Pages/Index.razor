@@ -2,6 +2,8 @@
 @page "/{CurrentPage:int}"
 @using Contracts
 @using Entities.Models
+@using BlazorAppTier1.Pages.UIElements
+@using Microsoft.AspNetCore.Mvc.RazorPages
 
 @inject IPostService _postService;
 @inject NavigationManager Navigation
@@ -14,182 +16,230 @@
 
 
 <div id="body">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous"/>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="sidebar">
-                <div class="widget border-0">
-                    <!--seaching-->
-                    <div class="search">
-                        <input class="form-control" type="text" placeholder="Search by title" @oninput=@(args => UpdateOwnerFilter(args))>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="sidebar">
+                    <div class="widget border-0">
+                        <SearchBar Callback="(s) => SearchPosts(s)"> </SearchBar>
                     </div>
-                </div>
-            
-                
-                <!--All reset posts view-->
-                <div class="widget">
-                    <div class="widget-title widget-collapse">
-                        <input type="radio"  name="radiobutton" class="custom-control-input" id="dateposted1" @onclick="@(() => postsFilteredBySubcategory(""))" >
-                        <label class="custom-control-label" for="dateposted1"> Reset Filter</label>
-                    </div>
-                </div>
-                
-                @foreach(var category in allCategories)
-                {
+
+
+                    <!--All reset posts view-->
                     <div class="widget">
                         <div class="widget-title widget-collapse">
-                            <h6>@category.Name</h6>
-                            <a class="ml-auto" data-toggle="collapse" data-bs-target="#dateposted" role="button" aria-expanded="false" aria-controls="dateposted"> <i class="fas fa-chevron-down"></i> </a>
-                        </div>
-                        <div class="collapse show" id="dateposted">
-                            <div class="widget-content">
-                        
-                                @foreach (var subcategory in category.Subcategories)
-                                {
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="radio"  name="radiobutton" class="custom-control-input" id="dateposted1" @onclick="@(() => postsFilteredBySubcategory(subcategory.Name))" >
-                                        <label class="custom-control-label" for="dateposted1">@subcategory.Name</label>
-                                    </div>
-                                }
-                            </div>
+                            @* <input type="radio" name="radiobutton" class="custom-control-input" id="dateposted1" @onclick="@(() => postsFilteredBySubcategory(""))"> *@
+                            <label class="custom-control-label" for="dateposted1"> Reset Filter</label>
                         </div>
                     </div>
-                }
+
+                    @if (allCategories == null) {
+                        <p> Loading categories</p>
+                    }
+                    else {
+                        @foreach (var category in allCategories) {
+                            <div class="widget">
+                                <div class="widget-title widget-collapse">
+                                    <h6>@category.Name</h6>
+                                    <a class="ml-auto" data-toggle="collapse" data-bs-target="#dateposted" role="button" aria-expanded="false" aria-controls="dateposted">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </a>
+                                </div>
+                                <div class="collapse show" id="dateposted">
+                                    <div class="widget-content">
+
+                                        @foreach (var subcategory in category.Subcategories) {
+                                            <div class="custom-control custom-checkbox">
+                                                @* <input type="radio" name="radiobutton" class="custom-control-input" id="dateposted1" @onclick="@(() => postsFilteredBySubcategory(subcategory.Name))"> *@
+                                                <label class="custom-control-label subcategories" for="dateposted1" @onclick="@(() => UpdateBySubcategory(subcategory.Id))">@subcategory.Name</label>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
             </div>
-        </div>
-        <!--Right side-->
-        <div class="col-lg-9">
-            <div class="row">
-                @foreach (var post in postToShow)
-                {
-                    <div class="col-sm-6 col-lg-4 mb-4">
-                        <div class="candidate-list candidate-grid">
-                            <div class="candidate-list-image">
-                                <img class="img-fluid" src="@post.Images" alt="">
-                            </div>
-                            <div class="candidate-list-details">
-                                <div class="candidate-list-info">
-                                    <div class="candidate-list-title">
-                                        <h5><a href="#" @onclick="@(() => Navigation.NavigateTo("/PostDetails/" + post.Id))">@post.Title</a></h5>
-                                    </div>
-                                    <div class="candidate-list-option">
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-user pr-1"></i>@post.Writer.GetName()</li>
-                                            <li><i class="fas fa-map-marker-alt pr-1"></i>@post.Address</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="candidate-list-favourite-time">
-                                    <a class="candidate-list-favourite order-2" href="#"><i class="far fa-heart"></i></a>
-                                    <span class="candidate-list-time order-1"><i class="far fa-clock pr-1"></i>@post.DateCreated.GetDate()</span>
-                                </div>
-                            </div>
-                        </div>
+            <!--Right side-->
+            <div class="col-lg-9">
+                <div class="row">
+
+                    @if (postToShow == null) {
+                        <p> Loading posts...</p>
+                    }
+                    else {
+@foreach (var post in postToShow) {
+    <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="candidate-list candidate-grid">
+            <div class="candidate-list-image">
+                <img class="img-fluid" src="@post.Images" alt="">
+            </div>
+            <div class="candidate-list-details">
+                <div class="candidate-list-info">
+                    <div class="candidate-list-title">
+                        <h5>
+                            <a href="#" @onclick="@(() => Navigation.NavigateTo("/PostDetails/" + post.Id))">@post.Title</a>
+                        </h5>
                     </div>
-                }
-            </div> 
-            <div class="row">
-                <div class="col-12 text-center mt-4 mt-sm-5">
-                    <ul class="pagination justify-content-center mb-0">
-                        <li class="page-item @backElement"> <a class="page-link" href="#" @onclick="@(() => Pagination(CurrentPage-1))">Prev</a> </li>
-                        <li class="page-item @nextElement"> <a class="page-link" href="#" @onclick="@((() => Pagination(CurrentPage+1)))">Next</a> </li>
-                    </ul>
+                    <div class="candidate-list-option">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-user pr-1"></i>@post.Writer.GetName()
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt pr-1"></i>@post.Address
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="candidate-list-favourite-time">
+                    <a class="candidate-list-favourite order-2" href="#">
+                        <i class="far fa-heart"></i>
+                    </a>
+                    <span class="candidate-list-time order-1">
+                        <i class="far fa-clock pr-1"></i>@post.DateCreated.GetDate()
+                    </span>
                 </div>
             </div>
         </div>
     </div>
+}
+                    }
+
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center mt-4 mt-sm-5">
+                        <ul class="pagination justify-content-center mb-0">
+                            <li class="page-item @backElement">
+                                <a class="page-link" href="#" @onclick="@(() => Pagination(CurrentPage - 1))">Prev</a>
+                            </li>
+                            <li class="page-item @nextElement">
+                                <a class="page-link" href="#" @onclick="@((() => Pagination(CurrentPage + 1)))">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-            
+
 
 @code{
 
-    private List<Post>? allPosts = new List<Post>();
-    private List<Category>? allCategories=new List<Category>();
-    
+    private List<Category>? allCategories;
+
     // subcategories filter
-    private List<Post>? subcategoriesToShow = new List<Post>();
-    
+    private List<Post>? subcategoriesToShow;
 
-    
+
     //pagination
-    private List<Post>? postToShow = new List<Post>();
+    private List<Post>? postToShow;
+
     [Parameter]
-    public int CurrentPage { get; set; } = 1;
+    public int CurrentPage { get; set; }
 
-    private string nextElement = String.Empty;
-    private string backElement = String.Empty;
+    private string nextElement = string.Empty;
+    private string backElement = string.Empty;
+    private Tracker _tracker;
+    private string _searchTitle = string.Empty;
+    private int _subCategoryIdSelected;
 
-    protected async override Task OnInitializedAsync() {
+
+    protected override async Task OnInitializedAsync() {
         allCategories = await _postService.GetALlCategoriesAsync();
-        allPosts = await _postService.GetAllPosts();
-        subcategoriesToShow.AddRange(allPosts);
+    //  postToShow = await _postService.GetAllPosts(0);
+    // subcategoriesToShow.AddRange(allPosts);
         CurrentPage = 1;
-        Pagination(CurrentPage);
-        
-        
-
+        _tracker = Tracker.AllPosts;
+        await Pagination(CurrentPage);
     }
 
-    private async void postsFilteredBySubcategory(string filter)
-    {
-        subcategoriesToShow.Clear();
-        
-        if(filter.Equals(""))
-        {
-            subcategoriesToShow.AddRange(allPosts);
+    // private async Task postsFilteredBySubcategory(string filter) {
+    //     subcategoriesToShow.Clear();
+    //
+    //     if (filter.Equals("")) {
+    //         subcategoriesToShow.AddRange(allPosts);
+    //     }
+    //
+    //     for (int i = 0; i < allPosts.Count; i++) {
+    //         if (allPosts[i].Subcategory.Name.Equals(filter) && allPosts[i] != null) subcategoriesToShow.Add(allPosts[i]);
+    //     }
+    //
+    //
+    //   await  Pagination(CurrentPage);
+    // }
+
+    private async Task Pagination(int current) {
+        int count = 9;
+        Navigation.NavigateTo("/" + current);
+
+        switch (_tracker) {
+            case Tracker.AllPosts:
+                postToShow = await _postService.GetAllPosts(current);
+                break;
+
+            case Tracker.SearchedPosts:
+                postToShow = await _postService.SearchPosts(_searchTitle, current);
+                break;
+
+            case Tracker.SubCategoryFilter:
+                postToShow = await _postService.GetPostsBySubCategoryId(_subCategoryIdSelected, current);
+                break;
         }
 
-        for (int i = 0; i < allPosts.Count; i++)
-        {
-            
-                if (allPosts[i].Subcategory.Name.Equals(filter)&&allPosts[i]!=null) subcategoriesToShow.Add(allPosts[i]);
-            }
-               
-        
-        Pagination(CurrentPage);
-    }
-
-    private void Pagination(int current)
-    {
-        int count = 9;
-        Navigation.NavigateTo("/"+current);
-        postToShow = subcategoriesToShow.OrderBy(d=>d.Id).Skip((current-1)*count).Take(count).ToList();
-        if (current == 1)
-        {
+    //   postToShow = subcategoriesToShow.OrderBy(d=>d.Id).Skip((current-1)*count).Take(count).ToList();
+        if (current == 1) {
             backElement = "disabled";
         }
-        else
-        {
+        else {
             backElement = String.Empty;
         }
-        
-        if (postToShow.Count < count)
-        {
+
+        if (postToShow.Count < count) {
             nextElement = "disabled";
+        }
+        else if (postToShow.Count == count) {
+            nextElement = "enabled";
         }
     }
 
-   
-    private async Task UpdateOwnerFilter(ChangeEventArgs args)
-    {
-        string value = (string)args.Value;
-        if (string.IsNullOrEmpty(value))
-        {
-            await GetNormal();
+
+    private async Task SearchPosts(String titleToSearch) {
+        if (string.IsNullOrEmpty(titleToSearch)) {
             return;
         }
-        
-        allPosts.Clear();
-        allPosts = await _postService.GetPostsByName(value);
-        
+        _tracker = Tracker.SearchedPosts;
+        _searchTitle = titleToSearch;
+        await Pagination(CurrentPage);
     }
-    
-    private async Task GetNormal()
-    {
-        allPosts = await _postService.GetAllPosts();
+
+    private async Task UpdateBySubcategory(int subcategoryId) {
+        _subCategoryIdSelected = subcategoryId;
+        _tracker = Tracker.SubCategoryFilter;
+        await Pagination(CurrentPage);
     }
-    
+
+
+    // private async Task UpdateOwnerFilter(ChangeEventArgs args) {
+    //     string value = (string) args.Value;
+    //     if (string.IsNullOrEmpty(value)) {
+    //         await GetNormal();
+    //         return;
+    //     }
+    //
+    //     allPosts.Clear();
+    //     allPosts = await _postService.GetPostsByName(value);
+    // }
+
+    private enum Tracker {
+        AllPosts,
+        SearchedPosts,
+        SubCategoryFilter
+    }
+
 }

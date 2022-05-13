@@ -25,13 +25,13 @@ public class Sep3T2Application {
 
 
         SpringApplication.run(Sep3T2Application.class, args);
-        testSearch();
+        //testSearch();
     }
 
     private static void testSearch() {
         System.out.println("Search started ::::::::::::::::::::: \n\n\n\n");
         PostGRPCClientImpl postGRPCClient = new PostGRPCClientImpl();
-        List<Post> posts = postGRPCClient.getAllPosts();
+        List<Post> posts = postGRPCClient.getAllPosts(1);
         posts.forEach(System.out::println);
     }
 
