@@ -3,6 +3,7 @@
 @using Contracts
 @using Entities.Models
 @using BlazorAppTier1.Pages.UIElements
+@using Microsoft.AspNetCore.Mvc.RazorPages
 
 @inject IPostService _postService;
 @inject NavigationManager Navigation
@@ -147,6 +148,7 @@
     private string backElement = string.Empty;
     private Tracker _tracker;
     private string _searchTitle = string.Empty;
+    private int _subCategoryIdSelected;
 
 
     protected override async Task OnInitializedAsync() {
@@ -154,7 +156,7 @@
     //  postToShow = await _postService.GetAllPosts(0);
     // subcategoriesToShow.AddRange(allPosts);
         CurrentPage = 1;
-        _tracker = Tracker.ALLPOSTS;
+        _tracker = Tracker.AllPosts;
         await Pagination(CurrentPage);
     }
 
@@ -178,12 +180,16 @@
         Navigation.NavigateTo("/" + current);
 
         switch (_tracker) {
-            case Tracker.ALLPOSTS:
+            case Tracker.AllPosts:
                 postToShow = await _postService.GetAllPosts(current);
                 break;
 
-            case Tracker.SEARCHEDPOSTS:
+            case Tracker.SearchedPosts:
                 postToShow = await _postService.SearchPosts(_searchTitle, current);
+                break;
+
+            case Tracker.SubCategoryFilter:
+                postToShow = await _postService.GetPostsBySubCategoryId(_subCategoryIdSelected, current);
                 break;
         }
 
@@ -208,10 +214,15 @@
         if (string.IsNullOrEmpty(titleToSearch)) {
             return;
         }
-        _tracker = Tracker.SEARCHEDPOSTS;
+        _tracker = Tracker.SearchedPosts;
         _searchTitle = titleToSearch;
         await Pagination(CurrentPage);
-        
+    }
+
+    private async Task UpdateBySubcategory(int subcategoryId) {
+        _subCategoryIdSelected = subcategoryId;
+        _tracker = Tracker.SubCategoryFilter;
+        await Pagination(CurrentPage);
     }
 
 
@@ -227,8 +238,9 @@
     // }
 
     private enum Tracker {
-        ALLPOSTS,
-        SEARCHEDPOSTS
+        AllPosts,
+        SearchedPosts,
+        SubCategoryFilter
     }
 
 }

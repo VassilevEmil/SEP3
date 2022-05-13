@@ -48,4 +48,13 @@ public class PostProtoImpl : Post.PostBase {
         var  post = await _postService.GetPostDetails(Id.Id);
         return ConvertGRPC.ConvertPostToPostObj(post);
     }
+
+    
+    public override Task<ListOfPostObj> GetPostsBySubcategoryId(SubIdWithCurrent request, ServerCallContext context) {
+        int current = request.Current;
+        int subcategoryId = request.Id;
+        throw new NotImplementedException();
+
+    }
+
 }

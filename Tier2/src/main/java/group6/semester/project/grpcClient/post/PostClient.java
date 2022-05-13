@@ -17,4 +17,7 @@ public interface PostClient {
     List<Post> searchPosts(String title, int current);
 
     List<Post> getAllPosts(int current);
+
+    List<Post> getPostBySubcategoryId(int subCategoryIdSelected, int current);
+
 }

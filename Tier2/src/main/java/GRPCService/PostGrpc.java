@@ -155,6 +155,38 @@ public final class PostGrpc {
      return getGetPostDetailsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<GRPCService.PostOuterClass.SubIdWithCurrent,
+      GRPCService.PostOuterClass.ListOfPostObj> getGetPostsBySubcategoryIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPostsBySubcategoryId",
+      requestType = GRPCService.PostOuterClass.SubIdWithCurrent.class,
+      responseType = GRPCService.PostOuterClass.ListOfPostObj.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<GRPCService.PostOuterClass.SubIdWithCurrent,
+      GRPCService.PostOuterClass.ListOfPostObj> getGetPostsBySubcategoryIdMethod() {
+    io.grpc.MethodDescriptor<GRPCService.PostOuterClass.SubIdWithCurrent, GRPCService.PostOuterClass.ListOfPostObj> getGetPostsBySubcategoryIdMethod;
+    if ((getGetPostsBySubcategoryIdMethod = PostGrpc.getGetPostsBySubcategoryIdMethod) == null) {
+      synchronized (PostGrpc.class) {
+        if ((getGetPostsBySubcategoryIdMethod = PostGrpc.getGetPostsBySubcategoryIdMethod) == null) {
+          PostGrpc.getGetPostsBySubcategoryIdMethod = getGetPostsBySubcategoryIdMethod = 
+              io.grpc.MethodDescriptor.<GRPCService.PostOuterClass.SubIdWithCurrent, GRPCService.PostOuterClass.ListOfPostObj>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "post.Post", "GetPostsBySubcategoryId"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.PostOuterClass.SubIdWithCurrent.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.PostOuterClass.ListOfPostObj.getDefaultInstance()))
+                  .setSchemaDescriptor(new PostMethodDescriptorSupplier("GetPostsBySubcategoryId"))
+                  .build();
+          }
+        }
+     }
+     return getGetPostsBySubcategoryIdMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -210,6 +242,13 @@ public final class PostGrpc {
       asyncUnimplementedUnaryCall(getGetPostDetailsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getPostsBySubcategoryId(GRPCService.PostOuterClass.SubIdWithCurrent request,
+        io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.ListOfPostObj> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetPostsBySubcategoryIdMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -240,6 +279,13 @@ public final class PostGrpc {
                 GRPCService.PostOuterClass.IdWithInteger,
                 GRPCService.PostOuterClass.PostObj>(
                   this, METHODID_GET_POST_DETAILS)))
+          .addMethod(
+            getGetPostsBySubcategoryIdMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                GRPCService.PostOuterClass.SubIdWithCurrent,
+                GRPCService.PostOuterClass.ListOfPostObj>(
+                  this, METHODID_GET_POSTS_BY_SUBCATEGORY_ID)))
           .build();
     }
   }
@@ -293,6 +339,14 @@ public final class PostGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetPostDetailsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getPostsBySubcategoryId(GRPCService.PostOuterClass.SubIdWithCurrent request,
+        io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.ListOfPostObj> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetPostsBySubcategoryIdMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -339,6 +393,13 @@ public final class PostGrpc {
     public GRPCService.PostOuterClass.PostObj getPostDetails(GRPCService.PostOuterClass.IdWithInteger request) {
       return blockingUnaryCall(
           getChannel(), getGetPostDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public GRPCService.PostOuterClass.ListOfPostObj getPostsBySubcategoryId(GRPCService.PostOuterClass.SubIdWithCurrent request) {
+      return blockingUnaryCall(
+          getChannel(), getGetPostsBySubcategoryIdMethod(), getCallOptions(), request);
     }
   }
 
@@ -391,12 +452,21 @@ public final class PostGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetPostDetailsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<GRPCService.PostOuterClass.ListOfPostObj> getPostsBySubcategoryId(
+        GRPCService.PostOuterClass.SubIdWithCurrent request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetPostsBySubcategoryIdMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ADD_POST = 0;
   private static final int METHODID_SEARCH_POSTS = 1;
   private static final int METHODID_GET_ALL_POSTS = 2;
   private static final int METHODID_GET_POST_DETAILS = 3;
+  private static final int METHODID_GET_POSTS_BY_SUBCATEGORY_ID = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -430,6 +500,10 @@ public final class PostGrpc {
         case METHODID_GET_POST_DETAILS:
           serviceImpl.getPostDetails((GRPCService.PostOuterClass.IdWithInteger) request,
               (io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.PostObj>) responseObserver);
+          break;
+        case METHODID_GET_POSTS_BY_SUBCATEGORY_ID:
+          serviceImpl.getPostsBySubcategoryId((GRPCService.PostOuterClass.SubIdWithCurrent) request,
+              (io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.ListOfPostObj>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -496,6 +570,7 @@ public final class PostGrpc {
               .addMethod(getSearchPostsMethod())
               .addMethod(getGetAllPostsMethod())
               .addMethod(getGetPostDetailsMethod())
+              .addMethod(getGetPostsBySubcategoryIdMethod())
               .build();
         }
       }

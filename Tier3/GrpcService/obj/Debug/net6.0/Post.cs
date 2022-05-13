@@ -34,17 +34,20 @@ namespace GRPCService {
             "ZWQYCyABKAsyES5wb3N0LkRhdGVDcmVhdGVkEiUKCGNvbW1lbnRzGAwgAygL",
             "MhMuY29tbWVudC5Db21tZW50T2JqIiwKDUxpc3RPZlBvc3RPYmoSGwoEbGlz",
             "dBgBIAMoCzINLnBvc3QuUG9zdE9iaiIbCg1JZFdpdGhJbnRlZ2VyEgoKAmlk",
-            "GAEgASgFImsKHVRyYW5zZmVyUG9zdFdpdGhTdWJjYXRlZ29yeUlkEioKDWlk",
-            "V2l0aEludGVnZXIYASABKAsyEy5wb3N0LklkV2l0aEludGVnZXISHgoHcG9z",
-            "dE9iahgCIAEoCzINLnBvc3QuUG9zdE9iaiIzChBTdHJpbmdBbmRJbnRlZ2Vy",
-            "Eg4KBnN0cmluZxgBIAEoCRIPCgdjdXJyZW50GAIgASgFIjcKC0RhdGVDcmVh",
-            "dGVkEgsKA2RheRgBIAEoBRINCgVtb250aBgCIAEoBRIMCgR5ZWFyGAMgASgF",
-            "Mu8BCgRQb3N0Ej0KB0FkZFBvc3QSIy5wb3N0LlRyYW5zZmVyUG9zdFdpdGhT",
-            "dWJjYXRlZ29yeUlkGg0ucG9zdC5Qb3N0T2JqEjoKC1NlYXJjaFBvc3RzEhYu",
-            "cG9zdC5TdHJpbmdBbmRJbnRlZ2VyGhMucG9zdC5MaXN0T2ZQb3N0T2JqEjYK",
-            "C0dldEFsbFBvc3RzEhIucG9zdC5SZXF1ZXN0TW9kZWwaEy5wb3N0Lkxpc3RP",
-            "ZlBvc3RPYmoSNAoOR2V0UG9zdERldGFpbHMSEy5wb3N0LklkV2l0aEludGVn",
-            "ZXIaDS5wb3N0LlBvc3RPYmpCDqoCC0dSUENTZXJ2aWNlYgZwcm90bzM="));
+            "GAEgASgFIi8KEFN1YklkV2l0aEN1cnJlbnQSCgoCaWQYASABKAUSDwoHY3Vy",
+            "cmVudBgCIAEoBSJrCh1UcmFuc2ZlclBvc3RXaXRoU3ViY2F0ZWdvcnlJZBIq",
+            "Cg1pZFdpdGhJbnRlZ2VyGAEgASgLMhMucG9zdC5JZFdpdGhJbnRlZ2VyEh4K",
+            "B3Bvc3RPYmoYAiABKAsyDS5wb3N0LlBvc3RPYmoiMwoQU3RyaW5nQW5kSW50",
+            "ZWdlchIOCgZzdHJpbmcYASABKAkSDwoHY3VycmVudBgCIAEoBSI3CgtEYXRl",
+            "Q3JlYXRlZBILCgNkYXkYASABKAUSDQoFbW9udGgYAiABKAUSDAoEeWVhchgD",
+            "IAEoBTK3AgoEUG9zdBI9CgdBZGRQb3N0EiMucG9zdC5UcmFuc2ZlclBvc3RX",
+            "aXRoU3ViY2F0ZWdvcnlJZBoNLnBvc3QuUG9zdE9iahI6CgtTZWFyY2hQb3N0",
+            "cxIWLnBvc3QuU3RyaW5nQW5kSW50ZWdlchoTLnBvc3QuTGlzdE9mUG9zdE9i",
+            "ahI2CgtHZXRBbGxQb3N0cxISLnBvc3QuUmVxdWVzdE1vZGVsGhMucG9zdC5M",
+            "aXN0T2ZQb3N0T2JqEjQKDkdldFBvc3REZXRhaWxzEhMucG9zdC5JZFdpdGhJ",
+            "bnRlZ2VyGg0ucG9zdC5Qb3N0T2JqEkYKF0dldFBvc3RzQnlTdWJjYXRlZ29y",
+            "eUlkEhYucG9zdC5TdWJJZFdpdGhDdXJyZW50GhMucG9zdC5MaXN0T2ZQb3N0",
+            "T2JqQg6qAgtHUlBDU2VydmljZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::GRPCService.UserReflection.Descriptor, global::GRPCService.ImageReflection.Descriptor, global::GRPCService.CommentReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -52,6 +55,7 @@ namespace GRPCService {
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.PostObj), global::GRPCService.PostObj.Parser, new[]{ "Id", "Title", "Description", "Price", "Address", "Condition", "PhoneNumber", "Email", "Writer", "Images", "DateCreated", "Comments" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.ListOfPostObj), global::GRPCService.ListOfPostObj.Parser, new[]{ "List" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.IdWithInteger), global::GRPCService.IdWithInteger.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.SubIdWithCurrent), global::GRPCService.SubIdWithCurrent.Parser, new[]{ "Id", "Current" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.TransferPostWithSubcategoryId), global::GRPCService.TransferPostWithSubcategoryId.Parser, new[]{ "IdWithInteger", "PostObj" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.StringAndInteger), global::GRPCService.StringAndInteger.Parser, new[]{ "String", "Current" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.DateCreated), global::GRPCService.DateCreated.Parser, new[]{ "Day", "Month", "Year" }, null, null, null, null)
@@ -1130,6 +1134,214 @@ namespace GRPCService {
 
   }
 
+  public sealed partial class SubIdWithCurrent : pb::IMessage<SubIdWithCurrent>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SubIdWithCurrent> _parser = new pb::MessageParser<SubIdWithCurrent>(() => new SubIdWithCurrent());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SubIdWithCurrent> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GRPCService.PostReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SubIdWithCurrent() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SubIdWithCurrent(SubIdWithCurrent other) : this() {
+      id_ = other.id_;
+      current_ = other.current_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SubIdWithCurrent Clone() {
+      return new SubIdWithCurrent(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "current" field.</summary>
+    public const int CurrentFieldNumber = 2;
+    private int current_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Current {
+      get { return current_; }
+      set {
+        current_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SubIdWithCurrent);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SubIdWithCurrent other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Current != other.Current) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Current != 0) hash ^= Current.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Current != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Current);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Current != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Current);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Current != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Current);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SubIdWithCurrent other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Current != 0) {
+        Current = other.Current;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Current = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Current = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class TransferPostWithSubcategoryId : pb::IMessage<TransferPostWithSubcategoryId>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1142,7 +1354,7 @@ namespace GRPCService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GRPCService.PostReflection.Descriptor.MessageTypes[4]; }
+      get { return global::GRPCService.PostReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1368,7 +1580,7 @@ namespace GRPCService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GRPCService.PostReflection.Descriptor.MessageTypes[5]; }
+      get { return global::GRPCService.PostReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1576,7 +1788,7 @@ namespace GRPCService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GRPCService.PostReflection.Descriptor.MessageTypes[6]; }
+      get { return global::GRPCService.PostReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -64,6 +64,17 @@ public class PostHttpClient : IPostService {
         }
     }
 
+    public async Task<List<Post>?> GetPostsBySubCategoryId(int subCategoryIdSelected, int current) {
+        try {
+            string client = await ClientAPI.getContent(Methods.Get, $"/bySubcategory/{subCategoryIdSelected}/{current}");
+            List<Post> lisFromServer = GetDeserialized<List<Post>>(client);
+            return lisFromServer;
+        }
+        catch (Exception e) {
+            throw new Exception(e.Message);
+        }
+    }
+
 
     public async Task<Post> GetPostDetails(int Id)
     {

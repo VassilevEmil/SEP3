@@ -56,5 +56,11 @@ public class PostServiceImpl implements PostService {
         return postClient.getPostDetails(Id);
     }
 
+    @Override
+    public List<Post> getPostsBySubcategories(int subCategoryIdSelected, int current) {
+
+        return postClient.getPostBySubcategoryId(subCategoryIdSelected, current);
+    }
+
 
 }

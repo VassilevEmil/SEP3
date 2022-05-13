@@ -11,6 +11,7 @@ service Post{
  rpc SearchPosts(StringAndInteger) returns (ListOfPostObj);
  rpc GetAllPosts(RequestModel) returns (ListOfPostObj);
  rpc GetPostDetails(IdWithInteger) returns (PostObj);
+rpc GetPostsBySubcategoryId(SubIdWithCurrent) returns (ListOfPostObj);
 }
 
 message RequestModel {
@@ -30,6 +31,12 @@ message PostObj{
   repeated image.ImageObj  images =10;
   DateCreated dateCreated =11;
    repeated comment.CommentObj comments =12 ;
+}
+
+
+message SubIdWithCurrent{
+  int32 id =1;
+  int32 current =2;
 }
 
 message ListOfPostObj{

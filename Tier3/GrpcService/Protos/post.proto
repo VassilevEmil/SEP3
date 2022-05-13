@@ -13,6 +13,8 @@ service Post{
   rpc SearchPosts(StringAndInteger) returns (ListOfPostObj);
   rpc GetAllPosts(RequestModel) returns (ListOfPostObj);
   rpc GetPostDetails(IdWithInteger) returns (PostObj);
+   rpc GetPostsBySubcategoryId(SubIdWithCurrent) returns (ListOfPostObj);
+
 }
 
 message RequestModel {
@@ -41,6 +43,10 @@ message ListOfPostObj{
 
 message IdWithInteger{
   int32 id=1;
+}
+message SubIdWithCurrent{
+  int32 id =1;
+  int32 current =2;
 }
 
 message TransferPostWithSubcategoryId{

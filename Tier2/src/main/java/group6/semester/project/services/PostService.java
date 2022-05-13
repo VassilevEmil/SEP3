@@ -18,4 +18,7 @@ public interface PostService {
     List<Post> getAllPosts(int current);
 
     Post getPostDetails(int Id);
+
+    List<Post> getPostsBySubcategories(int subCategoryIdSelected, int current);
+
 }

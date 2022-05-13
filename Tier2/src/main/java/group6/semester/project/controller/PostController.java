@@ -75,5 +75,19 @@ public class PostController {
         }
     }
 
+    @GetMapping(value = "/bySubcategory/{subCategoryIdSelected}/{current}")
+    @ResponseBody
+    public ResponseEntity getPostsBySubcategoryId(@PathVariable int subCategoryIdSelected, @PathVariable int current){
+
+
+        try {
+            List<Post> list = postService.getPostsBySubcategories(subCategoryIdSelected, current);
+            return ResponseEntity.ok(list);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.FORBIDDEN);
+        }
+
+    }
+
 
 }

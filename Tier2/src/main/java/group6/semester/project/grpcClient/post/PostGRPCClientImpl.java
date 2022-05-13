@@ -118,6 +118,16 @@ public class PostGRPCClientImpl implements PostClient {
         return postList;
     }
 
+    @Override
+    public List<Post> getPostBySubcategoryId(int subCategoryIdSelected, int current) {
+        PostOuterClass.SubIdWithCurrent subIdWithCurrent = PostOuterClass.SubIdWithCurrent.newBuilder().setCurrent(current).setId(subCategoryIdSelected).build();
+        PostOuterClass.ListOfPostObj postsBySubcategoryId = getPostBlockingStub().getPostsBySubcategoryId(subIdWithCurrent);
+        List<Post> posts = ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(postsBySubcategoryId.getListList());
+        return posts;
+
+
+    }
+
     private void disposeStub() {
         postBlockingStub = null;
         categoryBlockingStub = null;
