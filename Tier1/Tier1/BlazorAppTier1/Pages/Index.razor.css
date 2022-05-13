@@ -378,3 +378,6 @@
 .widget .widget-content {
     margin-top: 10px;
 }
+.subcategories{
+    cursor: pointer;
+}
