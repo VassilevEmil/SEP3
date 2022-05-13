@@ -11,5 +11,5 @@ public interface IPostService {
 
     Task<Post> GetPostDetails(int Id);
 
-    Task<List<Post>> SearchPosts(string title);
+    Task<List<Post>> SearchPosts(string title, int current);
 }

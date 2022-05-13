@@ -13,7 +13,7 @@ public interface PostService {
 
     List<Category> getAllCategories();
 
-    List<Post> searchPosts(String title);
+    List<Post> searchPosts(String title,int current);
 
     List<Post> getAllPosts(int current);
 

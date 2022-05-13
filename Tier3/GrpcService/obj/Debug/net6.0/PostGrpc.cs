@@ -50,7 +50,7 @@ namespace GRPCService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GRPCService.PostObj> __Marshaller_post_PostObj = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.PostObj.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GRPCService.OnlyString> __Marshaller_post_OnlyString = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.OnlyString.Parser));
+    static readonly grpc::Marshaller<global::GRPCService.StringAndInteger> __Marshaller_post_StringAndInteger = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.StringAndInteger.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GRPCService.ListOfPostObj> __Marshaller_post_ListOfPostObj = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.ListOfPostObj.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -67,11 +67,11 @@ namespace GRPCService {
         __Marshaller_post_PostObj);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GRPCService.OnlyString, global::GRPCService.ListOfPostObj> __Method_SearchPosts = new grpc::Method<global::GRPCService.OnlyString, global::GRPCService.ListOfPostObj>(
+    static readonly grpc::Method<global::GRPCService.StringAndInteger, global::GRPCService.ListOfPostObj> __Method_SearchPosts = new grpc::Method<global::GRPCService.StringAndInteger, global::GRPCService.ListOfPostObj>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SearchPosts",
-        __Marshaller_post_OnlyString,
+        __Marshaller_post_StringAndInteger,
         __Marshaller_post_ListOfPostObj);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -107,7 +107,7 @@ namespace GRPCService {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GRPCService.ListOfPostObj> SearchPosts(global::GRPCService.OnlyString request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GRPCService.ListOfPostObj> SearchPosts(global::GRPCService.StringAndInteger request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -146,7 +146,7 @@ namespace GRPCService {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, PostBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_AddPost, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.TransferPostWithSubcategoryId, global::GRPCService.PostObj>(serviceImpl.AddPost));
-      serviceBinder.AddMethod(__Method_SearchPosts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.OnlyString, global::GRPCService.ListOfPostObj>(serviceImpl.SearchPosts));
+      serviceBinder.AddMethod(__Method_SearchPosts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.StringAndInteger, global::GRPCService.ListOfPostObj>(serviceImpl.SearchPosts));
       serviceBinder.AddMethod(__Method_GetAllPosts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.RequestModel, global::GRPCService.ListOfPostObj>(serviceImpl.GetAllPosts));
       serviceBinder.AddMethod(__Method_GetPostDetails, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.IdWithInteger, global::GRPCService.PostObj>(serviceImpl.GetPostDetails));
     }

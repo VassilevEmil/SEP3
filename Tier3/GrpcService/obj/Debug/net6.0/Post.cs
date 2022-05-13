@@ -36,15 +36,15 @@ namespace GRPCService {
             "dBgBIAMoCzINLnBvc3QuUG9zdE9iaiIbCg1JZFdpdGhJbnRlZ2VyEgoKAmlk",
             "GAEgASgFImsKHVRyYW5zZmVyUG9zdFdpdGhTdWJjYXRlZ29yeUlkEioKDWlk",
             "V2l0aEludGVnZXIYASABKAsyEy5wb3N0LklkV2l0aEludGVnZXISHgoHcG9z",
-            "dE9iahgCIAEoCzINLnBvc3QuUG9zdE9iaiIcCgpPbmx5U3RyaW5nEg4KBnN0",
-            "cmluZxgBIAEoCSI3CgtEYXRlQ3JlYXRlZBILCgNkYXkYASABKAUSDQoFbW9u",
-            "dGgYAiABKAUSDAoEeWVhchgDIAEoBTLpAQoEUG9zdBI9CgdBZGRQb3N0EiMu",
-            "cG9zdC5UcmFuc2ZlclBvc3RXaXRoU3ViY2F0ZWdvcnlJZBoNLnBvc3QuUG9z",
-            "dE9iahI0CgtTZWFyY2hQb3N0cxIQLnBvc3QuT25seVN0cmluZxoTLnBvc3Qu",
-            "TGlzdE9mUG9zdE9iahI2CgtHZXRBbGxQb3N0cxISLnBvc3QuUmVxdWVzdE1v",
-            "ZGVsGhMucG9zdC5MaXN0T2ZQb3N0T2JqEjQKDkdldFBvc3REZXRhaWxzEhMu",
-            "cG9zdC5JZFdpdGhJbnRlZ2VyGg0ucG9zdC5Qb3N0T2JqQg6qAgtHUlBDU2Vy",
-            "dmljZWIGcHJvdG8z"));
+            "dE9iahgCIAEoCzINLnBvc3QuUG9zdE9iaiIzChBTdHJpbmdBbmRJbnRlZ2Vy",
+            "Eg4KBnN0cmluZxgBIAEoCRIPCgdjdXJyZW50GAIgASgFIjcKC0RhdGVDcmVh",
+            "dGVkEgsKA2RheRgBIAEoBRINCgVtb250aBgCIAEoBRIMCgR5ZWFyGAMgASgF",
+            "Mu8BCgRQb3N0Ej0KB0FkZFBvc3QSIy5wb3N0LlRyYW5zZmVyUG9zdFdpdGhT",
+            "dWJjYXRlZ29yeUlkGg0ucG9zdC5Qb3N0T2JqEjoKC1NlYXJjaFBvc3RzEhYu",
+            "cG9zdC5TdHJpbmdBbmRJbnRlZ2VyGhMucG9zdC5MaXN0T2ZQb3N0T2JqEjYK",
+            "C0dldEFsbFBvc3RzEhIucG9zdC5SZXF1ZXN0TW9kZWwaEy5wb3N0Lkxpc3RP",
+            "ZlBvc3RPYmoSNAoOR2V0UG9zdERldGFpbHMSEy5wb3N0LklkV2l0aEludGVn",
+            "ZXIaDS5wb3N0LlBvc3RPYmpCDqoCC0dSUENTZXJ2aWNlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::GRPCService.UserReflection.Descriptor, global::GRPCService.ImageReflection.Descriptor, global::GRPCService.CommentReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -53,7 +53,7 @@ namespace GRPCService {
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.ListOfPostObj), global::GRPCService.ListOfPostObj.Parser, new[]{ "List" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.IdWithInteger), global::GRPCService.IdWithInteger.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.TransferPostWithSubcategoryId), global::GRPCService.TransferPostWithSubcategoryId.Parser, new[]{ "IdWithInteger", "PostObj" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.OnlyString), global::GRPCService.OnlyString.Parser, new[]{ "String" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.StringAndInteger), global::GRPCService.StringAndInteger.Parser, new[]{ "String", "Current" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.DateCreated), global::GRPCService.DateCreated.Parser, new[]{ "Day", "Month", "Year" }, null, null, null, null)
           }));
     }
@@ -1356,15 +1356,15 @@ namespace GRPCService {
 
   }
 
-  public sealed partial class OnlyString : pb::IMessage<OnlyString>
+  public sealed partial class StringAndInteger : pb::IMessage<StringAndInteger>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<OnlyString> _parser = new pb::MessageParser<OnlyString>(() => new OnlyString());
+    private static readonly pb::MessageParser<StringAndInteger> _parser = new pb::MessageParser<StringAndInteger>(() => new StringAndInteger());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<OnlyString> Parser { get { return _parser; } }
+    public static pb::MessageParser<StringAndInteger> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1377,21 +1377,22 @@ namespace GRPCService {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OnlyString() {
+    public StringAndInteger() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OnlyString(OnlyString other) : this() {
+    public StringAndInteger(StringAndInteger other) : this() {
       string_ = other.string_;
+      current_ = other.current_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OnlyString Clone() {
-      return new OnlyString(this);
+    public StringAndInteger Clone() {
+      return new StringAndInteger(this);
     }
 
     /// <summary>Field number for the "string" field.</summary>
@@ -1405,13 +1406,24 @@ namespace GRPCService {
       }
     }
 
+    /// <summary>Field number for the "current" field.</summary>
+    public const int CurrentFieldNumber = 2;
+    private int current_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as OnlyString);
+    public int Current {
+      get { return current_; }
+      set {
+        current_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(OnlyString other) {
+    public override bool Equals(object other) {
+      return Equals(other as StringAndInteger);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(StringAndInteger other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1419,6 +1431,7 @@ namespace GRPCService {
         return true;
       }
       if (String != other.String) return false;
+      if (Current != other.Current) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1426,6 +1439,7 @@ namespace GRPCService {
     public override int GetHashCode() {
       int hash = 1;
       if (String.Length != 0) hash ^= String.GetHashCode();
+      if (Current != 0) hash ^= Current.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1446,6 +1460,10 @@ namespace GRPCService {
         output.WriteRawTag(10);
         output.WriteString(String);
       }
+      if (Current != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Current);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1459,6 +1477,10 @@ namespace GRPCService {
         output.WriteRawTag(10);
         output.WriteString(String);
       }
+      if (Current != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Current);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1471,6 +1493,9 @@ namespace GRPCService {
       if (String.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(String);
       }
+      if (Current != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Current);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1478,12 +1503,15 @@ namespace GRPCService {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(OnlyString other) {
+    public void MergeFrom(StringAndInteger other) {
       if (other == null) {
         return;
       }
       if (other.String.Length != 0) {
         String = other.String;
+      }
+      if (other.Current != 0) {
+        Current = other.Current;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1503,6 +1531,10 @@ namespace GRPCService {
             String = input.ReadString();
             break;
           }
+          case 16: {
+            Current = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -1519,6 +1551,10 @@ namespace GRPCService {
             break;
           case 10: {
             String = input.ReadString();
+            break;
+          }
+          case 16: {
+            Current = input.ReadInt32();
             break;
           }
         }

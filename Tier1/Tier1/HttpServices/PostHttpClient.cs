@@ -53,9 +53,9 @@ public class PostHttpClient : IPostService {
         }
     }
 
-    public async Task<List<Post>> SearchPosts(string title) {
+    public async Task<List<Post>> SearchPosts(string title, int current) {
         try {
-            string client = await ClientAPI.getContent(Methods.Get, $"/search/{title}");
+            string client = await ClientAPI.getContent(Methods.Get, $"/search/{title}/{current}");
             List<Post> listFromServer = GetDeserialized<List<Post>>(client);
             return listFromServer;
         }

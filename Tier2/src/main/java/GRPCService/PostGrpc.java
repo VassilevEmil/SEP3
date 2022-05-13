@@ -59,28 +59,28 @@ public final class PostGrpc {
      return getAddPostMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<GRPCService.PostOuterClass.OnlyString,
+  private static volatile io.grpc.MethodDescriptor<GRPCService.PostOuterClass.StringAndInteger,
       GRPCService.PostOuterClass.ListOfPostObj> getSearchPostsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "SearchPosts",
-      requestType = GRPCService.PostOuterClass.OnlyString.class,
+      requestType = GRPCService.PostOuterClass.StringAndInteger.class,
       responseType = GRPCService.PostOuterClass.ListOfPostObj.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GRPCService.PostOuterClass.OnlyString,
+  public static io.grpc.MethodDescriptor<GRPCService.PostOuterClass.StringAndInteger,
       GRPCService.PostOuterClass.ListOfPostObj> getSearchPostsMethod() {
-    io.grpc.MethodDescriptor<GRPCService.PostOuterClass.OnlyString, GRPCService.PostOuterClass.ListOfPostObj> getSearchPostsMethod;
+    io.grpc.MethodDescriptor<GRPCService.PostOuterClass.StringAndInteger, GRPCService.PostOuterClass.ListOfPostObj> getSearchPostsMethod;
     if ((getSearchPostsMethod = PostGrpc.getSearchPostsMethod) == null) {
       synchronized (PostGrpc.class) {
         if ((getSearchPostsMethod = PostGrpc.getSearchPostsMethod) == null) {
           PostGrpc.getSearchPostsMethod = getSearchPostsMethod = 
-              io.grpc.MethodDescriptor.<GRPCService.PostOuterClass.OnlyString, GRPCService.PostOuterClass.ListOfPostObj>newBuilder()
+              io.grpc.MethodDescriptor.<GRPCService.PostOuterClass.StringAndInteger, GRPCService.PostOuterClass.ListOfPostObj>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "post.Post", "SearchPosts"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GRPCService.PostOuterClass.OnlyString.getDefaultInstance()))
+                  GRPCService.PostOuterClass.StringAndInteger.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   GRPCService.PostOuterClass.ListOfPostObj.getDefaultInstance()))
                   .setSchemaDescriptor(new PostMethodDescriptorSupplier("SearchPosts"))
@@ -191,7 +191,7 @@ public final class PostGrpc {
 
     /**
      */
-    public void searchPosts(GRPCService.PostOuterClass.OnlyString request,
+    public void searchPosts(GRPCService.PostOuterClass.StringAndInteger request,
         io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.ListOfPostObj> responseObserver) {
       asyncUnimplementedUnaryCall(getSearchPostsMethod(), responseObserver);
     }
@@ -223,7 +223,7 @@ public final class PostGrpc {
             getSearchPostsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                GRPCService.PostOuterClass.OnlyString,
+                GRPCService.PostOuterClass.StringAndInteger,
                 GRPCService.PostOuterClass.ListOfPostObj>(
                   this, METHODID_SEARCH_POSTS)))
           .addMethod(
@@ -272,7 +272,7 @@ public final class PostGrpc {
 
     /**
      */
-    public void searchPosts(GRPCService.PostOuterClass.OnlyString request,
+    public void searchPosts(GRPCService.PostOuterClass.StringAndInteger request,
         io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.ListOfPostObj> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSearchPostsMethod(), getCallOptions()), request, responseObserver);
@@ -322,7 +322,7 @@ public final class PostGrpc {
 
     /**
      */
-    public GRPCService.PostOuterClass.ListOfPostObj searchPosts(GRPCService.PostOuterClass.OnlyString request) {
+    public GRPCService.PostOuterClass.ListOfPostObj searchPosts(GRPCService.PostOuterClass.StringAndInteger request) {
       return blockingUnaryCall(
           getChannel(), getSearchPostsMethod(), getCallOptions(), request);
     }
@@ -371,7 +371,7 @@ public final class PostGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<GRPCService.PostOuterClass.ListOfPostObj> searchPosts(
-        GRPCService.PostOuterClass.OnlyString request) {
+        GRPCService.PostOuterClass.StringAndInteger request) {
       return futureUnaryCall(
           getChannel().newCall(getSearchPostsMethod(), getCallOptions()), request);
     }
@@ -420,7 +420,7 @@ public final class PostGrpc {
               (io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.PostObj>) responseObserver);
           break;
         case METHODID_SEARCH_POSTS:
-          serviceImpl.searchPosts((GRPCService.PostOuterClass.OnlyString) request,
+          serviceImpl.searchPosts((GRPCService.PostOuterClass.StringAndInteger) request,
               (io.grpc.stub.StreamObserver<GRPCService.PostOuterClass.ListOfPostObj>) responseObserver);
           break;
         case METHODID_GET_ALL_POSTS:

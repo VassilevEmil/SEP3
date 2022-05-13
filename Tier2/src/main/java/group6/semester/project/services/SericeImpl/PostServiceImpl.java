@@ -42,8 +42,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<Post> searchPosts(String title) {
-        return postClient.searchPosts(title);
+    public List<Post> searchPosts(String title, int current) {
+        return postClient.searchPosts(title,current);
     }
 
     @Override

@@ -10,7 +10,7 @@ package post;
 
 service Post{
   rpc AddPost(TransferPostWithSubcategoryId) returns (PostObj);
-  rpc SearchPosts(OnlyString) returns (ListOfPostObj);
+  rpc SearchPosts(StringAndInteger) returns (ListOfPostObj);
   rpc GetAllPosts(RequestModel) returns (ListOfPostObj);
   rpc GetPostDetails(IdWithInteger) returns (PostObj);
 }
@@ -48,8 +48,9 @@ message TransferPostWithSubcategoryId{
   PostObj  postObj =2;
 }
 
-message OnlyString{
+message StringAndInteger{
   string string =1;
+  int32 current =2;
 }
 
 message DateCreated{

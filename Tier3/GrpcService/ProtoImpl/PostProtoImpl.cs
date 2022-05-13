@@ -33,9 +33,10 @@ public class PostProtoImpl : Post.PostBase {
         return ConvertGRPC.ConvertPostToPostObj(addPost);
     }
 
-    public override async Task<ListOfPostObj> SearchPosts(OnlyString request, ServerCallContext context) {
+    public override async Task<ListOfPostObj> SearchPosts(StringAndInteger request, ServerCallContext context) {
         String titleToSearch = request.String;
-        List<Entities.Models.Post> searchedPosts = await _postService.SearchPosts(titleToSearch);
+        int current = request.Current;
+        List<Entities.Models.Post> searchedPosts = await _postService.SearchPosts(titleToSearch, current);
         ListOfPostObj listOfPostObj = new ListOfPostObj() {
             List = {ConvertGRPC.GetRepeatedFieldOfPostFromListOfPosts(searchedPosts)}
         };

@@ -52,11 +52,11 @@ public class PostController {
 
     }
 
-    @GetMapping(value = "/search/{title}")
+    @GetMapping(value = "/search/{title}/{current}")
     @ResponseBody
-    public ResponseEntity searchPosts(@PathVariable String title) {
+    public ResponseEntity searchPosts(@PathVariable String title, @PathVariable int current) {
         try {
-            List<Post> posts = postService.searchPosts(title);
+            List<Post> posts = postService.searchPosts(title, current);
             return ResponseEntity.ok(posts);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);

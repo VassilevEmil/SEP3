@@ -50,10 +50,12 @@ public class PostDAOImpl : IPostService {
         return await _context.Posts.Include(t => t.Images).Include(t => t.Writer).OrderByDescending(post => post.DateCreated).Skip((current-1)*count).Take(count).ToListAsync();
     }
 
-    public async Task<List<Post>> SearchPosts(string titleToSearch) {
+    public async Task<List<Post>> SearchPosts(string titleToSearch, int current) {
+        int count = 9;
         return await _context.Posts.Include(post => post.Images).Include(post => post.Writer)
             .Where(post => post.Title.Contains(titleToSearch))
-            .OrderByDescending(post => post.DateCreated).ToListAsync();
+            .OrderByDescending(post => post.DateCreated)
+            .Skip((current-1)*count).Take(count).ToListAsync();
     }
 
     public async Task<Post> GetPostDetails(int Id)

@@ -10,7 +10,7 @@ public interface IPostService {
 
     Task<List<Post>> GetAllPostBySubCategory(int subcategoryId);
     Task<List<Post>> GetAllPost(int current);
-    Task<List<Post>> SearchPosts(string titleToSearch);
+    Task<List<Post>> SearchPosts(string titleToSearch, int current);
     Task<Post> GetPostDetails(int Id);
 
 }
