@@ -27,12 +27,21 @@
                     </div>
                 </div>
             
+                
+                <!--All reset posts view-->
+                <div class="widget">
+                    <div class="widget-title widget-collapse">
+                        <input type="radio"  name="radiobutton" class="custom-control-input" id="dateposted1" @onclick="@(() => postsFilteredBySubcategory(""))" >
+                        <label class="custom-control-label" for="dateposted1"> Reset Filter</label>
+                    </div>
+                </div>
+                
                 @foreach(var category in allCategories)
                 {
                     <div class="widget">
                         <div class="widget-title widget-collapse">
                             <h6>@category.Name</h6>
-                            <a class="ml-auto" data-toggle="collapse" href="#dateposted" role="button" aria-expanded="false" aria-controls="dateposted"> <i class="fas fa-chevron-down"></i> </a>
+                            <a class="ml-auto" data-toggle="collapse" data-bs-target="#dateposted" role="button" aria-expanded="false" aria-controls="dateposted"> <i class="fas fa-chevron-down"></i> </a>
                         </div>
                         <div class="collapse show" id="dateposted">
                             <div class="widget-content">
@@ -40,7 +49,7 @@
                                 @foreach (var subcategory in category.Subcategories)
                                 {
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="dateposted1">
+                                        <input type="radio"  name="radiobutton" class="custom-control-input" id="dateposted1" @onclick="@(() => postsFilteredBySubcategory(subcategory.Name))" >
                                         <label class="custom-control-label" for="dateposted1">@subcategory.Name</label>
                                     </div>
                                 }
@@ -99,6 +108,10 @@
 
     private List<Post>? allPosts = new List<Post>();
     private List<Category>? allCategories=new List<Category>();
+    
+    // subcategories filter
+    private List<Post>? subcategoriesToShow = new List<Post>();
+    
 
     
     //pagination
@@ -112,17 +125,38 @@
     protected async override Task OnInitializedAsync() {
         allCategories = await _postService.GetALlCategoriesAsync();
         allPosts = await _postService.GetAllPosts();
+        subcategoriesToShow.AddRange(allPosts);
         CurrentPage = 1;
         Pagination(CurrentPage);
         
+        
+
     }
 
+    private async void postsFilteredBySubcategory(string filter)
+    {
+        subcategoriesToShow.Clear();
+        
+        if(filter.Equals(""))
+        {
+            subcategoriesToShow.AddRange(allPosts);
+        }
+
+        for (int i = 0; i < allPosts.Count; i++)
+        {
+            
+                if (allPosts[i].Subcategory.Name.Equals(filter)&&allPosts[i]!=null) subcategoriesToShow.Add(allPosts[i]);
+            }
+               
+        
+        Pagination(CurrentPage);
+    }
 
     private void Pagination(int current)
     {
         int count = 9;
         Navigation.NavigateTo("/"+current);
-        postToShow = allPosts.OrderBy(d=>d.Id).Skip((current-1)*count).Take(count).ToList();
+        postToShow = subcategoriesToShow.OrderBy(d=>d.Id).Skip((current-1)*count).Take(count).ToList();
         if (current == 1)
         {
             backElement = "disabled";
@@ -137,7 +171,8 @@
             nextElement = "disabled";
         }
     }
-    
+
+   
     private async Task UpdateOwnerFilter(ChangeEventArgs args)
     {
         string value = (string)args.Value;

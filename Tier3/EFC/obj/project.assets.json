@@ -720,19 +720,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vassi\\.nuget\\packages\\": {}
+    "C:\\Users\\Marian\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\EFC\\EFC.csproj",
+      "projectUniqueName": "C:\\Users\\Marian\\Desktop\\VIA UNIVERSITY\\3rd semester\\sep project\\SEP3\\Tier3\\EFC\\EFC.csproj",
       "projectName": "EFC",
-      "projectPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\EFC\\EFC.csproj",
-      "packagesPath": "C:\\Users\\vassi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\EFC\\obj\\",
+      "projectPath": "C:\\Users\\Marian\\Desktop\\VIA UNIVERSITY\\3rd semester\\sep project\\SEP3\\Tier3\\EFC\\EFC.csproj",
+      "packagesPath": "C:\\Users\\Marian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Marian\\Desktop\\VIA UNIVERSITY\\3rd semester\\sep project\\SEP3\\Tier3\\EFC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vassi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Marian\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -744,8 +744,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\vassi\\Desktop\\SEP3\\SEP3\\Tier3\\Entities\\Entities.csproj"
+            "C:\\Users\\Marian\\Desktop\\VIA UNIVERSITY\\3rd semester\\sep project\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\Marian\\Desktop\\VIA UNIVERSITY\\3rd semester\\sep project\\SEP3\\Tier3\\Entities\\Entities.csproj"
             }
           }
         }

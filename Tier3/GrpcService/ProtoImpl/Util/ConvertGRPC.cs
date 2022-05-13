@@ -72,7 +72,8 @@ public class ConvertGRPC {
                 Month = request.DateCreated.Month,
                 Year = request.DateCreated.Year
             },
-            PhoneNumber = request.PhoneNumber
+            PhoneNumber = request.PhoneNumber,
+            Subcategory = GetSubcategoryObjFromSubCategory(request.Subcategory)
         };
         return postObj;
     }
@@ -140,7 +141,6 @@ public class ConvertGRPC {
         SubcategoryObj subcategoryObj = new SubcategoryObj() {
             Id = subcategory.Id,
             Name = subcategory.Name,
-            Posts = {new List<PostObj>()},
         };
         return subcategoryObj;
     }
