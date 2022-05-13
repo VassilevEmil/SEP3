@@ -15,5 +15,12 @@ public class Post
     public ICollection<Image> Images { get; set; }
     public User Writer { get; set; }
     
+    public Subcategory? Subcategory { get; set; }
+
+    public Post()
+    {
+        Subcategory = new Subcategory();
+    }
+    
 
 }

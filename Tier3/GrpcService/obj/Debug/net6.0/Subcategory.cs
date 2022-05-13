@@ -24,14 +24,13 @@ namespace GRPCService {
     static SubcategoryReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFzdWJjYXRlZ29yeS5wcm90bxILc3ViY2F0ZWdvcnkaCnBvc3QucHJvdG8i",
-            "SAoOU3ViY2F0ZWdvcnlPYmoSCgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCRIc",
-            "CgVwb3N0cxgDIAMoCzINLnBvc3QuUG9zdE9iajINCgtzdWJDYXRlZ29yeUIO",
-            "qgILR1JQQ1NlcnZpY2ViBnByb3RvMw=="));
+            "ChFzdWJjYXRlZ29yeS5wcm90bxILc3ViY2F0ZWdvcnkiKgoOU3ViY2F0ZWdv",
+            "cnlPYmoSCgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCTINCgtzdWJDYXRlZ29y",
+            "eUIOqgILR1JQQ1NlcnZpY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::GRPCService.PostReflection.Descriptor, },
+          new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.SubcategoryObj), global::GRPCService.SubcategoryObj.Parser, new[]{ "Id", "Name", "Posts" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.SubcategoryObj), global::GRPCService.SubcategoryObj.Parser, new[]{ "Id", "Name" }, null, null, null, null)
           }));
     }
     #endregion
@@ -69,7 +68,6 @@ namespace GRPCService {
     public SubcategoryObj(SubcategoryObj other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      posts_ = other.posts_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -100,16 +98,6 @@ namespace GRPCService {
       }
     }
 
-    /// <summary>Field number for the "posts" field.</summary>
-    public const int PostsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::GRPCService.PostObj> _repeated_posts_codec
-        = pb::FieldCodec.ForMessage(26, global::GRPCService.PostObj.Parser);
-    private readonly pbc::RepeatedField<global::GRPCService.PostObj> posts_ = new pbc::RepeatedField<global::GRPCService.PostObj>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::GRPCService.PostObj> Posts {
-      get { return posts_; }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SubcategoryObj);
@@ -125,7 +113,6 @@ namespace GRPCService {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if(!posts_.Equals(other.posts_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -134,7 +121,6 @@ namespace GRPCService {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      hash ^= posts_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -159,7 +145,6 @@ namespace GRPCService {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      posts_.WriteTo(output, _repeated_posts_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -177,7 +162,6 @@ namespace GRPCService {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      posts_.WriteTo(ref output, _repeated_posts_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -193,7 +177,6 @@ namespace GRPCService {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      size += posts_.CalculateSize(_repeated_posts_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -211,7 +194,6 @@ namespace GRPCService {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      posts_.Add(other.posts_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -234,10 +216,6 @@ namespace GRPCService {
             Name = input.ReadString();
             break;
           }
-          case 26: {
-            posts_.AddEntriesFrom(input, _repeated_posts_codec);
-            break;
-          }
         }
       }
     #endif
@@ -258,10 +236,6 @@ namespace GRPCService {
           }
           case 18: {
             Name = input.ReadString();
-            break;
-          }
-          case 26: {
-            posts_.AddEntriesFrom(ref input, _repeated_posts_codec);
             break;
           }
         }

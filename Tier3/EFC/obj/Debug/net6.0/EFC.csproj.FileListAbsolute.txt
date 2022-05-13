@@ -49,23 +49,6 @@ D:\VIA_Courses\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.dll
 D:\VIA_Courses\SEP3\Tier3\EFC\obj\Debug\net6.0\ref\EFC.dll
 D:\VIA_Courses\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.pdb
 D:\VIA_Courses\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.genruntimeconfig.cache
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.deps.json
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.runtimeconfig.json
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.dll
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\ref\EFC.dll
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.pdb
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\Entities.dll
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\Entities.pdb
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.csproj.AssemblyReference.cache
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.AssemblyInfoInputs.cache
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.AssemblyInfo.cs
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.csproj.CoreCompileInputs.cache
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.csproj.CopyComplete
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.dll
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\ref\EFC.dll
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.pdb
-C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.genruntimeconfig.cache
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.deps.json
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.runtimeconfig.json
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.dll
@@ -83,3 +66,20 @@ C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.d
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\EFC\obj\Debug\net6.0\ref\EFC.dll
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.pdb
 C:\Users\nepal\OneDrive\Desktop\SEP3-Final\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.genruntimeconfig.cache
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.deps.json
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.runtimeconfig.json
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.dll
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\ref\EFC.dll
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\EFC.pdb
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\Entities.dll
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\bin\Debug\net6.0\Entities.pdb
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.csproj.AssemblyReference.cache
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.AssemblyInfoInputs.cache
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.AssemblyInfo.cs
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.csproj.CoreCompileInputs.cache
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.csproj.CopyComplete
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.dll
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\ref\EFC.dll
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.pdb
+C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.genruntimeconfig.cache

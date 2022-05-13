@@ -25,30 +25,32 @@ namespace GRPCService {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cgpwb3N0LnByb3RvEgRwb3N0Ggp1c2VyLnByb3RvGgtpbWFnZS5wcm90bxoN",
-            "Y29tbWVudC5wcm90byIOCgxSZXF1ZXN0TW9kZWwinwIKB1Bvc3RPYmoSCgoC",
-            "aWQYASABKAUSDQoFdGl0bGUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkS",
-            "DQoFcHJpY2UYBCABKAUSDwoHYWRkcmVzcxgFIAEoCRIRCgljb25kaXRpb24Y",
-            "BiABKAkSEwoLcGhvbmVOdW1iZXIYByABKAkSDQoFZW1haWwYCCABKAkSHQoG",
-            "d3JpdGVyGAkgASgLMg0udXNlci5Vc2VyT2JqEh8KBmltYWdlcxgKIAMoCzIP",
-            "LmltYWdlLkltYWdlT2JqEiYKC2RhdGVDcmVhdGVkGAsgASgLMhEucG9zdC5E",
-            "YXRlQ3JlYXRlZBIlCghjb21tZW50cxgMIAMoCzITLmNvbW1lbnQuQ29tbWVu",
-            "dE9iaiIsCg1MaXN0T2ZQb3N0T2JqEhsKBGxpc3QYASADKAsyDS5wb3N0LlBv",
-            "c3RPYmoiGwoNSWRXaXRoSW50ZWdlchIKCgJpZBgBIAEoBSJrCh1UcmFuc2Zl",
-            "clBvc3RXaXRoU3ViY2F0ZWdvcnlJZBIqCg1pZFdpdGhJbnRlZ2VyGAEgASgL",
-            "MhMucG9zdC5JZFdpdGhJbnRlZ2VyEh4KB3Bvc3RPYmoYAiABKAsyDS5wb3N0",
-            "LlBvc3RPYmoiHAoKT25seVN0cmluZxIOCgZzdHJpbmcYASABKAkiNwoLRGF0",
-            "ZUNyZWF0ZWQSCwoDZGF5GAEgASgFEg0KBW1vbnRoGAIgASgFEgwKBHllYXIY",
-            "AyABKAUy6QEKBFBvc3QSPQoHQWRkUG9zdBIjLnBvc3QuVHJhbnNmZXJQb3N0",
-            "V2l0aFN1YmNhdGVnb3J5SWQaDS5wb3N0LlBvc3RPYmoSNAoLU2VhcmNoUG9z",
-            "dHMSEC5wb3N0Lk9ubHlTdHJpbmcaEy5wb3N0Lkxpc3RPZlBvc3RPYmoSNgoL",
-            "R2V0QWxsUG9zdHMSEi5wb3N0LlJlcXVlc3RNb2RlbBoTLnBvc3QuTGlzdE9m",
-            "UG9zdE9iahI0Cg5HZXRQb3N0RGV0YWlscxITLnBvc3QuSWRXaXRoSW50ZWdl",
-            "choNLnBvc3QuUG9zdE9iakIOqgILR1JQQ1NlcnZpY2ViBnByb3RvMw=="));
+            "Y29tbWVudC5wcm90bxoRc3ViY2F0ZWdvcnkucHJvdG8iDgoMUmVxdWVzdE1v",
+            "ZGVsItECCgdQb3N0T2JqEgoKAmlkGAEgASgFEg0KBXRpdGxlGAIgASgJEhMK",
+            "C2Rlc2NyaXB0aW9uGAMgASgJEg0KBXByaWNlGAQgASgFEg8KB2FkZHJlc3MY",
+            "BSABKAkSEQoJY29uZGl0aW9uGAYgASgJEhMKC3Bob25lTnVtYmVyGAcgASgJ",
+            "Eg0KBWVtYWlsGAggASgJEh0KBndyaXRlchgJIAEoCzINLnVzZXIuVXNlck9i",
+            "ahIfCgZpbWFnZXMYCiADKAsyDy5pbWFnZS5JbWFnZU9iahImCgtkYXRlQ3Jl",
+            "YXRlZBgLIAEoCzIRLnBvc3QuRGF0ZUNyZWF0ZWQSJQoIY29tbWVudHMYDCAD",
+            "KAsyEy5jb21tZW50LkNvbW1lbnRPYmoSMAoLc3ViY2F0ZWdvcnkYDSABKAsy",
+            "Gy5zdWJjYXRlZ29yeS5TdWJjYXRlZ29yeU9iaiIsCg1MaXN0T2ZQb3N0T2Jq",
+            "EhsKBGxpc3QYASADKAsyDS5wb3N0LlBvc3RPYmoiGwoNSWRXaXRoSW50ZWdl",
+            "chIKCgJpZBgBIAEoBSJrCh1UcmFuc2ZlclBvc3RXaXRoU3ViY2F0ZWdvcnlJ",
+            "ZBIqCg1pZFdpdGhJbnRlZ2VyGAEgASgLMhMucG9zdC5JZFdpdGhJbnRlZ2Vy",
+            "Eh4KB3Bvc3RPYmoYAiABKAsyDS5wb3N0LlBvc3RPYmoiHAoKT25seVN0cmlu",
+            "ZxIOCgZzdHJpbmcYASABKAkiNwoLRGF0ZUNyZWF0ZWQSCwoDZGF5GAEgASgF",
+            "Eg0KBW1vbnRoGAIgASgFEgwKBHllYXIYAyABKAUy6QEKBFBvc3QSPQoHQWRk",
+            "UG9zdBIjLnBvc3QuVHJhbnNmZXJQb3N0V2l0aFN1YmNhdGVnb3J5SWQaDS5w",
+            "b3N0LlBvc3RPYmoSNAoLU2VhcmNoUG9zdHMSEC5wb3N0Lk9ubHlTdHJpbmca",
+            "Ey5wb3N0Lkxpc3RPZlBvc3RPYmoSNgoLR2V0QWxsUG9zdHMSEi5wb3N0LlJl",
+            "cXVlc3RNb2RlbBoTLnBvc3QuTGlzdE9mUG9zdE9iahI0Cg5HZXRQb3N0RGV0",
+            "YWlscxITLnBvc3QuSWRXaXRoSW50ZWdlchoNLnBvc3QuUG9zdE9iakIOqgIL",
+            "R1JQQ1NlcnZpY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::GRPCService.UserReflection.Descriptor, global::GRPCService.ImageReflection.Descriptor, global::GRPCService.CommentReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::GRPCService.UserReflection.Descriptor, global::GRPCService.ImageReflection.Descriptor, global::GRPCService.CommentReflection.Descriptor, global::GRPCService.SubcategoryReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.RequestModel), global::GRPCService.RequestModel.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.PostObj), global::GRPCService.PostObj.Parser, new[]{ "Id", "Title", "Description", "Price", "Address", "Condition", "PhoneNumber", "Email", "Writer", "Images", "DateCreated", "Comments" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.PostObj), global::GRPCService.PostObj.Parser, new[]{ "Id", "Title", "Description", "Price", "Address", "Condition", "PhoneNumber", "Email", "Writer", "Images", "DateCreated", "Comments", "Subcategory" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.ListOfPostObj), global::GRPCService.ListOfPostObj.Parser, new[]{ "List" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.IdWithInteger), global::GRPCService.IdWithInteger.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.TransferPostWithSubcategoryId), global::GRPCService.TransferPostWithSubcategoryId.Parser, new[]{ "IdWithInteger", "PostObj" }, null, null, null, null),
@@ -237,6 +239,7 @@ namespace GRPCService {
       images_ = other.images_.Clone();
       dateCreated_ = other.dateCreated_ != null ? other.dateCreated_.Clone() : null;
       comments_ = other.comments_.Clone();
+      subcategory_ = other.subcategory_ != null ? other.subcategory_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -375,6 +378,17 @@ namespace GRPCService {
       get { return comments_; }
     }
 
+    /// <summary>Field number for the "subcategory" field.</summary>
+    public const int SubcategoryFieldNumber = 13;
+    private global::GRPCService.SubcategoryObj subcategory_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GRPCService.SubcategoryObj Subcategory {
+      get { return subcategory_; }
+      set {
+        subcategory_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PostObj);
@@ -400,6 +414,7 @@ namespace GRPCService {
       if(!images_.Equals(other.images_)) return false;
       if (!object.Equals(DateCreated, other.DateCreated)) return false;
       if(!comments_.Equals(other.comments_)) return false;
+      if (!object.Equals(Subcategory, other.Subcategory)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -418,6 +433,7 @@ namespace GRPCService {
       hash ^= images_.GetHashCode();
       if (dateCreated_ != null) hash ^= DateCreated.GetHashCode();
       hash ^= comments_.GetHashCode();
+      if (subcategory_ != null) hash ^= Subcategory.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -476,6 +492,10 @@ namespace GRPCService {
         output.WriteMessage(DateCreated);
       }
       comments_.WriteTo(output, _repeated_comments_codec);
+      if (subcategory_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(Subcategory);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -527,6 +547,10 @@ namespace GRPCService {
         output.WriteMessage(DateCreated);
       }
       comments_.WriteTo(ref output, _repeated_comments_codec);
+      if (subcategory_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(Subcategory);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -568,6 +592,9 @@ namespace GRPCService {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DateCreated);
       }
       size += comments_.CalculateSize(_repeated_comments_codec);
+      if (subcategory_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Subcategory);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -617,6 +644,12 @@ namespace GRPCService {
         DateCreated.MergeFrom(other.DateCreated);
       }
       comments_.Add(other.comments_);
+      if (other.subcategory_ != null) {
+        if (subcategory_ == null) {
+          Subcategory = new global::GRPCService.SubcategoryObj();
+        }
+        Subcategory.MergeFrom(other.Subcategory);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -685,6 +718,13 @@ namespace GRPCService {
             comments_.AddEntriesFrom(input, _repeated_comments_codec);
             break;
           }
+          case 106: {
+            if (subcategory_ == null) {
+              Subcategory = new global::GRPCService.SubcategoryObj();
+            }
+            input.ReadMessage(Subcategory);
+            break;
+          }
         }
       }
     #endif
@@ -751,6 +791,13 @@ namespace GRPCService {
           }
           case 98: {
             comments_.AddEntriesFrom(ref input, _repeated_comments_codec);
+            break;
+          }
+          case 106: {
+            if (subcategory_ == null) {
+              Subcategory = new global::GRPCService.SubcategoryObj();
+            }
+            input.ReadMessage(Subcategory);
             break;
           }
         }
