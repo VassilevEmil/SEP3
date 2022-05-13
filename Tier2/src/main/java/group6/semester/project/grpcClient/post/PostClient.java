@@ -16,5 +16,5 @@ public interface PostClient {
     Post getPostDetails(int id);
     List<Post> searchPosts(String title);
 
-    List<Post> getAllPosts();
+    List<Post> getAllPosts(int current);
 }

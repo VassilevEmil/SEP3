@@ -4,7 +4,6 @@ option java_package = "GRPCService";
 import "user.proto";
 import "image.proto";
 import "comment.proto";
-import "subcategory.proto";
 package post;
 
 service Post{
@@ -15,6 +14,7 @@ service Post{
 }
 
 message RequestModel {
+  int32 current = 1;
 }
 
 message PostObj{
@@ -30,7 +30,6 @@ message PostObj{
   repeated image.ImageObj  images =10;
   DateCreated dateCreated =11;
    repeated comment.CommentObj comments =12 ;
-  subcategory.SubcategoryObj subcategory= 13;
 }
 
 message ListOfPostObj{

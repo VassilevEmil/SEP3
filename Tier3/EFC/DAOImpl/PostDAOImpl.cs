@@ -45,8 +45,9 @@ public class PostDAOImpl : IPostService {
         return Task.FromResult(postOnSubCategory);
     }
 
-    public async Task<List<Post>> GetAllPost() {
-        return _context.Posts.Include(t => t.Images).Include(t => t.Writer).Include(t=>t.Subcategory).ToList();
+    public async Task<List<Post>> GetAllPost(int current) {
+        int count = 9;
+        return await _context.Posts.Include(t => t.Images).Include(t => t.Writer).OrderByDescending(post => post.DateCreated).Skip((current-1)*count).Take(count).ToListAsync();
     }
 
     public async Task<List<Post>> SearchPosts(string titleToSearch) {

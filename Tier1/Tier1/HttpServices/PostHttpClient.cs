@@ -41,10 +41,10 @@ public class PostHttpClient : IPostService {
         }
     }
 
-    public async Task<List<Post>> GetAllPosts()
+    public async Task<List<Post>> GetAllPosts(int current)
     {
         try {
-            string client = await ClientAPI.getContent(Methods.Get, $"/post");
+            string client = await ClientAPI.getContent(Methods.Get, $"/post/all/{current}");
             List<Post> list = GetDeserialized<List<Post>>(client);
             return list;
         }

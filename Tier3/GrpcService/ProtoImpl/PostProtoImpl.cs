@@ -13,9 +13,9 @@ public class PostProtoImpl : Post.PostBase {
         _postService = postService;
     }
 
-    public override async Task<ListOfPostObj> GetAllPosts(RequestModel request, ServerCallContext context)
-    {
-        var addPost = await _postService.GetAllPost();
+    public override async Task<ListOfPostObj> GetAllPosts(RequestModel request, ServerCallContext context) {
+        int current = request.Current;
+        var addPost = await _postService.GetAllPost(current);
         return ConvertGRPC.ConvertListPostToObj(addPost);
     }
 

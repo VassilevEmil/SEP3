@@ -15,7 +15,7 @@ public interface PostService {
 
     List<Post> searchPosts(String title);
 
-    List<Post> getAllPosts();
+    List<Post> getAllPosts(int current);
 
     Post getPostDetails(int Id);
 }

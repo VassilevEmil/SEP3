@@ -17,6 +17,11 @@ public final class PostOuterClass {
   public interface RequestModelOrBuilder extends
       // @@protoc_insertion_point(interface_extends:post.RequestModel)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 current = 1;</code>
+     */
+    int getCurrent();
   }
   /**
    * Protobuf type {@code post.RequestModel}
@@ -31,6 +36,7 @@ public final class PostOuterClass {
       super(builder);
     }
     private RequestModel() {
+      current_ = 0;
     }
 
     @java.lang.Override
@@ -46,6 +52,7 @@ public final class PostOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -56,6 +63,11 @@ public final class PostOuterClass {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              current_ = input.readInt32();
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -88,6 +100,15 @@ public final class PostOuterClass {
               GRPCService.PostOuterClass.RequestModel.class, GRPCService.PostOuterClass.RequestModel.Builder.class);
     }
 
+    public static final int CURRENT_FIELD_NUMBER = 1;
+    private int current_;
+    /**
+     * <code>int32 current = 1;</code>
+     */
+    public int getCurrent() {
+      return current_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -102,6 +123,9 @@ public final class PostOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (current_ != 0) {
+        output.writeInt32(1, current_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -111,6 +135,10 @@ public final class PostOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (current_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, current_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -127,6 +155,8 @@ public final class PostOuterClass {
       GRPCService.PostOuterClass.RequestModel other = (GRPCService.PostOuterClass.RequestModel) obj;
 
       boolean result = true;
+      result = result && (getCurrent()
+          == other.getCurrent());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -138,6 +168,8 @@ public final class PostOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CURRENT_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrent();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -271,6 +303,8 @@ public final class PostOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        current_ = 0;
+
         return this;
       }
 
@@ -297,6 +331,7 @@ public final class PostOuterClass {
       @java.lang.Override
       public GRPCService.PostOuterClass.RequestModel buildPartial() {
         GRPCService.PostOuterClass.RequestModel result = new GRPCService.PostOuterClass.RequestModel(this);
+        result.current_ = current_;
         onBuilt();
         return result;
       }
@@ -345,6 +380,9 @@ public final class PostOuterClass {
 
       public Builder mergeFrom(GRPCService.PostOuterClass.RequestModel other) {
         if (other == GRPCService.PostOuterClass.RequestModel.getDefaultInstance()) return this;
+        if (other.getCurrent() != 0) {
+          setCurrent(other.getCurrent());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -371,6 +409,32 @@ public final class PostOuterClass {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private int current_ ;
+      /**
+       * <code>int32 current = 1;</code>
+       */
+      public int getCurrent() {
+        return current_;
+      }
+      /**
+       * <code>int32 current = 1;</code>
+       */
+      public Builder setCurrent(int value) {
+        
+        current_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 current = 1;</code>
+       */
+      public Builder clearCurrent() {
+        
+        current_ = 0;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -6170,28 +6234,28 @@ public final class PostOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\npost.proto\022\004post\032\nuser.proto\032\013image.pr" +
-      "oto\032\rcomment.proto\"\016\n\014RequestModel\"\237\002\n\007P" +
-      "ostObj\022\n\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013des" +
-      "cription\030\003 \001(\t\022\r\n\005price\030\004 \001(\005\022\017\n\007address" +
-      "\030\005 \001(\t\022\021\n\tcondition\030\006 \001(\t\022\023\n\013phoneNumber" +
-      "\030\007 \001(\t\022\r\n\005email\030\010 \001(\t\022\035\n\006writer\030\t \001(\0132\r." +
-      "user.UserObj\022\037\n\006images\030\n \003(\0132\017.image.Ima" +
-      "geObj\022&\n\013dateCreated\030\013 \001(\0132\021.post.DateCr" +
-      "eated\022%\n\010comments\030\014 \003(\0132\023.comment.Commen" +
-      "tObj\",\n\rListOfPostObj\022\033\n\004list\030\001 \003(\0132\r.po" +
-      "st.PostObj\"\033\n\rIdWithInteger\022\n\n\002id\030\001 \001(\005\"" +
-      "k\n\035TransferPostWithSubcategoryId\022*\n\ridWi" +
-      "thInteger\030\001 \001(\0132\023.post.IdWithInteger\022\036\n\007" +
-      "postObj\030\002 \001(\0132\r.post.PostObj\"\034\n\nOnlyStri" +
-      "ng\022\016\n\006string\030\001 \001(\t\"7\n\013DateCreated\022\013\n\003day" +
-      "\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030\003 \001(\0052\351\001\n\004" +
-      "Post\022=\n\007AddPost\022#.post.TransferPostWithS" +
-      "ubcategoryId\032\r.post.PostObj\0224\n\013SearchPos" +
-      "ts\022\020.post.OnlyString\032\023.post.ListOfPostOb" +
-      "j\0226\n\013GetAllPosts\022\022.post.RequestModel\032\023.p" +
-      "ost.ListOfPostObj\0224\n\016GetPostDetails\022\023.po" +
-      "st.IdWithInteger\032\r.post.PostObjB\r\n\013GRPCS" +
-      "erviceb\006proto3"
+      "oto\032\rcomment.proto\"\037\n\014RequestModel\022\017\n\007cu" +
+      "rrent\030\001 \001(\005\"\237\002\n\007PostObj\022\n\n\002id\030\001 \001(\005\022\r\n\005t" +
+      "itle\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005price" +
+      "\030\004 \001(\005\022\017\n\007address\030\005 \001(\t\022\021\n\tcondition\030\006 \001" +
+      "(\t\022\023\n\013phoneNumber\030\007 \001(\t\022\r\n\005email\030\010 \001(\t\022\035" +
+      "\n\006writer\030\t \001(\0132\r.user.UserObj\022\037\n\006images\030" +
+      "\n \003(\0132\017.image.ImageObj\022&\n\013dateCreated\030\013 " +
+      "\001(\0132\021.post.DateCreated\022%\n\010comments\030\014 \003(\013" +
+      "2\023.comment.CommentObj\",\n\rListOfPostObj\022\033" +
+      "\n\004list\030\001 \003(\0132\r.post.PostObj\"\033\n\rIdWithInt" +
+      "eger\022\n\n\002id\030\001 \001(\005\"k\n\035TransferPostWithSubc" +
+      "ategoryId\022*\n\ridWithInteger\030\001 \001(\0132\023.post." +
+      "IdWithInteger\022\036\n\007postObj\030\002 \001(\0132\r.post.Po" +
+      "stObj\"\034\n\nOnlyString\022\016\n\006string\030\001 \001(\t\"7\n\013D" +
+      "ateCreated\022\013\n\003day\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\014" +
+      "\n\004year\030\003 \001(\0052\351\001\n\004Post\022=\n\007AddPost\022#.post." +
+      "TransferPostWithSubcategoryId\032\r.post.Pos" +
+      "tObj\0224\n\013SearchPosts\022\020.post.OnlyString\032\023." +
+      "post.ListOfPostObj\0226\n\013GetAllPosts\022\022.post" +
+      ".RequestModel\032\023.post.ListOfPostObj\0224\n\016Ge" +
+      "tPostDetails\022\023.post.IdWithInteger\032\r.post" +
+      ".PostObjB\r\n\013GRPCServiceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6213,7 +6277,7 @@ public final class PostOuterClass {
     internal_static_post_RequestModel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_post_RequestModel_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Current", });
     internal_static_post_PostObj_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_post_PostObj_fieldAccessorTable = new

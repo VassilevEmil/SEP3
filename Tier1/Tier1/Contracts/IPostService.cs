@@ -7,7 +7,7 @@ public interface IPostService {
     Task<List<Category>> GetALlCategoriesAsync();
 
     Task<List<Post>> GetPostsByName(string name);
-    Task<List<Post>> GetAllPosts();
+    Task<List<Post>> GetAllPosts(int current);
 
     Task<Post> GetPostDetails(int Id);
 

@@ -25,32 +25,31 @@ namespace GRPCService {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cgpwb3N0LnByb3RvEgRwb3N0Ggp1c2VyLnByb3RvGgtpbWFnZS5wcm90bxoN",
-            "Y29tbWVudC5wcm90bxoRc3ViY2F0ZWdvcnkucHJvdG8iDgoMUmVxdWVzdE1v",
-            "ZGVsItECCgdQb3N0T2JqEgoKAmlkGAEgASgFEg0KBXRpdGxlGAIgASgJEhMK",
-            "C2Rlc2NyaXB0aW9uGAMgASgJEg0KBXByaWNlGAQgASgFEg8KB2FkZHJlc3MY",
-            "BSABKAkSEQoJY29uZGl0aW9uGAYgASgJEhMKC3Bob25lTnVtYmVyGAcgASgJ",
-            "Eg0KBWVtYWlsGAggASgJEh0KBndyaXRlchgJIAEoCzINLnVzZXIuVXNlck9i",
-            "ahIfCgZpbWFnZXMYCiADKAsyDy5pbWFnZS5JbWFnZU9iahImCgtkYXRlQ3Jl",
-            "YXRlZBgLIAEoCzIRLnBvc3QuRGF0ZUNyZWF0ZWQSJQoIY29tbWVudHMYDCAD",
-            "KAsyEy5jb21tZW50LkNvbW1lbnRPYmoSMAoLc3ViY2F0ZWdvcnkYDSABKAsy",
-            "Gy5zdWJjYXRlZ29yeS5TdWJjYXRlZ29yeU9iaiIsCg1MaXN0T2ZQb3N0T2Jq",
-            "EhsKBGxpc3QYASADKAsyDS5wb3N0LlBvc3RPYmoiGwoNSWRXaXRoSW50ZWdl",
-            "chIKCgJpZBgBIAEoBSJrCh1UcmFuc2ZlclBvc3RXaXRoU3ViY2F0ZWdvcnlJ",
-            "ZBIqCg1pZFdpdGhJbnRlZ2VyGAEgASgLMhMucG9zdC5JZFdpdGhJbnRlZ2Vy",
-            "Eh4KB3Bvc3RPYmoYAiABKAsyDS5wb3N0LlBvc3RPYmoiHAoKT25seVN0cmlu",
-            "ZxIOCgZzdHJpbmcYASABKAkiNwoLRGF0ZUNyZWF0ZWQSCwoDZGF5GAEgASgF",
-            "Eg0KBW1vbnRoGAIgASgFEgwKBHllYXIYAyABKAUy6QEKBFBvc3QSPQoHQWRk",
-            "UG9zdBIjLnBvc3QuVHJhbnNmZXJQb3N0V2l0aFN1YmNhdGVnb3J5SWQaDS5w",
-            "b3N0LlBvc3RPYmoSNAoLU2VhcmNoUG9zdHMSEC5wb3N0Lk9ubHlTdHJpbmca",
-            "Ey5wb3N0Lkxpc3RPZlBvc3RPYmoSNgoLR2V0QWxsUG9zdHMSEi5wb3N0LlJl",
-            "cXVlc3RNb2RlbBoTLnBvc3QuTGlzdE9mUG9zdE9iahI0Cg5HZXRQb3N0RGV0",
-            "YWlscxITLnBvc3QuSWRXaXRoSW50ZWdlchoNLnBvc3QuUG9zdE9iakIOqgIL",
-            "R1JQQ1NlcnZpY2ViBnByb3RvMw=="));
+            "Y29tbWVudC5wcm90byIfCgxSZXF1ZXN0TW9kZWwSDwoHY3VycmVudBgBIAEo",
+            "BSKfAgoHUG9zdE9iahIKCgJpZBgBIAEoBRINCgV0aXRsZRgCIAEoCRITCgtk",
+            "ZXNjcmlwdGlvbhgDIAEoCRINCgVwcmljZRgEIAEoBRIPCgdhZGRyZXNzGAUg",
+            "ASgJEhEKCWNvbmRpdGlvbhgGIAEoCRITCgtwaG9uZU51bWJlchgHIAEoCRIN",
+            "CgVlbWFpbBgIIAEoCRIdCgZ3cml0ZXIYCSABKAsyDS51c2VyLlVzZXJPYmoS",
+            "HwoGaW1hZ2VzGAogAygLMg8uaW1hZ2UuSW1hZ2VPYmoSJgoLZGF0ZUNyZWF0",
+            "ZWQYCyABKAsyES5wb3N0LkRhdGVDcmVhdGVkEiUKCGNvbW1lbnRzGAwgAygL",
+            "MhMuY29tbWVudC5Db21tZW50T2JqIiwKDUxpc3RPZlBvc3RPYmoSGwoEbGlz",
+            "dBgBIAMoCzINLnBvc3QuUG9zdE9iaiIbCg1JZFdpdGhJbnRlZ2VyEgoKAmlk",
+            "GAEgASgFImsKHVRyYW5zZmVyUG9zdFdpdGhTdWJjYXRlZ29yeUlkEioKDWlk",
+            "V2l0aEludGVnZXIYASABKAsyEy5wb3N0LklkV2l0aEludGVnZXISHgoHcG9z",
+            "dE9iahgCIAEoCzINLnBvc3QuUG9zdE9iaiIcCgpPbmx5U3RyaW5nEg4KBnN0",
+            "cmluZxgBIAEoCSI3CgtEYXRlQ3JlYXRlZBILCgNkYXkYASABKAUSDQoFbW9u",
+            "dGgYAiABKAUSDAoEeWVhchgDIAEoBTLpAQoEUG9zdBI9CgdBZGRQb3N0EiMu",
+            "cG9zdC5UcmFuc2ZlclBvc3RXaXRoU3ViY2F0ZWdvcnlJZBoNLnBvc3QuUG9z",
+            "dE9iahI0CgtTZWFyY2hQb3N0cxIQLnBvc3QuT25seVN0cmluZxoTLnBvc3Qu",
+            "TGlzdE9mUG9zdE9iahI2CgtHZXRBbGxQb3N0cxISLnBvc3QuUmVxdWVzdE1v",
+            "ZGVsGhMucG9zdC5MaXN0T2ZQb3N0T2JqEjQKDkdldFBvc3REZXRhaWxzEhMu",
+            "cG9zdC5JZFdpdGhJbnRlZ2VyGg0ucG9zdC5Qb3N0T2JqQg6qAgtHUlBDU2Vy",
+            "dmljZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::GRPCService.UserReflection.Descriptor, global::GRPCService.ImageReflection.Descriptor, global::GRPCService.CommentReflection.Descriptor, global::GRPCService.SubcategoryReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::GRPCService.UserReflection.Descriptor, global::GRPCService.ImageReflection.Descriptor, global::GRPCService.CommentReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.RequestModel), global::GRPCService.RequestModel.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.PostObj), global::GRPCService.PostObj.Parser, new[]{ "Id", "Title", "Description", "Price", "Address", "Condition", "PhoneNumber", "Email", "Writer", "Images", "DateCreated", "Comments", "Subcategory" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.RequestModel), global::GRPCService.RequestModel.Parser, new[]{ "Current" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.PostObj), global::GRPCService.PostObj.Parser, new[]{ "Id", "Title", "Description", "Price", "Address", "Condition", "PhoneNumber", "Email", "Writer", "Images", "DateCreated", "Comments" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.ListOfPostObj), global::GRPCService.ListOfPostObj.Parser, new[]{ "List" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.IdWithInteger), global::GRPCService.IdWithInteger.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GRPCService.TransferPostWithSubcategoryId), global::GRPCService.TransferPostWithSubcategoryId.Parser, new[]{ "IdWithInteger", "PostObj" }, null, null, null, null),
@@ -91,12 +90,24 @@ namespace GRPCService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public RequestModel(RequestModel other) : this() {
+      current_ = other.current_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public RequestModel Clone() {
       return new RequestModel(this);
+    }
+
+    /// <summary>Field number for the "current" field.</summary>
+    public const int CurrentFieldNumber = 1;
+    private int current_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Current {
+      get { return current_; }
+      set {
+        current_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,12 +123,14 @@ namespace GRPCService {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Current != other.Current) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Current != 0) hash ^= Current.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -134,6 +147,10 @@ namespace GRPCService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Current != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Current);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -143,6 +160,10 @@ namespace GRPCService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Current != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Current);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -152,6 +173,9 @@ namespace GRPCService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Current != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Current);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -162,6 +186,9 @@ namespace GRPCService {
     public void MergeFrom(RequestModel other) {
       if (other == null) {
         return;
+      }
+      if (other.Current != 0) {
+        Current = other.Current;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -177,6 +204,10 @@ namespace GRPCService {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            Current = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -191,6 +222,10 @@ namespace GRPCService {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            Current = input.ReadInt32();
+            break;
+          }
         }
       }
     }
@@ -239,7 +274,6 @@ namespace GRPCService {
       images_ = other.images_.Clone();
       dateCreated_ = other.dateCreated_ != null ? other.dateCreated_.Clone() : null;
       comments_ = other.comments_.Clone();
-      subcategory_ = other.subcategory_ != null ? other.subcategory_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -378,17 +412,6 @@ namespace GRPCService {
       get { return comments_; }
     }
 
-    /// <summary>Field number for the "subcategory" field.</summary>
-    public const int SubcategoryFieldNumber = 13;
-    private global::GRPCService.SubcategoryObj subcategory_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::GRPCService.SubcategoryObj Subcategory {
-      get { return subcategory_; }
-      set {
-        subcategory_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PostObj);
@@ -414,7 +437,6 @@ namespace GRPCService {
       if(!images_.Equals(other.images_)) return false;
       if (!object.Equals(DateCreated, other.DateCreated)) return false;
       if(!comments_.Equals(other.comments_)) return false;
-      if (!object.Equals(Subcategory, other.Subcategory)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -433,7 +455,6 @@ namespace GRPCService {
       hash ^= images_.GetHashCode();
       if (dateCreated_ != null) hash ^= DateCreated.GetHashCode();
       hash ^= comments_.GetHashCode();
-      if (subcategory_ != null) hash ^= Subcategory.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -492,10 +513,6 @@ namespace GRPCService {
         output.WriteMessage(DateCreated);
       }
       comments_.WriteTo(output, _repeated_comments_codec);
-      if (subcategory_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(Subcategory);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -547,10 +564,6 @@ namespace GRPCService {
         output.WriteMessage(DateCreated);
       }
       comments_.WriteTo(ref output, _repeated_comments_codec);
-      if (subcategory_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(Subcategory);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -592,9 +605,6 @@ namespace GRPCService {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DateCreated);
       }
       size += comments_.CalculateSize(_repeated_comments_codec);
-      if (subcategory_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Subcategory);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -644,12 +654,6 @@ namespace GRPCService {
         DateCreated.MergeFrom(other.DateCreated);
       }
       comments_.Add(other.comments_);
-      if (other.subcategory_ != null) {
-        if (subcategory_ == null) {
-          Subcategory = new global::GRPCService.SubcategoryObj();
-        }
-        Subcategory.MergeFrom(other.Subcategory);
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -718,13 +722,6 @@ namespace GRPCService {
             comments_.AddEntriesFrom(input, _repeated_comments_codec);
             break;
           }
-          case 106: {
-            if (subcategory_ == null) {
-              Subcategory = new global::GRPCService.SubcategoryObj();
-            }
-            input.ReadMessage(Subcategory);
-            break;
-          }
         }
       }
     #endif
@@ -791,13 +788,6 @@ namespace GRPCService {
           }
           case 98: {
             comments_.AddEntriesFrom(ref input, _repeated_comments_codec);
-            break;
-          }
-          case 106: {
-            if (subcategory_ == null) {
-              Subcategory = new global::GRPCService.SubcategoryObj();
-            }
-            input.ReadMessage(Subcategory);
             break;
           }
         }

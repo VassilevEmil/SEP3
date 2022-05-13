@@ -9,7 +9,7 @@ public interface IPostService {
     Task<List<Post>> GetAllPosyByUserName(string userName);
 
     Task<List<Post>> GetAllPostBySubCategory(int subcategoryId);
-    Task<List<Post>> GetAllPost();
+    Task<List<Post>> GetAllPost(int current);
     Task<List<Post>> SearchPosts(string titleToSearch);
     Task<Post> GetPostDetails(int Id);
 

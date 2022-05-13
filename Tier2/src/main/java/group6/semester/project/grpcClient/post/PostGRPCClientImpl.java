@@ -104,8 +104,8 @@ public class PostGRPCClientImpl implements PostClient {
     }
 
     @Override
-    public List<Post> getAllPosts() {
-        PostOuterClass.RequestModel requestModal = PostOuterClass.RequestModel.newBuilder().build();
+    public List<Post> getAllPosts(int current) {
+        PostOuterClass.RequestModel requestModal = PostOuterClass.RequestModel.newBuilder().setCurrent(current).build();
         PostOuterClass.ListOfPostObj list = getPostBlockingStub().getAllPosts(requestModal);
         List<Post> postList = null;
         try {
