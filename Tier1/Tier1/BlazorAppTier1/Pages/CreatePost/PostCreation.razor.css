@@ -29,8 +29,9 @@
     padding: 1.25rem;
 }
 
-body{
-    background:#eee;
+.body{
+    background: rgba(113, 108, 108, 0.02);
+    color: white;
 }
 #text {
     resize: none;

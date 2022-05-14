@@ -1,9 +1,10 @@
-﻿using Entities.Models;
+﻿using System.Runtime.InteropServices;
+using Entities.Models;
 
 namespace Contracts; 
 
 public interface IPostService {
-    Task<Post> AddPostAsync(int subCategoryId, Post postToAdd);
+    Task<Post> AddPostAsync(int subCategoryId, Post postToAdd,[Optional] MultipartFormDataContent formDataContent);
     Task<List<Category>> GetALlCategoriesAsync();
 
     Task<List<Post>> GetAllPosts(int current);

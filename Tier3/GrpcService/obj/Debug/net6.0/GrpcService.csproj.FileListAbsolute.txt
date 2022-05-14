@@ -193,3 +193,42 @@ C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\GrpcS
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\GrpcService\obj\Debug\net6.0\ref\GrpcService.dll
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.pdb
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.genruntimeconfig.cache
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\appsettings.Development.json
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\appsettings.json
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\GrpcService.exe
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\GrpcService.deps.json
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\GrpcService.runtimeconfig.json
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\GrpcService.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\GrpcService.pdb
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Google.Protobuf.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Grpc.AspNetCore.Server.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Grpc.AspNetCore.Server.ClientFactory.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Grpc.Core.Api.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Grpc.Net.Client.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Grpc.Net.ClientFactory.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Grpc.Net.Common.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Npgsql.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\EFC.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Entities.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\EFC.pdb
+H:\Third Semester\Sep3\Tier3\GrpcService\bin\Debug\net6.0\Entities.pdb
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.csproj.AssemblyReference.cache
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.GeneratedMSBuildEditorConfig.editorconfig
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.AssemblyInfoInputs.cache
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.AssemblyInfo.cs
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.csproj.CoreCompileInputs.cache
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.MvcApplicationPartsAssemblyInfo.cache
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\staticwebassets.build.json
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\staticwebassets.development.json
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\scopedcss\bundle\GrpcService.styles.css
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.csproj.CopyComplete
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\refint\GrpcService.dll
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.pdb
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\GrpcService.genruntimeconfig.cache
+H:\Third Semester\Sep3\Tier3\GrpcService\obj\Debug\net6.0\ref\GrpcService.dll

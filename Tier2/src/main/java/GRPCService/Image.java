@@ -14,6 +14,122 @@ public final class Image {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code image.UploadStatus}
+   */
+  public enum UploadStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>PENDING = 0;</code>
+     */
+    PENDING(0),
+    /**
+     * <code>IN_PROGRESS = 1;</code>
+     */
+    IN_PROGRESS(1),
+    /**
+     * <code>SUCCESS = 2;</code>
+     */
+    SUCCESS(2),
+    /**
+     * <code>FAILED = 3;</code>
+     */
+    FAILED(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>PENDING = 0;</code>
+     */
+    public static final int PENDING_VALUE = 0;
+    /**
+     * <code>IN_PROGRESS = 1;</code>
+     */
+    public static final int IN_PROGRESS_VALUE = 1;
+    /**
+     * <code>SUCCESS = 2;</code>
+     */
+    public static final int SUCCESS_VALUE = 2;
+    /**
+     * <code>FAILED = 3;</code>
+     */
+    public static final int FAILED_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static UploadStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static UploadStatus forNumber(int value) {
+      switch (value) {
+        case 0: return PENDING;
+        case 1: return IN_PROGRESS;
+        case 2: return SUCCESS;
+        case 3: return FAILED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<UploadStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        UploadStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<UploadStatus>() {
+            public UploadStatus findValueByNumber(int number) {
+              return UploadStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return GRPCService.Image.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final UploadStatus[] VALUES = values();
+
+    public static UploadStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private UploadStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:image.UploadStatus)
+  }
+
   public interface ImageObjOrBuilder extends
       // @@protoc_insertion_point(interface_extends:image.ImageObj)
       com.google.protobuf.MessageOrBuilder {
@@ -627,11 +743,2758 @@ public final class Image {
 
   }
 
+  public interface MetaDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:image.MetaData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string type = 2;</code>
+     */
+    java.lang.String getType();
+    /**
+     * <code>string type = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+  }
+  /**
+   * Protobuf type {@code image.MetaData}
+   */
+  public  static final class MetaData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:image.MetaData)
+      MetaDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MetaData.newBuilder() to construct.
+    private MetaData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MetaData() {
+      name_ = "";
+      type_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MetaData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.Image.internal_static_image_MetaData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.Image.internal_static_image_MetaData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.Image.MetaData.class, GRPCService.Image.MetaData.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object type_;
+    /**
+     * <code>string type = 2;</code>
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string type = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.Image.MetaData)) {
+        return super.equals(obj);
+      }
+      GRPCService.Image.MetaData other = (GRPCService.Image.MetaData) obj;
+
+      boolean result = true;
+      result = result && getName()
+          .equals(other.getName());
+      result = result && getType()
+          .equals(other.getType());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.Image.MetaData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.MetaData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.MetaData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.MetaData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.MetaData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.MetaData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.MetaData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.MetaData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Image.MetaData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.MetaData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Image.MetaData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.MetaData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.Image.MetaData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code image.MetaData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:image.MetaData)
+        GRPCService.Image.MetaDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.Image.internal_static_image_MetaData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.Image.internal_static_image_MetaData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.Image.MetaData.class, GRPCService.Image.MetaData.Builder.class);
+      }
+
+      // Construct using GRPCService.Image.MetaData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        type_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.Image.internal_static_image_MetaData_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.MetaData getDefaultInstanceForType() {
+        return GRPCService.Image.MetaData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.MetaData build() {
+        GRPCService.Image.MetaData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.MetaData buildPartial() {
+        GRPCService.Image.MetaData result = new GRPCService.Image.MetaData(this);
+        result.name_ = name_;
+        result.type_ = type_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.Image.MetaData) {
+          return mergeFrom((GRPCService.Image.MetaData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.Image.MetaData other) {
+        if (other == GRPCService.Image.MetaData.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.Image.MetaData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.Image.MetaData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <code>string type = 2;</code>
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string type = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string type = 2;</code>
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 2;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 2;</code>
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:image.MetaData)
+    }
+
+    // @@protoc_insertion_point(class_scope:image.MetaData)
+    private static final GRPCService.Image.MetaData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.Image.MetaData();
+    }
+
+    public static GRPCService.Image.MetaData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MetaData>
+        PARSER = new com.google.protobuf.AbstractParser<MetaData>() {
+      @java.lang.Override
+      public MetaData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MetaData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MetaData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MetaData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.Image.MetaData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FileObjOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:image.FileObj)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes content = 1;</code>
+     */
+    com.google.protobuf.ByteString getContent();
+  }
+  /**
+   * Protobuf type {@code image.FileObj}
+   */
+  public  static final class FileObj extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:image.FileObj)
+      FileObjOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FileObj.newBuilder() to construct.
+    private FileObj(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FileObj() {
+      content_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FileObj(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              content_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.Image.internal_static_image_FileObj_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.Image.internal_static_image_FileObj_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.Image.FileObj.class, GRPCService.Image.FileObj.Builder.class);
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString content_;
+    /**
+     * <code>bytes content = 1;</code>
+     */
+    public com.google.protobuf.ByteString getContent() {
+      return content_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!content_.isEmpty()) {
+        output.writeBytes(1, content_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!content_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, content_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.Image.FileObj)) {
+        return super.equals(obj);
+      }
+      GRPCService.Image.FileObj other = (GRPCService.Image.FileObj) obj;
+
+      boolean result = true;
+      result = result && getContent()
+          .equals(other.getContent());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.Image.FileObj parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.FileObj parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.FileObj parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.FileObj parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.FileObj parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.FileObj parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.FileObj parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.FileObj parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Image.FileObj parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.FileObj parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Image.FileObj parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.FileObj parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.Image.FileObj prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code image.FileObj}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:image.FileObj)
+        GRPCService.Image.FileObjOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.Image.internal_static_image_FileObj_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.Image.internal_static_image_FileObj_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.Image.FileObj.class, GRPCService.Image.FileObj.Builder.class);
+      }
+
+      // Construct using GRPCService.Image.FileObj.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        content_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.Image.internal_static_image_FileObj_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.FileObj getDefaultInstanceForType() {
+        return GRPCService.Image.FileObj.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.FileObj build() {
+        GRPCService.Image.FileObj result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.FileObj buildPartial() {
+        GRPCService.Image.FileObj result = new GRPCService.Image.FileObj(this);
+        result.content_ = content_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.Image.FileObj) {
+          return mergeFrom((GRPCService.Image.FileObj)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.Image.FileObj other) {
+        if (other == GRPCService.Image.FileObj.getDefaultInstance()) return this;
+        if (other.getContent() != com.google.protobuf.ByteString.EMPTY) {
+          setContent(other.getContent());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.Image.FileObj parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.Image.FileObj) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes content = 1;</code>
+       */
+      public com.google.protobuf.ByteString getContent() {
+        return content_;
+      }
+      /**
+       * <code>bytes content = 1;</code>
+       */
+      public Builder setContent(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes content = 1;</code>
+       */
+      public Builder clearContent() {
+        
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:image.FileObj)
+    }
+
+    // @@protoc_insertion_point(class_scope:image.FileObj)
+    private static final GRPCService.Image.FileObj DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.Image.FileObj();
+    }
+
+    public static GRPCService.Image.FileObj getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FileObj>
+        PARSER = new com.google.protobuf.AbstractParser<FileObj>() {
+      @java.lang.Override
+      public FileObj parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FileObj(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FileObj> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FileObj> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.Image.FileObj getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FileUploadRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:image.FileUploadRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.image.MetaData metadata = 1;</code>
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.image.MetaData metadata = 1;</code>
+     */
+    GRPCService.Image.MetaData getMetadata();
+    /**
+     * <code>.image.MetaData metadata = 1;</code>
+     */
+    GRPCService.Image.MetaDataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.image.FileObj file = 2;</code>
+     */
+    boolean hasFile();
+    /**
+     * <code>.image.FileObj file = 2;</code>
+     */
+    GRPCService.Image.FileObj getFile();
+    /**
+     * <code>.image.FileObj file = 2;</code>
+     */
+    GRPCService.Image.FileObjOrBuilder getFileOrBuilder();
+
+    public GRPCService.Image.FileUploadRequest.RequestCase getRequestCase();
+  }
+  /**
+   * Protobuf type {@code image.FileUploadRequest}
+   */
+  public  static final class FileUploadRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:image.FileUploadRequest)
+      FileUploadRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FileUploadRequest.newBuilder() to construct.
+    private FileUploadRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FileUploadRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FileUploadRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              GRPCService.Image.MetaData.Builder subBuilder = null;
+              if (requestCase_ == 1) {
+                subBuilder = ((GRPCService.Image.MetaData) request_).toBuilder();
+              }
+              request_ =
+                  input.readMessage(GRPCService.Image.MetaData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((GRPCService.Image.MetaData) request_);
+                request_ = subBuilder.buildPartial();
+              }
+              requestCase_ = 1;
+              break;
+            }
+            case 18: {
+              GRPCService.Image.FileObj.Builder subBuilder = null;
+              if (requestCase_ == 2) {
+                subBuilder = ((GRPCService.Image.FileObj) request_).toBuilder();
+              }
+              request_ =
+                  input.readMessage(GRPCService.Image.FileObj.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((GRPCService.Image.FileObj) request_);
+                request_ = subBuilder.buildPartial();
+              }
+              requestCase_ = 2;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.Image.internal_static_image_FileUploadRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.Image.internal_static_image_FileUploadRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.Image.FileUploadRequest.class, GRPCService.Image.FileUploadRequest.Builder.class);
+    }
+
+    private int requestCase_ = 0;
+    private java.lang.Object request_;
+    public enum RequestCase
+        implements com.google.protobuf.Internal.EnumLite {
+      METADATA(1),
+      FILE(2),
+      REQUEST_NOT_SET(0);
+      private final int value;
+      private RequestCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RequestCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static RequestCase forNumber(int value) {
+        switch (value) {
+          case 1: return METADATA;
+          case 2: return FILE;
+          case 0: return REQUEST_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public RequestCase
+    getRequestCase() {
+      return RequestCase.forNumber(
+          requestCase_);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    /**
+     * <code>.image.MetaData metadata = 1;</code>
+     */
+    public boolean hasMetadata() {
+      return requestCase_ == 1;
+    }
+    /**
+     * <code>.image.MetaData metadata = 1;</code>
+     */
+    public GRPCService.Image.MetaData getMetadata() {
+      if (requestCase_ == 1) {
+         return (GRPCService.Image.MetaData) request_;
+      }
+      return GRPCService.Image.MetaData.getDefaultInstance();
+    }
+    /**
+     * <code>.image.MetaData metadata = 1;</code>
+     */
+    public GRPCService.Image.MetaDataOrBuilder getMetadataOrBuilder() {
+      if (requestCase_ == 1) {
+         return (GRPCService.Image.MetaData) request_;
+      }
+      return GRPCService.Image.MetaData.getDefaultInstance();
+    }
+
+    public static final int FILE_FIELD_NUMBER = 2;
+    /**
+     * <code>.image.FileObj file = 2;</code>
+     */
+    public boolean hasFile() {
+      return requestCase_ == 2;
+    }
+    /**
+     * <code>.image.FileObj file = 2;</code>
+     */
+    public GRPCService.Image.FileObj getFile() {
+      if (requestCase_ == 2) {
+         return (GRPCService.Image.FileObj) request_;
+      }
+      return GRPCService.Image.FileObj.getDefaultInstance();
+    }
+    /**
+     * <code>.image.FileObj file = 2;</code>
+     */
+    public GRPCService.Image.FileObjOrBuilder getFileOrBuilder() {
+      if (requestCase_ == 2) {
+         return (GRPCService.Image.FileObj) request_;
+      }
+      return GRPCService.Image.FileObj.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (requestCase_ == 1) {
+        output.writeMessage(1, (GRPCService.Image.MetaData) request_);
+      }
+      if (requestCase_ == 2) {
+        output.writeMessage(2, (GRPCService.Image.FileObj) request_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (requestCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (GRPCService.Image.MetaData) request_);
+      }
+      if (requestCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (GRPCService.Image.FileObj) request_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.Image.FileUploadRequest)) {
+        return super.equals(obj);
+      }
+      GRPCService.Image.FileUploadRequest other = (GRPCService.Image.FileUploadRequest) obj;
+
+      boolean result = true;
+      result = result && getRequestCase().equals(
+          other.getRequestCase());
+      if (!result) return false;
+      switch (requestCase_) {
+        case 1:
+          result = result && getMetadata()
+              .equals(other.getMetadata());
+          break;
+        case 2:
+          result = result && getFile()
+              .equals(other.getFile());
+          break;
+        case 0:
+        default:
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (requestCase_) {
+        case 1:
+          hash = (37 * hash) + METADATA_FIELD_NUMBER;
+          hash = (53 * hash) + getMetadata().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + FILE_FIELD_NUMBER;
+          hash = (53 * hash) + getFile().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.Image.FileUploadRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.FileUploadRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.FileUploadRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.FileUploadRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.FileUploadRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.FileUploadRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.FileUploadRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.FileUploadRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Image.FileUploadRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.FileUploadRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Image.FileUploadRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.FileUploadRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.Image.FileUploadRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code image.FileUploadRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:image.FileUploadRequest)
+        GRPCService.Image.FileUploadRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.Image.internal_static_image_FileUploadRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.Image.internal_static_image_FileUploadRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.Image.FileUploadRequest.class, GRPCService.Image.FileUploadRequest.Builder.class);
+      }
+
+      // Construct using GRPCService.Image.FileUploadRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        requestCase_ = 0;
+        request_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.Image.internal_static_image_FileUploadRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.FileUploadRequest getDefaultInstanceForType() {
+        return GRPCService.Image.FileUploadRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.FileUploadRequest build() {
+        GRPCService.Image.FileUploadRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.FileUploadRequest buildPartial() {
+        GRPCService.Image.FileUploadRequest result = new GRPCService.Image.FileUploadRequest(this);
+        if (requestCase_ == 1) {
+          if (metadataBuilder_ == null) {
+            result.request_ = request_;
+          } else {
+            result.request_ = metadataBuilder_.build();
+          }
+        }
+        if (requestCase_ == 2) {
+          if (fileBuilder_ == null) {
+            result.request_ = request_;
+          } else {
+            result.request_ = fileBuilder_.build();
+          }
+        }
+        result.requestCase_ = requestCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.Image.FileUploadRequest) {
+          return mergeFrom((GRPCService.Image.FileUploadRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.Image.FileUploadRequest other) {
+        if (other == GRPCService.Image.FileUploadRequest.getDefaultInstance()) return this;
+        switch (other.getRequestCase()) {
+          case METADATA: {
+            mergeMetadata(other.getMetadata());
+            break;
+          }
+          case FILE: {
+            mergeFile(other.getFile());
+            break;
+          }
+          case REQUEST_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.Image.FileUploadRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.Image.FileUploadRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int requestCase_ = 0;
+      private java.lang.Object request_;
+      public RequestCase
+          getRequestCase() {
+        return RequestCase.forNumber(
+            requestCase_);
+      }
+
+      public Builder clearRequest() {
+        requestCase_ = 0;
+        request_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.Image.MetaData, GRPCService.Image.MetaData.Builder, GRPCService.Image.MetaDataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.image.MetaData metadata = 1;</code>
+       */
+      public boolean hasMetadata() {
+        return requestCase_ == 1;
+      }
+      /**
+       * <code>.image.MetaData metadata = 1;</code>
+       */
+      public GRPCService.Image.MetaData getMetadata() {
+        if (metadataBuilder_ == null) {
+          if (requestCase_ == 1) {
+            return (GRPCService.Image.MetaData) request_;
+          }
+          return GRPCService.Image.MetaData.getDefaultInstance();
+        } else {
+          if (requestCase_ == 1) {
+            return metadataBuilder_.getMessage();
+          }
+          return GRPCService.Image.MetaData.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.image.MetaData metadata = 1;</code>
+       */
+      public Builder setMetadata(GRPCService.Image.MetaData value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+        requestCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.image.MetaData metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          GRPCService.Image.MetaData.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+        requestCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.image.MetaData metadata = 1;</code>
+       */
+      public Builder mergeMetadata(GRPCService.Image.MetaData value) {
+        if (metadataBuilder_ == null) {
+          if (requestCase_ == 1 &&
+              request_ != GRPCService.Image.MetaData.getDefaultInstance()) {
+            request_ = GRPCService.Image.MetaData.newBuilder((GRPCService.Image.MetaData) request_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          if (requestCase_ == 1) {
+            metadataBuilder_.mergeFrom(value);
+          }
+          metadataBuilder_.setMessage(value);
+        }
+        requestCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.image.MetaData metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          if (requestCase_ == 1) {
+            requestCase_ = 0;
+            request_ = null;
+            onChanged();
+          }
+        } else {
+          if (requestCase_ == 1) {
+            requestCase_ = 0;
+            request_ = null;
+          }
+          metadataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.image.MetaData metadata = 1;</code>
+       */
+      public GRPCService.Image.MetaData.Builder getMetadataBuilder() {
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.image.MetaData metadata = 1;</code>
+       */
+      public GRPCService.Image.MetaDataOrBuilder getMetadataOrBuilder() {
+        if ((requestCase_ == 1) && (metadataBuilder_ != null)) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          if (requestCase_ == 1) {
+            return (GRPCService.Image.MetaData) request_;
+          }
+          return GRPCService.Image.MetaData.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.image.MetaData metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.Image.MetaData, GRPCService.Image.MetaData.Builder, GRPCService.Image.MetaDataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          if (!(requestCase_ == 1)) {
+            request_ = GRPCService.Image.MetaData.getDefaultInstance();
+          }
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              GRPCService.Image.MetaData, GRPCService.Image.MetaData.Builder, GRPCService.Image.MetaDataOrBuilder>(
+                  (GRPCService.Image.MetaData) request_,
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        requestCase_ = 1;
+        onChanged();;
+        return metadataBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.Image.FileObj, GRPCService.Image.FileObj.Builder, GRPCService.Image.FileObjOrBuilder> fileBuilder_;
+      /**
+       * <code>.image.FileObj file = 2;</code>
+       */
+      public boolean hasFile() {
+        return requestCase_ == 2;
+      }
+      /**
+       * <code>.image.FileObj file = 2;</code>
+       */
+      public GRPCService.Image.FileObj getFile() {
+        if (fileBuilder_ == null) {
+          if (requestCase_ == 2) {
+            return (GRPCService.Image.FileObj) request_;
+          }
+          return GRPCService.Image.FileObj.getDefaultInstance();
+        } else {
+          if (requestCase_ == 2) {
+            return fileBuilder_.getMessage();
+          }
+          return GRPCService.Image.FileObj.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.image.FileObj file = 2;</code>
+       */
+      public Builder setFile(GRPCService.Image.FileObj value) {
+        if (fileBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          fileBuilder_.setMessage(value);
+        }
+        requestCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.image.FileObj file = 2;</code>
+       */
+      public Builder setFile(
+          GRPCService.Image.FileObj.Builder builderForValue) {
+        if (fileBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          fileBuilder_.setMessage(builderForValue.build());
+        }
+        requestCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.image.FileObj file = 2;</code>
+       */
+      public Builder mergeFile(GRPCService.Image.FileObj value) {
+        if (fileBuilder_ == null) {
+          if (requestCase_ == 2 &&
+              request_ != GRPCService.Image.FileObj.getDefaultInstance()) {
+            request_ = GRPCService.Image.FileObj.newBuilder((GRPCService.Image.FileObj) request_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          if (requestCase_ == 2) {
+            fileBuilder_.mergeFrom(value);
+          }
+          fileBuilder_.setMessage(value);
+        }
+        requestCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.image.FileObj file = 2;</code>
+       */
+      public Builder clearFile() {
+        if (fileBuilder_ == null) {
+          if (requestCase_ == 2) {
+            requestCase_ = 0;
+            request_ = null;
+            onChanged();
+          }
+        } else {
+          if (requestCase_ == 2) {
+            requestCase_ = 0;
+            request_ = null;
+          }
+          fileBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.image.FileObj file = 2;</code>
+       */
+      public GRPCService.Image.FileObj.Builder getFileBuilder() {
+        return getFileFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.image.FileObj file = 2;</code>
+       */
+      public GRPCService.Image.FileObjOrBuilder getFileOrBuilder() {
+        if ((requestCase_ == 2) && (fileBuilder_ != null)) {
+          return fileBuilder_.getMessageOrBuilder();
+        } else {
+          if (requestCase_ == 2) {
+            return (GRPCService.Image.FileObj) request_;
+          }
+          return GRPCService.Image.FileObj.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.image.FileObj file = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.Image.FileObj, GRPCService.Image.FileObj.Builder, GRPCService.Image.FileObjOrBuilder> 
+          getFileFieldBuilder() {
+        if (fileBuilder_ == null) {
+          if (!(requestCase_ == 2)) {
+            request_ = GRPCService.Image.FileObj.getDefaultInstance();
+          }
+          fileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              GRPCService.Image.FileObj, GRPCService.Image.FileObj.Builder, GRPCService.Image.FileObjOrBuilder>(
+                  (GRPCService.Image.FileObj) request_,
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        requestCase_ = 2;
+        onChanged();;
+        return fileBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:image.FileUploadRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:image.FileUploadRequest)
+    private static final GRPCService.Image.FileUploadRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.Image.FileUploadRequest();
+    }
+
+    public static GRPCService.Image.FileUploadRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FileUploadRequest>
+        PARSER = new com.google.protobuf.AbstractParser<FileUploadRequest>() {
+      @java.lang.Override
+      public FileUploadRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FileUploadRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FileUploadRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FileUploadRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.Image.FileUploadRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FileUploadResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:image.FileUploadResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>.image.UploadStatus status = 2;</code>
+     */
+    int getStatusValue();
+    /**
+     * <code>.image.UploadStatus status = 2;</code>
+     */
+    GRPCService.Image.UploadStatus getStatus();
+  }
+  /**
+   * Protobuf type {@code image.FileUploadResponse}
+   */
+  public  static final class FileUploadResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:image.FileUploadResponse)
+      FileUploadResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FileUploadResponse.newBuilder() to construct.
+    private FileUploadResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FileUploadResponse() {
+      name_ = "";
+      status_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FileUploadResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.Image.internal_static_image_FileUploadResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.Image.internal_static_image_FileUploadResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.Image.FileUploadResponse.class, GRPCService.Image.FileUploadResponse.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private int status_;
+    /**
+     * <code>.image.UploadStatus status = 2;</code>
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>.image.UploadStatus status = 2;</code>
+     */
+    public GRPCService.Image.UploadStatus getStatus() {
+      @SuppressWarnings("deprecation")
+      GRPCService.Image.UploadStatus result = GRPCService.Image.UploadStatus.valueOf(status_);
+      return result == null ? GRPCService.Image.UploadStatus.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (status_ != GRPCService.Image.UploadStatus.PENDING.getNumber()) {
+        output.writeEnum(2, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (status_ != GRPCService.Image.UploadStatus.PENDING.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.Image.FileUploadResponse)) {
+        return super.equals(obj);
+      }
+      GRPCService.Image.FileUploadResponse other = (GRPCService.Image.FileUploadResponse) obj;
+
+      boolean result = true;
+      result = result && getName()
+          .equals(other.getName());
+      result = result && status_ == other.status_;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.Image.FileUploadResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.FileUploadResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.FileUploadResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.FileUploadResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.FileUploadResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Image.FileUploadResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Image.FileUploadResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.FileUploadResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Image.FileUploadResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.FileUploadResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Image.FileUploadResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Image.FileUploadResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.Image.FileUploadResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code image.FileUploadResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:image.FileUploadResponse)
+        GRPCService.Image.FileUploadResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.Image.internal_static_image_FileUploadResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.Image.internal_static_image_FileUploadResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.Image.FileUploadResponse.class, GRPCService.Image.FileUploadResponse.Builder.class);
+      }
+
+      // Construct using GRPCService.Image.FileUploadResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        status_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.Image.internal_static_image_FileUploadResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.FileUploadResponse getDefaultInstanceForType() {
+        return GRPCService.Image.FileUploadResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.FileUploadResponse build() {
+        GRPCService.Image.FileUploadResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.Image.FileUploadResponse buildPartial() {
+        GRPCService.Image.FileUploadResponse result = new GRPCService.Image.FileUploadResponse(this);
+        result.name_ = name_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.Image.FileUploadResponse) {
+          return mergeFrom((GRPCService.Image.FileUploadResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.Image.FileUploadResponse other) {
+        if (other == GRPCService.Image.FileUploadResponse.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.Image.FileUploadResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.Image.FileUploadResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <code>.image.UploadStatus status = 2;</code>
+       */
+      public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>.image.UploadStatus status = 2;</code>
+       */
+      public Builder setStatusValue(int value) {
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.image.UploadStatus status = 2;</code>
+       */
+      public GRPCService.Image.UploadStatus getStatus() {
+        @SuppressWarnings("deprecation")
+        GRPCService.Image.UploadStatus result = GRPCService.Image.UploadStatus.valueOf(status_);
+        return result == null ? GRPCService.Image.UploadStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.image.UploadStatus status = 2;</code>
+       */
+      public Builder setStatus(GRPCService.Image.UploadStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.image.UploadStatus status = 2;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:image.FileUploadResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:image.FileUploadResponse)
+    private static final GRPCService.Image.FileUploadResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.Image.FileUploadResponse();
+    }
+
+    public static GRPCService.Image.FileUploadResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FileUploadResponse>
+        PARSER = new com.google.protobuf.AbstractParser<FileUploadResponse>() {
+      @java.lang.Override
+      public FileUploadResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FileUploadResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FileUploadResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FileUploadResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.Image.FileUploadResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_image_ImageObj_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_image_ImageObj_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_image_MetaData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_image_MetaData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_image_FileObj_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_image_FileObj_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_image_FileUploadRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_image_FileUploadRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_image_FileUploadResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_image_FileUploadResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -642,8 +3505,17 @@ public final class Image {
   static {
     java.lang.String[] descriptorData = {
       "\n\013image.proto\022\005image\"$\n\010ImageObj\022\n\n\002id\030\001" +
-      " \001(\005\022\014\n\004href\030\002 \001(\t2\007\n\005imageB\r\n\013GRPCServi" +
-      "ceb\006proto3"
+      " \001(\005\022\014\n\004href\030\002 \001(\t\"&\n\010MetaData\022\014\n\004name\030\001" +
+      " \001(\t\022\014\n\004type\030\002 \001(\t\"\032\n\007FileObj\022\017\n\007content" +
+      "\030\001 \001(\014\"c\n\021FileUploadRequest\022#\n\010metadata\030" +
+      "\001 \001(\0132\017.image.MetaDataH\000\022\036\n\004file\030\002 \001(\0132\016" +
+      ".image.FileObjH\000B\t\n\007request\"G\n\022FileUploa" +
+      "dResponse\022\014\n\004name\030\001 \001(\t\022#\n\006status\030\002 \001(\0162" +
+      "\023.image.UploadStatus*E\n\014UploadStatus\022\013\n\007" +
+      "PENDING\020\000\022\017\n\013IN_PROGRESS\020\001\022\013\n\007SUCCESS\020\002\022" +
+      "\n\n\006FAILED\020\0032H\n\005image\022?\n\006Upload\022\030.image.F" +
+      "ileUploadRequest\032\031.image.FileUploadRespo" +
+      "nse(\001B\r\n\013GRPCServiceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -663,6 +3535,30 @@ public final class Image {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_image_ImageObj_descriptor,
         new java.lang.String[] { "Id", "Href", });
+    internal_static_image_MetaData_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_image_MetaData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_image_MetaData_descriptor,
+        new java.lang.String[] { "Name", "Type", });
+    internal_static_image_FileObj_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_image_FileObj_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_image_FileObj_descriptor,
+        new java.lang.String[] { "Content", });
+    internal_static_image_FileUploadRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_image_FileUploadRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_image_FileUploadRequest_descriptor,
+        new java.lang.String[] { "Metadata", "File", "Request", });
+    internal_static_image_FileUploadResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_image_FileUploadResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_image_FileUploadResponse_descriptor,
+        new java.lang.String[] { "Name", "Status", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

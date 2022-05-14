@@ -27,6 +27,38 @@ public final class imageGrpc {
   public static final String SERVICE_NAME = "image.image";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<GRPCService.Image.FileUploadRequest,
+      GRPCService.Image.FileUploadResponse> getUploadMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Upload",
+      requestType = GRPCService.Image.FileUploadRequest.class,
+      responseType = GRPCService.Image.FileUploadResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<GRPCService.Image.FileUploadRequest,
+      GRPCService.Image.FileUploadResponse> getUploadMethod() {
+    io.grpc.MethodDescriptor<GRPCService.Image.FileUploadRequest, GRPCService.Image.FileUploadResponse> getUploadMethod;
+    if ((getUploadMethod = imageGrpc.getUploadMethod) == null) {
+      synchronized (imageGrpc.class) {
+        if ((getUploadMethod = imageGrpc.getUploadMethod) == null) {
+          imageGrpc.getUploadMethod = getUploadMethod = 
+              io.grpc.MethodDescriptor.<GRPCService.Image.FileUploadRequest, GRPCService.Image.FileUploadResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "image.image", "Upload"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.Image.FileUploadRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.Image.FileUploadResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new imageMethodDescriptorSupplier("Upload"))
+                  .build();
+          }
+        }
+     }
+     return getUploadMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -54,8 +86,22 @@ public final class imageGrpc {
    */
   public static abstract class imageImplBase implements io.grpc.BindableService {
 
+    /**
+     */
+    public io.grpc.stub.StreamObserver<GRPCService.Image.FileUploadRequest> upload(
+        io.grpc.stub.StreamObserver<GRPCService.Image.FileUploadResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getUploadMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getUploadMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                GRPCService.Image.FileUploadRequest,
+                GRPCService.Image.FileUploadResponse>(
+                  this, METHODID_UPLOAD)))
           .build();
     }
   }
@@ -76,6 +122,14 @@ public final class imageGrpc {
     protected imageStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new imageStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<GRPCService.Image.FileUploadRequest> upload(
+        io.grpc.stub.StreamObserver<GRPCService.Image.FileUploadResponse> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getUploadMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -117,6 +171,7 @@ public final class imageGrpc {
     }
   }
 
+  private static final int METHODID_UPLOAD = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -145,6 +200,9 @@ public final class imageGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_UPLOAD:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.upload(
+              (io.grpc.stub.StreamObserver<GRPCService.Image.FileUploadResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -196,6 +254,7 @@ public final class imageGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new imageFileDescriptorSupplier())
+              .addMethod(getUploadMethod())
               .build();
         }
       }

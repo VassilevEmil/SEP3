@@ -83,3 +83,20 @@ C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\o
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\ref\EFC.dll
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.pdb
 C:\Users\Marian\Desktop\VIA UNIVERSITY\3rd semester\sep project\SEP3\Tier3\EFC\obj\Debug\net6.0\EFC.genruntimeconfig.cache
+H:\Third Semester\Sep3\Tier3\EFC\bin\Debug\net6.0\EFC.deps.json
+H:\Third Semester\Sep3\Tier3\EFC\bin\Debug\net6.0\EFC.runtimeconfig.json
+H:\Third Semester\Sep3\Tier3\EFC\bin\Debug\net6.0\EFC.dll
+H:\Third Semester\Sep3\Tier3\EFC\bin\Debug\net6.0\EFC.pdb
+H:\Third Semester\Sep3\Tier3\EFC\bin\Debug\net6.0\Entities.dll
+H:\Third Semester\Sep3\Tier3\EFC\bin\Debug\net6.0\Entities.pdb
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\EFC.csproj.AssemblyReference.cache
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\EFC.GeneratedMSBuildEditorConfig.editorconfig
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\EFC.AssemblyInfoInputs.cache
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\EFC.AssemblyInfo.cs
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\EFC.csproj.CoreCompileInputs.cache
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\EFC.csproj.CopyComplete
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\EFC.dll
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\refint\EFC.dll
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\EFC.pdb
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\EFC.genruntimeconfig.cache
+H:\Third Semester\Sep3\Tier3\EFC\obj\Debug\net6.0\ref\EFC.dll
