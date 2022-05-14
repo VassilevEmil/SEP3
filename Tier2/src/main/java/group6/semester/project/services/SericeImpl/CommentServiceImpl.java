@@ -18,4 +18,9 @@ public class CommentServiceImpl implements CommentService {
     public Comment addComment(int postId, Comment comment) {
         return commentClient.addComment(postId, comment);
     }
+
+    @Override
+    public Comment deleteComment(int commentId) {
+        return commentClient.deleteComment(commentId);
+    }
 }

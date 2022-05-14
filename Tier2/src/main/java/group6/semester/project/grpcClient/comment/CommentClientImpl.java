@@ -13,4 +13,9 @@ public class CommentClientImpl implements CommentClient {
     public Comment addComment(int postId, Comment comment) {
         return null;
     }
+
+    @Override
+    public Comment deleteComment(int commentId) {
+        return null;
+    }
 }
