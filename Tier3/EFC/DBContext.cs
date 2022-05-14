@@ -10,6 +10,10 @@ public class DbAccess : DbContext
     public DbSet<Category> Categories { get; set; }
     public DbSet<Subcategory> Subcategories { get; set; }
     public DbSet<Image> Images { get; set; }
+    public DbSet<Bookmark> Bookmarks { get; set; }
+    public DbSet<Report> Reports { get; set; }
+
+    public DbSet<Comment> Comments { get; set; }
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -19,5 +23,9 @@ public class DbAccess : DbContext
         optionsBuilder.EnableSensitiveDataLogging();
     }
 
-   
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        modelBuilder.Entity<Report>().HasKey(report => new {report.PostId, report.ReporterUsername});
+        base.OnModelCreating(modelBuilder);
+    }
 }
