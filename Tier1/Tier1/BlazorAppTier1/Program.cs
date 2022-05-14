@@ -20,6 +20,8 @@ builder.Services.AddScoped<IAuthService, AuthServiceImpl>();
 builder.Services.AddScoped<IUserService, UserHttpClient>();
 builder.Services.AddScoped<IAuthService, AuthServiceImpl>();
 builder.Services.AddScoped<IPostService, PostHttpClient>();
+builder.Services.AddScoped<ICommentService, CommentHttpClient>();
+
 
 var app = builder.Build();
 
