@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nepal\\.nuget\\packages\\": {}
+    "C:\\Users\\himal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj",
+      "projectUniqueName": "H:\\Third Semester\\Sep3\\Tier1\\Tier1\\Contracts\\Contracts.csproj",
       "projectName": "Contracts",
-      "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\Contracts.csproj",
-      "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Contracts\\obj\\",
+      "projectPath": "H:\\Third Semester\\Sep3\\Tier1\\Tier1\\Contracts\\Contracts.csproj",
+      "packagesPath": "C:\\Users\\himal\\.nuget\\packages\\",
+      "outputPath": "H:\\Third Semester\\Sep3\\Tier1\\Tier1\\Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\himal\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -51,8 +51,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj"
+            "H:\\Third Semester\\Sep3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
+              "projectPath": "H:\\Third Semester\\Sep3\\Tier1\\Tier1\\Entities\\Entities.csproj"
             }
           }
         }
@@ -81,7 +81,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
