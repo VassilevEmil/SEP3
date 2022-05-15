@@ -1,5 +1,8 @@
 ﻿@using Entities.Models
+@using Contracts
+@using System.Security.Claims
 @inject NavigationManager Navigation
+@inject IUserService _UserService;
 
 @namespace BlazorAppTier1.Pages.PostPage 
 
@@ -33,7 +36,9 @@
                     </div>
                 </div>
                 <div class="candidate-list-favourite-time">
-                    <a class="candidate-list-favourite order-2" href="#">
+                    <!--Bookmark-->
+                    <a class="candidate-list-favourite order-2">
+                        <i class="fa fa-heart"></i>
                         <i class="far fa-heart"></i>
                     </a>
                     <span class="candidate-list-time order-1">
@@ -52,4 +57,27 @@
 @code {
     [Parameter]
     public List<Post> postToShow { get; set; }
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+
+    private User? _user = new User();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            AuthenticationState authState = await AuthState;
+            ClaimsPrincipal user = authState.User;
+            if (user.Identity.IsAuthenticated)
+            {
+    //get user clas base on the user identity
+                _user = await _UserService.GetUserAsync(user.Identity.Name);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+
 }
