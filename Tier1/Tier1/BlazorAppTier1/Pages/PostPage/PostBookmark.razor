@@ -1,0 +1,90 @@
+﻿@page "/PostBookmark/"
+@page "/PostBookmark/{CurrentPage:int}"
+
+@using Entities.Models
+@using Contracts
+
+@inject IPostService _postService;
+@inject NavigationManager Navigation
+
+@attribute [Authorize]
+
+<PageTitle>BookMark Page: @CurrentPage</PageTitle>
+
+<br/>
+<br/>
+<br/>
+
+
+<div id="body">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous"/>
+
+    <div class="container">
+        <div class="row">
+            <!--Right side-->
+            
+                
+                <PostList postToShow="@postToShow"></PostList>
+                
+                <div class="row">
+                    <div class="col-12 text-center mt-4 mt-sm-5">
+                        <ul class="pagination justify-content-center mb-0">
+                            <li class="page-item @backElement">
+                                <a class="page-link" @onclick="@(() => Pagination(CurrentPage - 1))">Prev</a>
+                            </li>
+                            <li class="page-item @nextElement">
+                                <a class="page-link" @onclick="@((() => Pagination(CurrentPage + 1)))">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+
+@code{
+    private List<Post>? postToShow;
+    //pagination
+    [Parameter]
+    public int CurrentPage { get; set; }
+    private string nextElement = string.Empty;
+    private string backElement = string.Empty;
+
+
+    protected override async Task OnInitializedAsync() {
+        try
+        {
+            CurrentPage = 1;
+            await Pagination(CurrentPage);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    private async Task Pagination(int current) {
+        int count = 9;
+        Navigation.NavigateTo("/PostBookmark/" + current);
+
+        
+        postToShow = await _postService.GetAllPosts(current);
+                
+        
+        if (current == 1) {
+            backElement = "disabled";
+        }
+        else {
+            backElement = String.Empty;
+        }
+
+        if (postToShow.Count < count) {
+            nextElement = "disabled";
+        }
+        else if (postToShow.Count == count) {
+            nextElement = "enabled";
+        }
+    }
+}
