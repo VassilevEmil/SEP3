@@ -7,6 +7,8 @@ package comment;
 
 service comment {
 
+  rpc AddComment(CommentObjAndInteger) returns (CommentObj);
+  rpc DeleteComment(Integer) returns (CommentObj);
 
 }
 
@@ -19,6 +21,11 @@ message CommentObj{
 }
 message Integer{
   int32 id=1;
+}
+
+message CommentObjAndInteger{
+  Integer postId = 1;
+  CommentObj commentObj = 2;
 }
 
 message DateCreated{

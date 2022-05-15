@@ -27,6 +27,70 @@ public final class commentGrpc {
   public static final String SERVICE_NAME = "comment.comment";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<GRPCService.Comment.CommentObjAndInteger,
+      GRPCService.Comment.CommentObj> getAddCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddComment",
+      requestType = GRPCService.Comment.CommentObjAndInteger.class,
+      responseType = GRPCService.Comment.CommentObj.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<GRPCService.Comment.CommentObjAndInteger,
+      GRPCService.Comment.CommentObj> getAddCommentMethod() {
+    io.grpc.MethodDescriptor<GRPCService.Comment.CommentObjAndInteger, GRPCService.Comment.CommentObj> getAddCommentMethod;
+    if ((getAddCommentMethod = commentGrpc.getAddCommentMethod) == null) {
+      synchronized (commentGrpc.class) {
+        if ((getAddCommentMethod = commentGrpc.getAddCommentMethod) == null) {
+          commentGrpc.getAddCommentMethod = getAddCommentMethod = 
+              io.grpc.MethodDescriptor.<GRPCService.Comment.CommentObjAndInteger, GRPCService.Comment.CommentObj>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "comment.comment", "AddComment"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.Comment.CommentObjAndInteger.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.Comment.CommentObj.getDefaultInstance()))
+                  .setSchemaDescriptor(new commentMethodDescriptorSupplier("AddComment"))
+                  .build();
+          }
+        }
+     }
+     return getAddCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<GRPCService.Comment.Integer,
+      GRPCService.Comment.CommentObj> getDeleteCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteComment",
+      requestType = GRPCService.Comment.Integer.class,
+      responseType = GRPCService.Comment.CommentObj.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<GRPCService.Comment.Integer,
+      GRPCService.Comment.CommentObj> getDeleteCommentMethod() {
+    io.grpc.MethodDescriptor<GRPCService.Comment.Integer, GRPCService.Comment.CommentObj> getDeleteCommentMethod;
+    if ((getDeleteCommentMethod = commentGrpc.getDeleteCommentMethod) == null) {
+      synchronized (commentGrpc.class) {
+        if ((getDeleteCommentMethod = commentGrpc.getDeleteCommentMethod) == null) {
+          commentGrpc.getDeleteCommentMethod = getDeleteCommentMethod = 
+              io.grpc.MethodDescriptor.<GRPCService.Comment.Integer, GRPCService.Comment.CommentObj>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "comment.comment", "DeleteComment"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.Comment.Integer.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.Comment.CommentObj.getDefaultInstance()))
+                  .setSchemaDescriptor(new commentMethodDescriptorSupplier("DeleteComment"))
+                  .build();
+          }
+        }
+     }
+     return getDeleteCommentMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -54,8 +118,36 @@ public final class commentGrpc {
    */
   public static abstract class commentImplBase implements io.grpc.BindableService {
 
+    /**
+     */
+    public void addComment(GRPCService.Comment.CommentObjAndInteger request,
+        io.grpc.stub.StreamObserver<GRPCService.Comment.CommentObj> responseObserver) {
+      asyncUnimplementedUnaryCall(getAddCommentMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deleteComment(GRPCService.Comment.Integer request,
+        io.grpc.stub.StreamObserver<GRPCService.Comment.CommentObj> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteCommentMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getAddCommentMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                GRPCService.Comment.CommentObjAndInteger,
+                GRPCService.Comment.CommentObj>(
+                  this, METHODID_ADD_COMMENT)))
+          .addMethod(
+            getDeleteCommentMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                GRPCService.Comment.Integer,
+                GRPCService.Comment.CommentObj>(
+                  this, METHODID_DELETE_COMMENT)))
           .build();
     }
   }
@@ -77,6 +169,22 @@ public final class commentGrpc {
         io.grpc.CallOptions callOptions) {
       return new commentStub(channel, callOptions);
     }
+
+    /**
+     */
+    public void addComment(GRPCService.Comment.CommentObjAndInteger request,
+        io.grpc.stub.StreamObserver<GRPCService.Comment.CommentObj> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAddCommentMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteComment(GRPCService.Comment.Integer request,
+        io.grpc.stub.StreamObserver<GRPCService.Comment.CommentObj> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteCommentMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -95,6 +203,20 @@ public final class commentGrpc {
     protected commentBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new commentBlockingStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public GRPCService.Comment.CommentObj addComment(GRPCService.Comment.CommentObjAndInteger request) {
+      return blockingUnaryCall(
+          getChannel(), getAddCommentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public GRPCService.Comment.CommentObj deleteComment(GRPCService.Comment.Integer request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteCommentMethod(), getCallOptions(), request);
     }
   }
 
@@ -115,8 +237,26 @@ public final class commentGrpc {
         io.grpc.CallOptions callOptions) {
       return new commentFutureStub(channel, callOptions);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<GRPCService.Comment.CommentObj> addComment(
+        GRPCService.Comment.CommentObjAndInteger request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAddCommentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<GRPCService.Comment.CommentObj> deleteComment(
+        GRPCService.Comment.Integer request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteCommentMethod(), getCallOptions()), request);
+    }
   }
 
+  private static final int METHODID_ADD_COMMENT = 0;
+  private static final int METHODID_DELETE_COMMENT = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -135,6 +275,14 @@ public final class commentGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_ADD_COMMENT:
+          serviceImpl.addComment((GRPCService.Comment.CommentObjAndInteger) request,
+              (io.grpc.stub.StreamObserver<GRPCService.Comment.CommentObj>) responseObserver);
+          break;
+        case METHODID_DELETE_COMMENT:
+          serviceImpl.deleteComment((GRPCService.Comment.Integer) request,
+              (io.grpc.stub.StreamObserver<GRPCService.Comment.CommentObj>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -196,6 +344,8 @@ public final class commentGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new commentFileDescriptorSupplier())
+              .addMethod(getAddCommentMethod())
+              .addMethod(getDeleteCommentMethod())
               .build();
         }
       }
