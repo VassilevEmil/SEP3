@@ -45,6 +45,19 @@ public final class Comment {
      * <code>.user.UserObj writer = 3;</code>
      */
     GRPCService.UserOuterClass.UserObjOrBuilder getWriterOrBuilder();
+
+    /**
+     * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+     */
+    boolean hasDateCreated();
+    /**
+     * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+     */
+    GRPCService.Comment.DateCreatedForComment getDateCreated();
+    /**
+     * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+     */
+    GRPCService.Comment.DateCreatedForCommentOrBuilder getDateCreatedOrBuilder();
   }
   /**
    * Protobuf type {@code comment.CommentObj}
@@ -107,6 +120,19 @@ public final class Comment {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(writer_);
                 writer_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              GRPCService.Comment.DateCreatedForComment.Builder subBuilder = null;
+              if (dateCreated_ != null) {
+                subBuilder = dateCreated_.toBuilder();
+              }
+              dateCreated_ = input.readMessage(GRPCService.Comment.DateCreatedForComment.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dateCreated_);
+                dateCreated_ = subBuilder.buildPartial();
               }
 
               break;
@@ -207,6 +233,27 @@ public final class Comment {
       return getWriter();
     }
 
+    public static final int DATECREATED_FIELD_NUMBER = 4;
+    private GRPCService.Comment.DateCreatedForComment dateCreated_;
+    /**
+     * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+     */
+    public boolean hasDateCreated() {
+      return dateCreated_ != null;
+    }
+    /**
+     * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+     */
+    public GRPCService.Comment.DateCreatedForComment getDateCreated() {
+      return dateCreated_ == null ? GRPCService.Comment.DateCreatedForComment.getDefaultInstance() : dateCreated_;
+    }
+    /**
+     * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+     */
+    public GRPCService.Comment.DateCreatedForCommentOrBuilder getDateCreatedOrBuilder() {
+      return getDateCreated();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -230,6 +277,9 @@ public final class Comment {
       if (writer_ != null) {
         output.writeMessage(3, getWriter());
       }
+      if (dateCreated_ != null) {
+        output.writeMessage(4, getDateCreated());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -249,6 +299,10 @@ public final class Comment {
       if (writer_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getWriter());
+      }
+      if (dateCreated_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getDateCreated());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -275,6 +329,11 @@ public final class Comment {
         result = result && getWriter()
             .equals(other.getWriter());
       }
+      result = result && (hasDateCreated() == other.hasDateCreated());
+      if (hasDateCreated()) {
+        result = result && getDateCreated()
+            .equals(other.getDateCreated());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -293,6 +352,10 @@ public final class Comment {
       if (hasWriter()) {
         hash = (37 * hash) + WRITER_FIELD_NUMBER;
         hash = (53 * hash) + getWriter().hashCode();
+      }
+      if (hasDateCreated()) {
+        hash = (37 * hash) + DATECREATED_FIELD_NUMBER;
+        hash = (53 * hash) + getDateCreated().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -437,6 +500,12 @@ public final class Comment {
           writer_ = null;
           writerBuilder_ = null;
         }
+        if (dateCreatedBuilder_ == null) {
+          dateCreated_ = null;
+        } else {
+          dateCreated_ = null;
+          dateCreatedBuilder_ = null;
+        }
         return this;
       }
 
@@ -469,6 +538,11 @@ public final class Comment {
           result.writer_ = writer_;
         } else {
           result.writer_ = writerBuilder_.build();
+        }
+        if (dateCreatedBuilder_ == null) {
+          result.dateCreated_ = dateCreated_;
+        } else {
+          result.dateCreated_ = dateCreatedBuilder_.build();
         }
         onBuilt();
         return result;
@@ -527,6 +601,9 @@ public final class Comment {
         }
         if (other.hasWriter()) {
           mergeWriter(other.getWriter());
+        }
+        if (other.hasDateCreated()) {
+          mergeDateCreated(other.getDateCreated());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -768,6 +845,123 @@ public final class Comment {
         }
         return writerBuilder_;
       }
+
+      private GRPCService.Comment.DateCreatedForComment dateCreated_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.Comment.DateCreatedForComment, GRPCService.Comment.DateCreatedForComment.Builder, GRPCService.Comment.DateCreatedForCommentOrBuilder> dateCreatedBuilder_;
+      /**
+       * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+       */
+      public boolean hasDateCreated() {
+        return dateCreatedBuilder_ != null || dateCreated_ != null;
+      }
+      /**
+       * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+       */
+      public GRPCService.Comment.DateCreatedForComment getDateCreated() {
+        if (dateCreatedBuilder_ == null) {
+          return dateCreated_ == null ? GRPCService.Comment.DateCreatedForComment.getDefaultInstance() : dateCreated_;
+        } else {
+          return dateCreatedBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+       */
+      public Builder setDateCreated(GRPCService.Comment.DateCreatedForComment value) {
+        if (dateCreatedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dateCreated_ = value;
+          onChanged();
+        } else {
+          dateCreatedBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+       */
+      public Builder setDateCreated(
+          GRPCService.Comment.DateCreatedForComment.Builder builderForValue) {
+        if (dateCreatedBuilder_ == null) {
+          dateCreated_ = builderForValue.build();
+          onChanged();
+        } else {
+          dateCreatedBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+       */
+      public Builder mergeDateCreated(GRPCService.Comment.DateCreatedForComment value) {
+        if (dateCreatedBuilder_ == null) {
+          if (dateCreated_ != null) {
+            dateCreated_ =
+              GRPCService.Comment.DateCreatedForComment.newBuilder(dateCreated_).mergeFrom(value).buildPartial();
+          } else {
+            dateCreated_ = value;
+          }
+          onChanged();
+        } else {
+          dateCreatedBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+       */
+      public Builder clearDateCreated() {
+        if (dateCreatedBuilder_ == null) {
+          dateCreated_ = null;
+          onChanged();
+        } else {
+          dateCreated_ = null;
+          dateCreatedBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+       */
+      public GRPCService.Comment.DateCreatedForComment.Builder getDateCreatedBuilder() {
+        
+        onChanged();
+        return getDateCreatedFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+       */
+      public GRPCService.Comment.DateCreatedForCommentOrBuilder getDateCreatedOrBuilder() {
+        if (dateCreatedBuilder_ != null) {
+          return dateCreatedBuilder_.getMessageOrBuilder();
+        } else {
+          return dateCreated_ == null ?
+              GRPCService.Comment.DateCreatedForComment.getDefaultInstance() : dateCreated_;
+        }
+      }
+      /**
+       * <code>.comment.DateCreatedForComment dateCreated = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.Comment.DateCreatedForComment, GRPCService.Comment.DateCreatedForComment.Builder, GRPCService.Comment.DateCreatedForCommentOrBuilder> 
+          getDateCreatedFieldBuilder() {
+        if (dateCreatedBuilder_ == null) {
+          dateCreatedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              GRPCService.Comment.DateCreatedForComment, GRPCService.Comment.DateCreatedForComment.Builder, GRPCService.Comment.DateCreatedForCommentOrBuilder>(
+                  getDateCreated(),
+                  getParentForChildren(),
+                  isClean());
+          dateCreated_ = null;
+        }
+        return dateCreatedBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -821,11 +1015,1905 @@ public final class Comment {
 
   }
 
+  public interface IntegerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:comment.Integer)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     */
+    int getId();
+  }
+  /**
+   * Protobuf type {@code comment.Integer}
+   */
+  public  static final class Integer extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:comment.Integer)
+      IntegerOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Integer.newBuilder() to construct.
+    private Integer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Integer() {
+      id_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Integer(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.Comment.internal_static_comment_Integer_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.Comment.internal_static_comment_Integer_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.Comment.Integer.class, GRPCService.Comment.Integer.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    /**
+     * <code>int32 id = 1;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.Comment.Integer)) {
+        return super.equals(obj);
+      }
+      GRPCService.Comment.Integer other = (GRPCService.Comment.Integer) obj;
+
+      boolean result = true;
+      result = result && (getId()
+          == other.getId());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.Comment.Integer parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Comment.Integer parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Comment.Integer parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Comment.Integer parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Comment.Integer parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Comment.Integer parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Comment.Integer parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Comment.Integer parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Comment.Integer parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.Comment.Integer parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Comment.Integer parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Comment.Integer parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.Comment.Integer prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code comment.Integer}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:comment.Integer)
+        GRPCService.Comment.IntegerOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.Comment.internal_static_comment_Integer_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.Comment.internal_static_comment_Integer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.Comment.Integer.class, GRPCService.Comment.Integer.Builder.class);
+      }
+
+      // Construct using GRPCService.Comment.Integer.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.Comment.internal_static_comment_Integer_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.Comment.Integer getDefaultInstanceForType() {
+        return GRPCService.Comment.Integer.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.Comment.Integer build() {
+        GRPCService.Comment.Integer result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.Comment.Integer buildPartial() {
+        GRPCService.Comment.Integer result = new GRPCService.Comment.Integer(this);
+        result.id_ = id_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.Comment.Integer) {
+          return mergeFrom((GRPCService.Comment.Integer)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.Comment.Integer other) {
+        if (other == GRPCService.Comment.Integer.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.Comment.Integer parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.Comment.Integer) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:comment.Integer)
+    }
+
+    // @@protoc_insertion_point(class_scope:comment.Integer)
+    private static final GRPCService.Comment.Integer DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.Comment.Integer();
+    }
+
+    public static GRPCService.Comment.Integer getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Integer>
+        PARSER = new com.google.protobuf.AbstractParser<Integer>() {
+      @java.lang.Override
+      public Integer parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Integer(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Integer> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Integer> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.Comment.Integer getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CommentObjAndIntegerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:comment.CommentObjAndInteger)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.comment.Integer postId = 1;</code>
+     */
+    boolean hasPostId();
+    /**
+     * <code>.comment.Integer postId = 1;</code>
+     */
+    GRPCService.Comment.Integer getPostId();
+    /**
+     * <code>.comment.Integer postId = 1;</code>
+     */
+    GRPCService.Comment.IntegerOrBuilder getPostIdOrBuilder();
+
+    /**
+     * <code>.comment.CommentObj commentObj = 2;</code>
+     */
+    boolean hasCommentObj();
+    /**
+     * <code>.comment.CommentObj commentObj = 2;</code>
+     */
+    GRPCService.Comment.CommentObj getCommentObj();
+    /**
+     * <code>.comment.CommentObj commentObj = 2;</code>
+     */
+    GRPCService.Comment.CommentObjOrBuilder getCommentObjOrBuilder();
+  }
+  /**
+   * Protobuf type {@code comment.CommentObjAndInteger}
+   */
+  public  static final class CommentObjAndInteger extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:comment.CommentObjAndInteger)
+      CommentObjAndIntegerOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CommentObjAndInteger.newBuilder() to construct.
+    private CommentObjAndInteger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CommentObjAndInteger() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CommentObjAndInteger(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              GRPCService.Comment.Integer.Builder subBuilder = null;
+              if (postId_ != null) {
+                subBuilder = postId_.toBuilder();
+              }
+              postId_ = input.readMessage(GRPCService.Comment.Integer.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postId_);
+                postId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              GRPCService.Comment.CommentObj.Builder subBuilder = null;
+              if (commentObj_ != null) {
+                subBuilder = commentObj_.toBuilder();
+              }
+              commentObj_ = input.readMessage(GRPCService.Comment.CommentObj.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(commentObj_);
+                commentObj_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.Comment.internal_static_comment_CommentObjAndInteger_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.Comment.internal_static_comment_CommentObjAndInteger_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.Comment.CommentObjAndInteger.class, GRPCService.Comment.CommentObjAndInteger.Builder.class);
+    }
+
+    public static final int POSTID_FIELD_NUMBER = 1;
+    private GRPCService.Comment.Integer postId_;
+    /**
+     * <code>.comment.Integer postId = 1;</code>
+     */
+    public boolean hasPostId() {
+      return postId_ != null;
+    }
+    /**
+     * <code>.comment.Integer postId = 1;</code>
+     */
+    public GRPCService.Comment.Integer getPostId() {
+      return postId_ == null ? GRPCService.Comment.Integer.getDefaultInstance() : postId_;
+    }
+    /**
+     * <code>.comment.Integer postId = 1;</code>
+     */
+    public GRPCService.Comment.IntegerOrBuilder getPostIdOrBuilder() {
+      return getPostId();
+    }
+
+    public static final int COMMENTOBJ_FIELD_NUMBER = 2;
+    private GRPCService.Comment.CommentObj commentObj_;
+    /**
+     * <code>.comment.CommentObj commentObj = 2;</code>
+     */
+    public boolean hasCommentObj() {
+      return commentObj_ != null;
+    }
+    /**
+     * <code>.comment.CommentObj commentObj = 2;</code>
+     */
+    public GRPCService.Comment.CommentObj getCommentObj() {
+      return commentObj_ == null ? GRPCService.Comment.CommentObj.getDefaultInstance() : commentObj_;
+    }
+    /**
+     * <code>.comment.CommentObj commentObj = 2;</code>
+     */
+    public GRPCService.Comment.CommentObjOrBuilder getCommentObjOrBuilder() {
+      return getCommentObj();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (postId_ != null) {
+        output.writeMessage(1, getPostId());
+      }
+      if (commentObj_ != null) {
+        output.writeMessage(2, getCommentObj());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (postId_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getPostId());
+      }
+      if (commentObj_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getCommentObj());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.Comment.CommentObjAndInteger)) {
+        return super.equals(obj);
+      }
+      GRPCService.Comment.CommentObjAndInteger other = (GRPCService.Comment.CommentObjAndInteger) obj;
+
+      boolean result = true;
+      result = result && (hasPostId() == other.hasPostId());
+      if (hasPostId()) {
+        result = result && getPostId()
+            .equals(other.getPostId());
+      }
+      result = result && (hasCommentObj() == other.hasCommentObj());
+      if (hasCommentObj()) {
+        result = result && getCommentObj()
+            .equals(other.getCommentObj());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPostId()) {
+        hash = (37 * hash) + POSTID_FIELD_NUMBER;
+        hash = (53 * hash) + getPostId().hashCode();
+      }
+      if (hasCommentObj()) {
+        hash = (37 * hash) + COMMENTOBJ_FIELD_NUMBER;
+        hash = (53 * hash) + getCommentObj().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.Comment.CommentObjAndInteger parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Comment.CommentObjAndInteger parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.Comment.CommentObjAndInteger prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code comment.CommentObjAndInteger}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:comment.CommentObjAndInteger)
+        GRPCService.Comment.CommentObjAndIntegerOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.Comment.internal_static_comment_CommentObjAndInteger_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.Comment.internal_static_comment_CommentObjAndInteger_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.Comment.CommentObjAndInteger.class, GRPCService.Comment.CommentObjAndInteger.Builder.class);
+      }
+
+      // Construct using GRPCService.Comment.CommentObjAndInteger.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (postIdBuilder_ == null) {
+          postId_ = null;
+        } else {
+          postId_ = null;
+          postIdBuilder_ = null;
+        }
+        if (commentObjBuilder_ == null) {
+          commentObj_ = null;
+        } else {
+          commentObj_ = null;
+          commentObjBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.Comment.internal_static_comment_CommentObjAndInteger_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.Comment.CommentObjAndInteger getDefaultInstanceForType() {
+        return GRPCService.Comment.CommentObjAndInteger.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.Comment.CommentObjAndInteger build() {
+        GRPCService.Comment.CommentObjAndInteger result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.Comment.CommentObjAndInteger buildPartial() {
+        GRPCService.Comment.CommentObjAndInteger result = new GRPCService.Comment.CommentObjAndInteger(this);
+        if (postIdBuilder_ == null) {
+          result.postId_ = postId_;
+        } else {
+          result.postId_ = postIdBuilder_.build();
+        }
+        if (commentObjBuilder_ == null) {
+          result.commentObj_ = commentObj_;
+        } else {
+          result.commentObj_ = commentObjBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.Comment.CommentObjAndInteger) {
+          return mergeFrom((GRPCService.Comment.CommentObjAndInteger)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.Comment.CommentObjAndInteger other) {
+        if (other == GRPCService.Comment.CommentObjAndInteger.getDefaultInstance()) return this;
+        if (other.hasPostId()) {
+          mergePostId(other.getPostId());
+        }
+        if (other.hasCommentObj()) {
+          mergeCommentObj(other.getCommentObj());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.Comment.CommentObjAndInteger parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.Comment.CommentObjAndInteger) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private GRPCService.Comment.Integer postId_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.Comment.Integer, GRPCService.Comment.Integer.Builder, GRPCService.Comment.IntegerOrBuilder> postIdBuilder_;
+      /**
+       * <code>.comment.Integer postId = 1;</code>
+       */
+      public boolean hasPostId() {
+        return postIdBuilder_ != null || postId_ != null;
+      }
+      /**
+       * <code>.comment.Integer postId = 1;</code>
+       */
+      public GRPCService.Comment.Integer getPostId() {
+        if (postIdBuilder_ == null) {
+          return postId_ == null ? GRPCService.Comment.Integer.getDefaultInstance() : postId_;
+        } else {
+          return postIdBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.comment.Integer postId = 1;</code>
+       */
+      public Builder setPostId(GRPCService.Comment.Integer value) {
+        if (postIdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postId_ = value;
+          onChanged();
+        } else {
+          postIdBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.Integer postId = 1;</code>
+       */
+      public Builder setPostId(
+          GRPCService.Comment.Integer.Builder builderForValue) {
+        if (postIdBuilder_ == null) {
+          postId_ = builderForValue.build();
+          onChanged();
+        } else {
+          postIdBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.Integer postId = 1;</code>
+       */
+      public Builder mergePostId(GRPCService.Comment.Integer value) {
+        if (postIdBuilder_ == null) {
+          if (postId_ != null) {
+            postId_ =
+              GRPCService.Comment.Integer.newBuilder(postId_).mergeFrom(value).buildPartial();
+          } else {
+            postId_ = value;
+          }
+          onChanged();
+        } else {
+          postIdBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.Integer postId = 1;</code>
+       */
+      public Builder clearPostId() {
+        if (postIdBuilder_ == null) {
+          postId_ = null;
+          onChanged();
+        } else {
+          postId_ = null;
+          postIdBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.Integer postId = 1;</code>
+       */
+      public GRPCService.Comment.Integer.Builder getPostIdBuilder() {
+        
+        onChanged();
+        return getPostIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.comment.Integer postId = 1;</code>
+       */
+      public GRPCService.Comment.IntegerOrBuilder getPostIdOrBuilder() {
+        if (postIdBuilder_ != null) {
+          return postIdBuilder_.getMessageOrBuilder();
+        } else {
+          return postId_ == null ?
+              GRPCService.Comment.Integer.getDefaultInstance() : postId_;
+        }
+      }
+      /**
+       * <code>.comment.Integer postId = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.Comment.Integer, GRPCService.Comment.Integer.Builder, GRPCService.Comment.IntegerOrBuilder> 
+          getPostIdFieldBuilder() {
+        if (postIdBuilder_ == null) {
+          postIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              GRPCService.Comment.Integer, GRPCService.Comment.Integer.Builder, GRPCService.Comment.IntegerOrBuilder>(
+                  getPostId(),
+                  getParentForChildren(),
+                  isClean());
+          postId_ = null;
+        }
+        return postIdBuilder_;
+      }
+
+      private GRPCService.Comment.CommentObj commentObj_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.Comment.CommentObj, GRPCService.Comment.CommentObj.Builder, GRPCService.Comment.CommentObjOrBuilder> commentObjBuilder_;
+      /**
+       * <code>.comment.CommentObj commentObj = 2;</code>
+       */
+      public boolean hasCommentObj() {
+        return commentObjBuilder_ != null || commentObj_ != null;
+      }
+      /**
+       * <code>.comment.CommentObj commentObj = 2;</code>
+       */
+      public GRPCService.Comment.CommentObj getCommentObj() {
+        if (commentObjBuilder_ == null) {
+          return commentObj_ == null ? GRPCService.Comment.CommentObj.getDefaultInstance() : commentObj_;
+        } else {
+          return commentObjBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.comment.CommentObj commentObj = 2;</code>
+       */
+      public Builder setCommentObj(GRPCService.Comment.CommentObj value) {
+        if (commentObjBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          commentObj_ = value;
+          onChanged();
+        } else {
+          commentObjBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.CommentObj commentObj = 2;</code>
+       */
+      public Builder setCommentObj(
+          GRPCService.Comment.CommentObj.Builder builderForValue) {
+        if (commentObjBuilder_ == null) {
+          commentObj_ = builderForValue.build();
+          onChanged();
+        } else {
+          commentObjBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.CommentObj commentObj = 2;</code>
+       */
+      public Builder mergeCommentObj(GRPCService.Comment.CommentObj value) {
+        if (commentObjBuilder_ == null) {
+          if (commentObj_ != null) {
+            commentObj_ =
+              GRPCService.Comment.CommentObj.newBuilder(commentObj_).mergeFrom(value).buildPartial();
+          } else {
+            commentObj_ = value;
+          }
+          onChanged();
+        } else {
+          commentObjBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.CommentObj commentObj = 2;</code>
+       */
+      public Builder clearCommentObj() {
+        if (commentObjBuilder_ == null) {
+          commentObj_ = null;
+          onChanged();
+        } else {
+          commentObj_ = null;
+          commentObjBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.comment.CommentObj commentObj = 2;</code>
+       */
+      public GRPCService.Comment.CommentObj.Builder getCommentObjBuilder() {
+        
+        onChanged();
+        return getCommentObjFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.comment.CommentObj commentObj = 2;</code>
+       */
+      public GRPCService.Comment.CommentObjOrBuilder getCommentObjOrBuilder() {
+        if (commentObjBuilder_ != null) {
+          return commentObjBuilder_.getMessageOrBuilder();
+        } else {
+          return commentObj_ == null ?
+              GRPCService.Comment.CommentObj.getDefaultInstance() : commentObj_;
+        }
+      }
+      /**
+       * <code>.comment.CommentObj commentObj = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          GRPCService.Comment.CommentObj, GRPCService.Comment.CommentObj.Builder, GRPCService.Comment.CommentObjOrBuilder> 
+          getCommentObjFieldBuilder() {
+        if (commentObjBuilder_ == null) {
+          commentObjBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              GRPCService.Comment.CommentObj, GRPCService.Comment.CommentObj.Builder, GRPCService.Comment.CommentObjOrBuilder>(
+                  getCommentObj(),
+                  getParentForChildren(),
+                  isClean());
+          commentObj_ = null;
+        }
+        return commentObjBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:comment.CommentObjAndInteger)
+    }
+
+    // @@protoc_insertion_point(class_scope:comment.CommentObjAndInteger)
+    private static final GRPCService.Comment.CommentObjAndInteger DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.Comment.CommentObjAndInteger();
+    }
+
+    public static GRPCService.Comment.CommentObjAndInteger getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CommentObjAndInteger>
+        PARSER = new com.google.protobuf.AbstractParser<CommentObjAndInteger>() {
+      @java.lang.Override
+      public CommentObjAndInteger parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CommentObjAndInteger(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CommentObjAndInteger> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CommentObjAndInteger> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.Comment.CommentObjAndInteger getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DateCreatedForCommentOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:comment.DateCreatedForComment)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 day = 1;</code>
+     */
+    int getDay();
+
+    /**
+     * <code>int32 month = 2;</code>
+     */
+    int getMonth();
+
+    /**
+     * <code>int32 year = 3;</code>
+     */
+    int getYear();
+  }
+  /**
+   * Protobuf type {@code comment.DateCreatedForComment}
+   */
+  public  static final class DateCreatedForComment extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:comment.DateCreatedForComment)
+      DateCreatedForCommentOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DateCreatedForComment.newBuilder() to construct.
+    private DateCreatedForComment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DateCreatedForComment() {
+      day_ = 0;
+      month_ = 0;
+      year_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DateCreatedForComment(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              day_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              month_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              year_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.Comment.internal_static_comment_DateCreatedForComment_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.Comment.internal_static_comment_DateCreatedForComment_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.Comment.DateCreatedForComment.class, GRPCService.Comment.DateCreatedForComment.Builder.class);
+    }
+
+    public static final int DAY_FIELD_NUMBER = 1;
+    private int day_;
+    /**
+     * <code>int32 day = 1;</code>
+     */
+    public int getDay() {
+      return day_;
+    }
+
+    public static final int MONTH_FIELD_NUMBER = 2;
+    private int month_;
+    /**
+     * <code>int32 month = 2;</code>
+     */
+    public int getMonth() {
+      return month_;
+    }
+
+    public static final int YEAR_FIELD_NUMBER = 3;
+    private int year_;
+    /**
+     * <code>int32 year = 3;</code>
+     */
+    public int getYear() {
+      return year_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (day_ != 0) {
+        output.writeInt32(1, day_);
+      }
+      if (month_ != 0) {
+        output.writeInt32(2, month_);
+      }
+      if (year_ != 0) {
+        output.writeInt32(3, year_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (day_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, day_);
+      }
+      if (month_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, month_);
+      }
+      if (year_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, year_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.Comment.DateCreatedForComment)) {
+        return super.equals(obj);
+      }
+      GRPCService.Comment.DateCreatedForComment other = (GRPCService.Comment.DateCreatedForComment) obj;
+
+      boolean result = true;
+      result = result && (getDay()
+          == other.getDay());
+      result = result && (getMonth()
+          == other.getMonth());
+      result = result && (getYear()
+          == other.getYear());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DAY_FIELD_NUMBER;
+      hash = (53 * hash) + getDay();
+      hash = (37 * hash) + MONTH_FIELD_NUMBER;
+      hash = (53 * hash) + getMonth();
+      hash = (37 * hash) + YEAR_FIELD_NUMBER;
+      hash = (53 * hash) + getYear();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.Comment.DateCreatedForComment parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.Comment.DateCreatedForComment parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.Comment.DateCreatedForComment prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code comment.DateCreatedForComment}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:comment.DateCreatedForComment)
+        GRPCService.Comment.DateCreatedForCommentOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.Comment.internal_static_comment_DateCreatedForComment_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.Comment.internal_static_comment_DateCreatedForComment_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.Comment.DateCreatedForComment.class, GRPCService.Comment.DateCreatedForComment.Builder.class);
+      }
+
+      // Construct using GRPCService.Comment.DateCreatedForComment.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        day_ = 0;
+
+        month_ = 0;
+
+        year_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.Comment.internal_static_comment_DateCreatedForComment_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.Comment.DateCreatedForComment getDefaultInstanceForType() {
+        return GRPCService.Comment.DateCreatedForComment.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.Comment.DateCreatedForComment build() {
+        GRPCService.Comment.DateCreatedForComment result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.Comment.DateCreatedForComment buildPartial() {
+        GRPCService.Comment.DateCreatedForComment result = new GRPCService.Comment.DateCreatedForComment(this);
+        result.day_ = day_;
+        result.month_ = month_;
+        result.year_ = year_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.Comment.DateCreatedForComment) {
+          return mergeFrom((GRPCService.Comment.DateCreatedForComment)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.Comment.DateCreatedForComment other) {
+        if (other == GRPCService.Comment.DateCreatedForComment.getDefaultInstance()) return this;
+        if (other.getDay() != 0) {
+          setDay(other.getDay());
+        }
+        if (other.getMonth() != 0) {
+          setMonth(other.getMonth());
+        }
+        if (other.getYear() != 0) {
+          setYear(other.getYear());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.Comment.DateCreatedForComment parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.Comment.DateCreatedForComment) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int day_ ;
+      /**
+       * <code>int32 day = 1;</code>
+       */
+      public int getDay() {
+        return day_;
+      }
+      /**
+       * <code>int32 day = 1;</code>
+       */
+      public Builder setDay(int value) {
+        
+        day_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 day = 1;</code>
+       */
+      public Builder clearDay() {
+        
+        day_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int month_ ;
+      /**
+       * <code>int32 month = 2;</code>
+       */
+      public int getMonth() {
+        return month_;
+      }
+      /**
+       * <code>int32 month = 2;</code>
+       */
+      public Builder setMonth(int value) {
+        
+        month_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 month = 2;</code>
+       */
+      public Builder clearMonth() {
+        
+        month_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int year_ ;
+      /**
+       * <code>int32 year = 3;</code>
+       */
+      public int getYear() {
+        return year_;
+      }
+      /**
+       * <code>int32 year = 3;</code>
+       */
+      public Builder setYear(int value) {
+        
+        year_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 year = 3;</code>
+       */
+      public Builder clearYear() {
+        
+        year_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:comment.DateCreatedForComment)
+    }
+
+    // @@protoc_insertion_point(class_scope:comment.DateCreatedForComment)
+    private static final GRPCService.Comment.DateCreatedForComment DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.Comment.DateCreatedForComment();
+    }
+
+    public static GRPCService.Comment.DateCreatedForComment getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DateCreatedForComment>
+        PARSER = new com.google.protobuf.AbstractParser<DateCreatedForComment>() {
+      @java.lang.Override
+      public DateCreatedForComment parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DateCreatedForComment(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DateCreatedForComment> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DateCreatedForComment> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.Comment.DateCreatedForComment getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_comment_CommentObj_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_comment_CommentObj_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_comment_Integer_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_comment_Integer_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_comment_CommentObjAndInteger_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_comment_CommentObjAndInteger_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_comment_DateCreatedForComment_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_comment_DateCreatedForComment_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -835,10 +2923,19 @@ public final class Comment {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rcomment.proto\022\007comment\032\nuser.proto\"E\n\n" +
+      "\n\rcomment.proto\022\007comment\032\nuser.proto\"z\n\n" +
       "CommentObj\022\n\n\002id\030\001 \001(\005\022\014\n\004body\030\002 \001(\t\022\035\n\006" +
-      "writer\030\003 \001(\0132\r.user.UserObj2\t\n\007commentB\r" +
-      "\n\013GRPCServiceb\006proto3"
+      "writer\030\003 \001(\0132\r.user.UserObj\0223\n\013dateCreat" +
+      "ed\030\004 \001(\0132\036.comment.DateCreatedForComment" +
+      "\"\025\n\007Integer\022\n\n\002id\030\001 \001(\005\"a\n\024CommentObjAnd" +
+      "Integer\022 \n\006postId\030\001 \001(\0132\020.comment.Intege" +
+      "r\022\'\n\ncommentObj\030\002 \001(\0132\023.comment.CommentO" +
+      "bj\"A\n\025DateCreatedForComment\022\013\n\003day\030\001 \001(\005" +
+      "\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030\003 \001(\0052\203\001\n\007commen" +
+      "t\022@\n\nAddComment\022\035.comment.CommentObjAndI" +
+      "nteger\032\023.comment.CommentObj\0226\n\rDeleteCom" +
+      "ment\022\020.comment.Integer\032\023.comment.Comment" +
+      "ObjB\r\n\013GRPCServiceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -858,7 +2955,25 @@ public final class Comment {
     internal_static_comment_CommentObj_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_comment_CommentObj_descriptor,
-        new java.lang.String[] { "Id", "Body", "Writer", });
+        new java.lang.String[] { "Id", "Body", "Writer", "DateCreated", });
+    internal_static_comment_Integer_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_comment_Integer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_comment_Integer_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_comment_CommentObjAndInteger_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_comment_CommentObjAndInteger_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_comment_CommentObjAndInteger_descriptor,
+        new java.lang.String[] { "PostId", "CommentObj", });
+    internal_static_comment_DateCreatedForComment_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_comment_DateCreatedForComment_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_comment_DateCreatedForComment_descriptor,
+        new java.lang.String[] { "Day", "Month", "Year", });
     GRPCService.UserOuterClass.getDescriptor();
   }
 

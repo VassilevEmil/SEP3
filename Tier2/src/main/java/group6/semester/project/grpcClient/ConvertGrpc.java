@@ -293,4 +293,46 @@ public class ConvertGrpc {
     }
 
 
+    /**
+     * It converts a Comment object to a CommentObj object.
+     *
+     * @param comment The comment object that we want to convert to a GRPC object.
+     * @return A CommentObj object is being returned.
+     */
+    public static GRPCService.Comment.CommentObj getCommentObjFromComment(Comment comment){
+        GRPCService.Comment.CommentObj commentObj = GRPCService.Comment.CommentObj.newBuilder()
+                .setBody(comment.getBody())
+                .setWriter(getGrpcUserFromUser(comment.getWriter()))
+                .setId(comment.getId())
+                .setDateCreated(GRPCService.Comment.DateCreatedForComment.newBuilder()
+                        .setDay(comment.getDateCreated().getDay())
+                        .setMonth(comment.getDateCreated().getMonth())
+                        .setYear(comment.getDateCreated().getYear())
+                        .build())
+                .build();
+        return commentObj;
+    }
+
+    /**
+     * It takes a GRPC Comment object and converts it into a Comment object
+     *
+     * @param commentObj The GRPC object that you want to convert to a Comment object.
+     * @return A Comment object
+     */
+    public static Comment getCommentFromGRPCCommentObj(GRPCService.Comment.CommentObj commentObj){
+        Comment comment = new Comment();
+        comment.setId(commentObj.getId());
+        comment.setBody(commentObj.getBody());
+        comment.setWriter(getUserFromGrpcUser(commentObj.getWriter()));
+        Date date = new Date();
+        date.setYear(commentObj.getDateCreated().getYear());
+        date.setMonth(commentObj.getDateCreated().getMonth());
+        date.setDay(commentObj.getDateCreated().getDay());
+        comment.setDateCreated(date);
+        return comment;
+
+
+    }
+
+
 }
