@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {}
+    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
+    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
-        "outputPath": "D:\\VIA_Courses\\SEP3\\Tier1\\Tier1\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
