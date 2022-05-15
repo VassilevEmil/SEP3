@@ -21,5 +21,14 @@ public class BookmarkProtoImpl : Bookmark.BookmarkBase
 
         return new Message();
     }
+    
+    public override async Task<Message> RemoveBookmark(StringAndInteger request,ServerCallContext context)
+    {
+        string username = request.UserName;
+        int postId = request.PostId;
+        _bookmarkService.RemoveBookmark(postId,username);
+
+        return new Message();
+    }
 
 }
