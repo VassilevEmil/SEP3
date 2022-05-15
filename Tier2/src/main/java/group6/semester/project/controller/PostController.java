@@ -102,17 +102,19 @@ public class PostController {
         IOException
     {
             try{
-                System.out.println("Adding image for post " + postId );
-                System.out.println(file.getOriginalFilename());
-                System.out.println(file.getName());
-                System.out.println(file.getContentType());
-                System.out.println(file.getSize());
+             //   System.out.println("Adding image for post " + postId );
+             //   System.out.println(file.getOriginalFilename());
+               // System.out.println(file.getName());
+              //  System.out.println(file.getContentType());
+             //   System.out.println(file.getSize());
 
 
-                String pathdirectory = new ClassPathResource("").getFile().getAbsolutePath();
-                Files.copy(file.getInputStream(), Paths.get(pathdirectory+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+               // String pathdirectory = new ClassPathResource("").getFile().getAbsolutePath();
+              //  Files.copy(file.getInputStream(), Paths.get(pathdirectory+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
                 //postService.addImage(file);
-                // return file;
+                //
+
+                postService.addImage(file,postId);
                 return ResponseEntity.ok("Done");
             }catch (Exception e)
             {

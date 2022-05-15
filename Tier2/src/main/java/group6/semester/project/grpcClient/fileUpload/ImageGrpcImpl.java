@@ -6,13 +6,16 @@ import com.google.protobuf.ByteString;
 import group6.semester.project.grpcClient.ManagedChannelGetter;
 import io.grpc.ManagedChannel;
 import io.grpc.stub.StreamObserver;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
+@Service
 public class ImageGrpcImpl
 {
 
@@ -31,17 +34,19 @@ public class ImageGrpcImpl
   }
 
 
-  public void uploadImage() throws IOException {
+  public void uploadImage(MultipartFile file,int postId) throws IOException {
 
+    System.out.println("file.getName()");
     // build metadata
     Image.FileUploadRequest metadata = Image.FileUploadRequest.newBuilder().setMetadata(
-        Image.MetaData.newBuilder().setName("test").setType("png").build()
+        Image.MetaData.newBuilder().setName("test").setType("jpg").build()
     ).build();
     streamObserver.onNext(metadata);
 
 
     // upload file as a chunk
-    InputStream inputStream = Files.newInputStream(path);
+   // InputStream inputStream = Files.newInputStream(path);
+    InputStream inputStream = file.getInputStream();
     byte[] bytes = new byte[4096];
     int size;
     while ((size = inputStream.read(bytes)) > 0) {

@@ -5,8 +5,34 @@ package image;
 
 service image{
 
+  rpc Upload(stream FileUploadRequest) returns (FileUploadResponse);
 }
 message ImageObj{
-  int32 id =1;
-  string href =2;
+  int32 id = 1;
+  string href = 2;
+}
+
+message MetaData {
+  string name = 1;
+  string type = 2;
+}
+message FileObj{
+  bytes content = 1;
+}
+enum UploadStatus {
+  PENDING = 0;
+  IN_PROGRESS = 1;
+  SUCCESS = 2;
+  FAILED = 3;
+}
+
+message FileUploadRequest {
+  oneof request {
+    MetaData metadata = 1;
+    FileObj file = 2;
+  }
+}
+message FileUploadResponse {
+  string name = 1;
+  UploadStatus status = 2;
 }
