@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\himal\\.nuget\\packages\\": {}
+    "C:\\Users\\nepal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Third Semester\\Sep3\\Tier1\\Tier1\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "H:\\Third Semester\\Sep3\\Tier1\\Tier1\\Entities\\Entities.csproj",
-      "packagesPath": "C:\\Users\\himal\\.nuget\\packages\\",
-      "outputPath": "H:\\Third Semester\\Sep3\\Tier1\\Tier1\\Entities\\obj\\",
+      "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\Entities.csproj",
+      "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier1\\Tier1\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\himal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

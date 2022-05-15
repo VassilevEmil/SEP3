@@ -60,6 +60,8 @@ public class ImageGrpcImpl
     // close the stream
     inputStream.close();
     streamObserver.onCompleted();
+    imageStub=null;
+
   }
   private class FileUploadObserver implements StreamObserver<Image.FileUploadResponse>
   {

@@ -22,7 +22,7 @@ public class PostHttpClient : IPostService
     **/
 
     // Adding post with  image
-    public async Task<Post> AddPostAsync(int subCategoryId, Post postToAdd, [Optional] MultipartFormDataContent form)
+    public async Task<Post> AddPostAsync(int subCategoryId, Post postToAdd, [Optional] MultipartFormDataContent? form)
     {
         string content = string.Empty;
         Post post = new Post();
