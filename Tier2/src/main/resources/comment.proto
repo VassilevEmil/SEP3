@@ -7,11 +7,23 @@ package comment;
 
 service comment {
 
+
 }
 
 message CommentObj{
   int32 id =1;
   string body =2;
   user.UserObj writer =3;
+  DateCreated dateCreated =4;
+
+}
+message Integer{
+  int32 id=1;
+}
+
+message DateCreated{
+  int32 day =1;
+  int32 month =2;
+  int32  year =3;
 }
 
