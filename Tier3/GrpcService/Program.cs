@@ -17,17 +17,14 @@ builder.Services.AddGrpc();
 //services
 //daos
 //builder.Services.AddScoped<IMessageDAO, MessageDAOImpl>();
-builder.Services.AddScoped<IBookmarkService, BookmarkDAOImpl>();
 builder.Services.AddScoped<IUserService, UserDAOImpl>();
 builder.Services.AddScoped<IPostService, PostDAOImpl>();
 builder.Services.AddScoped<ICommentService, CommentServiceImpl>();
-builder.Services.AddScoped<IImageService,ImageDaoImpl>();
 builder.Services.AddDbContext<DbAccess>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-app.MapGrpcService<BookmarkProtoImpl>();
 app.MapGrpcService<UserProtoImpl>();
 app.MapGrpcService<PostProtoImpl>();
 app.MapGrpcService<CategoryProtoImpl>();

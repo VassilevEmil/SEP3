@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Third Semester\\Sep3\\Tier3\\EFC\\EFC.csproj": {}
+    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj": {}
   },
   "projects": {
-    "H:\\Third Semester\\Sep3\\Tier3\\EFC\\EFC.csproj": {
+    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Third Semester\\Sep3\\Tier3\\EFC\\EFC.csproj",
+        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj",
         "projectName": "EFC",
-        "projectPath": "H:\\Third Semester\\Sep3\\Tier3\\EFC\\EFC.csproj",
-        "packagesPath": "C:\\Users\\himal\\.nuget\\packages\\",
-        "outputPath": "H:\\Third Semester\\Sep3\\Tier3\\EFC\\obj\\",
+        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\EFC.csproj",
+        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\EFC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\himal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "H:\\Third Semester\\Sep3\\Tier3\\Entities\\Entities.csproj": {
-                "projectPath": "H:\\Third Semester\\Sep3\\Tier3\\Entities\\Entities.csproj"
+              "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj"
               }
             }
           }
@@ -72,21 +72,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\Third Semester\\Sep3\\Tier3\\Entities\\Entities.csproj": {
+    "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Third Semester\\Sep3\\Tier3\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "H:\\Third Semester\\Sep3\\Tier3\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\himal\\.nuget\\packages\\",
-        "outputPath": "H:\\Third Semester\\Sep3\\Tier3\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nepal\\OneDrive\\Desktop\\SEP3-Final\\SEP3\\Tier3\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\himal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -124,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
