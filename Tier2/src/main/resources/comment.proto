@@ -16,7 +16,7 @@ message CommentObj{
   int32 id =1;
   string body =2;
   user.UserObj writer =3;
-  DateCreated dateCreated =4;
+  DateCreatedForComment dateCreated =4;
 
 }
 message Integer{
@@ -28,7 +28,7 @@ message CommentObjAndInteger{
   CommentObj commentObj = 2;
 }
 
-message DateCreated{
+message DateCreatedForComment{
   int32 day =1;
   int32 month =2;
   int32  year =3;

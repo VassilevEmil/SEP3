@@ -304,7 +304,7 @@ public class ConvertGrpc {
                 .setBody(comment.getBody())
                 .setWriter(getGrpcUserFromUser(comment.getWriter()))
                 .setId(comment.getId())
-                .setDateCreated(GRPCService.Comment.DateCreated.newBuilder()
+                .setDateCreated(GRPCService.Comment.DateCreatedForComment.newBuilder()
                         .setDay(comment.getDateCreated().getDay())
                         .setMonth(comment.getDateCreated().getMonth())
                         .setYear(comment.getDateCreated().getYear())
