@@ -7,12 +7,21 @@ option csharp_namespace = "GRPCService";
 package bookmark;
 
 service Bookmark{
-  rpc AddBoomark(BookmarkObj) returns (BookmarkObj);
-  rpc RemoveBookmark(StringAndInteger) returns (BookmarkObj);
+  rpc AddBoomark(BookmarkObj) returns (EmptyBookMark);
+  rpc RemoveBookmark(StringAndIntegerBookmark) returns (EmptyBookMark);
+  rpc GetListOfPosts(UserForBookMark) returns (ListOfPostsForBooking);
 }
 
-message Message{
-  string string=1;
+message EmptyBookMark{
+  
+}
+
+message ListOfPostsForBooking{
+  repeated post.PostObj post = 1;
+}
+
+message UserForBookMark{
+  string username = 1;
 }
 
 message BookmarkObj{
@@ -20,7 +29,7 @@ message BookmarkObj{
   post.PostObj Post=2;
 }
 
-message StringAndInteger{
-  int32 postId =1;
-  string userName = 2;
+message StringAndIntegerBookmark{
+  string string =1;
+  int32 current =2;
 }

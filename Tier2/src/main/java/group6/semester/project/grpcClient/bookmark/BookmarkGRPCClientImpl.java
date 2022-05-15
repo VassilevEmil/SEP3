@@ -7,8 +7,12 @@ import GRPCService.PostOuterClass;
 import group6.semester.project.grpcClient.ConvertGrpc;
 import group6.semester.project.grpcClient.ManagedChannelGetter;
 import group6.semester.project.model.Bookmark;
+import group6.semester.project.model.Post;
 import io.grpc.ManagedChannel;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static group6.semester.project.grpcClient.ConvertGrpc.getPostFromGrpcPost;
 
@@ -28,10 +32,10 @@ public class BookmarkGRPCClientImpl implements BookmarkClient{
     @Override
     public void AddBookmark(Bookmark bookmark) {
         BookmarkOuterClass.BookmarkObj obj = ConvertGrpc.getGrpcBookmarkFromOurBookmark(bookmark);
-        BookmarkOuterClass.Message message = null;
+        BookmarkOuterClass.EmptyBookMark message = null;
         try {
-            System.out.println("At the add post");
-            message = getBookmarkBlockingStub().addBoomark(obj);
+            getBookmarkBlockingStub().addBoomark(obj);
+            System.out.println("Sending bookmark");
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {
@@ -41,16 +45,29 @@ public class BookmarkGRPCClientImpl implements BookmarkClient{
 
     @Override
     public void RemoveBookmark(int postId, String userName) {
-        BookmarkOuterClass.StringAndInteger obj =  BookmarkOuterClass.StringAndInteger.newBuilder().setPostId(postId).setUserName(userName).build();
-        BookmarkOuterClass.Message message = null;
+        BookmarkOuterClass.StringAndIntegerBookmark obj =  BookmarkOuterClass.StringAndIntegerBookmark.newBuilder().setCurrent(postId).setString(userName).build();
+
         try {
-            System.out.println("At the add post");
-            message = getBookmarkBlockingStub().removeBookmark(obj);
+             getBookmarkBlockingStub().removeBookmark(obj);
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {
             disposeStub();
         }
+    }
+
+    @Override
+    public List<Post> getListOfBookedElements(String userName) {
+        BookmarkOuterClass.UserForBookMark obj =  BookmarkOuterClass.UserForBookMark.newBuilder().setUsername(userName).build();
+        BookmarkOuterClass.ListOfPostsForBooking message = null;
+        try {
+            message = getBookmarkBlockingStub().getListOfPosts(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            disposeStub();
+        }
+        return ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(message.getPostList());
     }
 
     private void disposeStub() {

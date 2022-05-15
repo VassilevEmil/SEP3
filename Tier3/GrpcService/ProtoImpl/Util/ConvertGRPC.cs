@@ -63,6 +63,32 @@ public class ConvertGRPC {
 
         return postObj;
     }
+    
+    public static ListOfPostsForBooking ConvertListPostToObjBooking(List<Entities.Models.Post> request) {
+        ListOfPostsForBooking postObj = new ListOfPostsForBooking();
+        foreach (var item in request) {
+            PostObj postObj2 = new PostObj() {
+                Id = item.Id,
+                Description = item.Description,
+                Address = item.Address,
+                Email = item.Email,
+                Condition = item.Condition,
+                Images = {new ImageObj()},
+                Price = item.Price,
+                Title = item.Title,
+                Writer = new UserObj(),
+                DateCreated = new DateCreated() {
+                    Day = item.DateCreated.Day,
+                    Month = item.DateCreated.Month,
+                    Year = item.DateCreated.Year
+                },
+                PhoneNumber = item.PhoneNumber,
+            };
+            postObj.Post.Add(postObj2);
+        }
+
+        return postObj;
+    }
 
     public static BookmarkObj ConvertBookmarkToBookmarkObj(Entities.Models.Bookmark reqest)
     {

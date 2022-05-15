@@ -31,4 +31,9 @@ public class BookmarkServiceImpl implements BookmarkService {
     public void RemoveBookmark(int postId, String userName) {
         bookmarkClient.RemoveBookmark(postId,userName);
     }
+
+    @Override
+    public List<Post> getListOfBookedElements(String userName) {
+        return bookmarkClient.getListOfBookedElements(userName);
+    }
 }

@@ -14,34 +14,23 @@ public final class BookmarkOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface MessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:bookmark.Message)
+  public interface EmptyBookMarkOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bookmark.EmptyBookMark)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string string = 1;</code>
-     */
-    java.lang.String getString();
-    /**
-     * <code>string string = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getStringBytes();
   }
   /**
-   * Protobuf type {@code bookmark.Message}
+   * Protobuf type {@code bookmark.EmptyBookMark}
    */
-  public  static final class Message extends
+  public  static final class EmptyBookMark extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:bookmark.Message)
-      MessageOrBuilder {
+      // @@protoc_insertion_point(message_implements:bookmark.EmptyBookMark)
+      EmptyBookMarkOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Message.newBuilder() to construct.
-    private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use EmptyBookMark.newBuilder() to construct.
+    private EmptyBookMark(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Message() {
-      string_ = "";
+    private EmptyBookMark() {
     }
 
     @java.lang.Override
@@ -49,7 +38,7 @@ public final class BookmarkOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Message(
+    private EmptyBookMark(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -57,7 +46,6 @@ public final class BookmarkOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -68,12 +56,6 @@ public final class BookmarkOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              string_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -95,49 +77,15 @@ public final class BookmarkOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return GRPCService.BookmarkOuterClass.internal_static_bookmark_Message_descriptor;
+      return GRPCService.BookmarkOuterClass.internal_static_bookmark_EmptyBookMark_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return GRPCService.BookmarkOuterClass.internal_static_bookmark_Message_fieldAccessorTable
+      return GRPCService.BookmarkOuterClass.internal_static_bookmark_EmptyBookMark_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              GRPCService.BookmarkOuterClass.Message.class, GRPCService.BookmarkOuterClass.Message.Builder.class);
-    }
-
-    public static final int STRING_FIELD_NUMBER = 1;
-    private volatile java.lang.Object string_;
-    /**
-     * <code>string string = 1;</code>
-     */
-    public java.lang.String getString() {
-      java.lang.Object ref = string_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        string_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string string = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getStringBytes() {
-      java.lang.Object ref = string_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        string_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+              GRPCService.BookmarkOuterClass.EmptyBookMark.class, GRPCService.BookmarkOuterClass.EmptyBookMark.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -154,9 +102,6 @@ public final class BookmarkOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getStringBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, string_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -166,9 +111,6 @@ public final class BookmarkOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getStringBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, string_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -179,14 +121,12 @@ public final class BookmarkOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof GRPCService.BookmarkOuterClass.Message)) {
+      if (!(obj instanceof GRPCService.BookmarkOuterClass.EmptyBookMark)) {
         return super.equals(obj);
       }
-      GRPCService.BookmarkOuterClass.Message other = (GRPCService.BookmarkOuterClass.Message) obj;
+      GRPCService.BookmarkOuterClass.EmptyBookMark other = (GRPCService.BookmarkOuterClass.EmptyBookMark) obj;
 
       boolean result = true;
-      result = result && getString()
-          .equals(other.getString());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -198,76 +138,74 @@ public final class BookmarkOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STRING_FIELD_NUMBER;
-      hash = (53 * hash) + getString().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static GRPCService.BookmarkOuterClass.Message parseFrom(
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseFrom(
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseFrom(
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseFrom(
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseFrom(byte[] data)
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseFrom(
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseFrom(java.io.InputStream input)
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseFrom(
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseDelimitedFrom(java.io.InputStream input)
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseDelimitedFrom(
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseFrom(
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GRPCService.BookmarkOuterClass.Message parseFrom(
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -280,7 +218,7 @@ public final class BookmarkOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(GRPCService.BookmarkOuterClass.Message prototype) {
+    public static Builder newBuilder(GRPCService.BookmarkOuterClass.EmptyBookMark prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -296,26 +234,26 @@ public final class BookmarkOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code bookmark.Message}
+     * Protobuf type {@code bookmark.EmptyBookMark}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:bookmark.Message)
-        GRPCService.BookmarkOuterClass.MessageOrBuilder {
+        // @@protoc_insertion_point(builder_implements:bookmark.EmptyBookMark)
+        GRPCService.BookmarkOuterClass.EmptyBookMarkOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return GRPCService.BookmarkOuterClass.internal_static_bookmark_Message_descriptor;
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_EmptyBookMark_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return GRPCService.BookmarkOuterClass.internal_static_bookmark_Message_fieldAccessorTable
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_EmptyBookMark_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                GRPCService.BookmarkOuterClass.Message.class, GRPCService.BookmarkOuterClass.Message.Builder.class);
+                GRPCService.BookmarkOuterClass.EmptyBookMark.class, GRPCService.BookmarkOuterClass.EmptyBookMark.Builder.class);
       }
 
-      // Construct using GRPCService.BookmarkOuterClass.Message.newBuilder()
+      // Construct using GRPCService.BookmarkOuterClass.EmptyBookMark.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -333,25 +271,23 @@ public final class BookmarkOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        string_ = "";
-
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return GRPCService.BookmarkOuterClass.internal_static_bookmark_Message_descriptor;
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_EmptyBookMark_descriptor;
       }
 
       @java.lang.Override
-      public GRPCService.BookmarkOuterClass.Message getDefaultInstanceForType() {
-        return GRPCService.BookmarkOuterClass.Message.getDefaultInstance();
+      public GRPCService.BookmarkOuterClass.EmptyBookMark getDefaultInstanceForType() {
+        return GRPCService.BookmarkOuterClass.EmptyBookMark.getDefaultInstance();
       }
 
       @java.lang.Override
-      public GRPCService.BookmarkOuterClass.Message build() {
-        GRPCService.BookmarkOuterClass.Message result = buildPartial();
+      public GRPCService.BookmarkOuterClass.EmptyBookMark build() {
+        GRPCService.BookmarkOuterClass.EmptyBookMark result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -359,9 +295,8 @@ public final class BookmarkOuterClass {
       }
 
       @java.lang.Override
-      public GRPCService.BookmarkOuterClass.Message buildPartial() {
-        GRPCService.BookmarkOuterClass.Message result = new GRPCService.BookmarkOuterClass.Message(this);
-        result.string_ = string_;
+      public GRPCService.BookmarkOuterClass.EmptyBookMark buildPartial() {
+        GRPCService.BookmarkOuterClass.EmptyBookMark result = new GRPCService.BookmarkOuterClass.EmptyBookMark(this);
         onBuilt();
         return result;
       }
@@ -400,18 +335,1277 @@ public final class BookmarkOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof GRPCService.BookmarkOuterClass.Message) {
-          return mergeFrom((GRPCService.BookmarkOuterClass.Message)other);
+        if (other instanceof GRPCService.BookmarkOuterClass.EmptyBookMark) {
+          return mergeFrom((GRPCService.BookmarkOuterClass.EmptyBookMark)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(GRPCService.BookmarkOuterClass.Message other) {
-        if (other == GRPCService.BookmarkOuterClass.Message.getDefaultInstance()) return this;
-        if (!other.getString().isEmpty()) {
-          string_ = other.string_;
+      public Builder mergeFrom(GRPCService.BookmarkOuterClass.EmptyBookMark other) {
+        if (other == GRPCService.BookmarkOuterClass.EmptyBookMark.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.BookmarkOuterClass.EmptyBookMark parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.BookmarkOuterClass.EmptyBookMark) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bookmark.EmptyBookMark)
+    }
+
+    // @@protoc_insertion_point(class_scope:bookmark.EmptyBookMark)
+    private static final GRPCService.BookmarkOuterClass.EmptyBookMark DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.BookmarkOuterClass.EmptyBookMark();
+    }
+
+    public static GRPCService.BookmarkOuterClass.EmptyBookMark getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EmptyBookMark>
+        PARSER = new com.google.protobuf.AbstractParser<EmptyBookMark>() {
+      @java.lang.Override
+      public EmptyBookMark parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EmptyBookMark(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EmptyBookMark> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EmptyBookMark> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.BookmarkOuterClass.EmptyBookMark getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListOfPostsForBookingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bookmark.ListOfPostsForBooking)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .post.PostObj post = 1;</code>
+     */
+    java.util.List<GRPCService.PostOuterClass.PostObj> 
+        getPostList();
+    /**
+     * <code>repeated .post.PostObj post = 1;</code>
+     */
+    GRPCService.PostOuterClass.PostObj getPost(int index);
+    /**
+     * <code>repeated .post.PostObj post = 1;</code>
+     */
+    int getPostCount();
+    /**
+     * <code>repeated .post.PostObj post = 1;</code>
+     */
+    java.util.List<? extends GRPCService.PostOuterClass.PostObjOrBuilder> 
+        getPostOrBuilderList();
+    /**
+     * <code>repeated .post.PostObj post = 1;</code>
+     */
+    GRPCService.PostOuterClass.PostObjOrBuilder getPostOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code bookmark.ListOfPostsForBooking}
+   */
+  public  static final class ListOfPostsForBooking extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bookmark.ListOfPostsForBooking)
+      ListOfPostsForBookingOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListOfPostsForBooking.newBuilder() to construct.
+    private ListOfPostsForBooking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListOfPostsForBooking() {
+      post_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListOfPostsForBooking(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                post_ = new java.util.ArrayList<GRPCService.PostOuterClass.PostObj>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              post_.add(
+                  input.readMessage(GRPCService.PostOuterClass.PostObj.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          post_ = java.util.Collections.unmodifiableList(post_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.BookmarkOuterClass.internal_static_bookmark_ListOfPostsForBooking_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.BookmarkOuterClass.internal_static_bookmark_ListOfPostsForBooking_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.BookmarkOuterClass.ListOfPostsForBooking.class, GRPCService.BookmarkOuterClass.ListOfPostsForBooking.Builder.class);
+    }
+
+    public static final int POST_FIELD_NUMBER = 1;
+    private java.util.List<GRPCService.PostOuterClass.PostObj> post_;
+    /**
+     * <code>repeated .post.PostObj post = 1;</code>
+     */
+    public java.util.List<GRPCService.PostOuterClass.PostObj> getPostList() {
+      return post_;
+    }
+    /**
+     * <code>repeated .post.PostObj post = 1;</code>
+     */
+    public java.util.List<? extends GRPCService.PostOuterClass.PostObjOrBuilder> 
+        getPostOrBuilderList() {
+      return post_;
+    }
+    /**
+     * <code>repeated .post.PostObj post = 1;</code>
+     */
+    public int getPostCount() {
+      return post_.size();
+    }
+    /**
+     * <code>repeated .post.PostObj post = 1;</code>
+     */
+    public GRPCService.PostOuterClass.PostObj getPost(int index) {
+      return post_.get(index);
+    }
+    /**
+     * <code>repeated .post.PostObj post = 1;</code>
+     */
+    public GRPCService.PostOuterClass.PostObjOrBuilder getPostOrBuilder(
+        int index) {
+      return post_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < post_.size(); i++) {
+        output.writeMessage(1, post_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < post_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, post_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.BookmarkOuterClass.ListOfPostsForBooking)) {
+        return super.equals(obj);
+      }
+      GRPCService.BookmarkOuterClass.ListOfPostsForBooking other = (GRPCService.BookmarkOuterClass.ListOfPostsForBooking) obj;
+
+      boolean result = true;
+      result = result && getPostList()
+          .equals(other.getPostList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getPostCount() > 0) {
+        hash = (37 * hash) + POST_FIELD_NUMBER;
+        hash = (53 * hash) + getPostList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.BookmarkOuterClass.ListOfPostsForBooking prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bookmark.ListOfPostsForBooking}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bookmark.ListOfPostsForBooking)
+        GRPCService.BookmarkOuterClass.ListOfPostsForBookingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_ListOfPostsForBooking_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_ListOfPostsForBooking_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.BookmarkOuterClass.ListOfPostsForBooking.class, GRPCService.BookmarkOuterClass.ListOfPostsForBooking.Builder.class);
+      }
+
+      // Construct using GRPCService.BookmarkOuterClass.ListOfPostsForBooking.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPostFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (postBuilder_ == null) {
+          post_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          postBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_ListOfPostsForBooking_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.BookmarkOuterClass.ListOfPostsForBooking getDefaultInstanceForType() {
+        return GRPCService.BookmarkOuterClass.ListOfPostsForBooking.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.BookmarkOuterClass.ListOfPostsForBooking build() {
+        GRPCService.BookmarkOuterClass.ListOfPostsForBooking result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.BookmarkOuterClass.ListOfPostsForBooking buildPartial() {
+        GRPCService.BookmarkOuterClass.ListOfPostsForBooking result = new GRPCService.BookmarkOuterClass.ListOfPostsForBooking(this);
+        int from_bitField0_ = bitField0_;
+        if (postBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            post_ = java.util.Collections.unmodifiableList(post_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.post_ = post_;
+        } else {
+          result.post_ = postBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.BookmarkOuterClass.ListOfPostsForBooking) {
+          return mergeFrom((GRPCService.BookmarkOuterClass.ListOfPostsForBooking)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.BookmarkOuterClass.ListOfPostsForBooking other) {
+        if (other == GRPCService.BookmarkOuterClass.ListOfPostsForBooking.getDefaultInstance()) return this;
+        if (postBuilder_ == null) {
+          if (!other.post_.isEmpty()) {
+            if (post_.isEmpty()) {
+              post_ = other.post_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePostIsMutable();
+              post_.addAll(other.post_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.post_.isEmpty()) {
+            if (postBuilder_.isEmpty()) {
+              postBuilder_.dispose();
+              postBuilder_ = null;
+              post_ = other.post_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              postBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPostFieldBuilder() : null;
+            } else {
+              postBuilder_.addAllMessages(other.post_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        GRPCService.BookmarkOuterClass.ListOfPostsForBooking parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (GRPCService.BookmarkOuterClass.ListOfPostsForBooking) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<GRPCService.PostOuterClass.PostObj> post_ =
+        java.util.Collections.emptyList();
+      private void ensurePostIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          post_ = new java.util.ArrayList<GRPCService.PostOuterClass.PostObj>(post_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          GRPCService.PostOuterClass.PostObj, GRPCService.PostOuterClass.PostObj.Builder, GRPCService.PostOuterClass.PostObjOrBuilder> postBuilder_;
+
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public java.util.List<GRPCService.PostOuterClass.PostObj> getPostList() {
+        if (postBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(post_);
+        } else {
+          return postBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public int getPostCount() {
+        if (postBuilder_ == null) {
+          return post_.size();
+        } else {
+          return postBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public GRPCService.PostOuterClass.PostObj getPost(int index) {
+        if (postBuilder_ == null) {
+          return post_.get(index);
+        } else {
+          return postBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public Builder setPost(
+          int index, GRPCService.PostOuterClass.PostObj value) {
+        if (postBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePostIsMutable();
+          post_.set(index, value);
+          onChanged();
+        } else {
+          postBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public Builder setPost(
+          int index, GRPCService.PostOuterClass.PostObj.Builder builderForValue) {
+        if (postBuilder_ == null) {
+          ensurePostIsMutable();
+          post_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          postBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public Builder addPost(GRPCService.PostOuterClass.PostObj value) {
+        if (postBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePostIsMutable();
+          post_.add(value);
+          onChanged();
+        } else {
+          postBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public Builder addPost(
+          int index, GRPCService.PostOuterClass.PostObj value) {
+        if (postBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePostIsMutable();
+          post_.add(index, value);
+          onChanged();
+        } else {
+          postBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public Builder addPost(
+          GRPCService.PostOuterClass.PostObj.Builder builderForValue) {
+        if (postBuilder_ == null) {
+          ensurePostIsMutable();
+          post_.add(builderForValue.build());
+          onChanged();
+        } else {
+          postBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public Builder addPost(
+          int index, GRPCService.PostOuterClass.PostObj.Builder builderForValue) {
+        if (postBuilder_ == null) {
+          ensurePostIsMutable();
+          post_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          postBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public Builder addAllPost(
+          java.lang.Iterable<? extends GRPCService.PostOuterClass.PostObj> values) {
+        if (postBuilder_ == null) {
+          ensurePostIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, post_);
+          onChanged();
+        } else {
+          postBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public Builder clearPost() {
+        if (postBuilder_ == null) {
+          post_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          postBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public Builder removePost(int index) {
+        if (postBuilder_ == null) {
+          ensurePostIsMutable();
+          post_.remove(index);
+          onChanged();
+        } else {
+          postBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public GRPCService.PostOuterClass.PostObj.Builder getPostBuilder(
+          int index) {
+        return getPostFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public GRPCService.PostOuterClass.PostObjOrBuilder getPostOrBuilder(
+          int index) {
+        if (postBuilder_ == null) {
+          return post_.get(index);  } else {
+          return postBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public java.util.List<? extends GRPCService.PostOuterClass.PostObjOrBuilder> 
+           getPostOrBuilderList() {
+        if (postBuilder_ != null) {
+          return postBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(post_);
+        }
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public GRPCService.PostOuterClass.PostObj.Builder addPostBuilder() {
+        return getPostFieldBuilder().addBuilder(
+            GRPCService.PostOuterClass.PostObj.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public GRPCService.PostOuterClass.PostObj.Builder addPostBuilder(
+          int index) {
+        return getPostFieldBuilder().addBuilder(
+            index, GRPCService.PostOuterClass.PostObj.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .post.PostObj post = 1;</code>
+       */
+      public java.util.List<GRPCService.PostOuterClass.PostObj.Builder> 
+           getPostBuilderList() {
+        return getPostFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          GRPCService.PostOuterClass.PostObj, GRPCService.PostOuterClass.PostObj.Builder, GRPCService.PostOuterClass.PostObjOrBuilder> 
+          getPostFieldBuilder() {
+        if (postBuilder_ == null) {
+          postBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              GRPCService.PostOuterClass.PostObj, GRPCService.PostOuterClass.PostObj.Builder, GRPCService.PostOuterClass.PostObjOrBuilder>(
+                  post_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          post_ = null;
+        }
+        return postBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bookmark.ListOfPostsForBooking)
+    }
+
+    // @@protoc_insertion_point(class_scope:bookmark.ListOfPostsForBooking)
+    private static final GRPCService.BookmarkOuterClass.ListOfPostsForBooking DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new GRPCService.BookmarkOuterClass.ListOfPostsForBooking();
+    }
+
+    public static GRPCService.BookmarkOuterClass.ListOfPostsForBooking getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListOfPostsForBooking>
+        PARSER = new com.google.protobuf.AbstractParser<ListOfPostsForBooking>() {
+      @java.lang.Override
+      public ListOfPostsForBooking parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListOfPostsForBooking(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListOfPostsForBooking> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListOfPostsForBooking> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public GRPCService.BookmarkOuterClass.ListOfPostsForBooking getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UserForBookMarkOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bookmark.UserForBookMark)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string username = 1;</code>
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+  }
+  /**
+   * Protobuf type {@code bookmark.UserForBookMark}
+   */
+  public  static final class UserForBookMark extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bookmark.UserForBookMark)
+      UserForBookMarkOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserForBookMark.newBuilder() to construct.
+    private UserForBookMark(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UserForBookMark() {
+      username_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserForBookMark(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return GRPCService.BookmarkOuterClass.internal_static_bookmark_UserForBookMark_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return GRPCService.BookmarkOuterClass.internal_static_bookmark_UserForBookMark_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              GRPCService.BookmarkOuterClass.UserForBookMark.class, GRPCService.BookmarkOuterClass.UserForBookMark.Builder.class);
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 1;</code>
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof GRPCService.BookmarkOuterClass.UserForBookMark)) {
+        return super.equals(obj);
+      }
+      GRPCService.BookmarkOuterClass.UserForBookMark other = (GRPCService.BookmarkOuterClass.UserForBookMark) obj;
+
+      boolean result = true;
+      result = result && getUsername()
+          .equals(other.getUsername());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static GRPCService.BookmarkOuterClass.UserForBookMark parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(GRPCService.BookmarkOuterClass.UserForBookMark prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bookmark.UserForBookMark}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bookmark.UserForBookMark)
+        GRPCService.BookmarkOuterClass.UserForBookMarkOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_UserForBookMark_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_UserForBookMark_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                GRPCService.BookmarkOuterClass.UserForBookMark.class, GRPCService.BookmarkOuterClass.UserForBookMark.Builder.class);
+      }
+
+      // Construct using GRPCService.BookmarkOuterClass.UserForBookMark.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        username_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_UserForBookMark_descriptor;
+      }
+
+      @java.lang.Override
+      public GRPCService.BookmarkOuterClass.UserForBookMark getDefaultInstanceForType() {
+        return GRPCService.BookmarkOuterClass.UserForBookMark.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public GRPCService.BookmarkOuterClass.UserForBookMark build() {
+        GRPCService.BookmarkOuterClass.UserForBookMark result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public GRPCService.BookmarkOuterClass.UserForBookMark buildPartial() {
+        GRPCService.BookmarkOuterClass.UserForBookMark result = new GRPCService.BookmarkOuterClass.UserForBookMark(this);
+        result.username_ = username_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof GRPCService.BookmarkOuterClass.UserForBookMark) {
+          return mergeFrom((GRPCService.BookmarkOuterClass.UserForBookMark)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(GRPCService.BookmarkOuterClass.UserForBookMark other) {
+        if (other == GRPCService.BookmarkOuterClass.UserForBookMark.getDefaultInstance()) return this;
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -429,11 +1623,11 @@ public final class BookmarkOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        GRPCService.BookmarkOuterClass.Message parsedMessage = null;
+        GRPCService.BookmarkOuterClass.UserForBookMark parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (GRPCService.BookmarkOuterClass.Message) e.getUnfinishedMessage();
+          parsedMessage = (GRPCService.BookmarkOuterClass.UserForBookMark) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -443,71 +1637,71 @@ public final class BookmarkOuterClass {
         return this;
       }
 
-      private java.lang.Object string_ = "";
+      private java.lang.Object username_ = "";
       /**
-       * <code>string string = 1;</code>
+       * <code>string username = 1;</code>
        */
-      public java.lang.String getString() {
-        java.lang.Object ref = string_;
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          string_ = s;
+          username_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string string = 1;</code>
+       * <code>string username = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getStringBytes() {
-        java.lang.Object ref = string_;
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          string_ = b;
+          username_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string string = 1;</code>
+       * <code>string username = 1;</code>
        */
-      public Builder setString(
+      public Builder setUsername(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        string_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string string = 1;</code>
+       * <code>string username = 1;</code>
        */
-      public Builder clearString() {
+      public Builder clearUsername() {
         
-        string_ = getDefaultInstance().getString();
+        username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
       /**
-       * <code>string string = 1;</code>
+       * <code>string username = 1;</code>
        */
-      public Builder setStringBytes(
+      public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        string_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
@@ -524,41 +1718,41 @@ public final class BookmarkOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:bookmark.Message)
+      // @@protoc_insertion_point(builder_scope:bookmark.UserForBookMark)
     }
 
-    // @@protoc_insertion_point(class_scope:bookmark.Message)
-    private static final GRPCService.BookmarkOuterClass.Message DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:bookmark.UserForBookMark)
+    private static final GRPCService.BookmarkOuterClass.UserForBookMark DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GRPCService.BookmarkOuterClass.Message();
+      DEFAULT_INSTANCE = new GRPCService.BookmarkOuterClass.UserForBookMark();
     }
 
-    public static GRPCService.BookmarkOuterClass.Message getDefaultInstance() {
+    public static GRPCService.BookmarkOuterClass.UserForBookMark getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Message>
-        PARSER = new com.google.protobuf.AbstractParser<Message>() {
+    private static final com.google.protobuf.Parser<UserForBookMark>
+        PARSER = new com.google.protobuf.AbstractParser<UserForBookMark>() {
       @java.lang.Override
-      public Message parsePartialFrom(
+      public UserForBookMark parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Message(input, extensionRegistry);
+        return new UserForBookMark(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Message> parser() {
+    public static com.google.protobuf.Parser<UserForBookMark> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Message> getParserForType() {
+    public com.google.protobuf.Parser<UserForBookMark> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public GRPCService.BookmarkOuterClass.Message getDefaultInstanceForType() {
+    public GRPCService.BookmarkOuterClass.UserForBookMark getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1365,40 +2559,40 @@ public final class BookmarkOuterClass {
 
   }
 
-  public interface StringAndIntegerOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:bookmark.StringAndInteger)
+  public interface StringAndIntegerBookmarkOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bookmark.StringAndIntegerBookmark)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 postId = 1;</code>
+     * <code>string string = 1;</code>
      */
-    int getPostId();
-
+    java.lang.String getString();
     /**
-     * <code>string userName = 2;</code>
-     */
-    java.lang.String getUserName();
-    /**
-     * <code>string userName = 2;</code>
+     * <code>string string = 1;</code>
      */
     com.google.protobuf.ByteString
-        getUserNameBytes();
+        getStringBytes();
+
+    /**
+     * <code>int32 current = 2;</code>
+     */
+    int getCurrent();
   }
   /**
-   * Protobuf type {@code bookmark.StringAndInteger}
+   * Protobuf type {@code bookmark.StringAndIntegerBookmark}
    */
-  public  static final class StringAndInteger extends
+  public  static final class StringAndIntegerBookmark extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:bookmark.StringAndInteger)
-      StringAndIntegerOrBuilder {
+      // @@protoc_insertion_point(message_implements:bookmark.StringAndIntegerBookmark)
+      StringAndIntegerBookmarkOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use StringAndInteger.newBuilder() to construct.
-    private StringAndInteger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use StringAndIntegerBookmark.newBuilder() to construct.
+    private StringAndIntegerBookmark(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private StringAndInteger() {
-      postId_ = 0;
-      userName_ = "";
+    private StringAndIntegerBookmark() {
+      string_ = "";
+      current_ = 0;
     }
 
     @java.lang.Override
@@ -1406,7 +2600,7 @@ public final class BookmarkOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private StringAndInteger(
+    private StringAndIntegerBookmark(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1425,15 +2619,15 @@ public final class BookmarkOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              postId_ = input.readInt32();
-              break;
-            }
-            case 18: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              userName_ = s;
+              string_ = s;
+              break;
+            }
+            case 16: {
+
+              current_ = input.readInt32();
               break;
             }
             default: {
@@ -1457,58 +2651,58 @@ public final class BookmarkOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return GRPCService.BookmarkOuterClass.internal_static_bookmark_StringAndInteger_descriptor;
+      return GRPCService.BookmarkOuterClass.internal_static_bookmark_StringAndIntegerBookmark_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return GRPCService.BookmarkOuterClass.internal_static_bookmark_StringAndInteger_fieldAccessorTable
+      return GRPCService.BookmarkOuterClass.internal_static_bookmark_StringAndIntegerBookmark_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              GRPCService.BookmarkOuterClass.StringAndInteger.class, GRPCService.BookmarkOuterClass.StringAndInteger.Builder.class);
+              GRPCService.BookmarkOuterClass.StringAndIntegerBookmark.class, GRPCService.BookmarkOuterClass.StringAndIntegerBookmark.Builder.class);
     }
 
-    public static final int POSTID_FIELD_NUMBER = 1;
-    private int postId_;
+    public static final int STRING_FIELD_NUMBER = 1;
+    private volatile java.lang.Object string_;
     /**
-     * <code>int32 postId = 1;</code>
+     * <code>string string = 1;</code>
      */
-    public int getPostId() {
-      return postId_;
-    }
-
-    public static final int USERNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object userName_;
-    /**
-     * <code>string userName = 2;</code>
-     */
-    public java.lang.String getUserName() {
-      java.lang.Object ref = userName_;
+    public java.lang.String getString() {
+      java.lang.Object ref = string_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userName_ = s;
+        string_ = s;
         return s;
       }
     }
     /**
-     * <code>string userName = 2;</code>
+     * <code>string string = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getUserNameBytes() {
-      java.lang.Object ref = userName_;
+        getStringBytes() {
+      java.lang.Object ref = string_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userName_ = b;
+        string_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int CURRENT_FIELD_NUMBER = 2;
+    private int current_;
+    /**
+     * <code>int32 current = 2;</code>
+     */
+    public int getCurrent() {
+      return current_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1525,11 +2719,11 @@ public final class BookmarkOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (postId_ != 0) {
-        output.writeInt32(1, postId_);
+      if (!getStringBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, string_);
       }
-      if (!getUserNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName_);
+      if (current_ != 0) {
+        output.writeInt32(2, current_);
       }
       unknownFields.writeTo(output);
     }
@@ -1540,12 +2734,12 @@ public final class BookmarkOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (postId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, postId_);
+      if (!getStringBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, string_);
       }
-      if (!getUserNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName_);
+      if (current_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, current_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1557,16 +2751,16 @@ public final class BookmarkOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof GRPCService.BookmarkOuterClass.StringAndInteger)) {
+      if (!(obj instanceof GRPCService.BookmarkOuterClass.StringAndIntegerBookmark)) {
         return super.equals(obj);
       }
-      GRPCService.BookmarkOuterClass.StringAndInteger other = (GRPCService.BookmarkOuterClass.StringAndInteger) obj;
+      GRPCService.BookmarkOuterClass.StringAndIntegerBookmark other = (GRPCService.BookmarkOuterClass.StringAndIntegerBookmark) obj;
 
       boolean result = true;
-      result = result && (getPostId()
-          == other.getPostId());
-      result = result && getUserName()
-          .equals(other.getUserName());
+      result = result && getString()
+          .equals(other.getString());
+      result = result && (getCurrent()
+          == other.getCurrent());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1578,78 +2772,78 @@ public final class BookmarkOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POSTID_FIELD_NUMBER;
-      hash = (53 * hash) + getPostId();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + STRING_FIELD_NUMBER;
+      hash = (53 * hash) + getString().hashCode();
+      hash = (37 * hash) + CURRENT_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrent();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseFrom(
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseFrom(
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseFrom(
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseFrom(
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseFrom(byte[] data)
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseFrom(
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseFrom(java.io.InputStream input)
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseFrom(
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseDelimitedFrom(java.io.InputStream input)
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseDelimitedFrom(
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseFrom(
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static GRPCService.BookmarkOuterClass.StringAndInteger parseFrom(
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1662,7 +2856,7 @@ public final class BookmarkOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(GRPCService.BookmarkOuterClass.StringAndInteger prototype) {
+    public static Builder newBuilder(GRPCService.BookmarkOuterClass.StringAndIntegerBookmark prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1678,26 +2872,26 @@ public final class BookmarkOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code bookmark.StringAndInteger}
+     * Protobuf type {@code bookmark.StringAndIntegerBookmark}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:bookmark.StringAndInteger)
-        GRPCService.BookmarkOuterClass.StringAndIntegerOrBuilder {
+        // @@protoc_insertion_point(builder_implements:bookmark.StringAndIntegerBookmark)
+        GRPCService.BookmarkOuterClass.StringAndIntegerBookmarkOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return GRPCService.BookmarkOuterClass.internal_static_bookmark_StringAndInteger_descriptor;
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_StringAndIntegerBookmark_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return GRPCService.BookmarkOuterClass.internal_static_bookmark_StringAndInteger_fieldAccessorTable
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_StringAndIntegerBookmark_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                GRPCService.BookmarkOuterClass.StringAndInteger.class, GRPCService.BookmarkOuterClass.StringAndInteger.Builder.class);
+                GRPCService.BookmarkOuterClass.StringAndIntegerBookmark.class, GRPCService.BookmarkOuterClass.StringAndIntegerBookmark.Builder.class);
       }
 
-      // Construct using GRPCService.BookmarkOuterClass.StringAndInteger.newBuilder()
+      // Construct using GRPCService.BookmarkOuterClass.StringAndIntegerBookmark.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1715,9 +2909,9 @@ public final class BookmarkOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        postId_ = 0;
+        string_ = "";
 
-        userName_ = "";
+        current_ = 0;
 
         return this;
       }
@@ -1725,17 +2919,17 @@ public final class BookmarkOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return GRPCService.BookmarkOuterClass.internal_static_bookmark_StringAndInteger_descriptor;
+        return GRPCService.BookmarkOuterClass.internal_static_bookmark_StringAndIntegerBookmark_descriptor;
       }
 
       @java.lang.Override
-      public GRPCService.BookmarkOuterClass.StringAndInteger getDefaultInstanceForType() {
-        return GRPCService.BookmarkOuterClass.StringAndInteger.getDefaultInstance();
+      public GRPCService.BookmarkOuterClass.StringAndIntegerBookmark getDefaultInstanceForType() {
+        return GRPCService.BookmarkOuterClass.StringAndIntegerBookmark.getDefaultInstance();
       }
 
       @java.lang.Override
-      public GRPCService.BookmarkOuterClass.StringAndInteger build() {
-        GRPCService.BookmarkOuterClass.StringAndInteger result = buildPartial();
+      public GRPCService.BookmarkOuterClass.StringAndIntegerBookmark build() {
+        GRPCService.BookmarkOuterClass.StringAndIntegerBookmark result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1743,10 +2937,10 @@ public final class BookmarkOuterClass {
       }
 
       @java.lang.Override
-      public GRPCService.BookmarkOuterClass.StringAndInteger buildPartial() {
-        GRPCService.BookmarkOuterClass.StringAndInteger result = new GRPCService.BookmarkOuterClass.StringAndInteger(this);
-        result.postId_ = postId_;
-        result.userName_ = userName_;
+      public GRPCService.BookmarkOuterClass.StringAndIntegerBookmark buildPartial() {
+        GRPCService.BookmarkOuterClass.StringAndIntegerBookmark result = new GRPCService.BookmarkOuterClass.StringAndIntegerBookmark(this);
+        result.string_ = string_;
+        result.current_ = current_;
         onBuilt();
         return result;
       }
@@ -1785,22 +2979,22 @@ public final class BookmarkOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof GRPCService.BookmarkOuterClass.StringAndInteger) {
-          return mergeFrom((GRPCService.BookmarkOuterClass.StringAndInteger)other);
+        if (other instanceof GRPCService.BookmarkOuterClass.StringAndIntegerBookmark) {
+          return mergeFrom((GRPCService.BookmarkOuterClass.StringAndIntegerBookmark)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(GRPCService.BookmarkOuterClass.StringAndInteger other) {
-        if (other == GRPCService.BookmarkOuterClass.StringAndInteger.getDefaultInstance()) return this;
-        if (other.getPostId() != 0) {
-          setPostId(other.getPostId());
-        }
-        if (!other.getUserName().isEmpty()) {
-          userName_ = other.userName_;
+      public Builder mergeFrom(GRPCService.BookmarkOuterClass.StringAndIntegerBookmark other) {
+        if (other == GRPCService.BookmarkOuterClass.StringAndIntegerBookmark.getDefaultInstance()) return this;
+        if (!other.getString().isEmpty()) {
+          string_ = other.string_;
           onChanged();
+        }
+        if (other.getCurrent() != 0) {
+          setCurrent(other.getCurrent());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1817,11 +3011,11 @@ public final class BookmarkOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        GRPCService.BookmarkOuterClass.StringAndInteger parsedMessage = null;
+        GRPCService.BookmarkOuterClass.StringAndIntegerBookmark parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (GRPCService.BookmarkOuterClass.StringAndInteger) e.getUnfinishedMessage();
+          parsedMessage = (GRPCService.BookmarkOuterClass.StringAndIntegerBookmark) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1831,97 +3025,97 @@ public final class BookmarkOuterClass {
         return this;
       }
 
-      private int postId_ ;
+      private java.lang.Object string_ = "";
       /**
-       * <code>int32 postId = 1;</code>
+       * <code>string string = 1;</code>
        */
-      public int getPostId() {
-        return postId_;
-      }
-      /**
-       * <code>int32 postId = 1;</code>
-       */
-      public Builder setPostId(int value) {
-        
-        postId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 postId = 1;</code>
-       */
-      public Builder clearPostId() {
-        
-        postId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object userName_ = "";
-      /**
-       * <code>string userName = 2;</code>
-       */
-      public java.lang.String getUserName() {
-        java.lang.Object ref = userName_;
+      public java.lang.String getString() {
+        java.lang.Object ref = string_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          userName_ = s;
+          string_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string userName = 2;</code>
+       * <code>string string = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getUserNameBytes() {
-        java.lang.Object ref = userName_;
+          getStringBytes() {
+        java.lang.Object ref = string_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          userName_ = b;
+          string_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string userName = 2;</code>
+       * <code>string string = 1;</code>
        */
-      public Builder setUserName(
+      public Builder setString(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        userName_ = value;
+        string_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string userName = 2;</code>
+       * <code>string string = 1;</code>
        */
-      public Builder clearUserName() {
+      public Builder clearString() {
         
-        userName_ = getDefaultInstance().getUserName();
+        string_ = getDefaultInstance().getString();
         onChanged();
         return this;
       }
       /**
-       * <code>string userName = 2;</code>
+       * <code>string string = 1;</code>
        */
-      public Builder setUserNameBytes(
+      public Builder setStringBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        userName_ = value;
+        string_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int current_ ;
+      /**
+       * <code>int32 current = 2;</code>
+       */
+      public int getCurrent() {
+        return current_;
+      }
+      /**
+       * <code>int32 current = 2;</code>
+       */
+      public Builder setCurrent(int value) {
+        
+        current_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 current = 2;</code>
+       */
+      public Builder clearCurrent() {
+        
+        current_ = 0;
         onChanged();
         return this;
       }
@@ -1938,61 +3132,71 @@ public final class BookmarkOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:bookmark.StringAndInteger)
+      // @@protoc_insertion_point(builder_scope:bookmark.StringAndIntegerBookmark)
     }
 
-    // @@protoc_insertion_point(class_scope:bookmark.StringAndInteger)
-    private static final GRPCService.BookmarkOuterClass.StringAndInteger DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:bookmark.StringAndIntegerBookmark)
+    private static final GRPCService.BookmarkOuterClass.StringAndIntegerBookmark DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GRPCService.BookmarkOuterClass.StringAndInteger();
+      DEFAULT_INSTANCE = new GRPCService.BookmarkOuterClass.StringAndIntegerBookmark();
     }
 
-    public static GRPCService.BookmarkOuterClass.StringAndInteger getDefaultInstance() {
+    public static GRPCService.BookmarkOuterClass.StringAndIntegerBookmark getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<StringAndInteger>
-        PARSER = new com.google.protobuf.AbstractParser<StringAndInteger>() {
+    private static final com.google.protobuf.Parser<StringAndIntegerBookmark>
+        PARSER = new com.google.protobuf.AbstractParser<StringAndIntegerBookmark>() {
       @java.lang.Override
-      public StringAndInteger parsePartialFrom(
+      public StringAndIntegerBookmark parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StringAndInteger(input, extensionRegistry);
+        return new StringAndIntegerBookmark(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<StringAndInteger> parser() {
+    public static com.google.protobuf.Parser<StringAndIntegerBookmark> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<StringAndInteger> getParserForType() {
+    public com.google.protobuf.Parser<StringAndIntegerBookmark> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public GRPCService.BookmarkOuterClass.StringAndInteger getDefaultInstanceForType() {
+    public GRPCService.BookmarkOuterClass.StringAndIntegerBookmark getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_bookmark_Message_descriptor;
+    internal_static_bookmark_EmptyBookMark_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_bookmark_Message_fieldAccessorTable;
+      internal_static_bookmark_EmptyBookMark_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bookmark_ListOfPostsForBooking_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bookmark_ListOfPostsForBooking_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bookmark_UserForBookMark_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bookmark_UserForBookMark_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bookmark_BookmarkObj_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bookmark_BookmarkObj_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_bookmark_StringAndInteger_descriptor;
+    internal_static_bookmark_StringAndIntegerBookmark_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_bookmark_StringAndInteger_fieldAccessorTable;
+      internal_static_bookmark_StringAndIntegerBookmark_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2003,15 +3207,19 @@ public final class BookmarkOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\016bookmark.proto\022\010bookmark\032\nuser.proto\032\n" +
-      "post.proto\"\031\n\007Message\022\016\n\006string\030\001 \001(\t\"G\n" +
-      "\013BookmarkObj\022\033\n\004User\030\001 \001(\0132\r.user.UserOb" +
-      "j\022\033\n\004Post\030\002 \001(\0132\r.post.PostObj\"4\n\020String" +
-      "AndInteger\022\016\n\006postId\030\001 \001(\005\022\020\n\010userName\030\002" +
-      " \001(\t2\203\001\n\010Bookmark\0226\n\nAddBoomark\022\025.bookma" +
-      "rk.BookmarkObj\032\021.bookmark.Message\022?\n\016Rem" +
-      "oveBookmark\022\032.bookmark.StringAndInteger\032" +
-      "\021.bookmark.MessageB\r\n\013GRPCServiceb\006proto" +
-      "3"
+      "post.proto\"\017\n\rEmptyBookMark\"4\n\025ListOfPos" +
+      "tsForBooking\022\033\n\004post\030\001 \003(\0132\r.post.PostOb" +
+      "j\"#\n\017UserForBookMark\022\020\n\010username\030\001 \001(\t\"G" +
+      "\n\013BookmarkObj\022\033\n\004User\030\001 \001(\0132\r.user.UserO" +
+      "bj\022\033\n\004Post\030\002 \001(\0132\r.post.PostObj\";\n\030Strin" +
+      "gAndIntegerBookmark\022\016\n\006string\030\001 \001(\t\022\017\n\007c" +
+      "urrent\030\002 \001(\0052\345\001\n\010Bookmark\022<\n\nAddBoomark\022" +
+      "\025.bookmark.BookmarkObj\032\027.bookmark.EmptyB" +
+      "ookMark\022M\n\016RemoveBookmark\022\".bookmark.Str" +
+      "ingAndIntegerBookmark\032\027.bookmark.EmptyBo" +
+      "okMark\022L\n\016GetListOfPosts\022\031.bookmark.User" +
+      "ForBookMark\032\037.bookmark.ListOfPostsForBoo" +
+      "kingB\r\n\013GRPCServiceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2027,24 +3235,36 @@ public final class BookmarkOuterClass {
           GRPCService.UserOuterClass.getDescriptor(),
           GRPCService.PostOuterClass.getDescriptor(),
         }, assigner);
-    internal_static_bookmark_Message_descriptor =
+    internal_static_bookmark_EmptyBookMark_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_bookmark_Message_fieldAccessorTable = new
+    internal_static_bookmark_EmptyBookMark_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_bookmark_Message_descriptor,
-        new java.lang.String[] { "String", });
-    internal_static_bookmark_BookmarkObj_descriptor =
+        internal_static_bookmark_EmptyBookMark_descriptor,
+        new java.lang.String[] { });
+    internal_static_bookmark_ListOfPostsForBooking_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_bookmark_ListOfPostsForBooking_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bookmark_ListOfPostsForBooking_descriptor,
+        new java.lang.String[] { "Post", });
+    internal_static_bookmark_UserForBookMark_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_bookmark_UserForBookMark_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bookmark_UserForBookMark_descriptor,
+        new java.lang.String[] { "Username", });
+    internal_static_bookmark_BookmarkObj_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_bookmark_BookmarkObj_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bookmark_BookmarkObj_descriptor,
         new java.lang.String[] { "User", "Post", });
-    internal_static_bookmark_StringAndInteger_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_bookmark_StringAndInteger_fieldAccessorTable = new
+    internal_static_bookmark_StringAndIntegerBookmark_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_bookmark_StringAndIntegerBookmark_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_bookmark_StringAndInteger_descriptor,
-        new java.lang.String[] { "PostId", "UserName", });
+        internal_static_bookmark_StringAndIntegerBookmark_descriptor,
+        new java.lang.String[] { "String", "Current", });
     GRPCService.UserOuterClass.getDescriptor();
     GRPCService.PostOuterClass.getDescriptor();
   }

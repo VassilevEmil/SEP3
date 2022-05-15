@@ -1,8 +1,11 @@
 ﻿@using Entities.Models
 @using Contracts
 @using System.Security.Claims
+@using BlazorAppTier1.Pages.UIElements
+
 @inject NavigationManager Navigation
 @inject IUserService _UserService;
+@inject IBookmarkService _BookmarkService;
 
 @namespace BlazorAppTier1.Pages.PostPage 
 
@@ -37,10 +40,24 @@
                 </div>
                 <div class="candidate-list-favourite-time">
                     <!--Bookmark-->
-                    <a class="candidate-list-favourite order-2">
-                        <i class="fa fa-heart"></i>
-                        <i class="far fa-heart"></i>
-                    </a>
+                    <AuthorizeView>
+                        <Authorized>
+                            @if (listOfBookedPosts.Exists(t=>t.Id.Equals(post.Id)))
+                            {
+
+                                <a class="candidate-list-favourite order-2" @onclick="@((() => removeFav(post)))">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="candidate-list-favourite order-2" @onclick="@((() => addFav(post)))">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            }
+                        </Authorized>
+                        <NotAuthorized></NotAuthorized>
+                    </AuthorizeView>
                     <span class="candidate-list-time order-1">
                         <i class="far fa-clock pr-1"></i>@post.DateCreated.GetDate()
                     </span>
@@ -53,15 +70,24 @@
                     }
 
                 </div>
-
+@if (showModal)
+    {
+        <Modal>
+            <p class="text-black">@infoMessage</p>
+            <button @onclick="@Proceed" class="btn btn-primary">Okay!</button>
+        </Modal>
+    }
 @code {
+    private bool showModal;
     [Parameter]
     public List<Post> postToShow { get; set; }
+
+    public List<Post>? listOfBookedPosts = new List<Post>();
     [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; } = null!;
+    public string infoMessage = String.Empty;
 
     private User? _user = new User();
-    
     protected override async Task OnInitializedAsync()
     {
         try
@@ -73,11 +99,56 @@
     //get user clas base on the user identity
                 _user = await _UserService.GetUserAsync(user.Identity.Name);
             }
+            listOfBookedPosts = await _BookmarkService.getListOfBookedElements(_user.Username);
         }
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
         }
+    }
+
+    private async Task addFav(Post post)
+    {
+        try
+        {
+            Bookmark bookmark = new Bookmark()
+            {
+                Post = post,
+                User = _user
+            };
+            await _BookmarkService.AddBookmark(bookmark);
+            infoMessage = "You successfully add the bookmark (" + bookmark.Post.Title+")";
+            showModal = true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+    
+    private async Task removeFav(Post post)
+    {
+        try
+        {
+            Bookmark bookmark = new Bookmark()
+            {
+                Post = post,
+                User = _user
+            };
+            await _BookmarkService.RemoveBookmark(bookmark);
+            infoMessage = "You successfully remove the bookmark (" + bookmark.Post.Title+")";
+            showModal = true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+    
+    private void Proceed()
+    {
+        showModal = false;
+        Navigation.NavigateTo(Navigation.Uri,true);
     }
 
 }

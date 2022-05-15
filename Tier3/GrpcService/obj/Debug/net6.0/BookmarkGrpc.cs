@@ -48,23 +48,37 @@ namespace GRPCService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GRPCService.BookmarkObj> __Marshaller_bookmark_BookmarkObj = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.BookmarkObj.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GRPCService.StringAndInteger> __Marshaller_bookmark_StringAndInteger = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.StringAndInteger.Parser));
+    static readonly grpc::Marshaller<global::GRPCService.EmptyBookMark> __Marshaller_bookmark_EmptyBookMark = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.EmptyBookMark.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GRPCService.StringAndIntegerBookmark> __Marshaller_bookmark_StringAndIntegerBookmark = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.StringAndIntegerBookmark.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GRPCService.UserForBookMark> __Marshaller_bookmark_UserForBookMark = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.UserForBookMark.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GRPCService.ListOfPostsForBooking> __Marshaller_bookmark_ListOfPostsForBooking = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.ListOfPostsForBooking.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GRPCService.BookmarkObj, global::GRPCService.BookmarkObj> __Method_AddBoomark = new grpc::Method<global::GRPCService.BookmarkObj, global::GRPCService.BookmarkObj>(
+    static readonly grpc::Method<global::GRPCService.BookmarkObj, global::GRPCService.EmptyBookMark> __Method_AddBoomark = new grpc::Method<global::GRPCService.BookmarkObj, global::GRPCService.EmptyBookMark>(
         grpc::MethodType.Unary,
         __ServiceName,
         "AddBoomark",
         __Marshaller_bookmark_BookmarkObj,
-        __Marshaller_bookmark_BookmarkObj);
+        __Marshaller_bookmark_EmptyBookMark);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GRPCService.StringAndInteger, global::GRPCService.BookmarkObj> __Method_RemoveBookmark = new grpc::Method<global::GRPCService.StringAndInteger, global::GRPCService.BookmarkObj>(
+    static readonly grpc::Method<global::GRPCService.StringAndIntegerBookmark, global::GRPCService.EmptyBookMark> __Method_RemoveBookmark = new grpc::Method<global::GRPCService.StringAndIntegerBookmark, global::GRPCService.EmptyBookMark>(
         grpc::MethodType.Unary,
         __ServiceName,
         "RemoveBookmark",
-        __Marshaller_bookmark_StringAndInteger,
-        __Marshaller_bookmark_BookmarkObj);
+        __Marshaller_bookmark_StringAndIntegerBookmark,
+        __Marshaller_bookmark_EmptyBookMark);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::GRPCService.UserForBookMark, global::GRPCService.ListOfPostsForBooking> __Method_GetListOfPosts = new grpc::Method<global::GRPCService.UserForBookMark, global::GRPCService.ListOfPostsForBooking>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetListOfPosts",
+        __Marshaller_bookmark_UserForBookMark,
+        __Marshaller_bookmark_ListOfPostsForBooking);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -77,13 +91,19 @@ namespace GRPCService {
     public abstract partial class BookmarkBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GRPCService.BookmarkObj> AddBoomark(global::GRPCService.BookmarkObj request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GRPCService.EmptyBookMark> AddBoomark(global::GRPCService.BookmarkObj request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GRPCService.BookmarkObj> RemoveBookmark(global::GRPCService.StringAndInteger request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GRPCService.EmptyBookMark> RemoveBookmark(global::GRPCService.StringAndIntegerBookmark request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::GRPCService.ListOfPostsForBooking> GetListOfPosts(global::GRPCService.UserForBookMark request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -97,7 +117,8 @@ namespace GRPCService {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_AddBoomark, serviceImpl.AddBoomark)
-          .AddMethod(__Method_RemoveBookmark, serviceImpl.RemoveBookmark).Build();
+          .AddMethod(__Method_RemoveBookmark, serviceImpl.RemoveBookmark)
+          .AddMethod(__Method_GetListOfPosts, serviceImpl.GetListOfPosts).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -107,8 +128,9 @@ namespace GRPCService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, BookmarkBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_AddBoomark, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.BookmarkObj, global::GRPCService.BookmarkObj>(serviceImpl.AddBoomark));
-      serviceBinder.AddMethod(__Method_RemoveBookmark, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.StringAndInteger, global::GRPCService.BookmarkObj>(serviceImpl.RemoveBookmark));
+      serviceBinder.AddMethod(__Method_AddBoomark, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.BookmarkObj, global::GRPCService.EmptyBookMark>(serviceImpl.AddBoomark));
+      serviceBinder.AddMethod(__Method_RemoveBookmark, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.StringAndIntegerBookmark, global::GRPCService.EmptyBookMark>(serviceImpl.RemoveBookmark));
+      serviceBinder.AddMethod(__Method_GetListOfPosts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.UserForBookMark, global::GRPCService.ListOfPostsForBooking>(serviceImpl.GetListOfPosts));
     }
 
   }
