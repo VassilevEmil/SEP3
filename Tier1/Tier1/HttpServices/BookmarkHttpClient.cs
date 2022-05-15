@@ -34,18 +34,5 @@ public class BookmarkHttpClient : IBookmarkService
             throw new Exception(e.Message);
         }
     }
-
-    public async Task<List<Post>> GetAllPostsByBookMark(int current)
-    {
-        try
-        {
-            string client = await ClientAPI.getContent(Methods.Get, $"/bookmark/all/{current}");
-            List<Post> list = GetDeserialized<List<Post>>(client);
-            return list;
-        }
-        catch (Exception e)
-        {
-            throw new Exception(e.Message);
-        }
-    }
+    
 }

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "GRPCService";
+import "user.proto";
+import "post.proto";
+
+package bookmark;
+
+service Bookmark{
+  rpc AddBoomark(BookmarkObj) returns (Message);
+  rpc RemoveBookmark(StringAndInteger) returns (Message);
+}
+
+message Message{
+  string string=1;
+}
+
+message BookmarkObj{
+  user.UserObj User=1;
+  post.PostObj Post=2;
+}
+
+message StringAndInteger{
+  int32 postId =1;
+  string userName = 2;
+}

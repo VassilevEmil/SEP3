@@ -3,6 +3,7 @@
  */
 package group6.semester.project.grpcClient;
 
+import GRPCService.BookmarkOuterClass;
 import GRPCService.CategoryOuterClass;
 import GRPCService.PostOuterClass;
 import GRPCService.UserOuterClass;
@@ -96,6 +97,15 @@ public class ConvertGrpc {
 
 
     }
+
+    public static BookmarkOuterClass.BookmarkObj getGrpcBookmarkFromOurBookmark(Bookmark bookmark){
+        BookmarkOuterClass.BookmarkObj bookmarkObj = BookmarkOuterClass.BookmarkObj.newBuilder()
+                .setPost(getGrpcPostFromOurPost(bookmark.getPost()))
+                .setUser(getGrpcUserFromUser(bookmark.getUser()))
+                .build();
+        return bookmarkObj;
+    }
+
 
     public static PostOuterClass.DateCreated getDateCreatedFromYearMonthDay(Date date){
         PostOuterClass.DateCreated dateCreated = PostOuterClass.DateCreated.newBuilder().setDay(date.getDay()).setMonth(date.getMonth()).setYear(date.getYear()).build();

@@ -10,5 +10,4 @@ import java.util.List;
 public interface BookmarkService {
     void AddBookmark(Bookmark bookmark);
     void RemoveBookmark(int postId, String userName);
-    List<Post> GetAllPostsByBookMark(int current);
 }

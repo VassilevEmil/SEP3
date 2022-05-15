@@ -1,6 +1,6 @@
 ﻿using Entities.Models;
 
-namespace Contracts;
+namespace Entities.Contracts;
 
 public interface IBookmarkService
 {
