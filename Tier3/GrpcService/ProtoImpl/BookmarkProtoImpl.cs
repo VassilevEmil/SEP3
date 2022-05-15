@@ -16,23 +16,45 @@ public class BookmarkProtoImpl : Bookmark.BookmarkBase
 
     public override async Task<EmptyBookMark> AddBoomark(BookmarkObj request, ServerCallContext context)
     {
-        Entities.Models.Bookmark local = ConvertGRPC.ConvertBookmarkObjToBookmark(request);
-        await _bookmarkService.AddBookmark(local);
-        return new EmptyBookMark();
+        try
+        {
+            Entities.Models.Bookmark local = ConvertGRPC.ConvertBookmarkObjToBookmark(request);
+            await _bookmarkService.AddBookmark(local);
+            return new EmptyBookMark();
+        }
+        catch (Exception e)
+        {
+            throw new RpcException(new Status(StatusCode.AlreadyExists, e.Message));
+        }
     }
 
     public override async Task<EmptyBookMark> RemoveBookmark(StringAndIntegerBookmark request,ServerCallContext context)
     {
-        string username = request.String;
-        int postId = request.Current;
-        Entities.Models.Bookmark ret= await _bookmarkService.RemoveBookmark(postId,username);
-        return new EmptyBookMark();
+        try
+        {
+            string username = request.String;
+            int postId = request.Current;
+            Entities.Models.Bookmark ret= await _bookmarkService.RemoveBookmark(postId,username);
+            return new EmptyBookMark();
+        }
+        catch (Exception e)
+        {
+            throw new RpcException(new Status(StatusCode.NotFound,e.Message));
+        }
+        
     }
 
     public override async Task<ListOfPostsForBooking> GetListOfPosts(UserForBookMark request, ServerCallContext context)
     {
-        string username = request.Username;
-        List<Entities.Models.Post> list = await _bookmarkService.getListOfBookedElements(username);
-        return ConvertGRPC.ConvertListPostToObjBooking(list);
+        try
+        {
+            string username = request.Username;
+            List<Entities.Models.Post> list = await _bookmarkService.getListOfBookedElements(username);
+            return ConvertGRPC.ConvertListPostToObjBooking(list);
+        }
+        catch (Exception e)
+        {
+            throw new RpcException(new Status(StatusCode.NotFound,e.Message));
+        }
     }
 }

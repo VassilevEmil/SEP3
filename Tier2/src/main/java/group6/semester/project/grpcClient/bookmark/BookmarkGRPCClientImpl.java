@@ -31,11 +31,10 @@ public class BookmarkGRPCClientImpl implements BookmarkClient{
 
     @Override
     public void AddBookmark(Bookmark bookmark) {
-        BookmarkOuterClass.BookmarkObj obj = ConvertGrpc.getGrpcBookmarkFromOurBookmark(bookmark);
-        BookmarkOuterClass.EmptyBookMark message = null;
         try {
+            BookmarkOuterClass.BookmarkObj obj = ConvertGrpc.getGrpcBookmarkFromOurBookmark(bookmark);
+            BookmarkOuterClass.EmptyBookMark message = null;
             getBookmarkBlockingStub().addBoomark(obj);
-            System.out.println("Sending bookmark");
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {
@@ -45,10 +44,9 @@ public class BookmarkGRPCClientImpl implements BookmarkClient{
 
     @Override
     public void RemoveBookmark(int postId, String userName) {
-        BookmarkOuterClass.StringAndIntegerBookmark obj =  BookmarkOuterClass.StringAndIntegerBookmark.newBuilder().setCurrent(postId).setString(userName).build();
-
         try {
-             getBookmarkBlockingStub().removeBookmark(obj);
+            BookmarkOuterClass.StringAndIntegerBookmark obj =  BookmarkOuterClass.StringAndIntegerBookmark.newBuilder().setCurrent(postId).setString(userName).build();
+            getBookmarkBlockingStub().removeBookmark(obj);
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {
@@ -58,16 +56,16 @@ public class BookmarkGRPCClientImpl implements BookmarkClient{
 
     @Override
     public List<Post> getListOfBookedElements(String userName) {
-        BookmarkOuterClass.UserForBookMark obj =  BookmarkOuterClass.UserForBookMark.newBuilder().setUsername(userName).build();
-        BookmarkOuterClass.ListOfPostsForBooking message = null;
         try {
+            BookmarkOuterClass.UserForBookMark obj =  BookmarkOuterClass.UserForBookMark.newBuilder().setUsername(userName).build();
+            BookmarkOuterClass.ListOfPostsForBooking message = null;
             message = getBookmarkBlockingStub().getListOfPosts(obj);
+            return ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(message.getPostList());
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {
             disposeStub();
         }
-        return ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(message.getPostList());
     }
 
     private void disposeStub() {

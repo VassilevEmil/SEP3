@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entiti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpServices", "HttpServices\HttpServices.csproj", "{1842E909-D12B-4660-9C10-6EC4D35B657E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNITtests", "UNITtests\UNITtests.csproj", "{22878B3B-23FA-4001-90F8-85C7C1CD9C95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{1842E909-D12B-4660-9C10-6EC4D35B657E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1842E909-D12B-4660-9C10-6EC4D35B657E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1842E909-D12B-4660-9C10-6EC4D35B657E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22878B3B-23FA-4001-90F8-85C7C1CD9C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22878B3B-23FA-4001-90F8-85C7C1CD9C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22878B3B-23FA-4001-90F8-85C7C1CD9C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22878B3B-23FA-4001-90F8-85C7C1CD9C95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
