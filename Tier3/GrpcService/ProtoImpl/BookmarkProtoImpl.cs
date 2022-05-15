@@ -14,21 +14,21 @@ public class BookmarkProtoImpl : Bookmark.BookmarkBase
         this._bookmarkService = _bookmarkService;
     }
 
-    public override async Task<Message> AddBoomark(BookmarkObj request,ServerCallContext context)
+    public override async Task<BookmarkObj> AddBoomark(BookmarkObj request,ServerCallContext context)
     {
         Entities.Models.Bookmark bookmark = ConvertGRPC.ConvertBookmarkObjToBookmark(request);
-        _bookmarkService.AddBookmark(bookmark);
+        var ret = await _bookmarkService.AddBookmark(bookmark);
 
-        return new Message();
+        return ConvertGRPC.ConvertBookmarkToBookmarkObj(ret);
     }
     
-    public override async Task<Message> RemoveBookmark(StringAndInteger request,ServerCallContext context)
+    public override async Task<BookmarkObj> RemoveBookmark(StringAndInteger request,ServerCallContext context)
     {
         string username = request.UserName;
         int postId = request.PostId;
-        _bookmarkService.RemoveBookmark(postId,username);
+        var ret= await _bookmarkService.RemoveBookmark(postId,username);
 
-        return new Message();
+        return ConvertGRPC.ConvertBookmarkToBookmarkObj(ret);
     }
 
 }

@@ -64,6 +64,29 @@ public class ConvertGRPC {
         return postObj;
     }
 
+    public static BookmarkObj ConvertBookmarkToBookmarkObj(Entities.Models.Bookmark reqest)
+    {
+        BookmarkObj bookmarkObj = new BookmarkObj()
+        {
+            Post = ConvertPostToPostObj(reqest.Post),
+            User = ConvertUserToUserObj(reqest.User)
+        };
+        return bookmarkObj;
+    }
+
+    public static UserObj ConvertUserToUserObj(Entities.Models.User reqest)
+    {
+        UserObj userObj = new UserObj()
+        {
+            Username = reqest.Username,
+            Password = reqest.Password,
+            FirstName = reqest.FirstName,
+            LastName = reqest.LastName,
+            Role = reqest.Role
+        };
+        return userObj;
+    }
+    
     public static PostObj ConvertPostToPostObj(Entities.Models.Post request) {
         PostObj postObj = new PostObj() {
             Id = request.Id,

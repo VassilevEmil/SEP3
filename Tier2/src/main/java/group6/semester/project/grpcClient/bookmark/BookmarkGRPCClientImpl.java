@@ -41,7 +41,16 @@ public class BookmarkGRPCClientImpl implements BookmarkClient{
 
     @Override
     public void RemoveBookmark(int postId, String userName) {
-
+        BookmarkOuterClass.StringAndInteger obj =  BookmarkOuterClass.StringAndInteger.newBuilder().setPostId(postId).setUserName(userName).build();
+        BookmarkOuterClass.Message message = null;
+        try {
+            System.out.println("At the add post");
+            message = getBookmarkBlockingStub().removeBookmark(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            disposeStub();
+        }
     }
 
     private void disposeStub() {
