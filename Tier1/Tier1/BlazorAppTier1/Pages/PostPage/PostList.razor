@@ -1,11 +1,5 @@
 ﻿@using Entities.Models
-@using Contracts
-@using System.Security.Claims
-@using BlazorAppTier1.Pages.UIElements
-
 @inject NavigationManager Navigation
-@inject IUserService _UserService;
-@inject IBookmarkService _BookmarkService;
 
 @namespace BlazorAppTier1.Pages.PostPage 
 
@@ -14,143 +8,48 @@
     @if (postToShow == null) {
         <p> Loading posts...</p>
     }else {
-        
-        @foreach (var post in (userBookedList)?listOfBookedPosts:postToShow) {
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="candidate-list candidate-grid">
-                    <div class="candidate-list-image">
-                        <img class="img-fluid" src="@post.Images" alt="">
+        @foreach (var post in postToShow) {
+        <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="candidate-list candidate-grid">
+                <div class="candidate-list-image">
+                    <img class="img-fluid" src="@post.Images" alt="">
+                </div>
+            <div class="candidate-list-details">
+                <div class="candidate-list-info">
+                    <div class="candidate-list-title">
+                        <h5>
+                            <a href="#" @onclick="@(() => Navigation.NavigateTo("/PostDetails/" + post.Id))">@post.Title</a>
+                        </h5>
                     </div>
-                    <div class="candidate-list-details">
-                        <div class="candidate-list-info">
-                            <div class="candidate-list-title">
-                                <h5>
-                                    <a class="link-primary" @onclick="@(() => Navigation.NavigateTo("/PostDetails/" + post.Id))">@post.Title</a>
-                                </h5>
-                            </div>
-                            <div class="candidate-list-option">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <i class="fas fa-user pr-1"></i>@post.Writer.GetName()
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-map-marker-alt pr-1"></i>@post.Address
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="candidate-list-favourite-time">
-                            <!--Bookmark-->
-                            <AuthorizeView>
-                                <Authorized>
-                                    @if (listOfBookedPosts.Exists(t => t.Id.Equals(post.Id)))
-                                    {
-
-                                        <a class="candidate-list-favourite order-2" @onclick="@((() => removeFav(post)))">
-                                            <i class="fa fa-heart"></i>
-                                        </a>
-                                    }else
-                                    {
-                                        <a class="candidate-list-favourite order-2" @onclick="@((() => addFav(post)))">
-                                            <i class="far fa-heart"></i>
-                                        </a>
-                                    }
-                                </Authorized>
-                                <NotAuthorized></NotAuthorized>
-                            </AuthorizeView>
-                            <span class="candidate-list-time order-1">
-                                <i class="far fa-clock pr-1"></i>@post.DateCreated.GetDate()
-                            </span>
-                        </div>
+                    <div class="candidate-list-option">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-user pr-1"></i>@post.Writer.GetName()
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt pr-1"></i>@post.Address
+                            </li>
+                        </ul>
                     </div>
                 </div>
+                <div class="candidate-list-favourite-time">
+                    <a class="candidate-list-favourite order-2" href="#">
+                        <i class="far fa-heart"></i>
+                    </a>
+                    <span class="candidate-list-time order-1">
+                        <i class="far fa-clock pr-1"></i>@post.DateCreated.GetDate()
+                    </span>
+                </div>
             </div>
-        }
-    }
-</div>
+        </div>
+    </div>
+}
 
-@if (showModal)
-    {
-        <Modal>
-            <p class="text-black">@infoMessage</p>
-            <button @onclick="@Proceed" class="btn btn-primary">Okay!</button>
-        </Modal>
-    }
+                    }
+
+                </div>
 
 @code {
-    private bool showModal;
     [Parameter]
     public List<Post> postToShow { get; set; }
-    [Parameter]
-    public bool userBookedList { get; set; }
-    
-    public List<Post>? listOfBookedPosts = new List<Post>();
-    [CascadingParameter]
-    public Task<AuthenticationState> AuthState { get; set; } = null!;
-    public string infoMessage = String.Empty;
-
-    private User? _user = new User();
-    protected override async Task OnInitializedAsync()
-    {
-        try
-        {
-            AuthenticationState authState = await AuthState;
-            ClaimsPrincipal user = authState.User;
-            if (user.Identity.IsAuthenticated)
-            {
-    //get user clas base on the user identity
-                _user = await _UserService.GetUserAsync(user.Identity.Name);
-            }
-            listOfBookedPosts = await _BookmarkService.getListOfBookedElements(_user.Username);
-            
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
-    }
-
-    private async Task addFav(Post post)
-    {
-        try
-        {
-            Bookmark bookmark = new Bookmark()
-            {
-                Post = post,
-                User = _user
-            };
-            await _BookmarkService.AddBookmark(bookmark);
-            infoMessage = "You successfully add the bookmark (" + bookmark.Post.Title+")";
-            showModal = true;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
-    }
-    
-    private async Task removeFav(Post post)
-    {
-        try
-        {
-            Bookmark bookmark = new Bookmark()
-            {
-                Post = post,
-                User = _user
-            };
-            await _BookmarkService.RemoveBookmark(bookmark);
-            infoMessage = "You successfully remove the bookmark (" + bookmark.Post.Title+")";
-            showModal = true;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
-    }
-    
-    private async Task Proceed()
-    {
-        showModal = false;
-        Navigation.NavigateTo(Navigation.Uri,true);
-    }
 }

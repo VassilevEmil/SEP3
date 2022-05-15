@@ -4,10 +4,8 @@
 @using Entities.Models
 @using Contracts
 
-
 @inject IPostService _postService;
 @inject NavigationManager Navigation
-
 
 @attribute [Authorize]
 
@@ -26,7 +24,7 @@
             <!--Right side-->
             
                 
-                <PostList postToShow="@postToShow" userBookedList="@true"></PostList>
+                <PostList postToShow="@postToShow"></PostList>
                 
                 <div class="row">
                     <div class="col-12 text-center mt-4 mt-sm-5">
@@ -53,10 +51,7 @@
     public int CurrentPage { get; set; }
     private string nextElement = string.Empty;
     private string backElement = string.Empty;
-    
-    
-    
-    public List<Post>? listOfBookedPosts = new List<Post>();
+
 
     protected override async Task OnInitializedAsync() {
         try

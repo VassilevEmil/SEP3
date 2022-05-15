@@ -1,8 +1,4 @@
-﻿@using Contracts
-@inject IAuthService authManager
-@inject NavigationManager navMgr
-
-<div id="body" class="dark">  
+﻿<div id="body" class="dark">  
 	<div class="hero-anime">
 	<div class="navigation-wrap bg-light start-header start-style">
 		<div class="container">
@@ -18,8 +14,14 @@
 						
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav ml-auto py-4 py-md-0">
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="Login" role="button">Login</a>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="Login" role="button">Login</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">Action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+										<a class="dropdown-item" href="#">Something else here</a>
+										<a class="dropdown-item" href="#">Another action</a>
+									</div>
 								</li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 									<a class="nav-link" href="PostCreation" role="button">Add </a>
@@ -28,9 +30,6 @@
 									<Authorized>
 										<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 											<a class="nav-link" href="PostBookmark" role="button">Bookmark list</a>
-										</li>
-										<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-											<a class="nav-link" @onclick="@(()=>Logout())" role="button">Logout</a>
 										</li>
 									</Authorized>
 									<NotAuthorized>
@@ -48,9 +47,6 @@
 </div>
 
 @code {
-	private async Task Logout()
-	{
-		await authManager.LogoutAsync();
-		navMgr.NavigateTo("/");
-	}
+
+
 }
