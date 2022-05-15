@@ -37,7 +37,7 @@ public class ImageGrpcImpl
 
   public void uploadImage(MultipartFile file,int id) throws IOException {
 
-
+try{
     String filename = file.getOriginalFilename();
     String type = filename.substring(filename.lastIndexOf(".") + 1);
     Image.FileUploadRequest metadata = Image.FileUploadRequest.newBuilder().setMetadata(
@@ -60,6 +60,11 @@ public class ImageGrpcImpl
     // close the stream
     inputStream.close();
     streamObserver.onCompleted();
+  disposeStub();}
+catch (IOException e)
+{
+  throw new IOException("Could not add message");
+}
   }
   private class FileUploadObserver implements StreamObserver<Image.FileUploadResponse>
   {
@@ -77,6 +82,10 @@ public class ImageGrpcImpl
     public void onCompleted() {
 
     }
+  }
+  private void disposeStub() {
+    imageStub = null;
+    streamObserver = null;
   }
 }
 
