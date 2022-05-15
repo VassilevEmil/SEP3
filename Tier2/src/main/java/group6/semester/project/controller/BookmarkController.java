@@ -3,11 +3,10 @@ package group6.semester.project.controller;
 import group6.semester.project.model.Bookmark;
 import group6.semester.project.model.Post;
 import group6.semester.project.services.BookmarkService;
-import group6.semester.project.services.PostService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -21,29 +20,27 @@ public class BookmarkController {
     }
 
     @PostMapping(value = "/bookmark")
-    public ResponseEntity addPost(@RequestBody Bookmark bookmark) {
+    public ResponseEntity addBookmark(@RequestBody Bookmark bookmark) {
         try {
             bookmarkService.AddBookmark(bookmark);
             return ResponseEntity.ok().build();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_ACCEPTABLE);
+            return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
 
     @DeleteMapping(value = "/bookmark/{postId}/{userName}")
-    public ResponseEntity addPost(@PathVariable int postId, @PathVariable String userName) {
+    public ResponseEntity removeBookmark(@PathVariable int postId, @PathVariable String userName) {
         try {
             bookmarkService.RemoveBookmark(postId,userName);
             return ResponseEntity.ok().build();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_ACCEPTABLE);
         }
     }
 
     @GetMapping(value = "/bookmark/getAllPosts/{username}")
-    public ResponseEntity<List<Post>> addPost(@PathVariable String username) {
+    public ResponseEntity<List<Post>> getListOfAllPostsByBookmark(@PathVariable String username) {
         var local = bookmarkService.getListOfBookedElements(username);
         return ResponseEntity.ok(local);
     }

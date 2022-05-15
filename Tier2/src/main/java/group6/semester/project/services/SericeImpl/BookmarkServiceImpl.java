@@ -24,16 +24,32 @@ public class BookmarkServiceImpl implements BookmarkService {
 
     @Override
     public void AddBookmark(Bookmark bookmark) {
-        bookmarkClient.AddBookmark(bookmark);
+        try{
+            bookmarkClient.AddBookmark(bookmark);
+        }catch (Exception e)
+        {
+            throw new RuntimeException(e.getMessage());
+        }
+
     }
 
     @Override
     public void RemoveBookmark(int postId, String userName) {
-        bookmarkClient.RemoveBookmark(postId,userName);
+        try {
+            bookmarkClient.RemoveBookmark(postId,userName);
+        }catch (Exception e)
+        {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     @Override
     public List<Post> getListOfBookedElements(String userName) {
-        return bookmarkClient.getListOfBookedElements(userName);
+        try{
+            return bookmarkClient.getListOfBookedElements(userName);
+        }catch (Exception e)
+        {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 }

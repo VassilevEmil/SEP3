@@ -25,22 +25,37 @@ public class BookmarkDAOImpl : IBookmarkService
 
     public async Task<Bookmark> RemoveBookmark(int postid, string username)
     {
-        Bookmark bookmarkLocal = await _context.Bookmarks.FirstAsync(t=>t.PostId.Equals(postid)&&t.Username.Equals(username));
-        _context.Bookmarks.Remove(bookmarkLocal);
-        await _context.SaveChangesAsync();
-        return bookmarkLocal;
+        try
+        {
+            Bookmark bookmarkLocal = await _context.Bookmarks.FirstAsync(t=>t.PostId.Equals(postid)&&t.Username.Equals(username));
+            _context.Bookmarks.Remove(bookmarkLocal);
+            await _context.SaveChangesAsync();
+            return bookmarkLocal;
+        }
+        catch (Exception e)
+        {
+            throw new Exception(e.Message);
+        }
     }
 
     public async Task<List<Post>> getListOfBookedElements(string username)
     {
-        List<Bookmark> list = _context.Bookmarks.Where(t => t.Username.Equals(username))
-            .Include(t=>t.Post).ThenInclude(t=>t.Images).Include(t=>t.Post).ToList();
-        List<Post> tosend = new List<Post>();
-        foreach (var item in list)
+        try
         {
-            tosend.Add(item.Post);
-        }
+            List<Bookmark> list = _context.Bookmarks.Where(t => t.Username.Equals(username))
+                .Include(t => t.Post).ThenInclude(t => t.Images).Include(t => t.Post).ToList();
+            List<Post> tosend = new List<Post>();
+            foreach (var item in list)
+            {
+                tosend.Add(item.Post);
+            }
 
-        return tosend;
+            return tosend;
+        }
+        catch (Exception e)
+        {
+            throw new Exception(e.Message);
+        }
+        
     }
 }
