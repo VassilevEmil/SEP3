@@ -19,6 +19,7 @@ builder.Services.AddGrpc();
 //builder.Services.AddScoped<IMessageDAO, MessageDAOImpl>();
 builder.Services.AddScoped<IUserService, UserDAOImpl>();
 builder.Services.AddScoped<IPostService, PostDAOImpl>();
+builder.Services.AddScoped<ICommentService, CommentServiceImpl>();
 builder.Services.AddScoped<IImageService,ImageDaoImpl>();
 builder.Services.AddScoped<ICommentService, CommentServiceImpl>();
 builder.Services.AddDbContext<DbAccess>();
