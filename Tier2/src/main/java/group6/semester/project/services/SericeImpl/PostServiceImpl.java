@@ -70,6 +70,8 @@ public class PostServiceImpl implements PostService {
     @Override public void addImage(MultipartFile file, int postId)
         throws IOException
     {
+
+
         imageGrpc.uploadImage(file,postId);
     }
 

@@ -9,6 +9,7 @@ import io.grpc.stub.StreamObserver;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +22,7 @@ public class ImageGrpcImpl
 
   private imageGrpc.imageStub imageStub;
   private StreamObserver<Image.FileUploadRequest> streamObserver = getImageStub().upload(new FileUploadObserver());
-  Path path = Paths.get("src/main/java/group6/semester/project/grpcClient/fileUpload/testImage.png");
+ // Path path = Paths.get("src/main/java/group6/semester/project/grpcClient/fileUpload/sunflower-0quality.jpg");
 
 
   private imageGrpc.imageStub getImageStub() {
@@ -34,19 +35,21 @@ public class ImageGrpcImpl
   }
 
 
-  public void uploadImage(MultipartFile file,int postId) throws IOException {
+  public void uploadImage(MultipartFile file,int id) throws IOException {
 
-    System.out.println("file.getName()");
-    // build metadata
+
+    String filename = file.getOriginalFilename();
+    String type = filename.substring(filename.lastIndexOf(".") + 1);
     Image.FileUploadRequest metadata = Image.FileUploadRequest.newBuilder().setMetadata(
-        Image.MetaData.newBuilder().setName("test").setType("jpg").build()
+        Image.MetaData.newBuilder().setName(String.valueOf(id)).setType(type).build()
     ).build();
     streamObserver.onNext(metadata);
-
+    System.out.println("Adding image");
 
     // upload file as a chunk
-   // InputStream inputStream = Files.newInputStream(path);
-    InputStream inputStream = file.getInputStream();
+ ;
+
+    InputStream inputStream =  new BufferedInputStream(file.getInputStream());
     byte[] bytes = new byte[4096];
     int size;
     while ((size = inputStream.read(bytes)) > 0) {
