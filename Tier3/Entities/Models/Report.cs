@@ -5,9 +5,8 @@ namespace Entities.Models;
 public class Report 
 
 {
-
-    // the follwing two props are for EFC use only
-    // Just add post and user objects on other tiers     ----Sachin
+// the follwing two props are for EFC use only
+   
     [ForeignKey(nameof(Post))]
     public int PostId { get; set; }
 
