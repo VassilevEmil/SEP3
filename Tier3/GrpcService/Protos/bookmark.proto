@@ -7,8 +7,8 @@ option csharp_namespace = "GRPCService";
 package bookmark;
 
 service Bookmark{
-  rpc AddBoomark(BookmarkObj) returns (Message);
-  rpc RemoveBookmark(StringAndInteger) returns (Message);
+  rpc AddBoomark(BookmarkObj) returns (BookmarkObj);
+  rpc RemoveBookmark(StringAndInteger) returns (BookmarkObj);
 }
 
 message Message{

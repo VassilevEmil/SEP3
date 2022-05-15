@@ -4,6 +4,6 @@ namespace Entities.Contracts;
 
 public interface IBookmarkService
 {
-    Task AddBookmark(Bookmark bookmark);
-    Task RemoveBookmark(int postid, String username);
+    Task<Bookmark> AddBookmark(Bookmark bookmark);
+    Task<Bookmark> RemoveBookmark(int postid, String username);
 }

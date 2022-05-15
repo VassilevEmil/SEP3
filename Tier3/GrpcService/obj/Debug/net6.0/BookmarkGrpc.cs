@@ -48,25 +48,23 @@ namespace GRPCService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GRPCService.BookmarkObj> __Marshaller_bookmark_BookmarkObj = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.BookmarkObj.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GRPCService.Message> __Marshaller_bookmark_Message = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.Message.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GRPCService.StringAndInteger> __Marshaller_bookmark_StringAndInteger = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GRPCService.StringAndInteger.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GRPCService.BookmarkObj, global::GRPCService.Message> __Method_AddBoomark = new grpc::Method<global::GRPCService.BookmarkObj, global::GRPCService.Message>(
+    static readonly grpc::Method<global::GRPCService.BookmarkObj, global::GRPCService.BookmarkObj> __Method_AddBoomark = new grpc::Method<global::GRPCService.BookmarkObj, global::GRPCService.BookmarkObj>(
         grpc::MethodType.Unary,
         __ServiceName,
         "AddBoomark",
         __Marshaller_bookmark_BookmarkObj,
-        __Marshaller_bookmark_Message);
+        __Marshaller_bookmark_BookmarkObj);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GRPCService.StringAndInteger, global::GRPCService.Message> __Method_RemoveBookmark = new grpc::Method<global::GRPCService.StringAndInteger, global::GRPCService.Message>(
+    static readonly grpc::Method<global::GRPCService.StringAndInteger, global::GRPCService.BookmarkObj> __Method_RemoveBookmark = new grpc::Method<global::GRPCService.StringAndInteger, global::GRPCService.BookmarkObj>(
         grpc::MethodType.Unary,
         __ServiceName,
         "RemoveBookmark",
         __Marshaller_bookmark_StringAndInteger,
-        __Marshaller_bookmark_Message);
+        __Marshaller_bookmark_BookmarkObj);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -79,13 +77,13 @@ namespace GRPCService {
     public abstract partial class BookmarkBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GRPCService.Message> AddBoomark(global::GRPCService.BookmarkObj request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GRPCService.BookmarkObj> AddBoomark(global::GRPCService.BookmarkObj request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GRPCService.Message> RemoveBookmark(global::GRPCService.StringAndInteger request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GRPCService.BookmarkObj> RemoveBookmark(global::GRPCService.StringAndInteger request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -109,8 +107,8 @@ namespace GRPCService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, BookmarkBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_AddBoomark, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.BookmarkObj, global::GRPCService.Message>(serviceImpl.AddBoomark));
-      serviceBinder.AddMethod(__Method_RemoveBookmark, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.StringAndInteger, global::GRPCService.Message>(serviceImpl.RemoveBookmark));
+      serviceBinder.AddMethod(__Method_AddBoomark, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.BookmarkObj, global::GRPCService.BookmarkObj>(serviceImpl.AddBoomark));
+      serviceBinder.AddMethod(__Method_RemoveBookmark, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCService.StringAndInteger, global::GRPCService.BookmarkObj>(serviceImpl.RemoveBookmark));
     }
 
   }
