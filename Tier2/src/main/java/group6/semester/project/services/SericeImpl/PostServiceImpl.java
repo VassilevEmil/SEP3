@@ -1,21 +1,26 @@
 package group6.semester.project.services.SericeImpl;
 
 
+import group6.semester.project.grpcClient.fileUpload.ImageGrpcImpl;
 import group6.semester.project.grpcClient.post.PostClient;
 import group6.semester.project.model.Category;
 import group6.semester.project.model.Post;
 import group6.semester.project.services.PostService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
 public class PostServiceImpl implements PostService {
 
     private final PostClient postClient ;
+    private final ImageGrpcImpl imageGrpc;
 
-    public PostServiceImpl(PostClient postClient) {
+    public PostServiceImpl(PostClient postClient,ImageGrpcImpl imageGrpc) {
         this.postClient = postClient;
+        this.imageGrpc = imageGrpc;
     }
 
     /**
@@ -62,5 +67,10 @@ public class PostServiceImpl implements PostService {
         return postClient.getPostBySubcategoryId(subCategoryIdSelected, current);
     }
 
+    @Override public void addImage(MultipartFile file, int postId)
+        throws IOException
+    {
+        imageGrpc.uploadImage(file,postId);
+    }
 
 }
