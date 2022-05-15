@@ -1,0 +1,6 @@
+obj\Debug\net6.0/Bookmark.cs \
+obj\Debug\net6.0/BookmarkGrpc.cs: Protos/user.proto\
+ Protos/image.proto\
+ Protos/comment.proto\
+ Protos/post.proto\
+ Protos/bookmark.proto
