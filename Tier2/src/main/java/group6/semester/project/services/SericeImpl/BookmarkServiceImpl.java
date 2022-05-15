@@ -24,16 +24,11 @@ public class BookmarkServiceImpl implements BookmarkService {
 
     @Override
     public void AddBookmark(Bookmark bookmark) {
-
+        bookmarkClient.AddBookmark(bookmark);
     }
 
     @Override
     public void RemoveBookmark(int postId, String userName) {
-
-    }
-
-    @Override
-    public List<Post> GetAllPostsByBookMark(int current) {
-        return postClient.getAllPosts(current);
+        bookmarkClient.RemoveBookmark(postId,userName);
     }
 }

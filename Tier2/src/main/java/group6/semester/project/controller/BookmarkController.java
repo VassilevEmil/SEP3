@@ -41,14 +41,4 @@ public class BookmarkController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_ACCEPTABLE);
         }
     }
-
-    @GetMapping(value = "/bookmark/all/{current}")
-    public ResponseEntity<List<Post>> getAllPosts(@PathVariable int current) throws RuntimeException {
-
-        System.out.println("Get all posts is called for bookmark");
-        List<Post> posts = bookmarkService.GetAllPostsByBookMark(current);
-        return ResponseEntity.ok(posts);
-
-    }
-
 }

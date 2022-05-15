@@ -45,7 +45,16 @@ public class ConvertGRPC {
         return post;
     }
 
-
+    public static Entities.Models.Bookmark ConvertBookmarkObjToBookmark(BookmarkObj request)
+    {
+        Entities.Models.Bookmark bookmark = new Entities.Models.Bookmark()
+        {
+            User = GetUserFromUserObj(request.User),
+            Post = ConvertPostObjToPost(request.Post)
+        };
+        return bookmark;
+    }
+    
     public static ListOfPostObj ConvertListPostToObj(List<Entities.Models.Post> request) {
         ListOfPostObj postObj = new ListOfPostObj();
         foreach (var item in request) {

@@ -23,6 +23,9 @@
     <ItemGroup>
         <Protobuf Include="Protos\subcategory.proto" GrpcServices="Server" ProtoRoot="Protos\" />
     </ItemGroup>
+    <ItemGroup>
+        <Protobuf Include="Protos\bookmark.proto" GrpcServices="Server" ProtoRoot="Protos\" />
+    </ItemGroup>
     
     <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
