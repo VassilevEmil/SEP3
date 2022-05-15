@@ -14,24 +14,20 @@ public class BookmarkHttpClient : IBookmarkService
         return obj;
     }
 
-    public async Task<Bookmark> AddBookmark(Bookmark bookmark)
+    public async Task AddBookmark(Bookmark bookmark)
     {
         try {
             var content = await ClientAPI.getContent(Methods.Post, $"/bookmark", bookmark);
-            Bookmark retur = GetDeserialized<Bookmark>(content);
-            return retur;
         }
         catch (Exception e) {
             throw new Exception(e.Message);
         }
     }
 
-    public async Task<Bookmark> RemoveBookmark(Bookmark bookmark)
+    public async Task RemoveBookmark(Bookmark bookmark)
     {
         try {
             var content = await ClientAPI.getContent(Methods.Delete, $"/bookmark/{bookmark.Post.Id}/{bookmark.User.Username}");
-            Bookmark retur = GetDeserialized<Bookmark>(content);
-            return retur;
         }
         catch (Exception e) {
             throw new Exception(e.Message);

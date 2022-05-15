@@ -24,7 +24,7 @@ public class BookmarkController {
     public ResponseEntity addPost(@RequestBody Bookmark bookmark) {
         try {
             bookmarkService.AddBookmark(bookmark);
-            return ResponseEntity.ok("Element added to bookmark");
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_ACCEPTABLE);
@@ -35,7 +35,7 @@ public class BookmarkController {
     public ResponseEntity addPost(@PathVariable int postId, @PathVariable String userName) {
         try {
             bookmarkService.RemoveBookmark(postId,userName);
-            return ResponseEntity.ok("Element removed from bookmark");
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_ACCEPTABLE);
