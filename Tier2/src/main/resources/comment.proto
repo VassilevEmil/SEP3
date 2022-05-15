@@ -7,8 +7,6 @@ package comment;
 
 service comment {
 
-  rpc AddComment(CommentObjAndInteger) returns (CommentObj);
-  rpc DeleteComment(Integer) returns (CommentObj);
 
 }
 
@@ -16,19 +14,14 @@ message CommentObj{
   int32 id =1;
   string body =2;
   user.UserObj writer =3;
-  DateCreatedForComment dateCreated =4;
+  DateCreated dateCreated =4;
 
 }
 message Integer{
   int32 id=1;
 }
 
-message CommentObjAndInteger{
-  Integer postId = 1;
-  CommentObj commentObj = 2;
-}
-
-message DateCreatedForComment{
+message DateCreated{
   int32 day =1;
   int32 month =2;
   int32  year =3;
