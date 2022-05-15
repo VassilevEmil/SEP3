@@ -28,21 +28,21 @@ public final class BookmarkGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.BookmarkObj,
-      GRPCService.BookmarkOuterClass.Message> getAddBoomarkMethod;
+      GRPCService.BookmarkOuterClass.EmptyBookMark> getAddBoomarkMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "AddBoomark",
       requestType = GRPCService.BookmarkOuterClass.BookmarkObj.class,
-      responseType = GRPCService.BookmarkOuterClass.Message.class,
+      responseType = GRPCService.BookmarkOuterClass.EmptyBookMark.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.BookmarkObj,
-      GRPCService.BookmarkOuterClass.Message> getAddBoomarkMethod() {
-    io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.BookmarkObj, GRPCService.BookmarkOuterClass.Message> getAddBoomarkMethod;
+      GRPCService.BookmarkOuterClass.EmptyBookMark> getAddBoomarkMethod() {
+    io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.BookmarkObj, GRPCService.BookmarkOuterClass.EmptyBookMark> getAddBoomarkMethod;
     if ((getAddBoomarkMethod = BookmarkGrpc.getAddBoomarkMethod) == null) {
       synchronized (BookmarkGrpc.class) {
         if ((getAddBoomarkMethod = BookmarkGrpc.getAddBoomarkMethod) == null) {
           BookmarkGrpc.getAddBoomarkMethod = getAddBoomarkMethod = 
-              io.grpc.MethodDescriptor.<GRPCService.BookmarkOuterClass.BookmarkObj, GRPCService.BookmarkOuterClass.Message>newBuilder()
+              io.grpc.MethodDescriptor.<GRPCService.BookmarkOuterClass.BookmarkObj, GRPCService.BookmarkOuterClass.EmptyBookMark>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "bookmark.Bookmark", "AddBoomark"))
@@ -50,7 +50,7 @@ public final class BookmarkGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   GRPCService.BookmarkOuterClass.BookmarkObj.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GRPCService.BookmarkOuterClass.Message.getDefaultInstance()))
+                  GRPCService.BookmarkOuterClass.EmptyBookMark.getDefaultInstance()))
                   .setSchemaDescriptor(new BookmarkMethodDescriptorSupplier("AddBoomark"))
                   .build();
           }
@@ -59,36 +59,68 @@ public final class BookmarkGrpc {
      return getAddBoomarkMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.StringAndInteger,
-      GRPCService.BookmarkOuterClass.Message> getRemoveBookmarkMethod;
+  private static volatile io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.StringAndIntegerBookmark,
+      GRPCService.BookmarkOuterClass.EmptyBookMark> getRemoveBookmarkMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "RemoveBookmark",
-      requestType = GRPCService.BookmarkOuterClass.StringAndInteger.class,
-      responseType = GRPCService.BookmarkOuterClass.Message.class,
+      requestType = GRPCService.BookmarkOuterClass.StringAndIntegerBookmark.class,
+      responseType = GRPCService.BookmarkOuterClass.EmptyBookMark.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.StringAndInteger,
-      GRPCService.BookmarkOuterClass.Message> getRemoveBookmarkMethod() {
-    io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.StringAndInteger, GRPCService.BookmarkOuterClass.Message> getRemoveBookmarkMethod;
+  public static io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.StringAndIntegerBookmark,
+      GRPCService.BookmarkOuterClass.EmptyBookMark> getRemoveBookmarkMethod() {
+    io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.StringAndIntegerBookmark, GRPCService.BookmarkOuterClass.EmptyBookMark> getRemoveBookmarkMethod;
     if ((getRemoveBookmarkMethod = BookmarkGrpc.getRemoveBookmarkMethod) == null) {
       synchronized (BookmarkGrpc.class) {
         if ((getRemoveBookmarkMethod = BookmarkGrpc.getRemoveBookmarkMethod) == null) {
           BookmarkGrpc.getRemoveBookmarkMethod = getRemoveBookmarkMethod = 
-              io.grpc.MethodDescriptor.<GRPCService.BookmarkOuterClass.StringAndInteger, GRPCService.BookmarkOuterClass.Message>newBuilder()
+              io.grpc.MethodDescriptor.<GRPCService.BookmarkOuterClass.StringAndIntegerBookmark, GRPCService.BookmarkOuterClass.EmptyBookMark>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "bookmark.Bookmark", "RemoveBookmark"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GRPCService.BookmarkOuterClass.StringAndInteger.getDefaultInstance()))
+                  GRPCService.BookmarkOuterClass.StringAndIntegerBookmark.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GRPCService.BookmarkOuterClass.Message.getDefaultInstance()))
+                  GRPCService.BookmarkOuterClass.EmptyBookMark.getDefaultInstance()))
                   .setSchemaDescriptor(new BookmarkMethodDescriptorSupplier("RemoveBookmark"))
                   .build();
           }
         }
      }
      return getRemoveBookmarkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.UserForBookMark,
+      GRPCService.BookmarkOuterClass.ListOfPostsForBooking> getGetListOfPostsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetListOfPosts",
+      requestType = GRPCService.BookmarkOuterClass.UserForBookMark.class,
+      responseType = GRPCService.BookmarkOuterClass.ListOfPostsForBooking.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.UserForBookMark,
+      GRPCService.BookmarkOuterClass.ListOfPostsForBooking> getGetListOfPostsMethod() {
+    io.grpc.MethodDescriptor<GRPCService.BookmarkOuterClass.UserForBookMark, GRPCService.BookmarkOuterClass.ListOfPostsForBooking> getGetListOfPostsMethod;
+    if ((getGetListOfPostsMethod = BookmarkGrpc.getGetListOfPostsMethod) == null) {
+      synchronized (BookmarkGrpc.class) {
+        if ((getGetListOfPostsMethod = BookmarkGrpc.getGetListOfPostsMethod) == null) {
+          BookmarkGrpc.getGetListOfPostsMethod = getGetListOfPostsMethod = 
+              io.grpc.MethodDescriptor.<GRPCService.BookmarkOuterClass.UserForBookMark, GRPCService.BookmarkOuterClass.ListOfPostsForBooking>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "bookmark.Bookmark", "GetListOfPosts"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.BookmarkOuterClass.UserForBookMark.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  GRPCService.BookmarkOuterClass.ListOfPostsForBooking.getDefaultInstance()))
+                  .setSchemaDescriptor(new BookmarkMethodDescriptorSupplier("GetListOfPosts"))
+                  .build();
+          }
+        }
+     }
+     return getGetListOfPostsMethod;
   }
 
   /**
@@ -121,15 +153,22 @@ public final class BookmarkGrpc {
     /**
      */
     public void addBoomark(GRPCService.BookmarkOuterClass.BookmarkObj request,
-        io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.Message> responseObserver) {
+        io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.EmptyBookMark> responseObserver) {
       asyncUnimplementedUnaryCall(getAddBoomarkMethod(), responseObserver);
     }
 
     /**
      */
-    public void removeBookmark(GRPCService.BookmarkOuterClass.StringAndInteger request,
-        io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.Message> responseObserver) {
+    public void removeBookmark(GRPCService.BookmarkOuterClass.StringAndIntegerBookmark request,
+        io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.EmptyBookMark> responseObserver) {
       asyncUnimplementedUnaryCall(getRemoveBookmarkMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getListOfPosts(GRPCService.BookmarkOuterClass.UserForBookMark request,
+        io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.ListOfPostsForBooking> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetListOfPostsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -139,15 +178,22 @@ public final class BookmarkGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 GRPCService.BookmarkOuterClass.BookmarkObj,
-                GRPCService.BookmarkOuterClass.Message>(
+                GRPCService.BookmarkOuterClass.EmptyBookMark>(
                   this, METHODID_ADD_BOOMARK)))
           .addMethod(
             getRemoveBookmarkMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                GRPCService.BookmarkOuterClass.StringAndInteger,
-                GRPCService.BookmarkOuterClass.Message>(
+                GRPCService.BookmarkOuterClass.StringAndIntegerBookmark,
+                GRPCService.BookmarkOuterClass.EmptyBookMark>(
                   this, METHODID_REMOVE_BOOKMARK)))
+          .addMethod(
+            getGetListOfPostsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                GRPCService.BookmarkOuterClass.UserForBookMark,
+                GRPCService.BookmarkOuterClass.ListOfPostsForBooking>(
+                  this, METHODID_GET_LIST_OF_POSTS)))
           .build();
     }
   }
@@ -173,17 +219,25 @@ public final class BookmarkGrpc {
     /**
      */
     public void addBoomark(GRPCService.BookmarkOuterClass.BookmarkObj request,
-        io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.Message> responseObserver) {
+        io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.EmptyBookMark> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getAddBoomarkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void removeBookmark(GRPCService.BookmarkOuterClass.StringAndInteger request,
-        io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.Message> responseObserver) {
+    public void removeBookmark(GRPCService.BookmarkOuterClass.StringAndIntegerBookmark request,
+        io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.EmptyBookMark> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getRemoveBookmarkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getListOfPosts(GRPCService.BookmarkOuterClass.UserForBookMark request,
+        io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.ListOfPostsForBooking> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetListOfPostsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -207,16 +261,23 @@ public final class BookmarkGrpc {
 
     /**
      */
-    public GRPCService.BookmarkOuterClass.Message addBoomark(GRPCService.BookmarkOuterClass.BookmarkObj request) {
+    public GRPCService.BookmarkOuterClass.EmptyBookMark addBoomark(GRPCService.BookmarkOuterClass.BookmarkObj request) {
       return blockingUnaryCall(
           getChannel(), getAddBoomarkMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public GRPCService.BookmarkOuterClass.Message removeBookmark(GRPCService.BookmarkOuterClass.StringAndInteger request) {
+    public GRPCService.BookmarkOuterClass.EmptyBookMark removeBookmark(GRPCService.BookmarkOuterClass.StringAndIntegerBookmark request) {
       return blockingUnaryCall(
           getChannel(), getRemoveBookmarkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public GRPCService.BookmarkOuterClass.ListOfPostsForBooking getListOfPosts(GRPCService.BookmarkOuterClass.UserForBookMark request) {
+      return blockingUnaryCall(
+          getChannel(), getGetListOfPostsMethod(), getCallOptions(), request);
     }
   }
 
@@ -240,7 +301,7 @@ public final class BookmarkGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GRPCService.BookmarkOuterClass.Message> addBoomark(
+    public com.google.common.util.concurrent.ListenableFuture<GRPCService.BookmarkOuterClass.EmptyBookMark> addBoomark(
         GRPCService.BookmarkOuterClass.BookmarkObj request) {
       return futureUnaryCall(
           getChannel().newCall(getAddBoomarkMethod(), getCallOptions()), request);
@@ -248,15 +309,24 @@ public final class BookmarkGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GRPCService.BookmarkOuterClass.Message> removeBookmark(
-        GRPCService.BookmarkOuterClass.StringAndInteger request) {
+    public com.google.common.util.concurrent.ListenableFuture<GRPCService.BookmarkOuterClass.EmptyBookMark> removeBookmark(
+        GRPCService.BookmarkOuterClass.StringAndIntegerBookmark request) {
       return futureUnaryCall(
           getChannel().newCall(getRemoveBookmarkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<GRPCService.BookmarkOuterClass.ListOfPostsForBooking> getListOfPosts(
+        GRPCService.BookmarkOuterClass.UserForBookMark request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetListOfPostsMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_ADD_BOOMARK = 0;
   private static final int METHODID_REMOVE_BOOKMARK = 1;
+  private static final int METHODID_GET_LIST_OF_POSTS = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -277,11 +347,15 @@ public final class BookmarkGrpc {
       switch (methodId) {
         case METHODID_ADD_BOOMARK:
           serviceImpl.addBoomark((GRPCService.BookmarkOuterClass.BookmarkObj) request,
-              (io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.Message>) responseObserver);
+              (io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.EmptyBookMark>) responseObserver);
           break;
         case METHODID_REMOVE_BOOKMARK:
-          serviceImpl.removeBookmark((GRPCService.BookmarkOuterClass.StringAndInteger) request,
-              (io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.Message>) responseObserver);
+          serviceImpl.removeBookmark((GRPCService.BookmarkOuterClass.StringAndIntegerBookmark) request,
+              (io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.EmptyBookMark>) responseObserver);
+          break;
+        case METHODID_GET_LIST_OF_POSTS:
+          serviceImpl.getListOfPosts((GRPCService.BookmarkOuterClass.UserForBookMark) request,
+              (io.grpc.stub.StreamObserver<GRPCService.BookmarkOuterClass.ListOfPostsForBooking>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -346,6 +420,7 @@ public final class BookmarkGrpc {
               .setSchemaDescriptor(new BookmarkFileDescriptorSupplier())
               .addMethod(getAddBoomarkMethod())
               .addMethod(getRemoveBookmarkMethod())
+              .addMethod(getGetListOfPostsMethod())
               .build();
         }
       }

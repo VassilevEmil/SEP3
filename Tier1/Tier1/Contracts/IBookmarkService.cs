@@ -4,6 +4,7 @@ namespace Contracts;
 
 public interface IBookmarkService
 {
-    Task AddBookmark(Bookmark bookmark);
-    Task RemoveBookmark(Bookmark bookmark);
+    Task<Bookmark> AddBookmark(Bookmark bookmark);
+    Task<Bookmark> RemoveBookmark(Bookmark bookmark);
+    Task<List<Post>> getListOfBookedElements(string username);
 }

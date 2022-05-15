@@ -30,4 +30,17 @@ public class BookmarkDAOImpl : IBookmarkService
         await _context.SaveChangesAsync();
         return bookmarkLocal;
     }
+
+    public async Task<List<Post>> getListOfBookedElements(string username)
+    {
+        List<Bookmark> list = _context.Bookmarks.Where(t => t.Username.Equals(username))
+            .Include(t=>t.Post).ThenInclude(t=>t.Images).Include(t=>t.Post).ToList();
+        List<Post> tosend = new List<Post>();
+        foreach (var item in list)
+        {
+            tosend.Add(item.Post);
+        }
+
+        return tosend;
+    }
 }

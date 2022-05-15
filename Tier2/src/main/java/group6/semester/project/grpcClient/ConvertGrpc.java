@@ -107,6 +107,14 @@ public class ConvertGrpc {
     }
 
 
+
+    public static Bookmark getBookmarkFromGrpcBookmark(BookmarkOuterClass.BookmarkObj bookmark){
+        Bookmark local = new Bookmark();
+        local.setUser(getUserFromGrpcUser(bookmark.getUser()));
+        local.setPost(getPostFromGrpcPost(bookmark.getPost()));
+        return local;
+    }
+
     public static PostOuterClass.DateCreated getDateCreatedFromYearMonthDay(Date date){
         PostOuterClass.DateCreated dateCreated = PostOuterClass.DateCreated.newBuilder().setDay(date.getDay()).setMonth(date.getMonth()).setYear(date.getYear()).build();
         return dateCreated;

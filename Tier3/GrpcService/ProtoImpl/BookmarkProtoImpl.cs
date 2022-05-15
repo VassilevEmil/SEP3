@@ -14,21 +14,25 @@ public class BookmarkProtoImpl : Bookmark.BookmarkBase
         this._bookmarkService = _bookmarkService;
     }
 
-    public override async Task<BookmarkObj> AddBoomark(BookmarkObj request,ServerCallContext context)
+    public override async Task<EmptyBookMark> AddBoomark(BookmarkObj request, ServerCallContext context)
     {
-        Entities.Models.Bookmark bookmark = ConvertGRPC.ConvertBookmarkObjToBookmark(request);
-        var ret = await _bookmarkService.AddBookmark(bookmark);
-
-        return ConvertGRPC.ConvertBookmarkToBookmarkObj(ret);
-    }
-    
-    public override async Task<BookmarkObj> RemoveBookmark(StringAndInteger request,ServerCallContext context)
-    {
-        string username = request.UserName;
-        int postId = request.PostId;
-        var ret= await _bookmarkService.RemoveBookmark(postId,username);
-
-        return ConvertGRPC.ConvertBookmarkToBookmarkObj(ret);
+        Entities.Models.Bookmark local = ConvertGRPC.ConvertBookmarkObjToBookmark(request);
+        await _bookmarkService.AddBookmark(local);
+        return new EmptyBookMark();
     }
 
+    public override async Task<EmptyBookMark> RemoveBookmark(StringAndIntegerBookmark request,ServerCallContext context)
+    {
+        string username = request.String;
+        int postId = request.Current;
+        Entities.Models.Bookmark ret= await _bookmarkService.RemoveBookmark(postId,username);
+        return new EmptyBookMark();
+    }
+
+    public override async Task<ListOfPostsForBooking> GetListOfPosts(UserForBookMark request, ServerCallContext context)
+    {
+        string username = request.Username;
+        List<Entities.Models.Post> list = await _bookmarkService.getListOfBookedElements(username);
+        return ConvertGRPC.ConvertListPostToObjBooking(list);
+    }
 }

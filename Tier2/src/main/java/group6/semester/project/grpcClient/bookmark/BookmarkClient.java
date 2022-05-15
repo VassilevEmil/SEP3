@@ -10,4 +10,6 @@ import java.util.List;
 public interface BookmarkClient {
     void AddBookmark(Bookmark bookmark);
     void RemoveBookmark(int postId, String userName);
+
+    List<Post> getListOfBookedElements(String userName);
 }
