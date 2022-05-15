@@ -21,6 +21,7 @@ builder.Services.AddScoped<IBookmarkService, BookmarkDAOImpl>();
 builder.Services.AddScoped<IUserService, UserDAOImpl>();
 builder.Services.AddScoped<IPostService, PostDAOImpl>();
 builder.Services.AddScoped<ICommentService, CommentServiceImpl>();
+builder.Services.AddScoped<IImageService,ImageDaoImpl>();
 builder.Services.AddDbContext<DbAccess>();
 
 var app = builder.Build();
