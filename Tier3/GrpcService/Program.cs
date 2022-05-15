@@ -19,7 +19,7 @@ builder.Services.AddGrpc();
 //builder.Services.AddScoped<IMessageDAO, MessageDAOImpl>();
 builder.Services.AddScoped<IUserService, UserDAOImpl>();
 builder.Services.AddScoped<IPostService, PostDAOImpl>();
-builder.Services.AddScoped<IImageService,ImageDaoImpl>();
+builder.Services.AddScoped<ICommentService, CommentServiceImpl>();
 builder.Services.AddDbContext<DbAccess>();
 
 var app = builder.Build();
@@ -29,6 +29,7 @@ app.MapGrpcService<UserProtoImpl>();
 app.MapGrpcService<PostProtoImpl>();
 app.MapGrpcService<CategoryProtoImpl>();
 app.MapGrpcService<ImageUploadProtoImpl>();
+app.MapGrpcService<CommentProtoImpl>();
 app.MapGet("/",
     () =>
         "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");

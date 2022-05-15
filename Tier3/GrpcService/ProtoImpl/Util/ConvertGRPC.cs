@@ -1,5 +1,6 @@
 ﻿using Entities.Models;
 using Google.Protobuf.Collections;
+using Grpc.Core;
 
 namespace GRPCService.ProtoImpl.Util;
 
@@ -45,17 +46,15 @@ public class ConvertGRPC {
     }
 
 
-    public static ListOfPostObj ConvertListPostToObj(List<Entities.Models.Post> request)
-    {
+    public static ListOfPostObj ConvertListPostToObj(List<Entities.Models.Post> request) {
         ListOfPostObj postObj = new ListOfPostObj();
-        foreach (var item in request)
-        {
+        foreach (var item in request) {
             postObj.List.Add(ConvertPostToPostObj(item));
         }
 
         return postObj;
     }
-    
+
     public static PostObj ConvertPostToPostObj(Entities.Models.Post request) {
         PostObj postObj = new PostObj() {
             Id = request.Id,
@@ -124,12 +123,10 @@ public class ConvertGRPC {
 
     public static RepeatedField<CategoryObj> GetRepeatedFieldOfCategoryObjFromListOfCategory(
         List<Entities.Models.Category> categories) {
-
         RepeatedField<CategoryObj> categoryObjs = new RepeatedField<CategoryObj>();
 
         foreach (Entities.Models.Category category in categories) {
             categoryObjs.Add(GetGRPCCategoryFromCategory(category));
-            
         }
 
         return categoryObjs;
@@ -154,5 +151,28 @@ public class ConvertGRPC {
         }
 
         return subcategories;
+    }
+
+    public static CommentObj GetCommentObjFromComment(Comment comment) {
+        return new CommentObj() {
+            Body = comment.Body,
+            Id = comment.Id,
+            Writer = GetUserObjFromUser(comment.Writer),
+            DateCreated = new DateCreatedForComment() {
+                Day = comment.DateCreated.Day,
+                Month = comment.DateCreated.Month,
+                Year = comment.DateCreated.Year
+            }
+        };
+    }
+
+    public static Comment GetCommentFromCommentObj(CommentObj commentObj) {
+        return new Comment() {
+            Body = commentObj.Body,
+            Id = commentObj.Id,
+            Writer = GetUserFromUserObj(commentObj.Writer),
+            DateCreated = new DateOnly(commentObj.DateCreated.Year, commentObj.DateCreated.Month,
+                commentObj.DateCreated.Day)
+        };
     }
 }
