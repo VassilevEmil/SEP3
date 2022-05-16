@@ -13,14 +13,10 @@ public class Post
     public string? PhoneNumber { get; set; }
     public string? Email { get; set; }
     public ICollection<Image> Images { get; set; }
+    public List<Comment>? Comments { get; set; }
     public User Writer { get; set; }
     
-    public Subcategory? Subcategory { get; set; }
 
-    public Post()
-    {
-        Subcategory = new Subcategory();
-    }
     
 
 }

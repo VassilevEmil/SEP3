@@ -32,7 +32,7 @@ public class PostDAOImpl : IPostService {
             .ToList());
     }
 
-    public Task<List<Post>> GetAllPosyByUserName(string userName) {
+    public Task<List<Post>> GetAllPostsByUsername(string userName) {
         List<Post> postsByUser = _context.Posts.Where(post => post.Writer.Username.Equals(userName)).Include(post
             => post.Subcategory).Include(p
             => p.Subcategory.Category).ToList();
@@ -42,7 +42,8 @@ public class PostDAOImpl : IPostService {
 
     public async Task<List<Post>> GetAllPost(int current) {
         int count = 9;
-        return await _context.Posts.Include(t => t.Images).Include(t => t.Writer).OrderByDescending(post => post.DateCreated).Skip((current-1)*count).Take(count).ToListAsync();
+        return await _context.Posts.Include(t => t.Images).Include(t => t.Writer)
+            .OrderByDescending(post => post.DateCreated).Skip((current - 1) * count).Take(count).ToListAsync();
     }
 
     public async Task<List<Post>> SearchPosts(string titleToSearch, int current) {
@@ -50,13 +51,15 @@ public class PostDAOImpl : IPostService {
         return await _context.Posts.Include(post => post.Images).Include(post => post.Writer)
             .Where(post => post.Title.Contains(titleToSearch))
             .OrderByDescending(post => post.DateCreated)
-            .Skip((current-1)*count).Take(count).ToListAsync();
+            .Skip((current - 1) * count).Take(count).ToListAsync();
     }
 
-    public async Task<Post> GetPostDetails(int Id)
-    {
-        return await _context.Posts.Include(post => post.Images).Include(post => post.Writer)
-            .FirstAsync(post => post.Id.Equals(Id));
+    public async Task<Post> GetPostDetails(int id) {
+        var post= await _context.Posts.Include(post => post.Images)
+            .Include(post => post.Writer!)
+            .Include(post => post.Comments!)
+            .ThenInclude(comment => comment.Writer).FirstAsync(post => post.Id == id);
+        return post;
     }
 
     public async Task<List<Post>> GetPostsBySubcategoryId(int subcategoryId, int current) {
@@ -66,12 +69,9 @@ public class PostDAOImpl : IPostService {
             .ThenInclude(post => post.Writer).FirstAsync(subcategory => subcategory.Id == subcategoryId);
 
         return findAsync.Posts.ToList();
-
     }
 
-    
-    
-    //To get the id for image and creating href accourding to it 
+    //To get the id for image and creating href according to it 
     public async Task<string> AddImage(int postId)
     {
         Image image = new Image();

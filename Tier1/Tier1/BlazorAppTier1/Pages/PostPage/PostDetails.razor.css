@@ -271,7 +271,6 @@ h5{
     display: inline-block;
     border: none;
     cursor: pointer;
-    color: #ffeba7;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 18px;
@@ -303,12 +302,24 @@ h5{
     width: 100%;
     z-index: 2;
 }
+.desc-sec.accor-3 {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
 #desc-1:checked ~ .desc-sec.accor-1 {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
 }
 #desc-2:checked ~ .desc-sec.accor-2 {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+#desc-3:checked ~ .desc-sec.accor-3 {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
@@ -424,7 +435,6 @@ h5{
         margin-left: 0;
     }
     .info-wrap{
-        margin-left: 0;
         width: 370px;
         margin: 0 auto;
         text-align: center;

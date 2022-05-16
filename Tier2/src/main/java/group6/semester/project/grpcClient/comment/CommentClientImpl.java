@@ -38,11 +38,14 @@ public class CommentClientImpl implements CommentClient {
                 .setPostId(GRPCService.Comment.Integer.newBuilder().setId(postId).build())
                 .build();
         GRPCService.Comment.CommentObj commentObjFromServer = getCommentBlockingStub().addComment(commentObjAndInteger);
-        return ConvertGrpc.getCommentFromGrpcComment(commentObjFromServer);
+        return ConvertGrpc.getCommentFromGRPCCommentObj(commentObjFromServer);
     }
 
     @Override
     public Comment deleteComment(int commentId) {
-        return null;
+        GRPCService.Comment.Integer integer = GRPCService.Comment.Integer.newBuilder()
+                .setId(commentId).build();
+        GRPCService.Comment.CommentObj commentObj = getCommentBlockingStub().deleteComment(integer);
+        return ConvertGrpc.getCommentFromGRPCCommentObj(commentObj);
     }
 }

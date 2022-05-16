@@ -114,7 +114,7 @@ public class ConvertGRPC {
     }
     
     public static PostObj ConvertPostToPostObj(Entities.Models.Post request) {
-        PostObj postObj = new PostObj() {
+        return new PostObj() {
             Id = request.Id,
             Description = request.Description,
             Address = request.Address,
@@ -131,11 +131,11 @@ public class ConvertGRPC {
             },
             PhoneNumber = request.PhoneNumber,
         };
-        return postObj;
     }
 
 
-    public static RepeatedField<PostObj> GetRepeatedFieldOfPostFromListOfPosts(List<Entities.Models.Post> posts) {
+    public static RepeatedField<PostObj>
+        GetRepeatedFieldOfPostFromListOfPosts(List<Entities.Models.Post> posts) {
         RepeatedField<PostObj> repeatedField = new RepeatedField<PostObj>();
         foreach (Entities.Models.Post post in posts) {
             repeatedField.Add(ConvertPostToPostObj(post));
@@ -157,7 +157,8 @@ public class ConvertGRPC {
         return images;
     }
 
-    public static RepeatedField<ImageObj> GetRepeatedImageObjFromImage(ICollection<Entities.Models.Image> images) {
+    public static RepeatedField<ImageObj> GetRepeatedImageObjFromImage(
+        ICollection<Entities.Models.Image> images) {
         RepeatedField<ImageObj> imageObjs = new RepeatedField<ImageObj>();
         foreach (Image variableImage in images) {
             imageObjs.Add(new ImageObj() {
@@ -232,5 +233,37 @@ public class ConvertGRPC {
             DateCreated = new DateOnly(commentObj.DateCreated.Year, commentObj.DateCreated.Month,
                 commentObj.DateCreated.Day)
         };
+    }
+
+    public static RepeatedField<CommentObj> GetRepeatedFieldsOfCommentObjsFromListOfComments(
+        ICollection<Entities.Models.Comment> comments) {
+        RepeatedField<CommentObj> commentObjs = new RepeatedField<CommentObj>();
+
+        foreach (Comment comment in comments) {
+            commentObjs.Add(GetCommentObjFromComment(comment));
+        }
+
+        return commentObjs;
+    }
+
+    public static PostObj ConvertPostToPostObjWithComments(Entities.Models.Post request) {
+        return new PostObj() {
+            Id = request.Id,
+            Description = request.Description,
+            Address = request.Address,
+            Email = request.Email,
+            Condition = request.Condition,
+            Images = {GetRepeatedImageObjFromImage(request.Images!)},
+            Price = request.Price,
+            Title = request.Title,
+            Writer = GetUserObjFromUser(request.Writer!),
+            DateCreated = new DateCreated() {
+                Day = request.DateCreated.Day,
+                Month = request.DateCreated.Month,
+                Year = request.DateCreated.Year
+            },
+            PhoneNumber = request.PhoneNumber,
+            Comments = { GetRepeatedFieldsOfCommentObjsFromListOfComments(request.Comments!) }
+        }; 
     }
 }
