@@ -31,7 +31,9 @@ public class ImageUploadProtoImpl:image.imageBase
             byte[] byteArray = fileContent.ToByteArray();
             byteFirst = Combine(byteFirst, byteArray);
         }
+        
 
+        
         
         // bool boolean = ByteArrayToFile(fileNameToSave, byteFirst);
        bool boolean = _imageService.AddImage(postID, fileType, byteFirst).Result;
@@ -68,4 +70,5 @@ public class ImageUploadProtoImpl:image.imageBase
         Buffer.BlockCopy(second, 0, ret, first.Length, second.Length);
         return ret;
     }
+  
 }

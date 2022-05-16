@@ -54,14 +54,19 @@ public class PostHttpClient : IPostService
                 Console.WriteLine("Ading image post ");
                 Console.WriteLine(form.Headers.ToString());
 
-                using var httpClient1 = new HttpClient();
-                httpClient1.DefaultRequestHeaders.Add("Authentification", "abc123");
-                Console.WriteLine(post.Id);
-                HttpResponseMessage responseForImage =
-                    await httpClient1.PostAsync($"http://localhost:8080/uploadImage/{post.Id}", formDataContent);
+                using (var httpClient1 = new HttpClient())
+                {
+                    httpClient1.DefaultRequestHeaders.Add("Authentification", "abc123");
+                    Console.WriteLine(post.Id);
+                    HttpResponseMessage responseForImage =
+                        await httpClient1.PostAsync($"http://localhost:8080/uploadImage/{post.Id}", formDataContent);
+                    // content = await responseForImage.Content.ReadAsStringAsync();
+                    // Console.WriteLine(GetDeserialized<string>(content));
+                   ;
+                }
             }
 
-
+            
             return post;
         }
         catch (Exception e)

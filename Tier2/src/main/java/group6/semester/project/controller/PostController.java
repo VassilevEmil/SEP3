@@ -101,20 +101,13 @@ public class PostController {
     public ResponseEntity uploadImage(@RequestBody() MultipartFile file,@PathVariable int postId) throws
         IOException
     {
+        System.out.println(file.getOriginalFilename());
             try{
-             //   System.out.println("Adding image for post " + postId );
-             //   System.out.println(file.getOriginalFilename());
-               // System.out.println(file.getName());
-              //  System.out.println(file.getContentType());
-             //   System.out.println(file.getSize());
 
-
-               // String pathdirectory = new ClassPathResource("").getFile().getAbsolutePath();
-              //  Files.copy(file.getInputStream(), Paths.get(pathdirectory+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
-                //postService.addImage(file);
-                //
+                System.out.println(file.getOriginalFilename());
 
                 postService.addImage(file,postId);
+
                 return ResponseEntity.ok("Done");
             }catch (Exception e)
             {

@@ -242,6 +242,7 @@ else
     private async Task OnInputFileChange(InputFileChangeEventArgs e)
     {
         file = e.File;
+        Console.WriteLine(file.Name);
     }
 
     private async Task CreatePost()
@@ -278,7 +279,7 @@ else
             if (file == null)
             {
                 Post localTest = await _postService.AddPostAsync(localId, post);
-
+                Console.WriteLine("File is null");
 
                 Console.WriteLine(localTest.Description);
             }
@@ -286,23 +287,29 @@ else
     // adding image function
             if (file != null)
             {
-                var form = new MultipartFormDataContent();
-                using (var fs = file.OpenReadStream())
+                using (var form = new MultipartFormDataContent())
                 {
-                    using (var streamContent = new StreamContent(fs))
+                    using (var fs = file.OpenReadStream())
                     {
-                        using (var fileContent = new ByteArrayContent(await streamContent.ReadAsByteArrayAsync()))
+                        using (var streamContent = new StreamContent(fs))
                         {
-                            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data");
+                            using (var fileContent = new ByteArrayContent(await streamContent.ReadAsByteArrayAsync()))
+                            {
+                                fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data");
 
-                            form.Add(fileContent, "file", file.Name);
+                                form.Add(fileContent, "file", file.Name);
 
-                            Post localTest = await _postService.AddPostAsync(localId, post, form);
-                            Console.WriteLine(localTest.Description);
+                                Post localTest = await _postService.AddPostAsync(localId, post, form);
+                                Console.WriteLine(localTest.Description);
+                            }
                         }
                     }
+
+
+
                 }
             }
+            file = null;
             navMgr.NavigateTo("/");
         }
         catch (Exception e)
