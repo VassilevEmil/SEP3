@@ -21,45 +21,62 @@ public class ImageGrpcImpl
 {
 
   private imageGrpc.imageStub imageStub;
-  private StreamObserver<Image.FileUploadRequest> streamObserver = getImageStub().upload(new FileUploadObserver());
+  private StreamObserver<Image.FileUploadRequest> streamObserver;
  // Path path = Paths.get("src/main/java/group6/semester/project/grpcClient/fileUpload/sunflower-0quality.jpg");
-
+private ManagedChannel managedChannel;
 
   private imageGrpc.imageStub getImageStub() {
     if (imageStub == null) {
-      ManagedChannel managedChannel = ManagedChannelGetter.getManagedChannel();
+       managedChannel = ManagedChannelGetter.getManagedChannel();
       imageStub = imageGrpc.newStub(managedChannel);
     }
     return imageStub;
+  }
+
+  public StreamObserver<Image.FileUploadRequest> getStreamObserver()
+  {
+    if (streamObserver == null){
+     streamObserver =  getImageStub().upload(new FileUploadObserver());
+    }
+    return streamObserver;
 
   }
 
-
   public void uploadImage(MultipartFile file,int id) throws IOException {
 
+try
+{
+  String filename = file.getOriginalFilename();
+  String type = filename.substring(filename.lastIndexOf(".") + 1);
+  Image.FileUploadRequest metadata = Image.FileUploadRequest.newBuilder().setMetadata(
+      Image.MetaData.newBuilder().setName(String.valueOf(id)).setType(type).build()).build();
+  getStreamObserver().onNext(metadata);
+  System.out.println("Adding image");
 
-    String filename = file.getOriginalFilename();
-    String type = filename.substring(filename.lastIndexOf(".") + 1);
-    Image.FileUploadRequest metadata = Image.FileUploadRequest.newBuilder().setMetadata(
-        Image.MetaData.newBuilder().setName(String.valueOf(id)).setType(type).build()
-    ).build();
-    streamObserver.onNext(metadata);
-    System.out.println("Adding image");
+  // upload file as a chunk
+  ;
 
-    // upload file as a chunk
- ;
+  InputStream inputStream = new BufferedInputStream(file.getInputStream());
+  byte[] bytes = new byte[4096];
+  int size;
+  while ((size = inputStream.read(bytes)) > 0)
+  {
+    Image.FileUploadRequest uploadRequest = Image.FileUploadRequest.newBuilder()
+        .setFile(Image.FileObj.newBuilder()
+            .setContent(ByteString.copyFrom(bytes, 0, size)).build()).build();
+    getStreamObserver().onNext(uploadRequest);
+  }
+  // close the stream
+  inputStream.close();
 
-    InputStream inputStream =  new BufferedInputStream(file.getInputStream());
-    byte[] bytes = new byte[4096];
-    int size;
-    while ((size = inputStream.read(bytes)) > 0) {
-      Image.FileUploadRequest uploadRequest = Image.FileUploadRequest.newBuilder()
-          .setFile(Image.FileObj.newBuilder().setContent(ByteString.copyFrom(bytes,0,size)).build()).build();
-      streamObserver.onNext(uploadRequest);
-    }
-    // close the stream
-    inputStream.close();
-    streamObserver.onCompleted();
+  System.out.println("On completed call for image upload");
+}
+catch (IOException e)
+{
+  throw new IOException("Could not add message");
+} getStreamObserver().onCompleted();
+  disposeStub();
+
   }
   private class FileUploadObserver implements StreamObserver<Image.FileUploadResponse>
   {
@@ -77,6 +94,10 @@ public class ImageGrpcImpl
     public void onCompleted() {
 
     }
+  }
+  private void disposeStub() {
+    imageStub = null;
+    streamObserver = null;
   }
 }
 

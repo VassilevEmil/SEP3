@@ -11,5 +11,7 @@ public interface IPostService {
     Task<List<Post>> SearchPosts(string titleToSearch, int current);
     Task<Post> GetPostDetails(int Id);
 
-  Task<List<Post>> GetPostsBySubcategoryId(int subcategoryId, int current);
+    Task<List<Post>> GetPostsBySubcategoryId(int subcategoryId, int current);
+
+    Task<string> AddImage(int id);
 }
