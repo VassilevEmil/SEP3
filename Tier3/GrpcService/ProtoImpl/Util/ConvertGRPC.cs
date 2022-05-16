@@ -45,7 +45,16 @@ public class ConvertGRPC {
         return post;
     }
 
-
+    public static Entities.Models.Bookmark ConvertBookmarkObjToBookmark(BookmarkObj request)
+    {
+        Entities.Models.Bookmark bookmark = new Entities.Models.Bookmark()
+        {
+            User = GetUserFromUserObj(request.User),
+            Post = ConvertPostObjToPost(request.Post)
+        };
+        return bookmark;
+    }
+    
     public static ListOfPostObj ConvertListPostToObj(List<Entities.Models.Post> request) {
         ListOfPostObj postObj = new ListOfPostObj();
         foreach (var item in request) {
@@ -54,7 +63,56 @@ public class ConvertGRPC {
 
         return postObj;
     }
+    
+    public static ListOfPostsForBooking ConvertListPostToObjBooking(List<Entities.Models.Post> request) {
+        ListOfPostsForBooking postObj = new ListOfPostsForBooking();
+        foreach (var item in request) {
+            PostObj postObj2 = new PostObj() {
+                Id = item.Id,
+                Description = item.Description,
+                Address = item.Address,
+                Email = item.Email,
+                Condition = item.Condition,
+                Images = {new ImageObj()},
+                Price = item.Price,
+                Title = item.Title,
+                Writer = new UserObj(),
+                DateCreated = new DateCreated() {
+                    Day = item.DateCreated.Day,
+                    Month = item.DateCreated.Month,
+                    Year = item.DateCreated.Year
+                },
+                PhoneNumber = item.PhoneNumber,
+            };
+            postObj.Post.Add(postObj2);
+        }
 
+        return postObj;
+    }
+
+    public static BookmarkObj ConvertBookmarkToBookmarkObj(Entities.Models.Bookmark reqest)
+    {
+        BookmarkObj bookmarkObj = new BookmarkObj()
+        {
+            Post = ConvertPostToPostObj(reqest.Post),
+            User = ConvertUserToUserObj(reqest.User)
+        };
+        return bookmarkObj;
+    }
+
+    public static UserObj ConvertUserToUserObj(Entities.Models.User reqest)
+    {
+        UserObj userObj = new UserObj()
+        {
+            Username = reqest.Username,
+            Password = reqest.Password,
+            FirstName = reqest.FirstName,
+            LastName = reqest.LastName,
+            Role = reqest.Role
+        };
+        return userObj;
+    }
+    
     public static PostObj ConvertPostToPostObj(Entities.Models.Post request) {
         PostObj postObj = new PostObj() {
             Id = request.Id,
