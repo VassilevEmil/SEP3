@@ -43,6 +43,9 @@ public class CommentClientImpl implements CommentClient {
 
     @Override
     public Comment deleteComment(int commentId) {
-        return null;
+        GRPCService.Comment.Integer integer = GRPCService.Comment.Integer.newBuilder()
+                .setId(commentId).build();
+        GRPCService.Comment.CommentObj commentObj = getCommentBlockingStub().deleteComment(integer);
+        return ConvertGrpc.getCommentFromGRPCCommentObj(commentObj);
     }
 }

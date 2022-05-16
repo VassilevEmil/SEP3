@@ -70,4 +70,12 @@ public class PostDAOImpl : IPostService {
 
         return findAsync.Posts.ToList();
     }
+
+    //To get the id for image and creating href according to it 
+    public async Task<string> AddImage(int postId)
+    {
+        Image image = new Image();
+        var imageId = await _context.Images.AddAsync(image);
+        return imageId.Entity.Id.ToString();
+    }
 }

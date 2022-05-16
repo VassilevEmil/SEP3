@@ -22,4 +22,10 @@ public class CommentProtoImpl : comment.commentBase {
         return ConvertGRPC.GetCommentObjFromComment(addedCommentFromServer);
 
     }
+
+    public override async Task<CommentObj> DeleteComment(Integer request, ServerCallContext context) {
+        int commentId = request.Id;
+        Comment deletedComment =await _commentService.DeleteComment(commentId);
+        return ConvertGRPC.GetCommentObjFromComment(deletedComment);
+    }
 }
