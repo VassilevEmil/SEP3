@@ -21,6 +21,7 @@ public class Post {
     private String email;
     private List<Image> images;
     private User writer;
+    private List<Comment> comments;
 
 
 

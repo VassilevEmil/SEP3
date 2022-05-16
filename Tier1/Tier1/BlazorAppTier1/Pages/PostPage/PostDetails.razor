@@ -1,6 +1,7 @@
 ﻿@page "/PostDetails/{Id:int}"
 @using Entities.Models
 @using Contracts
+@using BlazorAppTier1.Pages.UIElements
 @inject IPostService _postService
 
 <h3>PostDetails</h3>
@@ -8,6 +9,7 @@
 
 <div class="section-fluid-main">
     <div class="section">
+
         <div class="info-wrap mob-margin">
             <p class="title-up">@_user.GetName()</p>
             <h2>@_post.Title</h2>
@@ -17,33 +19,28 @@
                 <label for="desc-1">Description</label>
                 <input class="desc-btn" type="radio" id="desc-2" name="desc-btn"/>
                 <label for="desc-2">Details</label>
-
-
-                <div class="details">
-                    <div class="section-fluid desc-sec accor-1">
-                        <p>@_post.Description</p>
-                    </div>
-                    <div class="section-fluid desc-sec accor-2">
-                        <div class="section-inline">
-                            <p><span> Condition @_post.Condition</span><br>test</p>
-                        </div>
-                        <div class="section-inline">
-                            <p><span>@_post.PhoneNumber</span><br>test</p>
-                        </div>
-                        <div class="section-inline">
-                            <p>
-                                <span>@_post.Email</span><br>
-                            </p>
-                        </div>
-
-                    </div>
+                <input class="desc-btn" type="radio" id="desc-3" name="desc-btn"/>
+                <label for="desc-3">Comments</label>
+                <div class="section-fluid desc-sec accor-1">
+                    <p>@_post.Description</p>
+                </div>
+                <div class="section-fluid desc-sec accor-2">
+                    <p> Condition : @_post.Condition</p>
+                    <p> Price : @_post.Price</p>
+                    <p> Address: @_post.Address</p>
+                    <p> Email : @_post.Email </p>
+                    <p> Phone number : @_post.PhoneNumber</p>
+                </div>
+                <div class="section-fluid desc-sec accor-3 commentSection">
+                    <Comments CommentsToShow="_post.Comments"></Comments>
+                </div>
+                <div>
+                    <a href="#" class="btn"><i class="uil uil-shopping-cart icon" style="margin-top: 10%"></i>Bookmark</a>
                 </div>
             </div>
             <br/>
             <br/>
-            <div>
-                <a href="#" class="btn"><i class="uil uil-shopping-cart icon" style="margin-top: 10%"></i>Bookmark</a>
-            </div>
+
         </div>
 
 
@@ -87,15 +84,12 @@
     private Post? _post = new Post();
     private User? _user = new User();
 
-    protected override async Task OnInitializedAsync()
-    {
-        try
-        {
+    protected override async Task OnInitializedAsync() {
+        try {
             _post = await _postService.GetPostDetails(Id);
             _user = _post.Writer;
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             throw new Exception(e.Message);
         }
     }

@@ -69,6 +69,10 @@ public class ConvertGrpc {
         post.setTitle(postObj.getTitle());
         post.setImages(getListOfImageFromListOfGrpcImages(postObj.getImagesList()));
         post.setDateCreated(date);
+        if ( postObj.getCommentsList() !=null || !postObj.getCommentsList().isEmpty()){
+            post.setComments(getListOfCommentFromGrpcListOfComments(postObj.getCommentsList()));
+        }
+
         return post;
     }
 
@@ -179,31 +183,9 @@ public class ConvertGrpc {
     }
 
 
-    /**
-     * It takes a GRPC Comment object and converts it into a Comment object
-     *
-     * @param commentObj The comment object that is being converted to a Comment object.
-     * @return A Comment object
-     */
-    public static Comment getCommentFromGrpcComment(GRPCService.Comment.CommentObj commentObj) {
-        Comment comment = new Comment();
-        comment.setWriter(getUserFromGrpcUser(commentObj.getWriter()));
-        comment.setBody(commentObj.getBody());
-        comment.setId(commentObj.getId());
-        return comment;
-    }
 
-    /**
-     * It converts a Comment object to a CommentObj object.
-     *
-     * @param comment The comment object that we want to convert to a gRPC object.
-     * @return A CommentObj object.
-     */
-    public static GRPCService.Comment.CommentObj getGrpcCommentFromOurComment(Comment comment){
-        GRPCService.Comment.CommentObj commentObj = GRPCService.Comment.CommentObj.newBuilder().setId(comment.getId())
-                .setWriter(getGrpcUserFromUser(comment.getWriter())).setBody(comment.getBody()).build();
-        return commentObj;
-    }
+
+
 
     /**
      * It takes a list of our Comment objects and returns a list of GRPCService.Comment.CommentObj objects
@@ -215,7 +197,7 @@ public class ConvertGrpc {
     {
         List<GRPCService.Comment.CommentObj> commentObjs = new ArrayList<>();
         for (Comment i : list) {
-            commentObjs.add(getGrpcCommentFromOurComment(i));
+            commentObjs.add(getCommentObjFromComment(i));
         }
         return commentObjs;
     }
@@ -231,7 +213,7 @@ public class ConvertGrpc {
         List<Comment> comments = new ArrayList<>();
         for (GRPCService.Comment.CommentObj commentObj : list
         ) {
-            comments.add(getCommentFromGrpcComment(commentObj));
+            comments.add(getCommentFromGRPCCommentObj(commentObj));
         }
         return comments;
     }
