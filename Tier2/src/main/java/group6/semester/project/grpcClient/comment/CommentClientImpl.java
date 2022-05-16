@@ -38,7 +38,7 @@ public class CommentClientImpl implements CommentClient {
                 .setPostId(GRPCService.Comment.Integer.newBuilder().setId(postId).build())
                 .build();
         GRPCService.Comment.CommentObj commentObjFromServer = getCommentBlockingStub().addComment(commentObjAndInteger);
-        return ConvertGrpc.getCommentFromGrpcComment(commentObjFromServer);
+        return ConvertGrpc.getCommentFromGRPCCommentObj(commentObjFromServer);
     }
 
     @Override

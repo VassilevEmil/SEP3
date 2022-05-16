@@ -1,6 +1,7 @@
 ﻿#body{
     margin-top:20px;
     background:#eee;
+    overflow: scroll;
 }
 @media (min-width: 0) {
     .g-mr-15 {
@@ -33,6 +34,9 @@
 
 .u-shadow-v18 {
     box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.15);
+}
+.fullname{
+    cursor: pointer;
 }
 
 .g-color-gray-dark-v4 {

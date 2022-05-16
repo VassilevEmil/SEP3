@@ -57,8 +57,6 @@ public class PostGRPCClientImpl implements PostClient {
             postObj1 = getPostBlockingStub().addPost(transferPostWithSubcategoryId);
         } catch (Exception e) {
             throw new RuntimeException(e);
-        } finally {
-            disposeStub();
         }
         return getPostFromGrpcPost(postObj1);
     }
@@ -70,8 +68,6 @@ public class PostGRPCClientImpl implements PostClient {
             listOfCategoryObj = getCategoryBlockingStub().getAllCategories(CategoryOuterClass.Empty.newBuilder().build());
         } catch (Exception e) {
             throw new RuntimeException(e);
-        } finally {
-            disposeStub();
         }
         List<CategoryOuterClass.CategoryObj> allCategoriesList = listOfCategoryObj.getAllCategoriesList();
         List<Category> categories = ConvertGrpc.getListOfCategoryFromCategory(allCategoriesList);
@@ -88,8 +84,6 @@ public class PostGRPCClientImpl implements PostClient {
             postList = ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(list.getListList());
         } catch (Exception e) {
             throw new RuntimeException(e);
-        } finally {
-            disposeStub();
         }
         return postList;
     }
@@ -112,8 +106,6 @@ public class PostGRPCClientImpl implements PostClient {
             postList = ConvertGrpc.getListOfPostFromListOfGrpcPostObjects(list.getListList());
         } catch (Exception e) {
             throw new RuntimeException(e);
-        } finally {
-            disposeStub();
         }
         return postList;
     }
